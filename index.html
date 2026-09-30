@@ -31,7 +31,7 @@
 @media print{html,.app,.shell{background:#fff!important}.header,.tabs,.actions,.filters,.sheet,.overlay,.screen-only,.inspector{display:none!important}.main{padding:0}.view{display:block!important;margin-bottom:28px}.print-only{display:block}.print-header{border-bottom:2px solid #000;padding-bottom:18px;margin-bottom:24px}.print-header h1{font-size:28px}.workspace{display:block}.territory{break-inside:avoid;background:#fff}.node{break-inside:avoid}.inventory-cards{display:none}.inventory-table{display:table;width:100%;border-collapse:collapse}.inventory-table th,.inventory-table td{border:1px solid #777;padding:6px;text-align:left;font-size:10px}.inventory-table th{background:#eee;color:#000}.flow-layout{display:block}.flow-picker{display:none}.flow-sequence{break-inside:avoid}.scope-grid{display:grid;grid-template-columns:1fr 1fr}.print-notes{break-before:page} @page{margin:14mm}}
 </style>
 <style id="copyLayerStyles">
-/* The stage controls and COPY-01 are isolated from the approved architecture. */
+/* The stage controls and COPY-02 are isolated from the approved architecture. */
 .stage-switcher{padding:12px 16px;background:var(--panel);border-bottom:1px solid var(--line-strong);display:flex;align-items:center;justify-content:space-between;gap:24px}
 .stage-context{display:none;font:11px var(--mono);letter-spacing:.08em;color:var(--muted)}
 .stage-tabs{display:grid;grid-template-columns:1fr 1fr;width:100%;border:1px solid var(--line-strong);padding:3px;gap:3px;background:var(--paper)}
@@ -194,7 +194,7 @@ html[data-copy-entry-stage="content"] #stage-content{background:var(--graphite);
 <script id="copyStageEntry">document.documentElement.dataset.copyEntryStage=location.hash==='#contenido'?'content':'architecture';</script>
 </head>
 <body>
-<nav class="stage-switcher" aria-label="Etapas de preproducción"><span class="stage-context">GRUPO BRANDING<br>HUB DE PREPRODUCCIÓN</span><div class="stage-tabs" role="tablist" aria-label="Etapa activa"><button type="button" class="stage-tab" id="stage-architecture" role="tab" aria-selected="true" aria-controls="architectureStage" data-stage="architecture">ARQUITECTURA <small>ARQ-01</small></button><button type="button" class="stage-tab" id="stage-content" role="tab" aria-selected="false" aria-controls="contentStage" data-stage="content" tabindex="-1">CONTENIDO <small>COPY-01</small></button></div></nav>
+<nav class="stage-switcher" aria-label="Etapas de preproducción"><span class="stage-context">GRUPO BRANDING<br>HUB DE PREPRODUCCIÓN</span><div class="stage-tabs" role="tablist" aria-label="Etapa activa"><button type="button" class="stage-tab" id="stage-architecture" role="tab" aria-selected="true" aria-controls="architectureStage" data-stage="architecture">ARQUITECTURA <small>ARQ-01</small></button><button type="button" class="stage-tab" id="stage-content" role="tab" aria-selected="false" aria-controls="contentStage" data-stage="content" tabindex="-1">CONTENIDO <small>COPY-02</small></button></div></nav>
 <div id="architectureStage" role="tabpanel" aria-labelledby="stage-architecture">
 <div class="app" data-sd-id="1"><div class="shell" data-sd-id="2">
 <header class="header screen-only" data-sd-id="3"><div class="head-row" data-sd-id="4"><div class="brand" data-sd-id="5"><span class="brand-code" data-sd-id="6">ARQ-01</span><span class="brand-name" data-sd-id="7">GRUPO BRANDING</span></div><div class="meta" data-sd-id="8"><span data-sd-id="9">v1.0</span><span data-sd-id="10">PREPRODUCCIÓN</span></div><div class="actions" data-sd-id="11"><button class="btn" id="scopeBtn" data-sd-id="12">RESUMEN</button><button class="btn primary" id="presentBtn" data-sd-id="13">PRESENTAR</button></div></div><nav class="tabs" role="tablist" aria-label="Vistas principales" data-sd-id="14"><button class="tab" role="tab" aria-selected="true" aria-controls="mapView" id="tab-map" data-view="map" data-sd-id="15">MAPA</button><button class="tab" role="tab" aria-selected="false" aria-controls="flowsView" id="tab-flows" data-view="flows" data-sd-id="16">RECORRIDOS</button><button class="tab" role="tab" aria-selected="false" aria-controls="inventoryView" id="tab-inventory" data-view="inventory" data-sd-id="17">INVENTARIO</button></nav></header>
@@ -267,7 +267,7 @@ renderMap();selectNode(selected,false);renderFlows();renderInventory();renderSco
 <section id="contentStage" role="tabpanel" aria-labelledby="stage-content" hidden>
   <div class="copy-shell">
     <div class="copy-screen">
-      <header class="copy-header"><div class="copy-header-inner"><span class="copy-code">COPY-01</span><div><h2>Propuesta de contenidos</h2><p>Basado en la arquitectura aprobada</p></div></div></header>
+      <header class="copy-header"><div class="copy-header-inner"><span class="copy-code">COPY-02</span><div><h2>Propuesta de contenidos</h2><p>Basado en la arquitectura aprobada</p></div></div></header>
       <main class="copy-layout" id="copyMain">
         <nav class="copy-sidebar" aria-label="Páginas de contenido"><p id="copyIndexLabel">Contenido</p><div class="copy-page-list" id="copyPageList"></div></nav>
         <div class="copy-reader">
@@ -284,11 +284,11 @@ renderMap();selectNode(selected,false);renderFlows();renderInventory();renderSco
 <script id="copyData">
 const copyBlueprint = {
   "meta": {
-    "code": "COPY-01",
+    "code": "COPY-02",
     "title": "Propuesta de Contenidos",
     "version": "v1.0",
     "phase": "PREPRODUCCIÓN",
-    "source": "copy.rtf",
+    "source": "Brief Sitio Web Grupo Branding.csv · Historia Grupo Branding · Misión Visión Valores 2026",
     "architectureCode": "ARQ-01"
   },
   "statuses": {
@@ -332,12 +332,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S01-B01",
               "type": "h1",
-              "text": "Publicidad exterior, experiencias BTL y producción para llevar tu marca más lejos"
+              "text": "Publicidad exterior, experiencias de marca y producción en un mismo grupo"
             },
             {
               "id": "COPY-P01-S01-B02",
               "type": "paragraph",
-              "text": "En Grupo Branding integramos tres divisiones especializadas para dar visibilidad a tu marca, conectar con tus audiencias y llevar tus proyectos a la ejecución."
+              "text": "Conectamos medios, BTL y producción para convertir tus objetivos en proyectos bien coordinados y ejecutados."
             },
             {
               "id": "COPY-P01-S01-B03",
@@ -364,12 +364,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B01",
               "type": "h2",
-              "text": "Tres especialidades. Una visión integral para tu marca."
+              "text": "Tres especialidades conectadas para tu marca"
             },
             {
               "id": "COPY-P01-S02-B02",
               "type": "paragraph",
-              "text": "Cada proyecto necesita algo diferente. Conectamos publicidad y medios, experiencias de marca y producción para responder a cada necesidad desde la especialidad adecuada."
+              "text": "Trabajamos desde visibilidad, experiencias y producción. Activamos una o varias capacidades según lo que tu proyecto necesita."
             },
             {
               "id": "COPY-P01-S02-B03",
@@ -379,7 +379,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B04",
               "type": "paragraph",
-              "text": "Llevamos tu marca a espacios estratégicos mediante publicidad exterior, medios y soluciones en puntos de venta."
+              "text": "Damos visibilidad a tu marca con publicidad exterior: vallas unipolares, puentes, banderines y minivallas."
             },
             {
               "id": "COPY-P01-S02-B05",
@@ -395,7 +395,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B07",
               "type": "paragraph",
-              "text": "Creamos activaciones, promociones, eventos, stands y experiencias que acercan tu marca a las personas."
+              "text": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que acercan tu marca a las personas."
             },
             {
               "id": "COPY-P01-S02-B08",
@@ -406,12 +406,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B09",
               "type": "h3",
-              "text": "Media Print · Producción gráfica"
+              "text": "Media Print · Producción física"
             },
             {
               "id": "COPY-P01-S02-B10",
               "type": "paragraph",
-              "text": "Materializamos tus ideas mediante soluciones de impresión, personalización y producción gráfica."
+              "text": "Producimos branding para espacios, exhibidores, estructuras, rotulación vehicular y desarrollos a medida."
             },
             {
               "id": "COPY-P01-S02-B11",
@@ -437,7 +437,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S03-B02",
               "type": "paragraph",
-              "text": "Cada objetivo requiere una respuesta distinta. Te ayudamos a hacer visible tu marca, crear experiencias con tus públicos y producir los materiales que necesita tu proyecto."
+              "text": "Podemos conectar medios, experiencias y producción bajo una misma coordinación, desde la idea hasta su ejecución."
             },
             {
               "id": "COPY-P01-S03-B03",
@@ -447,7 +447,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S03-B04",
               "type": "paragraph",
-              "text": "Presencia de marca en espacios exteriores, puntos estratégicos y lugares de contacto con tus audiencias."
+              "text": "Vallas unipolares, puentes, banderines y minivallas para llevar tu mensaje a espacios de circulación."
             },
             {
               "id": "COPY-P01-S03-B05",
@@ -457,27 +457,27 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S03-B06",
               "type": "paragraph",
-              "text": "Acciones, promociones y experiencias que llevan tu marca directamente a las personas."
+              "text": "Activaciones y street marketing para crear encuentros directos entre tu marca y las personas."
             },
             {
               "id": "COPY-P01-S03-B07",
               "type": "h3",
-              "text": "Eventos y stands"
+              "text": "Eventos y experiencias"
             },
             {
               "id": "COPY-P01-S03-B08",
               "type": "paragraph",
-              "text": "Espacios para lanzamientos, ferias, promociones y otros momentos de encuentro con tu público."
+              "text": "Eventos corporativos y experienciales diseñados y ejecutados para conectar con tu público."
             },
             {
               "id": "COPY-P01-S03-B09",
               "type": "h3",
-              "text": "Producción gráfica"
+              "text": "Producción física y gráfica"
             },
             {
               "id": "COPY-P01-S03-B10",
               "type": "paragraph",
-              "text": "Impresión, personalización y piezas físicas para campañas, promociones y necesidades corporativas."
+              "text": "Branding de espacios, exhibidores, estructuras y rotulación para llevar tu proyecto al mundo físico."
             }
           ],
           "pending": [],
@@ -497,7 +497,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S04-B02",
               "type": "paragraph",
-              "text": "Conoce proyectos de publicidad exterior, activaciones, eventos, stands y producción desarrollados desde nuestras diferentes especialidades."
+              "text": "Conoce proyectos de medios y producción física que muestran distintas maneras de llevar una idea a la ejecución."
             },
             {
               "id": "COPY-P01-S04-B03",
@@ -523,7 +523,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S05-B02",
               "type": "paragraph",
-              "text": "Trabajamos junto a empresas y equipos de marketing para llevar sus necesidades de comunicación a espacios, experiencias y ejecuciones reales."
+              "text": "Trabajamos principalmente con marcas transnacionales y equipos que necesitan coordinar medios, experiencias o producción."
             },
             {
               "id": "COPY-P01-S05-B03",
@@ -534,12 +534,12 @@ const copyBlueprint = {
           "pending": [
             {
               "id": "COPY-P01-S05-P01",
-              "sourceText": "[LOGOS DE CLIENTES POR SELECCIONAR]",
-              "label": "Logos de clientes por seleccionar",
+              "sourceText": "[LOGOTIPOS DE CLIENTES POR INCORPORAR]",
+              "label": "Logotipos de clientes por incorporar",
               "category": "Referencias de clientes"
             }
           ],
-          "status": "MISSING_INFORMATION"
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P01-S06",
@@ -555,7 +555,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S06-B02",
               "type": "paragraph",
-              "text": "En un mismo grupo reunimos experiencia en publicidad y medios, BTL y producción. Partimos de lo que necesitas para conectar tu proyecto con la especialidad adecuada."
+              "text": "Coordinamos especialistas y proveedores alrededor del mismo objetivo. Así reduces fragmentación y mantienes un estándar de ejecución en cada etapa."
             },
             {
               "id": "COPY-P01-S06-B03",
@@ -565,7 +565,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S06-B04",
               "type": "paragraph",
-              "text": "Llevamos tu marca a espacios donde puede encontrarse con sus audiencias."
+              "text": "Damos presencia a tu marca en medios y formatos de publicidad exterior."
             },
             {
               "id": "COPY-P01-S06-B05",
@@ -575,7 +575,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S06-B06",
               "type": "paragraph",
-              "text": "Creamos momentos de contacto directo entre tu marca y las personas."
+              "text": "Diseñamos activaciones y eventos para generar interacción con las personas."
             },
             {
               "id": "COPY-P01-S06-B07",
@@ -585,7 +585,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S06-B08",
               "type": "paragraph",
-              "text": "Materializamos las piezas que necesita tu campaña o proyecto."
+              "text": "Fabricamos los elementos físicos que necesita tu campaña o espacio."
             }
           ],
           "pending": [],
@@ -605,7 +605,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S07-B02",
               "type": "paragraph",
-              "text": "No necesitas saber qué división contactar. Explícanos tu proyecto y te orientaremos hacia la especialidad adecuada."
+              "text": "No necesitas elegir una división antes de escribirnos. Cuéntanos qué buscas y te conectaremos con el equipo adecuado."
             },
             {
               "id": "COPY-P01-S07-B03",
@@ -654,12 +654,8 @@ const copyBlueprint = {
         "BTL",
         "activaciones",
         "eventos",
-        "stands",
-        "producción gráfica",
-        "puntos de venta",
-        "promociones",
-        "impresión",
-        "personalización"
+        "producción física",
+        "branding de espacios"
       ]
     },
     {
@@ -668,7 +664,7 @@ const copyBlueprint = {
       "name": "Nosotros",
       "sourceHeading": "2. NOSOTROS",
       "route": "/nosotros/",
-      "status": "MISSING_INFORMATION",
+      "status": "READY_FOR_REVIEW",
       "provisional": false,
       "sections": [
         {
@@ -680,12 +676,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S01-B01",
               "type": "h1",
-              "text": "Tres especialidades conectadas por una misma forma de trabajar"
+              "text": "Un grupo que conecta medios, experiencias y producción"
             },
             {
               "id": "COPY-P02-S01-B02",
               "type": "paragraph",
-              "text": "En Grupo Branding integramos publicidad exterior, experiencias BTL y producción gráfica para llevar diferentes necesidades de marca de la estrategia a la ejecución."
+              "text": "Coordinamos capacidades especializadas para convertir las necesidades de tu marca en proyectos ejecutados con calidad y seguimiento."
             },
             {
               "id": "COPY-P02-S01-B03",
@@ -706,17 +702,17 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S02-B01",
               "type": "h2",
-              "text": "Hacemos que las ideas sucedan en el mundo real"
+              "text": "De la estrategia a la ejecución"
             },
             {
               "id": "COPY-P02-S02-B02",
               "type": "paragraph",
-              "text": "Trabajamos desde tres especialidades que se complementan: visibilidad, experiencias y producción."
+              "text": "Somos un grupo de marketing y comunicación integrado por tres unidades especializadas."
             },
             {
               "id": "COPY-P02-S02-B03",
               "type": "paragraph",
-              "text": "A través de Media Branding, Linkbranding y Media Print ayudamos a convertir necesidades de comunicación en espacios, activaciones y piezas que las personas pueden ver, vivir y experimentar."
+              "text": "Media Branding trabaja visibilidad y medios; Linkbranding diseña experiencias BTL; Media Print produce los elementos físicos que las hacen posibles."
             }
           ],
           "pending": [],
@@ -731,28 +727,56 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S03-B01",
               "type": "h2",
-              "text": "Experiencia construida desde diferentes áreas de la comunicación"
+              "text": "Una trayectoria que amplió nuestra capacidad de ejecución"
             },
             {
               "id": "COPY-P02-S03-B02",
               "type": "paragraph",
-              "text": "Nuestra trayectoria reúne experiencia en publicidad exterior, BTL, eventos, activaciones y producción para marcas."
+              "text": "Crecimos sumando especialidades para atender proyectos de marca desde más frentes."
             },
             {
               "id": "COPY-P02-S03-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P02-S03-P01"
-            }
-          ],
-          "pending": [
+              "type": "h3",
+              "text": "2015 · Medios y BTL"
+            },
             {
-              "id": "COPY-P02-S03-P01",
-              "sourceText": "[HISTORIA · AÑOS · HITOS POR VALIDAR]",
-              "label": "Historia · años · hitos por validar",
-              "category": "Información corporativa"
+              "id": "COPY-P02-S03-B04",
+              "type": "paragraph",
+              "text": "Nace Media Branding y se estructura la operación BTL vinculada a Linkbranding en Honduras."
+            },
+            {
+              "id": "COPY-P02-S03-B05",
+              "type": "h3",
+              "text": "2017 · Producción interna"
+            },
+            {
+              "id": "COPY-P02-S03-B06",
+              "type": "paragraph",
+              "text": "Creamos un equipo de producción para cuidar calidad y tiempos de entrega."
+            },
+            {
+              "id": "COPY-P02-S03-B07",
+              "type": "h3",
+              "text": "2018 · Gran formato"
+            },
+            {
+              "id": "COPY-P02-S03-B08",
+              "type": "paragraph",
+              "text": "Media Branding incorpora vallas unipolares a su red de publicidad exterior."
+            },
+            {
+              "id": "COPY-P02-S03-B09",
+              "type": "h3",
+              "text": "2024 · Planta en Tegucigalpa"
+            },
+            {
+              "id": "COPY-P02-S03-B10",
+              "type": "paragraph",
+              "text": "Nuestra división de producción instala una planta y amplía su capacidad para atender a terceros."
             }
           ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P02-S04",
@@ -768,7 +792,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S04-B02",
               "type": "paragraph",
-              "text": "No todos los proyectos necesitan la misma solución. Partimos de lo que quieres lograr para identificar qué especialidad puede aportar mayor valor y cómo llevar el proyecto adelante."
+              "text": "Entendemos tu objetivo, diseñamos la respuesta, integramos especialistas, ejecutamos y damos seguimiento. Innovamos cuando ayuda a resolver mejor, cuidando cada compromiso y detalle."
+            },
+            {
+              "id": "COPY-P02-S04-B03",
+              "type": "list",
+              "text": "Entender · Diseñar · Integrar · Ejecutar · Dar seguimiento"
             }
           ],
           "pending": [],
@@ -793,7 +822,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S05-B03",
               "type": "paragraph",
-              "text": "Trabajamos publicidad exterior, medios y espacios estratégicos para aumentar la presencia de las marcas."
+              "text": "Trabajamos publicidad exterior con vallas unipolares, puentes, banderines y minivallas."
             },
             {
               "id": "COPY-P02-S05-B04",
@@ -803,17 +832,17 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S05-B05",
               "type": "paragraph",
-              "text": "Creamos activaciones, promociones, eventos y experiencias que conectan marcas con personas."
+              "text": "Diseñamos activaciones, eventos y experiencias BTL que conectan marcas con personas."
             },
             {
               "id": "COPY-P02-S05-B06",
               "type": "h3",
-              "text": "Media Print · Producción gráfica"
+              "text": "Media Print · Producción física"
             },
             {
               "id": "COPY-P02-S05-B07",
               "type": "paragraph",
-              "text": "Desarrollamos soluciones de impresión, personalización y producción para materializar necesidades de marca."
+              "text": "Fabricamos branding para espacios, exhibidores, estructuras, rotulación vehicular y desarrollos especiales."
             }
           ],
           "pending": [],
@@ -833,12 +862,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S06-B02",
               "type": "paragraph",
-              "text": "Podemos participar en diferentes momentos de una campaña: desde encontrar dónde hacer visible una marca hasta crear una experiencia o producir las piezas necesarias para ejecutarla."
+              "text": "Un mismo proyecto puede necesitar medios, una activación y producción física. Conectamos esas capacidades para reducir la coordinación entre proveedores."
             },
             {
               "id": "COPY-P02-S06-B03",
               "type": "paragraph",
-              "text": "Cada división mantiene su especialidad y puede conectarse con las demás cuando el proyecto lo necesita."
+              "text": "Cada división conserva su especialidad y comparte un estándar de servicio y ejecución."
             }
           ],
           "pending": [],
@@ -853,28 +882,21 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S07-B01",
               "type": "h2",
-              "text": "Experiencia en Honduras y la región"
+              "text": "Operación en Honduras y experiencia regional"
             },
             {
               "id": "COPY-P02-S07-B02",
               "type": "paragraph",
-              "text": "Nuestra experiencia incluye proyectos y operaciones desarrollados en Honduras y otros mercados de Centroamérica."
+              "text": "Operamos en Honduras y contamos con experiencia y relaciones comerciales a nivel regional."
             },
             {
               "id": "COPY-P02-S07-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P02-S07-P01"
+              "type": "paragraph",
+              "text": "Tenemos oficinas en Tegucigalpa, en Condominios Metrópolis, bulevar Suyapa, y en San Pedro Sula, en Plaza Bulevar, bulevar Micheletti."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P02-S07-P01",
-              "sourceText": "[COBERTURA Y OFICINAS ACTUALES POR VALIDAR]",
-              "label": "Cobertura y oficinas actuales por validar",
-              "category": "Información corporativa"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P02-S08",
@@ -890,23 +912,11 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S08-B02",
               "type": "paragraph",
-              "text": "Hemos trabajado con marcas de diferentes industrias en proyectos de publicidad, activación y producción."
-            },
-            {
-              "id": "COPY-P02-S08-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P02-S08-P01"
+              "text": "Trabajamos con marcas transnacionales, agencias de publicidad, empresas de consumo masivo, banca, tiendas y clientes corporativos."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P02-S08-P01",
-              "sourceText": "[CLIENTES Y CREDENCIALES POR VALIDAR]",
-              "label": "Clientes y credenciales por validar",
-              "category": "Información corporativa"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P02-S09",
@@ -938,12 +948,8 @@ const copyBlueprint = {
       "presentTerms": [
         "publicidad exterior",
         "BTL",
-        "activaciones",
-        "eventos",
-        "producción gráfica",
-        "promociones",
-        "impresión",
-        "personalización"
+        "producción física",
+        "vallas unipolares"
       ]
     },
     {
@@ -969,7 +975,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P03-S01-B02",
               "type": "paragraph",
-              "text": "En Grupo Branding reunimos tres divisiones enfocadas en publicidad y visibilidad, experiencias BTL y producción gráfica."
+              "text": "Reunimos medios y publicidad exterior, BTL y experiencias, y producción física para que encuentres la especialidad que necesita tu proyecto."
             },
             {
               "id": "COPY-P03-S01-B03",
@@ -994,12 +1000,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P03-S02-B02",
               "type": "paragraph",
-              "text": "Llevamos tu marca a espacios estratégicos mediante publicidad exterior, medios y soluciones en puntos de venta."
+              "text": "Llevamos tu marca a espacios de circulación con medios y formatos de publicidad exterior."
             },
             {
               "id": "COPY-P03-S02-B03",
               "type": "list",
-              "text": "Publicidad exterior · Medios · Punto de venta · Nuevas tecnologías"
+              "text": "Vallas unipolares · Puentes · Banderines · Minivallas"
             },
             {
               "id": "COPY-P03-S02-B04",
@@ -1025,12 +1031,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P03-S03-B02",
               "type": "paragraph",
-              "text": "Creamos puntos de contacto entre tu marca y las personas mediante activaciones, promociones, eventos y stands."
+              "text": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que generan interacción con las personas."
             },
             {
               "id": "COPY-P03-S03-B03",
               "type": "list",
-              "text": "BTL · Activaciones · Promociones · Eventos · Stands"
+              "text": "Eventos · Activaciones · Staffing · Street marketing"
             },
             {
               "id": "COPY-P03-S03-B04",
@@ -1051,17 +1057,17 @@ const copyBlueprint = {
             {
               "id": "COPY-P03-S04-B01",
               "type": "h2",
-              "text": "Producción gráfica"
+              "text": "Producción física para marcas"
             },
             {
               "id": "COPY-P03-S04-B02",
               "type": "paragraph",
-              "text": "Materializamos necesidades de marca mediante impresión, personalización y diferentes aplicaciones gráficas."
+              "text": "Convertimos ideas en elementos físicos de branding, publicidad y exhibición, con atención a la identidad y los detalles de cada proyecto."
             },
             {
               "id": "COPY-P03-S04-B03",
               "type": "list",
-              "text": "Impresión · Personalización · Producción gráfica"
+              "text": "Branding de espacios · Exhibidores · Estructuras · Rotulación vehicular"
             },
             {
               "id": "COPY-P03-S04-B04",
@@ -1105,13 +1111,9 @@ const copyBlueprint = {
         "BTL",
         "activaciones",
         "eventos",
-        "stands",
-        "producción gráfica",
-        "punto de venta",
-        "puntos de venta",
-        "promociones",
-        "impresión",
-        "personalización"
+        "staffing",
+        "street marketing",
+        "rotulación vehicular"
       ]
     },
     {
@@ -1120,7 +1122,7 @@ const copyBlueprint = {
       "name": "Media Branding",
       "sourceHeading": "4. MEDIA BRANDING",
       "route": "/media-branding/",
-      "status": "MISSING_INFORMATION",
+      "status": "READY_FOR_REVIEW",
       "provisional": false,
       "sections": [
         {
@@ -1137,7 +1139,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S01-B02",
               "type": "paragraph",
-              "text": "En Media Branding conectamos marcas con sus audiencias mediante publicidad exterior, espacios estratégicos, soluciones en puntos de venta y nuevos formatos de comunicación."
+              "text": "Trabajamos medios y publicidad exterior para dar presencia a tu marca en espacios donde las personas circulan y toman decisiones."
             },
             {
               "id": "COPY-P04-S01-B03",
@@ -1168,7 +1170,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S02-B03",
               "type": "paragraph",
-              "text": "Te ayudamos a explorar alternativas para llevar tu comunicación a espacios exteriores, rutas y puntos de contacto relevantes para tu público."
+              "text": "Combinamos creatividad, producción e instalación para que tu mensaje llegue al espacio adecuado."
             }
           ],
           "pending": [],
@@ -1188,12 +1190,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S03-B02",
               "type": "paragraph",
-              "text": "Trabajamos soluciones de publicidad exterior para ampliar la presencia de marcas y campañas en espacios físicos."
+              "text": "Desarrollamos campañas de publicidad exterior en formatos que hacen visible tu marca fuera de la pantalla."
             },
             {
               "id": "COPY-P04-S03-B03",
               "type": "paragraph",
-              "text": "Seleccionamos formatos y ubicaciones según las necesidades de visibilidad de cada proyecto."
+              "text": "Te orientamos sobre el formato y la ubicación según el objetivo de tu campaña y la disponibilidad vigente."
             }
           ],
           "pending": [],
@@ -1213,7 +1215,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S04-B02",
               "type": "paragraph",
-              "text": "Llevamos campañas y comunicación de marca a espacios comerciales y puntos de venta para reforzar su presencia durante la experiencia de compra."
+              "text": "Nuestra trayectoria incluye locaciones en supermercados. Los espacios comerciales disponibles se revisan para cada campaña."
             }
           ],
           "pending": [],
@@ -1224,32 +1226,16 @@ const copyBlueprint = {
           "name": "Corredor COVI / CA-5",
           "sourceName": "Corredor COVI / CA-5",
           "type": "section",
+          "render": false,
           "blocks": [
             {
               "id": "COPY-P04-S05-B01",
               "type": "h2",
-              "text": "Publicidad en el corredor CA-5"
-            },
-            {
-              "id": "COPY-P04-S05-B02",
-              "type": "paragraph",
-              "text": "Contamos con alternativas de publicidad vinculadas al corredor CA-5 para campañas que buscan presencia a lo largo de esta importante ruta de Honduras."
-            },
-            {
-              "id": "COPY-P04-S05-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S05-P01"
+              "text": "Corredor CA-5"
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S05-P01",
-              "sourceText": "[UBICACIONES Y FORMATOS DISPONIBLES POR CONFIRMAR]",
-              "label": "Ubicaciones y formatos disponibles por confirmar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S06",
@@ -1265,39 +1251,23 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S06-B02",
               "type": "paragraph",
-              "text": "Trabajamos diferentes formatos de publicidad exterior para adaptar cada campaña a su ubicación, audiencia y objetivo de comunicación."
-            },
-            {
-              "id": "COPY-P04-S06-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S06-P01"
+              "text": "Trabajamos vallas unipolares, puentes, banderines y minivallas. La selección depende de ubicación, objetivo y disponibilidad."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S06-P01",
-              "sourceText": "[INVENTARIO ACTUAL POR CONFIRMAR]",
-              "label": "Inventario actual por confirmar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S07",
           "name": "Nuevas tecnologías",
           "sourceName": "Nuevas tecnologías",
           "type": "section",
+          "render": false,
           "blocks": [
             {
               "id": "COPY-P04-S07-B01",
               "type": "h2",
-              "text": "Nuevas formas de captar la atención"
-            },
-            {
-              "id": "COPY-P04-S07-B02",
-              "type": "paragraph",
-              "text": "Integramos formatos y tecnologías que amplían las posibilidades de la publicidad física y permiten crear experiencias visuales diferentes alrededor de una marca."
+              "text": "Nuevas tecnologías"
             }
           ],
           "pending": [],
@@ -1308,64 +1278,32 @@ const copyBlueprint = {
           "name": "Experiencias 3D y hologramas",
           "sourceName": "Experiencias 3D y hologramas",
           "type": "section",
+          "render": false,
           "blocks": [
             {
               "id": "COPY-P04-S08-B01",
               "type": "h2",
-              "text": "Crea una experiencia visual diferente"
-            },
-            {
-              "id": "COPY-P04-S08-B02",
-              "type": "paragraph",
-              "text": "Desarrollamos soluciones con hologramas y experiencias 3D para proyectos que buscan presentar productos, mensajes y campañas más allá de los formatos tradicionales."
-            },
-            {
-              "id": "COPY-P04-S08-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S08-P01"
+              "text": "Experiencias 3D y hologramas"
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S08-P01",
-              "sourceText": "[FORMATOS Y DISPONIBILIDAD POR VALIDAR]",
-              "label": "Formatos y disponibilidad por validar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S09",
           "name": "Realidad aumentada",
           "sourceName": "Realidad aumentada",
           "type": "section",
+          "render": false,
           "blocks": [
             {
               "id": "COPY-P04-S09-B01",
               "type": "h2",
-              "text": "Conecta el espacio físico con una experiencia digital"
-            },
-            {
-              "id": "COPY-P04-S09-B02",
-              "type": "paragraph",
-              "text": "Incorporamos realidad aumentada cuando una campaña necesita sumar interacción digital a su presencia física."
-            },
-            {
-              "id": "COPY-P04-S09-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S09-P01"
+              "text": "Realidad aumentada"
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S09-P01",
-              "sourceText": "[CAPACIDAD Y APLICACIONES ACTUALES POR VALIDAR]",
-              "label": "Capacidad y aplicaciones actuales por validar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S10",
@@ -1376,28 +1314,16 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S10-B01",
               "type": "h2",
-              "text": "Publicidad y visibilidad en Honduras y la región"
+              "text": "Publicidad exterior en Honduras"
             },
             {
               "id": "COPY-P04-S10-B02",
               "type": "paragraph",
-              "text": "Nuestra experiencia incluye proyectos y presencia en Honduras y Guatemala."
-            },
-            {
-              "id": "COPY-P04-S10-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S10-P01"
+              "text": "Media Branding opera en Honduras. La cobertura disponible para cada campaña depende de las ubicaciones vigentes."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S10-P01",
-              "sourceText": "[COBERTURA COMERCIAL ACTUAL POR VALIDAR]",
-              "label": "Cobertura comercial actual por validar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S11",
@@ -1413,23 +1339,11 @@ const copyBlueprint = {
             {
               "id": "COPY-P04-S11-B02",
               "type": "paragraph",
-              "text": "Conoce proyectos donde convertimos necesidades de comunicación en presencia física a través de espacios, formatos y soluciones publicitarias."
-            },
-            {
-              "id": "COPY-P04-S11-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P04-S11-P01"
+              "text": "Entre nuestras referencias están banderines Issima, secuencial Six, paraderos Fútbol y unipolar Powerade."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P04-S11-P01",
-              "sourceText": "[PROYECTOS Y CLIENTES POR SELECCIONAR]",
-              "label": "Proyectos y clientes por seleccionar",
-              "category": "Información comercial de medios"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P04-S12",
@@ -1460,11 +1374,10 @@ const copyBlueprint = {
       ],
       "presentTerms": [
         "publicidad exterior",
-        "puntos de venta",
-        "realidad aumentada",
-        "hologramas",
-        "experiencias 3D",
-        "CA-5"
+        "vallas unipolares",
+        "puentes",
+        "banderines",
+        "minivallas"
       ]
     },
     {
@@ -1473,7 +1386,7 @@ const copyBlueprint = {
       "name": "Linkbranding",
       "sourceHeading": "5. LINKBRANDING",
       "route": "/linkbranding/",
-      "status": "MISSING_INFORMATION",
+      "status": "READY_FOR_REVIEW",
       "provisional": false,
       "sections": [
         {
@@ -1490,7 +1403,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P05-S01-B02",
               "type": "paragraph",
-              "text": "En Linkbranding diseñamos y ejecutamos activaciones, promociones, eventos y stands para crear puntos de contacto reales entre marcas y audiencias."
+              "text": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que generan interacción y recuerdo para tu marca."
             },
             {
               "id": "COPY-P05-S01-B03",
@@ -1516,12 +1429,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P05-S02-B02",
               "type": "paragraph",
-              "text": "Creamos experiencias donde las personas pueden conocer, probar, vivir y relacionarse directamente con una marca."
+              "text": "Creamos encuentros donde las personas pueden interactuar directamente con tu marca."
             },
             {
               "id": "COPY-P05-S02-B03",
               "type": "paragraph",
-              "text": "Llevamos cada proyecto desde la estrategia y la producción hasta su ejecución."
+              "text": "Coordinamos concepto, proveedores y operación para que cada experiencia llegue a tiempo al lugar indicado."
             }
           ],
           "pending": [],
@@ -1529,8 +1442,8 @@ const copyBlueprint = {
         },
         {
           "id": "COPY-P05-S03",
-          "name": "Estrategia y BTL",
-          "sourceName": "Estrategia y BTL",
+          "name": "Diseño de activaciones",
+          "sourceName": "Diseño de activaciones",
           "type": "section",
           "blocks": [
             {
@@ -1541,7 +1454,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P05-S03-B02",
               "type": "paragraph",
-              "text": "Partimos de lo que quieres lograr para definir cómo, dónde y de qué manera tu marca debe encontrarse con las personas."
+              "text": "Partimos de tu objetivo para diseñar una interacción relevante y planear su ejecución."
             }
           ],
           "pending": [],
@@ -1549,19 +1462,19 @@ const copyBlueprint = {
         },
         {
           "id": "COPY-P05-S04",
-          "name": "Promociones y material POP",
-          "sourceName": "Promociones y material POP",
+          "name": "Eventos corporativos y experienciales",
+          "sourceName": "Eventos corporativos y experienciales",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S04-B01",
               "type": "h2",
-              "text": "Lleva tu campaña al punto de contacto"
+              "text": "Eventos donde tu marca se encuentra con las personas"
             },
             {
               "id": "COPY-P05-S04-B02",
               "type": "paragraph",
-              "text": "Desarrollamos promociones y materiales POP para apoyar campañas, activaciones y presencia de marca en espacios comerciales y puntos de venta."
+              "text": "Diseñamos y ejecutamos eventos corporativos y experienciales, cuidando la coordinación y la puntualidad de cada entrega."
             }
           ],
           "pending": [],
@@ -1569,19 +1482,19 @@ const copyBlueprint = {
         },
         {
           "id": "COPY-P05-S05",
-          "name": "Eventos, stands y activaciones",
-          "sourceName": "Eventos, stands y activaciones",
+          "name": "Activaciones de marca",
+          "sourceName": "Activaciones de marca",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S05-B01",
               "type": "h2",
-              "text": "Creamos espacios donde tu marca cobra vida"
+              "text": "Activaciones que invitan a participar"
             },
             {
               "id": "COPY-P05-S05-B02",
               "type": "paragraph",
-              "text": "Diseñamos y ejecutamos eventos, stands y activaciones para lanzamientos, promociones, ferias y otros momentos donde necesitas conectar directamente con tu público."
+              "text": "Llevamos tu marca a una experiencia directa con las personas, desde el concepto hasta la operación en campo."
             }
           ],
           "pending": [],
@@ -1589,115 +1502,79 @@ const copyBlueprint = {
         },
         {
           "id": "COPY-P05-S06",
-          "name": "Outsourcing",
-          "sourceName": "Outsourcing",
+          "name": "Staffing",
+          "sourceName": "Staffing",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S06-B01",
               "type": "h2",
-              "text": "Personal y apoyo operativo para tus proyectos"
+              "text": "Staffing para activaciones y eventos"
             },
             {
               "id": "COPY-P05-S06-B02",
               "type": "paragraph",
-              "text": "Apoyamos acciones que requieren equipos y ejecución en campo para llevar experiencias de marca a diferentes puntos de contacto."
-            },
-            {
-              "id": "COPY-P05-S06-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P05-S06-P01"
+              "text": "Integramos personal de apoyo para la operación de activaciones y eventos según lo que requiere cada proyecto."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P05-S06-P01",
-              "sourceText": "[ALCANCE ACTUAL DEL SERVICIO POR VALIDAR]",
-              "label": "Alcance actual del servicio por validar",
-              "category": "Servicios y experiencia"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P05-S07",
-          "name": "Viajes corporativos",
-          "sourceName": "Viajes corporativos",
+          "name": "Street marketing",
+          "sourceName": "Street marketing",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S07-B01",
               "type": "h2",
-              "text": "Coordinamos experiencias para empresas y equipos"
+              "text": "Street marketing para encontrarte con tu público"
             },
             {
               "id": "COPY-P05-S07-B02",
               "type": "paragraph",
-              "text": "Desarrollamos soluciones de viajes corporativos dentro de nuestra oferta de experiencias y coordinación."
-            },
-            {
-              "id": "COPY-P05-S07-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P05-S07-P01"
+              "text": "Llevamos acciones de marca a espacios de circulación para generar contacto directo con tu público."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P05-S07-P01",
-              "sourceText": "[SERVICIO Y COBERTURA POR VALIDAR]",
-              "label": "Servicio y cobertura por validar",
-              "category": "Servicios y experiencia"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P05-S08",
-          "name": "Marketing digital",
-          "sourceName": "Marketing digital",
+          "name": "Experiencia regional",
+          "sourceName": "Experiencia regional",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S08-B01",
               "type": "h2",
-              "text": "Conecta la experiencia con otros canales"
+              "text": "Más de 20 años creando experiencias BTL"
             },
             {
               "id": "COPY-P05-S08-B02",
               "type": "paragraph",
-              "text": "Integramos acciones digitales cuando una campaña necesita extender su alcance o conectar una experiencia física con otros puntos de contacto."
-            },
-            {
-              "id": "COPY-P05-S08-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P05-S08-P01"
+              "text": "Nuestra trayectoria regional y la operación en Honduras nos permiten abordar proyectos con conocimiento de distintos mercados."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P05-S08-P01",
-              "sourceText": "[SERVICIOS DIGITALES ACTUALES POR VALIDAR]",
-              "label": "Servicios digitales actuales por validar",
-              "category": "Servicios y experiencia"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P05-S09",
-          "name": "Producción",
-          "sourceName": "Producción",
+          "name": "Coordinación de producción",
+          "sourceName": "Coordinación de producción",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P05-S09-B01",
               "type": "h2",
-              "text": "Del diseño a la construcción"
+              "text": "Menos proveedores que coordinar"
             },
             {
               "id": "COPY-P05-S09-B02",
               "type": "paragraph",
-              "text": "Contamos con capacidades de carpintería, herrería e impresión para producir stands, elementos de activación y materiales necesarios para cada proyecto."
+              "text": "Centralizamos proveedores y coordinamos la ejecución para que tu experiencia mantenga consistencia, servicio y puntualidad."
             }
           ],
           "pending": [],
@@ -1708,32 +1585,16 @@ const copyBlueprint = {
           "name": "Proyectos",
           "sourceName": "Proyectos",
           "type": "section",
+          "render": false,
           "blocks": [
             {
               "id": "COPY-P05-S10-B01",
               "type": "h2",
               "text": "Experiencias diseñadas para suceder"
-            },
-            {
-              "id": "COPY-P05-S10-B02",
-              "type": "paragraph",
-              "text": "Conoce activaciones, eventos y espacios donde combinamos estrategia, producción y ejecución para llevar una idea al terreno."
-            },
-            {
-              "id": "COPY-P05-S10-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P05-S10-P01"
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P05-S10-P01",
-              "sourceText": "[PROYECTOS, CLIENTES Y RESULTADOS POR SELECCIONAR]",
-              "label": "Proyectos, clientes y resultados por seleccionar",
-              "category": "Servicios y experiencia"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P05-S11",
@@ -1749,7 +1610,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P05-S11-B02",
               "type": "paragraph",
-              "text": "Como parte de Grupo Branding, podemos conectar una necesidad de BTL con soluciones de publicidad exterior o producción gráfica cuando el proyecto lo requiere."
+              "text": "Como parte de Grupo Branding, podemos conectar tu experiencia BTL con medios y producción física cuando el proyecto lo necesita."
             },
             {
               "id": "COPY-P05-S11-B03",
@@ -1789,18 +1650,11 @@ const copyBlueprint = {
         }
       ],
       "presentTerms": [
-        "publicidad exterior",
         "BTL",
         "activaciones",
-        "eventos",
-        "stands",
-        "producción gráfica",
-        "puntos de venta",
-        "promociones",
-        "viajes corporativos",
-        "impresión",
-        "carpintería",
-        "herrería"
+        "eventos corporativos",
+        "staffing",
+        "street marketing"
       ]
     },
     {
@@ -1809,8 +1663,8 @@ const copyBlueprint = {
       "name": "Media Print",
       "sourceHeading": "6. MEDIA PRINT",
       "route": "/media-print/",
-      "status": "MISSING_INFORMATION",
-      "provisional": true,
+      "status": "READY_FOR_REVIEW",
+      "provisional": false,
       "sections": [
         {
           "id": "COPY-P06-S01",
@@ -1821,12 +1675,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P06-S01-B01",
               "type": "h1",
-              "text": "Producción gráfica para materializar tus ideas"
+              "text": "Producción física para convertir tus ideas en realidad"
             },
             {
               "id": "COPY-P06-S01-B02",
               "type": "paragraph",
-              "text": "En Media Print desarrollamos soluciones de impresión, personalización y producción para campañas, promociones y necesidades corporativas."
+              "text": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
             },
             {
               "id": "COPY-P06-S01-B03",
@@ -1836,7 +1690,7 @@ const copyBlueprint = {
             }
           ],
           "pending": [],
-          "status": "MISSING_INFORMATION"
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P06-S02",
@@ -1847,85 +1701,106 @@ const copyBlueprint = {
             {
               "id": "COPY-P06-S02-B01",
               "type": "h2",
-              "text": "De una idea a una pieza terminada"
+              "text": "De la idea a una solución física viable"
             },
             {
               "id": "COPY-P06-S02-B02",
               "type": "paragraph",
-              "text": "Producimos diferentes aplicaciones y productos personalizados para acompañar proyectos de comunicación, promoción y marca."
+              "text": "Revisamos tu identidad y objetivo, definimos cómo producir cada elemento y cuidamos materiales, medidas, acabados e implementación."
             }
           ],
           "pending": [],
-          "status": "MISSING_INFORMATION"
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P06-S03",
-          "name": "Productos personalizados",
-          "sourceName": "Productos personalizados",
+          "name": "Branding de espacios y punto de venta",
+          "sourceName": "Branding de espacios y punto de venta",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P06-S03-B01",
               "type": "h2",
-              "text": "Personaliza piezas para tu marca"
+              "text": "Tu marca presente en espacios y exhibiciones"
             },
             {
               "id": "COPY-P06-S03-B02",
               "type": "paragraph",
-              "text": "Desarrollamos productos personalizados para acciones promocionales y necesidades corporativas."
-            },
-            {
-              "id": "COPY-P06-S03-B03",
-              "type": "list",
-              "text": "Bolsos · Jarras · Stickers · Aplicaciones gráficas"
+              "text": "Producimos aplicaciones para espacios, comunicación comercial y exhibición, con atención a la identidad de tu marca."
             },
             {
               "id": "COPY-P06-S03-B04",
-              "type": "placeholder",
-              "pendingId": "COPY-P06-S03-P01"
-            }
-          ],
-          "pending": [
+              "type": "h3",
+              "text": "Branding y ambientación"
+            },
             {
-              "id": "COPY-P06-S03-P01",
-              "sourceText": "[SERVICIOS, MATERIALES Y TÉCNICAS POR COMPLETAR]",
-              "label": "Servicios, materiales y técnicas por completar",
-              "category": "Información comercial y producción"
+              "id": "COPY-P06-S03-B05",
+              "type": "paragraph",
+              "text": "Gráficos murales, señalización y aplicaciones de marca para espacios."
+            },
+            {
+              "id": "COPY-P06-S03-B06",
+              "type": "h3",
+              "text": "Punto de venta y exhibición"
+            },
+            {
+              "id": "COPY-P06-S03-B07",
+              "type": "paragraph",
+              "text": "Material POP, exhibidores, displays y gráficos para presentar tu marca o producto."
+            },
+            {
+              "id": "COPY-P06-S03-B08",
+              "type": "h3",
+              "text": "Estructuras y mobiliario"
+            },
+            {
+              "id": "COPY-P06-S03-B09",
+              "type": "paragraph",
+              "text": "Stands, exhibiciones, muebles publicitarios y estructuras metálicas."
             }
           ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P06-S04",
-          "name": "Aplicaciones gráficas",
-          "sourceName": "Aplicaciones gráficas",
+          "name": "Rotulación y desarrollos especiales",
+          "sourceName": "Rotulación y desarrollos especiales",
           "type": "section",
           "blocks": [
             {
               "id": "COPY-P06-S04-B01",
               "type": "h2",
-              "text": "Lleva tu identidad a diferentes superficies"
+              "text": "Soluciones para vehículos e ideas fuera de formato"
             },
             {
               "id": "COPY-P06-S04-B02",
               "type": "paragraph",
-              "text": "Trabajamos aplicaciones gráficas adaptadas a diferentes piezas y superficies según las necesidades de cada proyecto."
+              "text": "Adaptamos la producción a vehículos, campañas y necesidades que requieren una pieza especial."
             },
             {
               "id": "COPY-P06-S04-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P06-S04-P01"
-            }
-          ],
-          "pending": [
+              "type": "h3",
+              "text": "Rotulación vehicular"
+            },
             {
-              "id": "COPY-P06-S04-P01",
-              "sourceText": "[TIPOS DE APLICACIÓN Y MATERIALES POR COMPLETAR]",
-              "label": "Tipos de aplicación y materiales por completar",
-              "category": "Información comercial y producción"
+              "id": "COPY-P06-S04-B04",
+              "type": "paragraph",
+              "text": "Branding parcial o completo y gráficos para flotas."
+            },
+            {
+              "id": "COPY-P06-S04-B05",
+              "type": "h3",
+              "text": "Desarrollos a medida"
+            },
+            {
+              "id": "COPY-P06-S04-B06",
+              "type": "paragraph",
+              "text": "Prototipos, elementos tridimensionales y dispositivos diseñados para un proyecto específico."
             }
           ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P06-S05",
@@ -1936,23 +1811,16 @@ const copyBlueprint = {
             {
               "id": "COPY-P06-S05-B01",
               "type": "h2",
-              "text": "Producción que se puede ver y tocar"
+              "text": "Proyectos que muestran lo que producimos"
             },
             {
               "id": "COPY-P06-S05-B02",
-              "type": "placeholder",
-              "pendingId": "COPY-P06-S05-P01"
+              "type": "paragraph",
+              "text": "Entre nuestras referencias de producción están bancas de estadio, stand Nescafé Ice, proyectos Maggi y latas de Pepsi."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P06-S05-P01",
-              "sourceText": "[PROYECTOS, CLIENTES Y CAPACIDADES POR COMPLETAR]",
-              "label": "Proyectos, clientes y capacidades por completar",
-              "category": "Información comercial y producción"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P06-S06",
@@ -1978,15 +1846,16 @@ const copyBlueprint = {
             }
           ],
           "pending": [],
-          "status": "MISSING_INFORMATION"
+          "status": "READY_FOR_REVIEW"
         }
       ],
-      "sourceNote": "COPY PROVISIONAL · INFORMACIÓN POR COMPLETAR",
       "presentTerms": [
-        "producción gráfica",
-        "promociones",
-        "impresión",
-        "personalización"
+        "producción física",
+        "branding de espacios",
+        "material POP",
+        "exhibidores",
+        "rotulación vehicular",
+        "estructuras metálicas"
       ]
     },
     {
@@ -2012,7 +1881,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P07-S01-B02",
               "type": "paragraph",
-              "text": "Explora proyectos desarrollados desde nuestras diferentes especialidades y descubre cómo llevamos necesidades de marca a ejecuciones reales."
+              "text": "Conoce proyectos de publicidad exterior y producción física realizados desde nuestras especialidades."
             }
           ],
           "pending": [],
@@ -2041,52 +1910,22 @@ const copyBlueprint = {
           "blocks": [
             {
               "id": "COPY-P07-S03-B01",
-              "type": "placeholder",
-              "pendingId": "COPY-P07-S03-P01"
+              "type": "h3",
+              "text": "Banderines Issima"
             },
             {
               "id": "COPY-P07-S03-B02",
-              "type": "placeholder",
-              "pendingId": "COPY-P07-S03-P02"
-            },
-            {
-              "id": "COPY-P07-S03-B03",
-              "type": "placeholder",
-              "pendingId": "COPY-P07-S03-P03"
+              "type": "paragraph",
+              "text": "Media Branding · publicidad exterior"
             },
             {
               "id": "COPY-P07-S03-B04",
               "type": "paragraph",
-              "text": "El reto, la solución que desarrollamos y cómo llevamos el proyecto a la ejecución."
-            },
-            {
-              "id": "COPY-P07-S03-B05",
-              "type": "cta",
-              "text": "[Ver proyecto]",
-              "destinationArchitectureId": null
+              "text": "Otras referencias: secuencial Six, unipolar Powerade, bancas de estadio y stand Nescafé Ice."
             }
           ],
-          "pending": [
-            {
-              "id": "COPY-P07-S03-P01",
-              "sourceText": "[Nombre del proyecto]",
-              "label": "Nombre del proyecto",
-              "category": "Ficha de proyecto"
-            },
-            {
-              "id": "COPY-P07-S03-P02",
-              "sourceText": "[Cliente]",
-              "label": "Cliente",
-              "category": "Ficha de proyecto"
-            },
-            {
-              "id": "COPY-P07-S03-P03",
-              "sourceText": "[División / divisiones]",
-              "label": "División / divisiones",
-              "category": "Ficha de proyecto"
-            }
-          ],
-          "status": "MISSING_INFORMATION"
+          "pending": [],
+          "status": "READY_FOR_REVIEW"
         },
         {
           "id": "COPY-P07-S04",
@@ -2115,7 +1954,11 @@ const copyBlueprint = {
           "status": "READY_FOR_REVIEW"
         }
       ],
-      "presentTerms": []
+      "presentTerms": [
+        "publicidad exterior",
+        "banderines",
+        "stand"
+      ]
     },
     {
       "id": "COPY-P08",
@@ -2125,6 +1968,7 @@ const copyBlueprint = {
       "route": "/contacto/",
       "status": "READY_FOR_REVIEW",
       "provisional": false,
+      "formDestinationEmail": "gramos@mediabranding.net",
       "sections": [
         {
           "id": "COPY-P08-S01",
@@ -2140,7 +1984,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P08-S01-B02",
               "type": "paragraph",
-              "text": "No necesitas saber qué división contactar. Explícanos qué quieres lograr y te ayudaremos a orientar tu proyecto hacia la especialidad adecuada."
+              "text": "Cuéntanos qué quieres lograr. Te conectaremos con la especialidad adecuada o coordinaremos varias si tu proyecto lo requiere."
             }
           ],
           "pending": [],
@@ -2170,12 +2014,12 @@ const copyBlueprint = {
             {
               "id": "COPY-P08-S02-B04",
               "type": "option",
-              "text": "Producción gráfica"
+              "text": "Producción física e impresión"
             },
             {
               "id": "COPY-P08-S02-B05",
               "type": "option",
-              "text": "Una solución que combine diferentes especialidades"
+              "text": "Una solución combinada"
             },
             {
               "id": "COPY-P08-S02-B06",
@@ -2236,7 +2080,37 @@ const copyBlueprint = {
             {
               "id": "COPY-P08-S03-B02",
               "type": "paragraph",
-              "text": "Cuéntanos qué quieres lograr. Nosotros te ayudaremos a encontrar la especialidad adecuada para llevarlo adelante."
+              "text": "Si prefieres escribirnos directamente, estas son nuestras vías de contacto."
+            },
+            {
+              "id": "COPY-P08-S03-B03",
+              "type": "h3",
+              "text": "Contacto directo"
+            },
+            {
+              "id": "COPY-P08-S03-B04",
+              "type": "paragraph",
+              "text": "Media Branding: rromero@mediabranding.net / 3368-2657 · ventashn@mediabranding.net / 3350-1306."
+            },
+            {
+              "id": "COPY-P08-S03-B05",
+              "type": "paragraph",
+              "text": "Linkbranding: ventashn@linkbranding.com / 3180-9892 · norarivera@linkbranding.com / 3177-0084."
+            },
+            {
+              "id": "COPY-P08-S03-B06",
+              "type": "paragraph",
+              "text": "Contacto adicional: ventas3@gbrandingca.com / 8735-6357."
+            },
+            {
+              "id": "COPY-P08-S03-B07",
+              "type": "h3",
+              "text": "Oficinas"
+            },
+            {
+              "id": "COPY-P08-S03-B08",
+              "type": "paragraph",
+              "text": "Tegucigalpa: Condominios Metrópolis, bulevar Suyapa. San Pedro Sula: Plaza Bulevar, bulevar Micheletti."
             }
           ],
           "pending": [],
@@ -2248,7 +2122,8 @@ const copyBlueprint = {
         "BTL",
         "activaciones",
         "eventos",
-        "producción gráfica"
+        "producción física",
+        "impresión"
       ]
     },
     {
@@ -2333,27 +2208,6 @@ const copyBlueprint = {
       ]
     }
   ],
-  "sourceNotes": {
-    "title": "Pendientes antes de convertir COPY-01 en definitivo",
-    "items": [
-      {
-        "pageId": "COPY-P02",
-        "text": "Nosotros → historia, años, hitos, cobertura y clientes."
-      },
-      {
-        "pageId": "COPY-P04",
-        "text": "Media Branding → inventario, ubicaciones, formatos, cobertura y proyectos."
-      },
-      {
-        "pageId": "COPY-P05",
-        "text": "Linkbranding → proyectos, clientes y confirmar servicios vigentes."
-      },
-      {
-        "pageId": "COPY-P06",
-        "text": "Media Print → información comercial completa, materiales, técnicas, servicios y proyectos."
-      }
-    ]
-  },
   "presentation": [
     {
       "title": "Cómo hablamos",
@@ -2405,14 +2259,8 @@ const copyBlueprint = {
       ]
     },
     {
-      "title": "Información por completar",
-      "body": "Datos pendientes para completar la propuesta de contenidos.",
-      "kind": "pending",
-      "pageIds": []
-    },
-    {
       "title": "Próximo paso",
-      "body": "Validar contenido → completar información → diseño visual.",
+      "body": "Validar contenido → diseño visual.",
       "kind": "next",
       "pageIds": []
     }
@@ -2420,7 +2268,7 @@ const copyBlueprint = {
 };
 </script>
 <script id="copyRuntime">
-/* COPY-01 renders the existing content authority without modifying either data set. */
+/* COPY-02 renders the existing content authority without modifying architecture. */
 (() => {
   'use strict';
   const q = selector => document.querySelector(selector);
@@ -2440,12 +2288,12 @@ const copyBlueprint = {
   if('scrollRestoration' in history)history.scrollRestoration='manual';
   const pageById = id => pages.find(page=>page.id===id);
   const architectureOf = page => blueprint.nodes.find(node=>node.id===page.architectureId);
-  const pendingOf = page => page.sections.flatMap(section=>section.pending);
+  const visibleSections = page => page.sections.filter(section=>section.render!==false);
   const labelOf = block => block.text.startsWith('[')&&block.text.endsWith(']')?block.text.slice(1,-1):block.text;
   const blockAttribute = block => `data-copy-block="${h(block.id)}"`;
 
   function pendingBlocks(blocks, section){
-    return `<aside class="copy-pending"><strong>INFORMACIÓN QUE NECESITAMOS</strong>${blocks.map(block=>{const item=section.pending.find(item=>item.id===block.pendingId);return `<p ${blockAttribute(block)} data-copy-pending="${h(item.id)}">${h(item.label)}</p>`;}).join('')}</aside>`;
+    return `<aside class="copy-pending">${blocks.map(block=>{const item=section.pending.find(item=>item.id===block.pendingId);return `<p ${blockAttribute(block)} data-copy-pending="${h(item.id)}">${h(item.label)}</p>`;}).join('')}</aside>`;
   }
   function field(block, index, total){
     const label=labelOf(block), long=total>1&&index===total-1;
@@ -2488,7 +2336,7 @@ const copyBlueprint = {
       for(const block of blocks.slice(firstGroup)){if(block.type==='h3')groups.push([]);groups.at(-1).push(block);}
       body=renderFlow(blocks.slice(0,firstGroup),section)+`<div class="copy-groups" data-columns="${groups.length===3?3:2}">${groups.map(group=>`<section class="copy-group">${renderFlow(group,section)}</section>`).join('')}</div>`;
     }else if(section.name==='Ficha de proyecto'){
-      body=`<div class="copy-project-card"><div class="copy-project-visual" aria-hidden="true"></div><div class="copy-project-body">${renderFlow(blocks,section)}</div></div>`;
+      body=`<div class="copy-project-card"><div class="copy-project-body">${renderFlow(blocks,section)}</div></div>`;
     }else if(section.name==='Filtros'){
       body=blocks.map(b=>b.type==='list'?`<ul class="copy-filter-list" ${blockAttribute(b)}>${b.text.split(' · ').map(text=>`<li>${h(text)}</li>`).join('')}</ul>`:renderBlock(b)).join('');
     }else if(newsletter){
@@ -2501,10 +2349,10 @@ const copyBlueprint = {
     return `<section class="${classes}" data-copy-section="${h(section.id)}">${label}${body}</section>`;
   }
   function renderSections(page){
-    if(page.name!=='Divisiones')return page.sections.map(renderSection).join('');
+    if(page.name!=='Divisiones')return visibleSections(page).map(renderSection).join('');
     const divisionNames=blueprint.nodes.filter(node=>node.concept).map(node=>node.name);
     let html='',groupOpen=false;
-    for(const section of page.sections){
+    for(const section of visibleSections(page)){
       const division=divisionNames.includes(section.name);
       if(division&&!groupOpen){html+='<div class="copy-division-grid">';groupOpen=true;}
       if(!division&&groupOpen){html+='</div>';groupOpen=false;}
@@ -2512,15 +2360,11 @@ const copyBlueprint = {
     }
     return html+(groupOpen?'</div>':'');
   }
-  function pendingSummary(page){
-    const labels=[...new Set(pendingOf(page).map(item=>item.label))];
-    return labels.length?`<aside class="copy-page-pending"><h2>PARA COMPLETAR ESTA PÁGINA NECESITAMOS</h2><ul>${labels.map(label=>`<li>${h(label)}</li>`).join('')}</ul></aside>`:'';
-  }
   function pageHeader(page,context){
     const terms=page.presentTerms.slice(0,3);
     return `<header class="copy-page-head"><div class="copy-page-head-row"><div><h2 ${context==='screen'?'id="copyPageHeading" tabindex="-1"':''}>${h(page.name)}</h2><div class="copy-route">${h(architectureOf(page).route)}</div></div>${terms.length?`<p class="copy-seo-note"><span>ENFOQUE SEO</span>${terms.map(h).join(' · ')}</p>`:''}</div>${page.provisional?`<aside class="copy-pending copy-provisional">${h(page.sourceNote)}</aside>`:''}</header>`;
   }
-  function pageContent(page,context){return pageHeader(page,context)+renderSections(page)+pendingSummary(page);}
+  function pageContent(page,context){return pageHeader(page,context)+renderSections(page);}
   function renderIndex(){
     const visiblePages=state.focalPageId?[pageById(state.focalPageId)]:mainPages;
     q('#copyPageList').innerHTML=visiblePages.map(page=>`<div class="copy-page-entry">${state.focalPageId?`<div class="copy-page-link" aria-current="page">${h(page.name)}</div>`:`<button type="button" class="copy-page-link" data-copy-page="${h(page.id)}" aria-controls="copyDocument"${page.id===state.pageId?' aria-current="page"':''}>${h(page.name)}</button>`}</div>`).join('');
@@ -2541,7 +2385,7 @@ const copyBlueprint = {
   }
   function render(){
     const page=pageById(state.pageId),focal=Boolean(state.focalPageId);
-    if(!page.sections.some(section=>section.id===state.sectionId))state.sectionId=page.sections[0].id;
+    if(!visibleSections(page).some(section=>section.id===state.sectionId))state.sectionId=visibleSections(page)[0].id;
     q('#copyDocument').innerHTML=pageContent(page,'screen');
     q('#copyDocument').dataset.copyPage=page.id;
     if(page.id===mainPages[0].id)integrateNewsletter();

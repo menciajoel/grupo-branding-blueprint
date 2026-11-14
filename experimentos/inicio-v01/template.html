@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#141414">
+  <meta name="description" content="{{META}}">
+  <title>Grupo Branding · Inicio · Experimento 02</title>
+  <link rel="icon" href="assets/brand/grupo-branding/isotipo-color.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="motion.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#divisiones" data-scroll>Saltar a las divisiones</a>
+  <header class="site-header">
+    <a href="#inicio" class="brand" data-scroll aria-label="Grupo Branding · Inicio"><img src="assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="52" alt="Grupo Branding"></a>
+    <div class="header-actions">
+      <nav aria-label="Navegación principal"><a href="#divisiones" data-scroll>Divisiones</a><a href="#proyectos" data-scroll>Portafolio</a><a href="#contacto" data-scroll>Contacto<img class="ui-icon" src="assets/icons/arrow-up-right.svg" width="18" height="18" alt=""></a></nav>
+      <button type="button" class="icon-button motion-toggle" aria-label="Reducir movimiento" aria-pressed="false" hidden><img class="ui-icon" src="assets/icons/pause.svg" width="17" height="17" alt=""></button>
+      <button type="button" class="icon-button menu-toggle" aria-label="Abrir menú" aria-haspopup="dialog" aria-controls="menu-dialog"><img class="ui-icon" src="assets/icons/menu.svg" width="28" height="28" alt=""></button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <div class="convergence" id="convergence">
+      <div class="convergence-scene">
+        <section class="hero-surface" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <span class="hero-dash" aria-hidden="true"></span>
+            <h1 id="hero-title" data-copy="COPY-P01-S01-B01">{{HERO_TITLE}}</h1>
+            <div class="mobile-art-slot" aria-hidden="true"></div>
+            <div class="hero-support">{{HERO_BODY}}<div class="hero-actions">{{HERO_ACTIONS}}</div></div>
+          </div>
+        </section>
+        {{BRAND_ART}}
+        <section class="division-surface" id="divisiones" aria-labelledby="division-heading" tabindex="-1">
+          <div class="division-copy">
+            <span class="section-kicker">01 / DIVISIONES</span>
+            <div id="division-heading">{{DIVISION_TITLE}}</div>
+            {{DIVISION_BODY}}
+            {{MOBILE_DIVISION_ART}}
+            <div class="division-tabs" aria-label="Capacidades de Grupo Branding">{{DIVISION_TABS}}</div>
+            <div class="division-panels">{{DIVISION_PANELS}}</div>
+          </div>
+        </section>
+        <div class="scene-bottom">
+          <span class="scene-counter" aria-label="Secuencia de tres momentos"><span data-counter>01</span><span class="counter-rule" aria-hidden="true"></span>03</span>
+          <a href="#divisiones" data-scroll class="scene-next" aria-label="Explorar las divisiones"><img class="ui-icon" src="assets/icons/arrow-down.svg" width="30" height="30" alt=""></a>
+          <button class="stock-note" type="button" data-credits>Stock provisional</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="solutions section-pad" id="soluciones" aria-labelledby="solutions-heading">
+      <div class="section-top"><span class="section-kicker">02 / SOLUCIONES</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="section-heading" id="solutions-heading">{{SOLUTIONS_TITLE}}{{SOLUTIONS_BODY}}</div>
+      <div class="solution-layout"><ol class="solution-list">{{SOLUTIONS_ROWS}}</ol><div class="solution-visual" id="solution-visual">{{SOLUTIONS_PHOTOS}}<button type="button" class="photo-credit" data-credits>Stock provisional<img class="ui-icon" src="assets/icons/arrow-up-right.svg" width="15" height="15" alt=""></button></div></div>
+    </section>
+
+    <section class="projects section-pad" id="proyectos" aria-labelledby="projects-heading">
+      <div class="section-top"><span class="section-kicker">03 / PROYECTOS</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="section-heading" id="projects-heading">{{PROJECTS_TITLE}}<div>{{PROJECTS_BODY}}{{PROJECTS_ACTION}}</div></div>
+      <p class="evidence-note">Casos documentados · Fotografías de los proyectos por incorporar</p>
+      <div class="project-index">{{PROJECT_ROWS}}</div>
+    </section>
+
+    <section class="brands section-pad" id="marcas" aria-labelledby="brands-heading">
+      <span class="section-kicker">04 / MARCAS</span><div class="brands-copy" id="brands-heading">{{BRANDS_TITLE}}{{BRANDS_BODY}}</div>
+      <div class="brand-pending">{{BRANDS_PENDING}}<span class="pending-rule" aria-hidden="true"></span></div>
+    </section>
+
+    <section class="why section-pad" id="por-que" aria-labelledby="why-heading">
+      <div class="section-top"><span class="section-kicker">05 / GRUPO BRANDING</span><span class="section-rule" aria-hidden="true"></span></div>
+      <div class="section-heading" id="why-heading">{{WHY_TITLE}}{{WHY_BODY}}</div>
+      <div class="value-list">{{VALUES}}</div>
+    </section>
+
+    <section class="contact section-pad" id="contacto" aria-labelledby="contact-heading">
+      <span class="section-kicker">06 / CONTACTO</span><div id="contact-heading">{{CONTACT_TITLE}}</div><div class="contact-bottom">{{CONTACT_BODY}}{{CONTACT_ACTION}}</div>
+      <img class="contact-mark" src="assets/brand/grupo-branding/isotipo-color.svg" width="160" height="153" alt="" loading="lazy">
+    </section>
+
+    <section class="newsletter section-pad" id="newsletter" aria-labelledby="newsletter-heading">
+      <div id="newsletter-heading">{{NEWS_TITLE}}{{NEWS_BODY}}</div>
+      <form class="newsletter-form" novalidate>
+        <label for="newsletter-email">{{EMAIL_LABEL}}</label>
+        <div class="email-line"><input id="newsletter-email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" aria-describedby="newsletter-demo"><button type="submit">{{NEWS_BUTTON}}<img class="ui-icon" src="assets/icons/arrow-up-right.svg" width="24" height="24" alt=""></button></div>
+        <label class="consent"><input type="checkbox" name="consent" required>{{NEWS_CONSENT}}</label>
+        <p class="demo-note" id="newsletter-demo">Demostración de interfaz. No se registran ni se envían datos.</p>
+        <p class="form-error" role="alert" data-copy="{{ERROR_ID}}" hidden>{{ERROR}}</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer section-pad">
+    <a href="#inicio" data-scroll class="footer-brand" aria-label="Volver al inicio"><img src="assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="52" alt="Grupo Branding" loading="lazy"></a>
+    <nav aria-label="Navegación del pie"><a href="#divisiones" data-scroll>Divisiones</a><a href="#proyectos" data-scroll>Portafolio</a><a href="#contacto" data-scroll>Contacto</a></nav>
+    <div class="footer-meta"><span>Experimento 02 · Pendiente de revisión creativa</span><button type="button" data-credits>Stock y créditos<img class="ui-icon" src="assets/icons/arrow-up-right.svg" width="16" height="16" alt=""></button></div>
+  </footer>
+
+  <dialog class="menu-dialog" id="menu-dialog" aria-labelledby="menu-title"><div class="dialog-bar"><h2 id="menu-title">Explorar</h2><button type="button" class="icon-button" data-close aria-label="Cerrar menú"><img class="ui-icon" src="assets/icons/x.svg" width="26" height="26" alt=""></button></div><nav aria-label="Secciones de Inicio"><a href="#divisiones" data-scroll>Divisiones</a><a href="#soluciones" data-scroll>Soluciones</a><a href="#proyectos" data-scroll>Proyectos</a><a href="#marcas" data-scroll>Marcas</a><a href="#por-que" data-scroll>Por qué Grupo Branding</a><a href="#contacto" data-scroll>Contacto</a><a href="#newsletter" data-scroll>Newsletter</a></nav></dialog>
+
+  <dialog class="review-dialog" id="preview-dialog" aria-labelledby="preview-title"><div class="dialog-bar"><span class="dialog-label" id="preview-label">VISTA DE DESTINO</span><button type="button" class="icon-button" data-close aria-label="Cerrar vista de destino"><img class="ui-icon" src="assets/icons/x.svg" width="25" height="25" alt=""></button></div><p class="preview-path" id="preview-path"></p><h2 id="preview-title"></h2><div id="preview-body"></div><p class="preview-note" id="preview-note">La página completa queda fuera del alcance de este prototipo de Inicio.</p></dialog>
+
+  <dialog class="review-dialog" id="credits-dialog" aria-labelledby="credits-title"><div class="dialog-bar"><span class="dialog-label">RECURSOS DE REFERENCIA</span><button type="button" class="icon-button" data-close aria-label="Cerrar créditos"><img class="ui-icon" src="assets/icons/x.svg" width="25" height="25" alt=""></button></div><h2 id="credits-title">Stock provisional</h2><p>Las fotografías de referencia no representan proyectos, eventos ni instalaciones de Grupo Branding.</p><ul class="credit-list">{{CREDITS}}</ul><a class="license-link" href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Licencia Unsplash · Uso comercial permitido<img class="ui-icon" src="assets/icons/arrow-up-right.svg" width="18" height="18" alt=""></a><p class="credit-small">Inter Tight · SIL Open Font License. Iconos Lucide · ISC. GSAP y ScrollTrigger · Standard License.</p></dialog>
+
+  <dialog class="review-dialog" id="newsletter-dialog" aria-labelledby="newsletter-preview-title"><div class="dialog-bar"><span class="dialog-label">VISTA PREVIA · SIN REGISTRO</span><button type="button" class="icon-button" data-close aria-label="Cerrar vista previa de suscripción"><img class="ui-icon" src="assets/icons/x.svg" width="25" height="25" alt=""></button></div><h2 id="newsletter-preview-title">Newsletter</h2><p class="subscription-preview" data-copy="{{SUCCESS_ID}}">{{SUCCESS}}</p><p class="preview-note">Este es el mensaje aprobado de confirmación. El envío y la gestión de suscriptores se conectarán en una etapa posterior. No se ha registrado tu dirección.</p></dialog>
+  <script type="application/json" id="destination-data">{{DESTINATION_DATA}}</script>
+  <script type="application/json" id="geometry-data">{{GEOMETRY_DATA}}</script>
+</body>
+</html>

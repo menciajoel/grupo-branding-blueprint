@@ -1,0 +1,9 @@
+{
+  "license": "https://unsplash.com/license",
+  "status": "Stock provisional para dirección de arte. No representa proyectos, instalaciones ni eventos de Grupo Branding.",
+  "items": [
+    {"id":"visibilidad","author":"Osman Rana","source":"https://unsplash.com/photos/worms-eye-view-photo-of-building-during-night-time-RgJvJkyb8Hk","image":"https://images.unsplash.com/photo-1495679107927-a152a875c83f","alt":"Fotografía de referencia: arquitectura monumental vista desde abajo de noche.","sizes":[800,1600,2200],"position":"50% 50%"},
+    {"id":"experiencias","author":"Yvette de Wit","source":"https://unsplash.com/photos/crowded-musical-event-with-lights-Kcx_YuUR-dw","image":"https://images.unsplash.com/photo-1520242739010-44e95bde329e","alt":"Fotografía de referencia: público de espaldas y una producción de luces en un evento.","sizes":[720,1440],"position":"50% 54%"},
+    {"id":"produccion","author":"Bank Phrom","source":"https://unsplash.com/photos/printing-machine-Tzm3Oyu_6sk","image":"https://images.unsplash.com/photo-1503694978374-8a2fa686963a","alt":"Fotografía de referencia: detalle de los rodillos y el papel de una prensa de impresión.","sizes":[720,1440],"position":"50% 50%"}
+  ]
+}

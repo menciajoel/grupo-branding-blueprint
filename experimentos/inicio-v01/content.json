@@ -1,0 +1,521 @@
+{
+  "source": "ARQ-02 + COPY-03",
+  "sections": {
+    "COPY-P01-S01": {
+      "id": "COPY-P01-S01",
+      "name": "Hero",
+      "sourceName": "Hero",
+      "type": "hero",
+      "blocks": [
+        {
+          "id": "COPY-P01-S01-B01",
+          "type": "h1",
+          "text": "Publicidad exterior, experiencias de marca y producción en un mismo grupo"
+        },
+        {
+          "id": "COPY-P01-S01-B02",
+          "type": "paragraph",
+          "text": "Conectamos medios, BTL y producción para convertir tus objetivos en proyectos bien coordinados y ejecutados."
+        },
+        {
+          "id": "COPY-P01-S01-B03",
+          "type": "cta",
+          "text": "[Cuéntanos sobre tu proyecto]",
+          "destinationArchitectureId": "ARQ-P08"
+        },
+        {
+          "id": "COPY-P01-S01-B04",
+          "type": "cta",
+          "text": "[Conoce nuestras divisiones]",
+          "destinationArchitectureId": "ARQ-P03"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S02": {
+      "id": "COPY-P01-S02",
+      "name": "Nuestras divisiones",
+      "sourceName": "Nuestras divisiones",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S02-B01",
+          "type": "h2",
+          "text": "Tres especialidades conectadas para tu marca"
+        },
+        {
+          "id": "COPY-P01-S02-B02",
+          "type": "paragraph",
+          "text": "Trabajamos desde visibilidad, experiencias y producción. Activamos una o varias capacidades según lo que tu proyecto necesita."
+        },
+        {
+          "id": "COPY-P01-S02-B03",
+          "type": "h3",
+          "text": "Media Branding · Publicidad y visibilidad"
+        },
+        {
+          "id": "COPY-P01-S02-B04",
+          "type": "paragraph",
+          "text": "Damos visibilidad a tu marca con publicidad exterior: vallas unipolares, puentes, banderines y minivallas."
+        },
+        {
+          "id": "COPY-P01-S02-B05",
+          "type": "cta",
+          "text": "[Conoce Media Branding]",
+          "destinationArchitectureId": "ARQ-P04"
+        },
+        {
+          "id": "COPY-P01-S02-B06",
+          "type": "h3",
+          "text": "Linkbranding · BTL y experiencias"
+        },
+        {
+          "id": "COPY-P01-S02-B07",
+          "type": "paragraph",
+          "text": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que acercan tu marca a las personas."
+        },
+        {
+          "id": "COPY-P01-S02-B08",
+          "type": "cta",
+          "text": "[Conoce Linkbranding]",
+          "destinationArchitectureId": "ARQ-P05"
+        },
+        {
+          "id": "COPY-P01-S02-B09",
+          "type": "h3",
+          "text": "Media Print · Producción física"
+        },
+        {
+          "id": "COPY-P01-S02-B10",
+          "type": "paragraph",
+          "text": "Producimos branding para espacios, exhibidores, estructuras, rotulación vehicular y desarrollos a medida."
+        },
+        {
+          "id": "COPY-P01-S02-B11",
+          "type": "cta",
+          "text": "[Conoce Media Print]",
+          "destinationArchitectureId": "ARQ-P06"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S03": {
+      "id": "COPY-P01-S03",
+      "name": "Soluciones",
+      "sourceName": "Soluciones",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S03-B01",
+          "type": "h2",
+          "text": "De la visibilidad a la ejecución"
+        },
+        {
+          "id": "COPY-P01-S03-B02",
+          "type": "paragraph",
+          "text": "Podemos conectar medios, experiencias y producción bajo una misma coordinación, desde la idea hasta su ejecución."
+        },
+        {
+          "id": "COPY-P01-S03-B03",
+          "type": "h3",
+          "text": "Publicidad exterior y medios"
+        },
+        {
+          "id": "COPY-P01-S03-B04",
+          "type": "paragraph",
+          "text": "Vallas unipolares, puentes, banderines y minivallas para llevar tu mensaje a espacios de circulación."
+        },
+        {
+          "id": "COPY-P01-S03-B05",
+          "type": "h3",
+          "text": "Activaciones y BTL"
+        },
+        {
+          "id": "COPY-P01-S03-B06",
+          "type": "paragraph",
+          "text": "Activaciones y street marketing para crear encuentros directos entre tu marca y las personas."
+        },
+        {
+          "id": "COPY-P01-S03-B07",
+          "type": "h3",
+          "text": "Eventos y experiencias"
+        },
+        {
+          "id": "COPY-P01-S03-B08",
+          "type": "paragraph",
+          "text": "Eventos corporativos y experienciales diseñados y ejecutados para conectar con tu público."
+        },
+        {
+          "id": "COPY-P01-S03-B09",
+          "type": "h3",
+          "text": "Producción física y gráfica"
+        },
+        {
+          "id": "COPY-P01-S03-B10",
+          "type": "paragraph",
+          "text": "Branding de espacios, exhibidores, estructuras y rotulación para llevar tu proyecto al mundo físico."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S04": {
+      "id": "COPY-P01-S04",
+      "name": "Proyectos",
+      "sourceName": "Proyectos",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S04-B01",
+          "type": "h2",
+          "text": "Ideas llevadas a la ejecución"
+        },
+        {
+          "id": "COPY-P01-S04-B02",
+          "type": "paragraph",
+          "text": "Conoce proyectos de medios y producción física que muestran distintas maneras de llevar una idea a la ejecución."
+        },
+        {
+          "id": "COPY-P01-S04-B03",
+          "type": "cta",
+          "text": "[Ver proyectos]",
+          "destinationArchitectureId": "ARQ-P07"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S05": {
+      "id": "COPY-P01-S05",
+      "name": "Marcas",
+      "sourceName": "Marcas",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S05-B01",
+          "type": "h2",
+          "text": "Marcas que han confiado en nuestro trabajo"
+        },
+        {
+          "id": "COPY-P01-S05-B02",
+          "type": "paragraph",
+          "text": "Trabajamos principalmente con marcas transnacionales y equipos que necesitan coordinar medios, experiencias o producción."
+        },
+        {
+          "id": "COPY-P01-S05-B03",
+          "type": "placeholder",
+          "pendingId": "COPY-P01-S05-P01"
+        }
+      ],
+      "pending": [
+        {
+          "id": "COPY-P01-S05-P01",
+          "sourceText": "[LOGOTIPOS DE CLIENTES POR INCORPORAR]",
+          "label": "Logotipos de clientes por incorporar",
+          "category": "Referencias de clientes"
+        }
+      ],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S06": {
+      "id": "COPY-P01-S06",
+      "name": "Por qué Grupo Branding",
+      "sourceName": "Por qué Grupo Branding",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S06-B01",
+          "type": "h2",
+          "text": "Diferentes especialidades conectadas alrededor de tu proyecto"
+        },
+        {
+          "id": "COPY-P01-S06-B02",
+          "type": "paragraph",
+          "text": "Coordinamos especialistas y proveedores alrededor del mismo objetivo. Así reduces fragmentación y mantienes un estándar de ejecución en cada etapa."
+        },
+        {
+          "id": "COPY-P01-S06-B03",
+          "type": "h3",
+          "text": "Visibilidad"
+        },
+        {
+          "id": "COPY-P01-S06-B04",
+          "type": "paragraph",
+          "text": "Damos presencia a tu marca en medios y formatos de publicidad exterior."
+        },
+        {
+          "id": "COPY-P01-S06-B05",
+          "type": "h3",
+          "text": "Experiencias"
+        },
+        {
+          "id": "COPY-P01-S06-B06",
+          "type": "paragraph",
+          "text": "Diseñamos activaciones y eventos para generar interacción con las personas."
+        },
+        {
+          "id": "COPY-P01-S06-B07",
+          "type": "h3",
+          "text": "Producción"
+        },
+        {
+          "id": "COPY-P01-S06-B08",
+          "type": "paragraph",
+          "text": "Fabricamos los elementos físicos que necesita tu campaña o espacio."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S07": {
+      "id": "COPY-P01-S07",
+      "name": "CTA",
+      "sourceName": "CTA",
+      "type": "action",
+      "blocks": [
+        {
+          "id": "COPY-P01-S07-B01",
+          "type": "h2",
+          "text": "Cuéntanos qué necesita tu marca"
+        },
+        {
+          "id": "COPY-P01-S07-B02",
+          "type": "paragraph",
+          "text": "No necesitas elegir una división antes de escribirnos. Cuéntanos qué buscas y te conectaremos con el equipo adecuado."
+        },
+        {
+          "id": "COPY-P01-S07-B03",
+          "type": "cta",
+          "text": "[Hablemos de tu proyecto]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    "COPY-P01-S08": {
+      "id": "COPY-P01-S08",
+      "name": "Newsletter",
+      "sourceName": "Newsletter",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P01-S08-B01",
+          "type": "h2",
+          "text": "Mantente conectado con Grupo Branding"
+        },
+        {
+          "id": "COPY-P01-S08-B02",
+          "type": "paragraph",
+          "text": "Recibe proyectos, novedades y nuevas ideas sobre publicidad, experiencias de marca y producción."
+        },
+        {
+          "id": "COPY-P01-S08-B03",
+          "type": "field",
+          "text": "[Correo electrónico]"
+        },
+        {
+          "id": "COPY-P01-S08-B04",
+          "type": "cta",
+          "text": "[Suscribirme]",
+          "destinationArchitectureId": "ARQ-C01"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    }
+  },
+  "projects": [
+    {
+      "id": "CASE-DUNKIN",
+      "architectureId": "ARQ-P09",
+      "name": "Dunkin",
+      "routeProposal": "/portafolio/dunkin/",
+      "divisionIds": [
+        "ARQ-P04"
+      ],
+      "presentation": "Campaña publicitaria de Dunkin.",
+      "execution": "Implementación exterior con piezas creativas que destacaron sus productos.",
+      "photoEvidence": {
+        "source": "IMPACTOS EXITO MEDIA BRANDING.pdf",
+        "page": 2,
+        "caption": "Fotografía de la campaña exterior incluida en el material entregado."
+      },
+      "results": null,
+      "testimonial": {
+        "quote": "Nos sentimos muy satisfechos con el resultado",
+        "attribution": "Gilma Mejía · Dunkin"
+      },
+      "relatedProjectIds": []
+    },
+    {
+      "id": "CASE-ISSIMA",
+      "architectureId": "ARQ-P09",
+      "name": "ISSIMA",
+      "routeProposal": "/portafolio/issima/",
+      "divisionIds": [
+        "ARQ-P04"
+      ],
+      "presentation": "Campaña publicitaria de ISSIMA, marca de Corporación Dinant.",
+      "execution": "Ejecución en un formato de publicidad exterior diferenciador y de alto impacto visual.",
+      "photoEvidence": {
+        "source": "IMPACTOS EXITO MEDIA BRANDING.pdf",
+        "page": 3,
+        "caption": "Fotografía de la campaña exterior incluida en el material entregado."
+      },
+      "results": null,
+      "testimonial": {
+        "quote": "Queremos destacar especialmente la calidad de la implementación, el cuidado de los detalles",
+        "attribution": "4am Saatchi & Saatchi · Agencia"
+      },
+      "relatedProjectIds": []
+    },
+    {
+      "id": "CASE-FLYING-FISH",
+      "architectureId": "ARQ-P09",
+      "name": "Flying Fish",
+      "routeProposal": "/portafolio/flying-fish/",
+      "divisionIds": [
+        "ARQ-P04"
+      ],
+      "presentation": "Campaña de Flying Fish, marca de Cervecería Hondureña, implementada para Eco Publicidad.",
+      "execution": "Elemento tridimensional que sobresale de una valla de publicidad exterior.",
+      "photoEvidence": {
+        "source": "IMPACTOS EXITO MEDIA BRANDING.pdf",
+        "page": 4,
+        "caption": "Fotografía de la implementación incluida en el material entregado."
+      },
+      "results": null,
+      "testimonial": {
+        "quote": "Valoramos especialmente la capacidad de su equipo para convertir una idea en una solución de gran calidad visual",
+        "attribution": "Eco Publicidad"
+      },
+      "relatedProjectIds": []
+    }
+  ],
+  "newsletter": {
+    "id": "COPY-P09",
+    "architectureId": "ARQ-C01",
+    "name": "Newsletter",
+    "sourceHeading": "9. NEWSLETTER",
+    "route": "Inicio / pie de página",
+    "status": "READY_FOR_REVIEW",
+    "provisional": false,
+    "sections": [
+      {
+        "id": "COPY-P09-S01",
+        "name": "Suscripción",
+        "sourceName": null,
+        "type": "section",
+        "blocks": [
+          {
+            "id": "COPY-P09-S01-B01",
+            "type": "h2",
+            "text": "Mantente conectado con Grupo Branding"
+          },
+          {
+            "id": "COPY-P09-S01-B02",
+            "type": "paragraph",
+            "text": "Recibe proyectos, novedades e ideas sobre publicidad exterior, BTL, experiencias de marca y producción."
+          },
+          {
+            "id": "COPY-P09-S01-B03",
+            "type": "field",
+            "text": "[Correo electrónico]"
+          },
+          {
+            "id": "COPY-P09-S01-B04",
+            "type": "cta",
+            "text": "[Suscribirme]",
+            "destinationArchitectureId": "ARQ-C01"
+          },
+          {
+            "id": "COPY-P09-S01-B05",
+            "type": "consent",
+            "text": "Al suscribirte aceptas recibir comunicaciones de Grupo Branding. Podrás cancelar tu suscripción en cualquier momento."
+          }
+        ],
+        "pending": [],
+        "status": "READY_FOR_REVIEW"
+      },
+      {
+        "id": "COPY-P09-S02",
+        "name": "Éxito:",
+        "sourceName": "Éxito:",
+        "type": "message",
+        "blocks": [
+          {
+            "id": "COPY-P09-S02-B01",
+            "type": "message",
+            "text": "Gracias por suscribirte. Ya formas parte de nuestras novedades."
+          }
+        ],
+        "pending": [],
+        "status": "READY_FOR_REVIEW"
+      },
+      {
+        "id": "COPY-P09-S03",
+        "name": "Error:",
+        "sourceName": "Error:",
+        "type": "message",
+        "blocks": [
+          {
+            "id": "COPY-P09-S03-B01",
+            "type": "message",
+            "text": "No pudimos completar tu suscripción. Revisa tu correo e inténtalo nuevamente."
+          }
+        ],
+        "pending": [],
+        "status": "READY_FOR_REVIEW"
+      }
+    ],
+    "presentTerms": [
+      "publicidad exterior",
+      "BTL"
+    ]
+  },
+  "destinations": {
+    "/": {
+      "name": "Inicio",
+      "headline": "Publicidad exterior, experiencias de marca y producción en un mismo grupo",
+      "body": "Conectamos medios, BTL y producción para convertir tus objetivos en proyectos bien coordinados y ejecutados."
+    },
+    "/nosotros/": {
+      "name": "Nosotros",
+      "headline": "Un grupo que conecta medios, experiencias y producción",
+      "body": "Coordinamos capacidades especializadas para convertir las necesidades de tu marca en proyectos ejecutados con calidad y seguimiento."
+    },
+    "/divisiones/": {
+      "name": "Divisiones",
+      "headline": "Tres especialidades para diferentes necesidades de tu marca",
+      "body": "Reunimos medios y publicidad exterior, BTL y experiencias, y producción física para que encuentres la especialidad que necesita tu proyecto."
+    },
+    "/media-branding/": {
+      "name": "Media Branding",
+      "headline": "Publicidad exterior y espacios estratégicos para hacer visible tu marca",
+      "body": "Trabajamos medios y publicidad exterior para dar presencia a tu marca en espacios donde las personas circulan y toman decisiones."
+    },
+    "/linkbranding/": {
+      "name": "Linkbranding",
+      "headline": "Activaciones BTL y experiencias que conectan tu marca con las personas",
+      "body": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que generan interacción y recuerdo para tu marca."
+    },
+    "/media-print/": {
+      "name": "Media Print",
+      "headline": "Producción física para convertir tus ideas en realidad",
+      "body": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
+    },
+    "/portafolio/": {
+      "name": "Portafolio",
+      "headline": "Nuestro trabajo se entiende mejor cuando se ve",
+      "body": "Conoce proyectos de publicidad exterior y producción física realizados desde nuestras especialidades."
+    },
+    "/contacto/": {
+      "name": "Contacto",
+      "headline": "Cuéntanos qué necesita tu marca",
+      "body": "Cuéntanos qué quieres lograr. Te conectaremos con la especialidad adecuada o coordinaremos varias si tu proyecto lo requiere."
+    }
+  }
+}

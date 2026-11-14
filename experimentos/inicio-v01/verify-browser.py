@@ -25,13 +25,14 @@ def run(code):
 
 setup='''async page => {
   page.__gbAudit={errors:[],http:[],failed:[],posts:[],external:[]};
+  page.__gbExpectedOrigin=new URL(__BASE__).origin;
   if (!page.__gbListening) {
     page.__gbListening=true;
     page.on('pageerror',e=>page.__gbAudit.errors.push(e.message));
     page.on('console',m=>{if(m.type()==='error')page.__gbAudit.errors.push(m.text());});
     page.on('response',r=>{if(r.status()>=400)page.__gbAudit.http.push([r.status(),r.url()]);});
     page.on('requestfailed',r=>page.__gbAudit.failed.push([r.failure()?.errorText,r.url()]));
-    page.on('request',r=>{if(r.method()!=='GET')page.__gbAudit.posts.push([r.method(),r.url()]);if(new URL(r.url()).origin!==new URL(page.url()).origin)page.__gbAudit.external.push(r.url());});
+    page.on('request',r=>{if(r.method()!=='GET')page.__gbAudit.posts.push([r.method(),r.url()]);if(new URL(r.url()).origin!==page.__gbExpectedOrigin)page.__gbAudit.external.push(r.url());});
   }
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.setViewportSize({width:1440,height:900});
@@ -151,12 +152,12 @@ results['audit']=run('''async page=>{
  await page.screenshot({path:'output/playwright/'+LABEL+'-1672-hero.png'});
  return { ...page.__gbAudit,performance:await page.evaluate(()=>({navigation:performance.getEntriesByType('navigation').map(n=>({domContentLoadedMs:Math.round(n.domContentLoadedEventEnd),loadMs:Math.round(n.loadEventEnd)})),resources:performance.getEntriesByType('resource').length})),finalURL:page.url()};
 }'''.replace('BASE',json.dumps(args.url)).replace('LABEL',json.dumps(args.label)))
+(output/f'{args.label}-test-results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
 blocking=[x for x in results['audit']['failed'] if x[0]!='net::ERR_ABORTED']
 assert not results['audit']['errors'],results['audit']['errors']
 assert not results['audit']['http'],results['audit']['http']
 assert not results['audit']['posts'],results['audit']['posts']
 assert not results['audit']['external'],results['audit']['external']
 assert not blocking,blocking
-(output/f'{args.label}-test-results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
 print('PASS · zero JS errors/HTTP failures/POSTs/external runtime dependencies',flush=True)
 print('Report:',output/f'{args.label}-test-results.json')

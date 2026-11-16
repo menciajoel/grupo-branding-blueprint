@@ -44,6 +44,7 @@ class Document(HTMLParser):
             if copy: self.copy[copy].append(data)
 
 doc=Document();doc.feed((ROOT/'index.html').read_text())
+assert 'motion.js?v='+hashlib.sha256((ROOT/'motion.js').read_bytes()).hexdigest()[:12] in (ROOT/'index.html').read_text(), 'Rebuild after changing motion.js'
 assert doc.headings==1
 assert len(doc.ids)==len(set(doc.ids)), 'Duplicate IDs'
 count=0

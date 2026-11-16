@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the fixed Inicio composition from structured editorial data."""
 import html
+import hashlib
 import json
 import re
 import xml.etree.ElementTree as ET
@@ -74,7 +75,7 @@ def brand_svg(mobile=False):
         defs.append(f'<clipPath id="reveal-{suffix}-{i}" clipPathUnits="userSpaceOnUse"><rect class="photo-wipe" data-width="{g["width"]}" x="{g["x"]}" y="{g["y"]}" width="{g["width"]}" height="{g["height"]}"/></clipPath>')
         pieces.append(f'''<g class="piece-stage" data-piece="{i}"><g class="piece-arrival"><polygon class="official-piece" data-native-fill="{g['fill']}" fill="{g['fill']}" points="{g['points']}"/>
           <g class="facet-photo" data-facet="{i}" clip-path="url(#facet-{suffix}-{i})"><g clip-path="url(#reveal-{suffix}-{i})"><image href="assets/media/{key}-{'800' if i==0 else '720'}.webp" x="{g['x']}" y="{g['y']}" width="{g['width']}" height="{g['height']}" preserveAspectRatio="xMidYMid slice"/></g></g></g></g>''')
-    return f'<svg class="{"mobile-division-art" if mobile else "brand-art"}" viewBox="0 0 221.4 211.53" aria-hidden="true" focusable="false"><defs>{"".join(defs)}</defs>{"".join(pieces)}</svg>'
+    return f'<svg class="{"mobile-division-art" if mobile else "brand-art"}" viewBox="0 0 221.4 211.53" aria-hidden="true" focusable="false"><defs>{"".join(defs)}</defs><g class="isotype-stage">{"".join(pieces)}</g></svg>'
 
 
 headline = text(1,1)
@@ -114,6 +115,7 @@ error = newsletter_support[2]['blocks'][0]
 credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener noreferrer">{esc(m["author"])} · Unsplash{icon(size=18)}</a></li>' for m in media['items'])
 
 values = {
+ 'MOTION_HASH':hashlib.sha256((ROOT/'motion.js').read_bytes()).hexdigest()[:12],
  'META':esc(text(1,2)), 'HERO_TITLE':headline_html,'HERO_BODY':tag('p',1,2,'hero-lead'),
  'HERO_ACTIONS':action(1,3,'button button-primary')+action(1,4,'button button-outline'),
  'BRAND_ART':brand_svg(), 'MOBILE_DIVISION_ART':brand_svg(True),

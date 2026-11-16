@@ -189,8 +189,7 @@
       document.body.classList.toggle('desktop-motion',wide);
       document.body.classList.toggle('mobile-motion',!wide && !reducedNow);
       hero.inert=false;divisions.inert=false;
-      const pieces=$$('.piece-stage',art);
-      const arrivals=$$('.piece-arrival',art);
+      const stage=$('.isotype-stage',art);
       const wipes=$$('.photo-wipe',art);
       const photoGroups=$$('.facet-photo',art);
       const originalViewBox='0 0 221.4 211.53';
@@ -198,34 +197,41 @@
 
       if (!reducedNow) {
         const size = () => ({w:innerWidth,h:wide?innerHeight:hero.clientHeight});
-        const choreography = {progress:0};
-        const easePose=gsap.parseEase('power2.inOut');
-        const rigid=(element,state) => element.setAttribute('transform',`translate(${state.x} ${state.y}) scale(${state.scale ?? 1}) rotate(${state.rotation} 110.7 105.765)`);
-        const renderPieces=() => {
-          pieces.forEach((piece,i) => {
-            const p=choreography.progress;
-            const start=p<.32?'hero':p<.57?'fan':'center';
-            const end=p<.32?'fan':p<.57?'center':'aside';
-            const t=easePose(p<.32?p/.32:p<.57?(p-.32)/.25:(p-.57)/.43);
-            const a=pose(start,i),b=pose(end,i);
-            const state={};
-            for (const key of ['x','y','scale','rotation']) state[key]=a[key]+(b[key]-a[key])*t;
-            rigid(piece,wide?state:pose('hero',i));
-          });
-        };
-        const pose = (name,i) => {
+        const rigid=(element,state) => element.setAttribute('transform',`translate(${state.x} ${state.y}) scale(${state.scale}) rotate(${state.rotation} 110.7 105.765)`);
+        let transition=null;
+        const pose = name => {
           const {w,h}=size();
-          if (!wide) {
-            if(w<=700){const slot=$('.mobile-art-slot');return {x:w*.23,y:-slot.clientHeight*.17,scale:w*.94/221.4,rotation:0};}
-            return {x:w*.53,y:h*.35,scale:w*.82/221.4,rotation:0};
+          if(!wide && w<=700){
+            const slot=$('.mobile-art-slot');
+            if(name==='A')return {x:w*.23,y:-slot.clientHeight*.17,scale:w*.94/221.4};
+            const scale=slot.clientHeight*.94/211.53;
+            return {x:name==='B'?(w-221.4*scale)/2:w-221.4*scale-22,y:(slot.clientHeight-211.53*scale)/2,scale};
           }
-          if(name==='hero')return {x:w*.49,y:h*.07,scale:w*.64/221.4,rotation:0};
-          if(name==='fan'){
-            const offsets=[[-.10,.07,-14],[.08,-.04,14],[.04,.02,-5]][i];
-            return {x:w*(.32+offsets[0]),y:h*(.18+offsets[1]),scale:Math.min(w*.45,h*.73)/221.4,rotation:offsets[2]};
-          }
-          const scale = Math.min(w*(name==='center'?.46:.49),h*(name==='center'?.64:.72))/221.4;
-          return {x:name==='center'?(w-221.4*scale)/2:w*.60,y:(h-211.53*scale)/2,scale,rotation:0};
+          if(name==='A')return wide?{x:w*.49,y:h*.07,scale:w*.64/221.4}:{x:w*.53,y:h*.35,scale:w*.82/221.4};
+          // B restores the exact centered pose from the published transition.
+          // C preserves its approved final position beside the divisions.
+          const scale=Math.min(w*(name==='B'?.46:.49),h*(name==='B'?.64:.72))/221.4;
+          return {x:name==='B'?(w-221.4*scale)/2:w*.60,y:(h-211.53*scale)/2,scale};
+        };
+        const timing=wide?{B:.44,leaveB:.57,C:1}:{B:.20,leaveB:.32,C:.67};
+        const frame={...pose('A')};
+        const turn={rotation:0};
+        const renderIsotype = () => {
+          const time=transition?.time() ?? 0;
+          const named=time<.00001?'A':time>=timing.C-.000001?'C':time>=timing.B-.000001 && time<=timing.leaveB+.000001?'B':null;
+          // Keep the named poses numerically exact, independent of tween rounding.
+          rigid(stage,named?{...pose(named),rotation:named==='A'?0:360}:{...frame,rotation:turn.rotation});
+        };
+        const varsFor = name => Object.fromEntries(['x','y','scale'].map(key=>[key,()=>pose(name)[key]]));
+        const choreograph = timeline => {
+          const {B:arrive,leaveB:depart,C:finish}=timing;
+          timeline.addLabel('A',0).addLabel('B',arrive).addLabel('salida-B',depart).addLabel('C',finish)
+            .fromTo(frame,varsFor('A'),{...varsFor('B'),duration:arrive,ease:'power2.inOut'},0)
+            // A numeric proxy preserves the accumulated turn: no shortest-angle interpolation.
+            .fromTo(turn,{rotation:0},{rotation:360,duration:arrive,ease:'power2.inOut'},0)
+            .fromTo(frame,varsFor('B'),{...varsFor('C'),duration:finish-depart,ease:'power2.inOut',immediateRender:false},depart);
+          // Between B and salida-B, native scroll keeps the whole symbol centered.
+          // No pause, scroll interception, or transforms on individual pieces.
         };
         const prepare = () => {
           const {w,h}=size();
@@ -239,43 +245,41 @@
             art.style.top='0';art.style.left='0';art.style.width='100%';art.style.height=`${h}px`;
             art.setAttribute('viewBox',`0 0 ${w} ${h}`);
           }
-          renderPieces();
+          renderIsotype();
         };
         prepare();
         gsap.set(photoGroups,{opacity:0});
         gsap.set(wipes,{attr:{width:0}});
-        const offsets=[[-25,17,-11],[25,-20,12],[9,24,-6]];
+        // Keep the symbol united from the first frame; typography retains its timing.
         intro=gsap.timeline({defaults:{ease:'power3.out'},onComplete:() => {scene.dataset.entry='complete';}});
-        arrivals.forEach((piece,i) => {
-          const state={x:offsets[i][0],y:offsets[i][1],rotation:offsets[i][2]};
-          rigid(piece,state);
-          intro.to(state,{x:0,y:0,rotation:0,duration:1.15,onUpdate:()=>rigid(piece,state)},i*.08);
-        });
         intro.fromTo($$('.word-enter'),{yPercent:112},{yPercent:0,stagger:.07,duration:.85},.08)
           .fromTo($('.hero-dash'),{scaleX:0,transformOrigin:'left'},{scaleX:1,duration:.5},.15);
 
         if (wide) {
           gsap.set($('.division-copy'),{x:-size().w*.16,clipPath:'inset(0 100% 0 0)'});
           divisions.inert=true;
-          const timeline=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{id:'brand-convergence',trigger:$('#convergence'),pin:scene,start:'top top',end:()=>`+=${innerHeight*1.25}`,scrub:.65,anticipatePin:1,invalidateOnRefresh:true,
+          const timeline=transition=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{id:'brand-convergence',trigger:$('#convergence'),pin:scene,start:'top top',end:()=>`+=${innerHeight*1.25}`,scrub:.65,anticipatePin:1,invalidateOnRefresh:true,
             onUpdate:self => {
               const p=self.animation?.progress() ?? self.progress;
               scene.dataset.progress=p.toFixed(3);
               scene.dataset.phase=p>.96?'divisions':p>.12?'convergence':'hero';
               $('[data-counter]').textContent=p<.3?'01':p<.72?'02':'03';
               hero.inert=p>.28;divisions.inert=p<.80;
-            }
+            },
+            onRefresh:renderIsotype
           }});
           timeline.fromTo($$('.kinetic-line'),{xPercent:0,rotation:0},{xPercent:-108,rotation:-2.5,stagger:.035,duration:.26,ease:'power2.in'},0)
             .fromTo($('.hero-support'),{x:0,clipPath:'inset(0 0% 0 0)'},{x:-90,clipPath:'inset(0 100% 0 0)',duration:.22,ease:'power2.in'},.03)
             .fromTo($('.hero-dash'),{scaleX:1},{scaleX:0,duration:.16},.12);
-          timeline.fromTo(choreography,{progress:0},{progress:1,duration:1,ease:'none',onUpdate:renderPieces},0);
-          timeline.fromTo(photoGroups,{opacity:0},{opacity:1,duration:.015},.31)
-            .fromTo(wipes,{attr:{width:0}},{attr:{width:(i,element)=>Number(element.dataset.width)},stagger:.035,duration:.34},.32)
+          choreograph(timeline);
+          timeline.fromTo(photoGroups,{opacity:0},{opacity:1,duration:.015},.20)
+            .fromTo(wipes,{attr:{width:0}},{attr:{width:(i,element)=>Number(element.dataset.width)},stagger:.035,duration:.15},.22)
             .fromTo($('.division-copy'),{x:()=>-size().w*.16,clipPath:'inset(0 100% 0 0)'},{x:0,clipPath:'inset(0 0% 0 0)',duration:.4},.60);
           // Ticker callbacks report the rendered (scrubbed) state, not only wheel position.
           const sync=() => {
             const p=timeline.progress();
+            renderIsotype();
+            scene.dataset.isotypeState=p<.44?'A-B':p<=.57?'B':p<1?'B-C':'C';
             scene.dataset.progress=p.toFixed(3);
             scene.dataset.phase=p>.96?'divisions':p>.12?'convergence':'hero';
             $('[data-counter]').textContent=p<.3?'01':p<.72?'02':'03';
@@ -284,13 +288,14 @@
           timeline.eventCallback('onUpdate',sync);
           ScrollTrigger.addEventListener('refreshInit',prepare);
         } else {
-          const release=gsap.timeline({scrollTrigger:{id:'mobile-convergence',trigger:hero,start:'top top',end:'bottom 20%',scrub:true,invalidateOnRefresh:true}});
-          pieces.forEach((piece,i) => {
-            const state={progress:0};
-            release.fromTo(state,{progress:0},{progress:1,duration:1,onUpdate:()=>{const base=pose('hero',i);rigid(piece,{...base,x:base.x+[-22,20,3][i]*state.progress,y:base.y+[0,-10,-7][i]*state.progress,rotation:[-5,5,0][i]*state.progress});}},0);
-          });
+          const release=transition=gsap.timeline({scrollTrigger:{id:'mobile-convergence',trigger:hero,start:'top top',end:'bottom 20%',scrub:true,invalidateOnRefresh:true,onRefresh:renderIsotype}});
+          // Mobile has the same three poses, timed inside its unpinned art window.
+          choreograph(release);
+          release.to({},{duration:1},0)
+            .fromTo(photoGroups,{opacity:0},{opacity:1,duration:.015},.06)
+            .fromTo(wipes,{attr:{width:0}},{attr:{width:(i,element)=>Number(element.dataset.width)},duration:.09,stagger:.015},.08);
+          release.eventCallback('onUpdate',renderIsotype);
           ScrollTrigger.addEventListener('refreshInit',prepare);
-          release.to(photoGroups,{opacity:1,duration:.1},.25).fromTo(wipes,{attr:{width:0}},{attr:{width:(i,element)=>Number(element.dataset.width)},duration:.6,stagger:.04},.28);
         }
 
         // Later content uses one continuous image stage; text is never batch faded in.
@@ -304,7 +309,7 @@
           art.setAttribute('viewBox',originalViewBox);art.removeAttribute('style');
           // gsap.context reverts SVG transforms, clip windows and ScrollTriggers.
           ScrollTrigger.removeEventListener('refreshInit',prepare);
-          [...pieces,...arrivals].forEach(piece=>piece.removeAttribute('transform'));
+          stage.removeAttribute('transform');
         };
       }
       scene.dataset.entry='complete';scene.dataset.phase='static';

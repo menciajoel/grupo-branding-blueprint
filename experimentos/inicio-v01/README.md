@@ -20,9 +20,13 @@ Abrir `http://127.0.0.1:4173/experimentos/inicio-v01/`. La carpeta es autónoma:
 
 ## Movimiento
 
-En pantallas desde 1100 × 780: ensamblaje rígido de los tres polígonos oficiales y entrada tipográfica. El scroll nativo gobierna salida por máscaras, separación, convergencia central, revelado fotográfico y traslado del conjunto al lado de las divisiones. Cada transformación conserva la geometría: traslación, rotación y escala uniforme. Una sola escena fijada; sin interceptar rueda/táctil ni esperas obligatorias.
+Concepto de transición: **Tres fuerzas, un grupo**. La secuencia GSAP contiene tres estados explícitos: **A**, hero monumental a la derecha; **B**, isotipo fotográfico completo centrado con el tamaño de la convergencia original; **C**, isotipo fotográfico a la derecha junto a las divisiones. Un contenedor común del SVG mantiene unidas sus tres piezas. El giro A → B acumula 360° mediante una propiedad numérica de GSAP; B y C conservan 360°, visualmente equivalentes a la orientación oficial. El scroll inverso recorre 360° → 0° sin normalizar el ángulo. Se conservan exactamente A y C, el copy y las animaciones tipográficas.
 
-En móvil y tablet: composición vertical propia, isotipo recortado entre titular y texto, transformación breve sin fijación y presentación de divisiones en el flujo del documento. Preferencia de movimiento reducido y control manual: documento estático completo. El contenido existe en el HTML inicial, incluso sin JavaScript.
+En escritorio desde 1100 × 780: A → B ocupa el 0–44 % del scroll; B permanece reconocible entre el 44–57 %, sin bloquear el desplazamiento; B → C ocupa el 57–100 %, coordinado con la entrada de divisiones. Las fotografías ya están reveladas al alcanzar B. El recorrido inverso restaura C → B → A. El tamaño de B y C conserva las proporciones originales de cada estado.
+
+En móvil y tablet: los mismos tres estados se adaptan al encuadre sin fijar la pantalla. En móvil la convergencia sucede antes de que la ventana gráfica salga del viewport; la presentación final de las divisiones sigue en el flujo original. Preferencia de movimiento reducido y control manual: documento estático completo. El contenido existe en el HTML inicial, incluso sin JavaScript.
+
+Recuperación de la versión anterior: etiqueta publicada `inicio-antes-transicion-v03`, commit `a869328fe0aefe18da7a7268590d793cb1400980`. La etiqueta identifica exactamente el árbol publicado antes de este refinamiento.
 
 ## Verificación
 

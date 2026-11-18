@@ -849,3 +849,41 @@ body:not(.motion-ready) .resolve-copy {
     will-change:auto
   }
 }
+
+/* The hero alone adapts to measured copy, not device-height breakpoints. */
+.journey-stage[data-adaptive] {
+  --scene-height:var(--adaptive-height);
+}
+.journey-stage[data-adaptive] .hero-copy {
+  padding-top:var(--hero-top);
+  padding-bottom:var(--hero-bottom);
+}
+.journey-stage[data-adaptive] .hero-copy h1 {font-size:var(--hero-title-size)}
+.journey-stage[data-adaptive] .hero-description {font-size:var(--hero-description-size)}
+.journey-stage[data-adaptive] .hero-action .button {font-size:var(--hero-button-size)}
+.journey-stage[data-adaptive] .resolve-copy h2 {font-size:var(--resolve-title-size)}
+.journey-stage[data-adaptive] .resolve-lead {font-size:var(--resolve-lead-size)}
+.journey-stage[data-adaptive] .resolve-description {font-size:var(--resolve-description-size)}
+@media(max-width:700px) {
+  .motion-ready .journey-stage[data-adaptive] .resolve-copy {bottom:var(--resolve-bottom)}
+}
+@media(min-width:701px) and (max-width:1100px) {
+  .motion-ready .journey-stage[data-adaptive] .resolve-copy {padding-bottom:var(--resolve-bottom)}
+}
+.journey-stage[data-compact] .hero-description {margin-top:18px}
+.journey-stage[data-compact] .hero-action {margin-top:20px}
+.journey-stage[data-compact] .hero-action .button {min-height:52px;padding:14px 18px}
+.journey-stage[data-compact] .resolve-copy .section-label {margin-bottom:18px}
+.journey-stage[data-compact] .resolve-paragraphs {margin-top:20px;gap:16px}
+.journey-stage[data-motion="flow-animated"] {height:auto;min-height:0}
+.journey-stage[data-motion="flow-animated"] .hero-copy {
+  height:auto;min-height:var(--flow-hero-height);justify-content:center;
+}
+.journey-stage[data-motion="flow-animated"] .photo-window {
+  height:var(--flow-photo-height);min-height:0;bottom:auto;
+}
+.journey-stage[data-motion="flow-animated"] .photo-shade {height:var(--flow-hero-height)}
+.journey-stage[data-motion="flow-animated"] .resolve-copy {
+  position:relative;inset:auto;visibility:visible;background:transparent;
+  padding-top:calc(var(--header) + var(--flow-photo-height) + 24px);
+}

@@ -21,6 +21,75 @@
   let resizeFrame = 0;
   let resizeTimer = 0;
   let restoring = false;
+  let rebuildingScene = null;
+  let sceneLayoutKey = '';
+  let entryResume = 0;
+  let resizeIntent = false;
+  const clamp = value => Math.max(0,Math.min(1,value));
+  // svh stays stable while browser chrome expands/collapses on Android/iOS.
+  // It is measured, never inferred from a device's physical screen size.
+  const viewportMeasure = document.createElement('div');
+  viewportMeasure.setAttribute('aria-hidden','true');
+  viewportMeasure.style.cssText='position:fixed;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none;contain:strict';
+  body.append(viewportMeasure);
+  const stableHeight = () => viewportMeasure.offsetHeight || document.documentElement.clientHeight;
+  const layoutKey = () => `${innerWidth}x${stableHeight()}`;
+  viewportKey=layoutKey();
+  const adaptiveProperties=['--adaptive-height','--hero-title-size','--hero-description-size','--hero-button-size','--hero-top','--hero-bottom','--resolve-title-size','--resolve-lead-size','--resolve-description-size','--resolve-bottom','--flow-photo-height','--flow-hero-height'];
+  function clearAdaptive() {
+    delete stage.dataset.adaptive;delete stage.dataset.compact;delete stage.dataset.fit;delete stage.dataset.motion;
+    adaptiveProperties.forEach(property=>stage.style.removeProperty(property));
+  }
+  function measureAdaptive(mobile,portrait) {
+    clearAdaptive();
+    body.classList.add('motion-ready');
+    const height=stableHeight(),head=header.offsetHeight;
+    const title=hero.querySelector('h1'),description=hero.querySelector('.hero-description'),button=hero.querySelector('.button');
+    const resolveTitle=resolve.querySelector('h2'),lead=resolve.querySelector('.resolve-lead'),detail=resolve.querySelector('.resolve-description');
+    const size=element=>parseFloat(getComputedStyle(element).fontSize);
+    const base={title:size(title),description:size(description),button:size(button),resolve:size(resolveTitle),lead:size(lead),detail:size(detail)};
+    const heroStyle=getComputedStyle(hero);
+    const top=parseFloat(heroStyle.paddingTop),bottom=parseFloat(heroStyle.paddingBottom);
+    const resolveBottom=mobile?70:portrait?100:80;
+    stage.dataset.adaptive='true';
+    stage.style.setProperty('--adaptive-height',`${height}px`);
+    const set=(name,value)=>stage.style.setProperty(name,`${value}px`);
+    set('--hero-top',top);set('--hero-bottom',bottom);set('--resolve-bottom',resolveBottom);
+    const typography=factor=>{
+      set('--hero-title-size',Math.max(30,base.title*factor));
+      set('--hero-description-size',Math.max(16,base.description*factor));
+      set('--hero-button-size',Math.max(16,base.button*factor));
+      set('--resolve-title-size',Math.max(32,base.resolve*factor));
+      set('--resolve-lead-size',Math.max(21,base.lead*factor));
+      set('--resolve-description-size',Math.max(16,base.detail*factor));
+    };
+    typography(1);
+    const occupied=()=>[...hero.children].reduce((total,element)=>{
+      const css=getComputedStyle(element);return total+element.offsetHeight+parseFloat(css.marginTop)+parseFloat(css.marginBottom);
+    },0);
+    const heroFits=()=>occupied()+parseFloat(getComputedStyle(hero).paddingTop)+parseFloat(getComputedStyle(hero).paddingBottom)<=height+1;
+    const resolveHeight=()=>[...resolve.children].reduce((total,element)=>{
+      const css=getComputedStyle(element);return total+element.offsetHeight+parseFloat(css.marginTop)+parseFloat(css.marginBottom);
+    },0);
+    const resolveFits=()=>resolveHeight()+head+resolveBottom+Math.min(100,height*.16)+20<=height;
+    if(!heroFits()||!resolveFits()) {
+      stage.dataset.compact='true';
+      set('--hero-top',head+20);set('--hero-bottom',mobile?80:88);set('--resolve-bottom',mobile?70:80);
+      for(let factor=1;factor>=.639;factor-=.04){typography(factor);if(heroFits()&&resolveFits())break;}
+    }
+    const fits=heroFits()&&resolveFits();
+    stage.dataset.fit=fits?'pinned':'flow';
+    const window=document.querySelector('.photo-window');
+    // Layout coordinates deliberately exclude the previous tween's transforms.
+    const photoTop=window.offsetTop,photoHeight=window.offsetHeight;
+    const copyTop=resolve.offsetTop+resolve.firstElementChild.offsetTop;
+    const baseBottom=mobile?37:portrait?43:12;
+    const bottomInset=Math.max(baseBottom,100-(copyTop-20-photoTop)/Math.max(1,photoHeight)*100);
+    const mask=mobile?`inset(0% 8% ${Math.min(88,bottomInset)}% 8%)`:portrait?`inset(12% 8% ${Math.min(84,bottomInset)}% 8%)`:'inset(20% 5% 12% 44%)';
+    set('--flow-photo-height',Math.max(100,Math.min(210,height*.32)));
+    set('--flow-hero-height',Math.max(height,occupied()+head+108));
+    return {height,fits,mask};
+  }
 
   header.dataset.enhanced = '';
   menuToggle.hidden = false;
@@ -57,31 +126,37 @@
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
   function rememberReading() {
-    if (resizeMemory!==null||`${innerWidth}x${innerHeight}`!==viewportKey||reduce.matches) return;
-    if (journeyTrigger&&activeTimeline) {
-      readingSnapshot={progress:activeTimeline.progress(),inScene:scrollY>=journeyTrigger.start-2&&scrollY<=journeyTrigger.end+2};
-    } else {
-      const sectionY=scrollY+resolve.getBoundingClientRect().top;
-      readingSnapshot={progress:scrollY+innerHeight*.45>=sectionY?1:0,inScene:scrollY>=0&&stage.getBoundingClientRect().bottom>header.offsetHeight};
-    }
+    if (resizeMemory!==null||layoutKey()!==sceneLayoutKey||reduce.matches||restoring) return;
+    const top=scrollY+stage.getBoundingClientRect().top;
+    const end=journeyTrigger?.end ?? scrollY+resolve.getBoundingClientRect().top;
+    const start=journeyTrigger?.start ?? top;
+    const inScene=scrollY>=start-2&&scrollY<=end+2;
+    const anchor=(!inScene&&scrollY>end+2?document.elementFromPoint(innerWidth*.35,Math.min(innerHeight-1,header.offsetHeight+24))?.closest('.extended-page section'):null)??document.querySelector('.extended-page');
+    readingSnapshot={progress:activeTimeline?activeTimeline.progress():clamp((scrollY-start)/Math.max(1,end-start)),inScene,
+      after:scrollY>end+2,anchor,anchorTop:anchor.getBoundingClientRect().top};
   }
-  function applyResize() {
+  function applyResize(forceMeasure=false) {
     if (resizeMemory===null||restoring||reduce.matches) return;
     restoring=true;
     try {
+      if(forceMeasure||layoutKey()!==sceneLayoutKey)rebuildingScene?.();
       ScrollTrigger.refresh();
-      if (journeyTrigger&&activeTimeline) {
-        window.scrollTo({top:journeyTrigger.start+(journeyTrigger.end-journeyTrigger.start)*resizeMemory,behavior:'instant'});
-        ScrollTrigger.update();
-        journeyTrigger.getTween()?.progress(1);
-        activeTimeline.progress(resizeMemory);
-        renderScene?.();
-      } else {
-        const target=resizeMemory<.26?0:scrollY+resolve.getBoundingClientRect().top-header.offsetHeight-24;
-        window.scrollTo({top:Math.max(0,target),behavior:'instant'});
-        ScrollTrigger.update();
+      if(!resizeIntent) {
+        if(resizeMemory.inScene) {
+          const start=journeyTrigger?.start??scrollY+stage.getBoundingClientRect().top;
+          const end=journeyTrigger?.end??scrollY+resolve.getBoundingClientRect().top;
+          window.scrollTo({top:start+(end-start)*resizeMemory.progress,behavior:'instant'});
+        } else if(resizeMemory.after) {
+          const anchor=resizeMemory.anchor?.isConnected?resizeMemory.anchor:document.querySelector('.extended-page');
+          window.scrollTo({top:scrollY+anchor.getBoundingClientRect().top-resizeMemory.anchorTop,behavior:'instant'});
+        }
       }
-      stage.dataset.resizeRestored=resizeMemory.toFixed(4);
+      ScrollTrigger.update();
+      journeyTrigger?.getTween()?.progress(1);
+      if(resizeMemory.inScene&&activeTimeline&&!resizeIntent)activeTimeline.progress(resizeMemory.progress);
+      renderScene?.();
+      stage.dataset.resizeRestored=(activeTimeline?.progress()??resizeMemory.progress).toFixed(4);
+      sceneLayoutKey=layoutKey();
     } finally {restoring=false;}
   }
   function queueResize() {
@@ -89,29 +164,26 @@
     resizeFrame=requestAnimationFrame(()=>{resizeFrame=0;applyResize();});
   }
   function rememberResize() {
-    const nextKey=`${innerWidth}x${innerHeight}`;
-    if (nextKey===viewportKey) return;
+    const nextKey=layoutKey();
+    if(nextKey===viewportKey)return;
+    entryResume=entry?.time()??entryResume;
     viewportKey=nextKey;
-    // Preserve one reading point across the entire resize burst. Intermediate
-    // refreshes and media-query rebuilds must never become the new anchor.
-    if (resizeMemory===null) {
-      if (!readingSnapshot?.inScene) return;
-      resizeMemory=readingSnapshot.progress;
+    if(resizeMemory===null) {
+      resizeMemory=readingSnapshot??{progress:activeTimeline?.progress()??0,inScene:scrollY<stage.offsetHeight,after:false,anchorTop:0};
+      resizeIntent=false;
     }
-    stage.dataset.resizing='true';
-    clearTimeout(resizeTimer);
+    stage.dataset.resizing='true';clearTimeout(resizeTimer);
     resizeTimer=setTimeout(()=>{
-      if (resizeFrame) cancelAnimationFrame(resizeFrame);
-      resizeFrame=0;applyResize();resizeMemory=null;
+      if(resizeFrame)cancelAnimationFrame(resizeFrame);
+      resizeFrame=0;applyResize();resizeMemory=null;resizeIntent=false;
       delete stage.dataset.resizing;rememberReading();
-    },260);
+    },180);
     queueResize();
   }
   function cancelResize() {
-    if (resizeMemory===null) return;
-    clearTimeout(resizeTimer);cancelAnimationFrame(resizeFrame);
-    resizeFrame=0;resizeMemory=null;delete stage.dataset.resizing;
-    rememberReading();
+    // A new gesture takes priority over an older resize snapshot. Layout still
+    // updates, but no delayed scrollTo can pull the visitor back afterwards.
+    if(resizeMemory!==null)resizeIntent=true;
   }
   addEventListener('resize',rememberResize,{capture:true,passive:true});
   addEventListener('scroll',rememberReading,{passive:true});
@@ -119,12 +191,17 @@
   gsap.addEventListener('matchMediaInit',rememberResize);
   ScrollTrigger.addEventListener('refresh',queueResize);
   const mm = gsap.matchMedia();
-  mm.add({reduce:'(prefers-reduced-motion: reduce)',desktop:'(min-width:1101px)',mobile:'(max-width:700px)',short:'(max-height:739px)',portrait:'(orientation:portrait)',mobileFits:'(min-height:840px)',tabletFits:'(min-height:900px)',fine:'(hover:hover) and (pointer:fine)'}, context => {
-    const {reduce:reduced,desktop,mobile,short,fine,portrait,mobileFits,tabletFits} = context.conditions;
-    const pinned = !reduced && !short && (!mobile||mobileFits) && (desktop||mobile||!portrait||tabletFits);
+  mm.add({reduce:'(prefers-reduced-motion: reduce)',desktop:'(min-width:1101px)',mobile:'(max-width:700px)',short:'(min-width:1101px) and (max-height:739px)',portrait:'(orientation:portrait)',fine:'(hover:hover) and (pointer:fine)'}, context => {
+    let sceneContext;
+    const buildScene=()=>{
+    const {reduce:reduced,desktop,mobile,short,fine,portrait} = context.conditions;
+    const adaptive=!desktop&&!reduced;
+    const layout=adaptive?measureAdaptive(mobile,portrait):null;
+    const pinned=!reduced&&(adaptive?layout.fits:!short);
     let pointerMove, pointerLeave;
     let finishedEntry = false;
-    stage.dataset.motion = reduced ? 'reduced' : pinned ? 'pinned' : 'flow';
+    stage.dataset.motion = reduced ? 'reduced' : pinned ? 'pinned' : adaptive ? 'flow-animated' : 'flow';
+    if(!pinned)body.classList.remove('motion-ready');
     stage.dataset.state = 'hero';
     const cleanVisibility = () => {
       hero.inert = false; resolve.inert = false;
@@ -140,17 +217,18 @@
       .fromTo('.hero-description',{y:18,opacity:0},{y:0,opacity:1,duration:.6},.7)
       .fromTo('.hero-action',{y:14,opacity:0},{y:0,opacity:1,duration:.5},.94);
     if (hasEntered) entry.progress(1);
+    else if(entryResume)entry.time(entryResume);
     const finishEntry = () => {
       if (!finishedEntry) { entry.progress(1); finishedEntry=true;hasEntered=true; }
     };
-    if (pinned) {
-      body.classList.add('motion-ready');
+    if (pinned || adaptive) {
+      if(pinned)body.classList.add('motion-ready');
       // Each format gets its own mask trajectory; the photograph is never replaced.
       const portraitTablet = !mobile && !desktop && portrait;
-      const finalMask = mobile ? 'inset(0% 8% 37% 8%)' : portraitTablet ? 'inset(12% 8% 43% 8%)' : desktop ? 'inset(18% 7% 12% 30%)' : 'inset(20% 5% 12% 44%)';
+      const finalMask = adaptive&&pinned ? layout.mask : mobile ? 'inset(0% 8% 37% 8%)' : portraitTablet ? 'inset(12% 8% 43% 8%)' : desktop ? 'inset(18% 7% 12% 30%)' : 'inset(20% 5% 12% 44%)';
       const timeline = gsap.timeline({defaults:{ease:'none'},scrollTrigger:{
-        id:'division-hero-editorial',trigger:'.division-journey',start:'top top',end:() => `+=${Math.round(innerHeight*(mobile?.76:.9))}`,
-        pin:stage,pinSpacing:true,scrub:.45,invalidateOnRefresh:true,anticipatePin:1,
+        id:'division-hero-editorial',trigger:'.division-journey',start:'top top',end:() => `+=${Math.round(adaptive?(pinned?layout.height*(mobile?.76:.9):hero.offsetHeight):innerHeight*.9)}`,
+        pin:pinned?stage:false,pinSpacing:true,scrub:.45,invalidateOnRefresh:true,anticipatePin:1,
         onUpdate:self => {
           if (self.progress > .001) finishEntry();
         },
@@ -160,9 +238,9 @@
         }
       }});
       // Easing is encoded in these finite scrub intervals, never a competing tween.
-      timeline.to(hero,{y:mobile?-38:-64,autoAlpha:0,duration:.21,ease:'power2.in'},.05)
-        .fromTo('.photo-depth',{y:0,xPercent:0,yPercent:mobile?-22:portraitTablet?-18:0},{y:0,xPercent:!mobile&&!desktop&&!portrait?26:0,yPercent:()=>mobile?-Math.min(22,Math.max(0,(innerWidth-390)/210*22)):0,duration:.77,ease:'power2.inOut'},.12)
-        .to('.photo-window',{clipPath:finalMask,duration:.77,ease:'power2.inOut'},.12)
+      timeline.to(hero,{y:!pinned?-12:mobile?-38:-64,autoAlpha:pinned?0:1,duration:.21,ease:'power2.in'},.05)
+        .fromTo('.photo-depth',{y:0,xPercent:0,yPercent:mobile?-22:portraitTablet?-18:0},{y:0,xPercent:!mobile&&!desktop&&!portrait?26:0,yPercent:()=>adaptive&&stage.hasAttribute('data-compact')?(mobile?-22:portraitTablet?-18:0):mobile?-Math.min(22,Math.max(0,(innerWidth-390)/210*22)):0,duration:.77,ease:'power2.inOut'},.12)
+        .to('.photo-window',{y:adaptive&&!pinned?()=>resolve.offsetTop:0,clipPath:finalMask,duration:.77,ease:'power2.inOut'},.12)
         .to('.photo-shade',{opacity:mobile?0:portraitTablet?.75:.8,duration:.65,ease:'sine.inOut'},.18)
         .fromTo(resolve,{autoAlpha:0},{autoAlpha:1,duration:.03},.24)
         .fromTo('.resolve-copy .section-label',{y:12,opacity:0},{y:0,opacity:1,duration:.22,ease:'power2.out'},.23)
@@ -179,8 +257,8 @@
         const p=timeline.progress();
         stage.dataset.progress=p.toFixed(4);
         stage.dataset.state=p<.25?'hero':p<.7?'transition':'resolve';
-        hero.inert=p>=.26; hero.setAttribute('aria-hidden',String(p>=.26));
-        resolve.inert=p<.26; resolve.setAttribute('aria-hidden',String(p<.26));
+        hero.inert=pinned&&p>=.26; hero.setAttribute('aria-hidden',String(pinned&&p>=.26));
+        resolve.inert=pinned&&p<.26; resolve.setAttribute('aria-hidden',String(pinned&&p<.26));
         if (p>.7&&pendingFocus) {pendingFocus.focus({preventScroll:true});pendingFocus=null;}
         document.querySelector('.scene-current').textContent=p<.5?'01':'02';
         const onward=document.querySelector('.continue-link');
@@ -217,8 +295,30 @@
       onward.querySelector('img').src='assets/icons/arrow-down.svg';
       document.querySelector('.scene-current').textContent='01';
       delete stage.dataset.progress;delete stage.dataset.scrollStart;delete stage.dataset.scrollEnd;
+      clearAdaptive();
     };
+    };
+    const rebuild=()=>{
+      entryResume=entry?.time()??entryResume;
+      sceneContext?.revert();
+      sceneContext=gsap.context(buildScene);
+      sceneLayoutKey=layoutKey();
+      if(resizeMemory?.inScene&&activeTimeline&&!resizeIntent) {
+        activeTimeline.progress(resizeMemory.progress);
+        renderScene?.();
+      }
+    };
+    rebuild();
+    rebuildingScene=()=>{if(!context.conditions.desktop)rebuild();};
+    return ()=>{rebuildingScene=null;sceneContext.revert();};
   });
   // Images and font metrics can finish after defer. Refresh once their sizes settle.
-  Promise.all([document.fonts.ready,photo.decode().catch(() => {})]).then(() => ScrollTrigger.refresh());
+  Promise.all([document.fonts.ready,photo.decode().catch(() => {})]).then(() => {
+    if(reduce.matches){ScrollTrigger.refresh();return;}
+    rememberReading();
+    const ownsSnapshot=resizeMemory===null;
+    if(ownsSnapshot)resizeMemory=readingSnapshot??{progress:activeTimeline?.progress()??0,inScene:true,after:false,anchorTop:0};
+    applyResize(true);
+    if(ownsSnapshot){resizeMemory=null;rememberReading();}
+  });
 })();

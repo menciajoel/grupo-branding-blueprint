@@ -213,7 +213,7 @@
     const lines = gsap.utils.toArray('.headline-line>span');
     entry = gsap.timeline({defaults:{ease:'power3.out'},onComplete:() => {finishedEntry=true;hasEntered=true;stage.dataset.entry='complete';}})
       .fromTo(photo,{scale:1.075},{scale:1,duration:1.5,ease:'power2.out'},0)
-      .fromTo(lines,{yPercent:110},{yPercent:0,duration:.85,stagger:.09},.08)
+      .fromTo(lines,{y:0,yPercent:110},{y:0,yPercent:0,duration:.85,stagger:.09},.08)
       .fromTo('.hero-description',{y:18,opacity:0},{y:0,opacity:1,duration:.6},.7)
       .fromTo('.hero-action',{y:14,opacity:0},{y:0,opacity:1,duration:.5},.94);
     if (hasEntered) entry.progress(1);

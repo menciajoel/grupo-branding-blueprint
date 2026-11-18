@@ -64,6 +64,12 @@ Carpeta: `output/correccion-hero-responsive-2026-11-18/`.
 
 ## Límites reales
 
+### Comprobación adicional durante la publicación
+
+La inspección pública detectó un desplazamiento residual en las líneas del titular al cruzar de móvil a escritorio sin recargar. La carga directa de escritorio no lo presentaba. Se declara `y:0` en ambos extremos del tween de entrada, junto con `yPercent`, para evitar que al reconstruir el contexto se conserve una traslación en píxeles. No cambia el recorrido ni el timing aprobados.
+
+Se reprodujo el defecto y se comprobó su corrección en la cadena 1440×900→375×667→768×899→768×900→900×768→1440×900: progreso conservado en 0,4242, una sola envoltura de pin, cero desbordamientos y las cuatro líneas con traslación final cero. Al volver al inicio, el titular permanece completo. Evidencias adicionales en `output/publicacion-hero-2026-11-18/`.
+
 No se dispone de acceso directo a Motorola Edge 50 Pro/Edge 60 Fusion, iPad Mini 5/iPad 10 ni Safari iOS físico. La emulación y Safari de macOS no reproducen íntegramente las barras, preferencias ni rendimiento de esos dispositivos. Su revisión física queda pendiente del director.
 
 Safari emitió una advertencia no bloqueante sobre la precarga de Inter Tight no utilizada durante los primeros segundos; no se observó un error JavaScript asociado. No se alteró la fuente aprobada ni su configuración durante esta corrección. No se midieron FPS en dispositivos físicos.

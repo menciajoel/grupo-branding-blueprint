@@ -1,0 +1,18 @@
+/* Interface palette approved by the project director, 17 Nov 2026.
+   Supersedes the earlier pilot selection. The official SVGs stay intact. */
+:root {
+  --mb-pigment-blue: #2e70b4;
+  --mb-pigment-orange: #f08633;
+  --mb-color-action: var(--mb-pigment-blue);
+  --mb-color-action-hover: var(--mb-pigment-blue);
+  --mb-color-action-pressed: var(--mb-pigment-blue);
+  --mb-color-on-action: #ffffff;
+  --mb-color-focus: var(--mb-pigment-orange);
+  --mb-color-navigation-active: var(--mb-pigment-blue);
+  --mb-color-navigation-hover: #ffffff;
+  --mb-color-editorial-accent: var(--mb-pigment-orange);
+  --mb-color-transition-rule: var(--mb-pigment-orange);
+  --mb-color-canvas: #080f12;
+  --mb-color-text: #f5f6f5;
+  --mb-color-text-muted: #c6cbcd;
+}

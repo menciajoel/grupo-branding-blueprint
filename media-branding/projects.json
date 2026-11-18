@@ -1,0 +1,42 @@
+{
+  "section": "COPY-P04-S11",
+  "autoplay": false,
+  "items": [
+    {
+      "mediaId": "proyecto-issima",
+      "label": "Banderines Issima",
+      "labelSource": "COPY-P04-S11-B02",
+      "evidence": "documental"
+    },
+    {
+      "mediaId": "proyectos-secuencial",
+      "label": "Secuencial",
+      "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
+      "evidence": "conceptual"
+    },
+    {
+      "mediaId": "proyectos-paradero",
+      "label": "Paradero",
+      "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
+      "evidence": "conceptual"
+    },
+    {
+      "mediaId": "proyectos-unipolar",
+      "label": "Unipolar",
+      "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
+      "evidence": "conceptual"
+    },
+    {
+      "mediaId": "proyectos-valla",
+      "label": "Valla",
+      "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
+      "evidence": "conceptual"
+    },
+    {
+      "mediaId": "proyectos-puente",
+      "label": "Puente",
+      "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
+      "evidence": "conceptual"
+    }
+  ]
+}

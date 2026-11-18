@@ -74,7 +74,7 @@ def brand_svg(mobile=False):
         defs.append(f'<clipPath id="facet-{suffix}-{i}" clipPathUnits="userSpaceOnUse"><polygon points="{g["points"]}"/></clipPath>')
         defs.append(f'<clipPath id="reveal-{suffix}-{i}" clipPathUnits="userSpaceOnUse"><rect class="photo-wipe" data-width="{g["width"]}" x="{g["x"]}" y="{g["y"]}" width="{g["width"]}" height="{g["height"]}"/></clipPath>')
         pieces.append(f'''<g class="piece-stage" data-piece="{i}"><g class="piece-arrival"><polygon class="official-piece" data-native-fill="{g['fill']}" fill="{g['fill']}" points="{g['points']}"/>
-          <g class="facet-photo" data-facet="{i}" clip-path="url(#facet-{suffix}-{i})"><g clip-path="url(#reveal-{suffix}-{i})"><image href="assets/media/{key}-{'800' if i==0 else '720'}.webp" x="{g['x']}" y="{g['y']}" width="{g['width']}" height="{g['height']}" preserveAspectRatio="xMidYMid slice"/></g></g></g></g>''')
+          <g class="facet-photo" data-facet="{i}" clip-path="url(#facet-{suffix}-{i})"><g class="facet-media" clip-path="url(#reveal-{suffix}-{i})"><image href="assets/media/{key}-{'800' if i==0 else '720'}.webp" x="{g['x']}" y="{g['y']}" width="{g['width']}" height="{g['height']}" preserveAspectRatio="xMidYMid slice"/></g></g></g></g>''')
     return f'<svg class="{"mobile-division-art" if mobile else "brand-art"}" viewBox="0 0 221.4 211.53" aria-hidden="true" focusable="false"><defs>{"".join(defs)}</defs><g class="isotype-stage">{"".join(pieces)}</g></svg>'
 
 
@@ -85,10 +85,12 @@ if ' '.join(lines) == headline:
 else:
     headline_html = f'<span class="headline-mask"><span class="kinetic-line"><span class="word-enter">{esc(headline)}</span></span></span>'
 
-division_tabs, division_panels = [], []
+division_switches, division_panels, division_choices = [], [], []
 for i,(brand,key,start) in enumerate(zip(BRANDS,MEDIA,(3,6,9))):
-    division_tabs.append(f'<h3><a class="division-tab" id="tab-{key}" href="#panel-{key}" data-tab="{i}"><span class="tab-rule" aria-hidden="true"></span><span data-copy="{block_id(2,start)}">{esc(text(2,start))}</span>{icon()}</a></h3>')
-    division_panels.append(f'<article id="panel-{key}" class="division-panel" data-panel="{i}" aria-labelledby="tab-{key}"><img class="division-logo" src="assets/brand/{brand}/horizontal-blanco.svg" width="150" height="46" alt="" loading="lazy">{tag("p",2,start+1)}{action(2,start+2)}</article>')
+    name,category=text(2,start).split(' · ',1)
+    division_choices.append(f'<button class="division-choice" type="button" data-division-choice="{i}" aria-label="{esc(text(2,start))}" aria-controls="panel-{key}" aria-pressed="false"><span class="choice-category">{esc(category)}</span><span class="choice-name">{esc(name)}</span><span class="choice-accent" aria-hidden="true"></span></button>')
+    division_switches.append(f'<a class="division-switch" href="#panel-{key}" data-company-switch="{i}" aria-controls="panel-{key}">{esc(name)}{icon(size=16)}</a>')
+    division_panels.append(f'<article id="panel-{key}" class="division-panel" data-panel="{i}" aria-labelledby="company-{key}" tabindex="-1"><h3 class="sr-only" id="company-{key}" data-copy="{block_id(2,start)}">{esc(text(2,start))}</h3><div class="division-logo-window"><img class="division-logo" src="assets/brand/{brand}/horizontal-blanco.svg" width="150" height="46" alt="" loading="lazy"></div><div class="division-panel-body">{tag("p",2,start+1)}{action(2,start+2,"button button-primary")}</div></article>')
 
 solutions = []
 for i,start in enumerate((3,5,7,9)):
@@ -116,11 +118,13 @@ credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener
 
 values = {
  'MOTION_HASH':hashlib.sha256((ROOT/'motion.js').read_bytes()).hexdigest()[:12],
+ 'STYLE_HASH':hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12],
  'META':esc(text(1,2)), 'HERO_TITLE':headline_html,'HERO_BODY':tag('p',1,2,'hero-lead'),
  'HERO_ACTIONS':action(1,3,'button button-primary')+action(1,4,'button button-outline'),
  'BRAND_ART':brand_svg(), 'MOBILE_DIVISION_ART':brand_svg(True),
  'DIVISION_TITLE':tag('h2',2,1),'DIVISION_BODY':tag('p',2,2,'division-lead'),
- 'DIVISION_TABS':''.join(division_tabs),'DIVISION_PANELS':''.join(division_panels),
+ 'DIVISION_CHOICES':''.join(division_choices),
+ 'DIVISION_SWITCHES':''.join(division_switches),'DIVISION_PANELS':''.join(division_panels),
  'SOLUTIONS_TITLE':tag('h2',3,1),'SOLUTIONS_BODY':tag('p',3,2),
  'SOLUTIONS_ROWS':''.join(solutions),'SOLUTIONS_PHOTOS':solution_photos,
  'PROJECTS_TITLE':tag('h2',4,1),'PROJECTS_BODY':tag('p',4,2),'PROJECTS_ACTION':action(4,3,'text-link'), 'PROJECT_ROWS':''.join(project_rows),

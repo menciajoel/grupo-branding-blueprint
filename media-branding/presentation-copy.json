@@ -1,0 +1,53 @@
+{
+  "status": "Propuesta autorizada para presentación, sin modificar COPY-03",
+  "source": "Instrucción del director «Completar prototipo para presentación», 17-11-2026",
+  "section": "COPY-P04-S13",
+  "retainedSourceIds": [
+    "COPY-P04-S13-B01",
+    "COPY-P04-S13-B03"
+  ],
+  "blocks": [
+    {
+      "id": "PRES-MB-PREDIOS-01",
+      "role": "headline",
+      "text": "Tu propiedad puede tener más potencial del que imaginas.",
+      "replaces": [
+        "COPY-P04-S13-B04"
+      ]
+    },
+    {
+      "id": "PRES-MB-PREDIOS-02",
+      "role": "paragraph",
+      "text": "¿Tienes un terreno o edificio con buena visibilidad? Cuéntanos dónde está y exploremos juntos su potencial para publicidad exterior.",
+      "replaces": [
+        "COPY-P04-S13-B02"
+      ]
+    },
+    {
+      "id": "PRES-MB-PREDIOS-03",
+      "role": "cta",
+      "text": "Proponer mi espacio",
+      "target": "/contacto/#predios-privados",
+      "sourceDependency": [
+        "ARQ-C02"
+      ]
+    },
+    {
+      "id": "PRES-MB-PREDIOS-04",
+      "role": "demonstrationEmail",
+      "text": "predios@example.com",
+      "replaces": [
+        "COPY-P04-S13-B05"
+      ],
+      "operational": false
+    }
+  ],
+  "withheldSourceIds": [
+    "COPY-P04-S13-B02",
+    "COPY-P04-S13-B04",
+    "COPY-P04-S13-B05",
+    "COPY-P04-S13-B06"
+  ],
+  "phone": null,
+  "notes": "Los 26 bloques originales siguen íntegros en content.json. La sustitución visible es una capa separada; no se elimina información del registro aprobado. No se utiliza el correo de demostración en mailto, formularios o envíos."
+}

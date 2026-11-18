@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080f12">
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/media-branding/vertical-color.svg">
+  <title>Media Branding | Publicidad exterior en Honduras</title>
+  <meta name="description" content="Trabajamos medios y publicidad exterior para dar presencia a tu marca en espacios donde las personas circulan y toman decisiones.">
+  <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="tokens.css?v={{TOKENS.CSS}}">
+  <link rel="stylesheet" href="styles.css?v={{STYLES.CSS}}">
+  <link rel="stylesheet" href="chapters.css?v={{CHAPTERS.CSS}}">
+  <link rel="stylesheet" href="projects.css?v={{PROJECTS.CSS}}">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="motion.js?v={{MOTION.JS}}" defer></script>
+  <script src="chapters.js?v={{CHAPTERS.JS}}" defer></script>
+  <script src="projects.js?v={{PROJECTS.JS}}" defer></script>
+</head>
+<body class="division-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="division-header">
+    <a class="brand-link" href="#inicio" aria-label="Media Branding · Inicio"><img src="{{BRAND}}" width="404" height="120" alt="Media Branding"></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="division-navigation" aria-expanded="false" hidden><span>Menú</span><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <nav id="division-navigation" aria-label="Media Branding">{{NAVIGATION}}</nav>
+  </header>
+  <main id="contenido">
+    <div class="division-journey" id="inicio">
+      <div class="journey-stage" data-state="hero">
+        <div class="photo-window">
+          <div class="photo-depth">
+            <img class="journey-photo" src="assets/media/unipolar-vu018-1200.webp" srcset="assets/media/unipolar-vu018-720.webp 720w, assets/media/unipolar-vu018-1200.webp 1200w, assets/media/unipolar-vu018-1800.webp 1800w, assets/media/unipolar-vu018-2400.webp 2400w" sizes="(max-width:700px) 100vw, (max-width:1100px) 82vw, 74vw" width="4080" height="5440" fetchpriority="high" decoding="async" alt="{{HERO_ALT}}">
+          </div>
+        </div>
+        <div class="photo-shade" aria-hidden="true"></div>
+        <section class="hero-copy" aria-labelledby="hero-title" data-section="COPY-P04-S01">
+          {{HERO_HEADING}}
+          {{HERO_PARAGRAPH}}
+          <div class="hero-action">{{HERO_CTA}}</div>
+        </section>
+        <section class="resolve-copy" id="que-resolvemos" aria-labelledby="resolve-title" data-section="COPY-P04-S02" tabindex="-1">
+          <p class="section-label">01 / Qué resolvemos</p>
+          <div class="resolve-title-mask">{{RESOLVE_TITLE}}</div>
+          <div class="resolve-paragraphs">{{RESOLVE_LEAD}}{{RESOLVE_PARAGRAPH}}</div>
+        </section>
+        <a class="continue-link" href="#que-resolvemos"><span>Qué resolvemos</span><img src="assets/icons/arrow-down.svg" width="20" height="20" alt=""></a>
+        <span class="scene-index" aria-hidden="true"><span class="scene-current">01</span><span class="index-rule"></span>02</span>
+      </div>
+    </div>
+    <div class="extended-page">{{PAGE_SECTIONS}}</div>
+  </main>
+  {{PAGE_FOOTER}}
+</body>
+</html>

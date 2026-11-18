@@ -1,0 +1,166 @@
+{
+  "id": "COPY-P08",
+  "architectureId": "ARQ-P08",
+  "name": "Contacto",
+  "sourceHeading": "8. CONTACTO",
+  "route": "/contacto/",
+  "status": "READY_FOR_REVIEW",
+  "provisional": false,
+  "formDestinationEmail": "gramos@mediabranding.net",
+  "sections": [
+    {
+      "id": "COPY-P08-S01",
+      "name": "Hero",
+      "sourceName": "Hero",
+      "type": "hero",
+      "blocks": [
+        {
+          "id": "COPY-P08-S01-B01",
+          "type": "h1",
+          "text": "Cuéntanos qué necesita tu marca"
+        },
+        {
+          "id": "COPY-P08-S01-B02",
+          "type": "paragraph",
+          "text": "Cuéntanos qué quieres lograr. Te conectaremos con la especialidad adecuada o coordinaremos varias si tu proyecto lo requiere."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P08-S02",
+      "name": "Formulario",
+      "sourceName": "Formulario",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P08-S02-B01",
+          "type": "h2",
+          "text": "¿Qué necesitas?"
+        },
+        {
+          "id": "COPY-P08-S02-B02",
+          "type": "option",
+          "text": "Publicidad exterior y medios"
+        },
+        {
+          "id": "COPY-P08-S02-B03",
+          "type": "option",
+          "text": "Activaciones, BTL o eventos"
+        },
+        {
+          "id": "COPY-P08-S02-B04",
+          "type": "option",
+          "text": "Producción física e impresión"
+        },
+        {
+          "id": "COPY-P08-S02-B05",
+          "type": "option",
+          "text": "Una solución combinada"
+        },
+        {
+          "id": "COPY-P08-S02-B06",
+          "type": "option",
+          "text": "Aún no estoy seguro"
+        },
+        {
+          "id": "COPY-P08-S02-B07",
+          "type": "field",
+          "text": "Nombre"
+        },
+        {
+          "id": "COPY-P08-S02-B08",
+          "type": "field",
+          "text": "Empresa"
+        },
+        {
+          "id": "COPY-P08-S02-B09",
+          "type": "field",
+          "text": "Correo electrónico"
+        },
+        {
+          "id": "COPY-P08-S02-B10",
+          "type": "field",
+          "text": "Teléfono"
+        },
+        {
+          "id": "COPY-P08-S02-B11",
+          "type": "field",
+          "text": "Cuéntanos sobre tu proyecto"
+        },
+        {
+          "id": "COPY-P08-S02-B12",
+          "type": "paragraph",
+          "text": "¿Qué quieres lograr? Puedes contarnos sobre tu campaña, necesidad, fechas o cualquier información que nos ayude a entender el proyecto."
+        },
+        {
+          "id": "COPY-P08-S02-B13",
+          "type": "cta",
+          "text": "[Enviar consulta]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P08-S03",
+      "name": "Cierre",
+      "sourceName": "Cierre",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P08-S03-B01",
+          "type": "h2",
+          "text": "Empecemos por entender tu necesidad"
+        },
+        {
+          "id": "COPY-P08-S03-B02",
+          "type": "paragraph",
+          "text": "Si prefieres escribirnos directamente, estas son nuestras vías de contacto."
+        },
+        {
+          "id": "COPY-P08-S03-B03",
+          "type": "h3",
+          "text": "Contacto directo"
+        },
+        {
+          "id": "COPY-P08-S03-B04",
+          "type": "paragraph",
+          "text": "Media Branding: rromero@mediabranding.net / 3368-2657 · ventashn@mediabranding.net / 3350-1306."
+        },
+        {
+          "id": "COPY-P08-S03-B05",
+          "type": "paragraph",
+          "text": "Linkbranding: ventashn@linkbranding.com / 3180-9892 · norarivera@linkbranding.com / 3177-0084."
+        },
+        {
+          "id": "COPY-P08-S03-B06",
+          "type": "paragraph",
+          "text": "Contacto adicional: ventas3@gbrandingca.com / 8735-6357."
+        },
+        {
+          "id": "COPY-P08-S03-B07",
+          "type": "h3",
+          "text": "Oficinas"
+        },
+        {
+          "id": "COPY-P08-S03-B08",
+          "type": "paragraph",
+          "text": "Tegucigalpa: Condominios Metrópolis, bulevar Suyapa. San Pedro Sula: Plaza Bulevar, bulevar Micheletti."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    }
+  ],
+  "presentTerms": [
+    "publicidad exterior",
+    "BTL",
+    "activaciones",
+    "eventos",
+    "producción física",
+    "impresión"
+  ]
+}

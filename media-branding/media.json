@@ -1,0 +1,365 @@
+{
+  "hero": {
+    "source": "recursos/Unipolares/VU1C-18 copia.jpg",
+    "catalogId": "VU-025",
+    "originalDimensions": [
+      4080,
+      5440
+    ],
+    "sha256": "1910ac5e8c2a00c2c06a0d8e6d0e8d78c6b792f1ac65f11e1a1c1b3986bd31e7",
+    "files": [
+      720,
+      1200,
+      1800,
+      2400
+    ],
+    "alt": "Valla unipolar junto a una vía urbana, con árboles y cielo nublado.",
+    "treatment": "Conversión colorimétrica ICC de Display P3 a sRGB, redimensionado y codificación WebP. Sin retoque, generación ni alteración del original. Recorte mediante object-fit en la presentación.",
+    "rights": "Recurso proporcionado dentro del proyecto. La autorización de publicación debe ser confirmada por el titular antes de un despliegue público."
+  },
+  "brand": {
+    "source": "../assets/brand/media-branding/horizontal-blanco.svg",
+    "sha256": "2c6685fffd2847803814cd387ae5a62c1441fb1945fbfb50f854bb30098d6f68",
+    "accent": "#2e70b4",
+    "accentSource": "Encargo aprobado del usuario — 17 de noviembre de 2026; prevalece sobre la selección anterior del piloto."
+  },
+  "items": [
+    {
+      "id": "exterior-puente",
+      "type": "real",
+      "source": "recursos/Puentes/PTE-04 copia.jpg",
+      "catalogId": "PTE-007",
+      "originalDimensions": [
+        4800,
+        3980
+      ],
+      "sha256": "565c28a2824e1c94c33f18b5a32d3e60abe5f176628ebc02b6f8f1c5d42a343a",
+      "sizes": [
+        800,
+        1800
+      ],
+      "alt": "Soporte publicitario en un puente sobre una vía urbana.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "exterior-unipolar",
+      "type": "real",
+      "source": "recursos/Unipolares/VU3C-01 copia.jpg",
+      "catalogId": "VU-035",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "4b9cb9a0a08dd280cff6c9d0255af08bce18ab8597db4e15b0cb734ec9e09cb1",
+      "sizes": [
+        720,
+        1440
+      ],
+      "alt": "Valla unipolar vista desde una intersección urbana.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "formato-puentes",
+      "type": "real",
+      "source": "recursos/Puentes/PTE-12.jpg",
+      "catalogId": "PTE-025",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "9e3e4dc7ba06bddacb16e4c390dc52e71263a499301eab57644660aa25ce64f9",
+      "sizes": [
+        720,
+        1440
+      ],
+      "alt": "Soporte publicitario sobre un puente peatonal.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "formato-banderines",
+      "type": "real",
+      "source": "recursos/Banderines dobles/BD1C-07 copia.jpg",
+      "catalogId": "BD-009",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "2fe25ec6e8d4019e7cddf3352dfc56889faccf47d6d597f4d2648ddc57018319",
+      "sizes": [
+        720,
+        1440
+      ],
+      "alt": "Banderines publicitarios consecutivos junto a una avenida arbolada.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "formato-minivallas",
+      "type": "real",
+      "source": "recursos/Minivallas/MV-02 copia.jpg",
+      "catalogId": "MV-003",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "6d144d09f7f5e9e044d3b0aea3d72769c0bbbae5436a108ca5d8db9fd60897e9",
+      "sizes": [
+        720,
+        1440
+      ],
+      "alt": "Minivalla junto a una vía urbana con un edificio al fondo.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "cobertura-ciudad",
+      "type": "real",
+      "source": "recursos/Unipolares/VU1C-02 copia.jpg",
+      "catalogId": "VU-003",
+      "originalDimensions": [
+        4080,
+        3060
+      ],
+      "sha256": "486dd180e93b85badb2d113bdab7af9c172d35f64e34ebe2b843a344900f46af",
+      "sizes": [
+        800,
+        1800
+      ],
+      "alt": "Vía urbana con soporte publicitario y paisaje construido.",
+      "position": "50% 50%"
+    },
+    {
+      "id": "concepto-retail",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-retail-original.png",
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "sha256": "988fc07b9e13cab640d726757fcd285766fba83fc6ca03c5a40719a2620ce94a",
+      "sizes": [
+        640,
+        1120
+      ],
+      "alt": "Visualización conceptual de exhibición de productos sin marca en un supermercado.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/completa-2026-11-17/concepto-retail-prompt.txt",
+      "replacementRequired": true
+    },
+    {
+      "id": "concepto-exterior",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-exterior-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "724925a9bdf1559ec33ee7212bfa16c4cab74e7b220281e8ff816e2d6e907722",
+      "sizes": [
+        800,
+        1536
+      ],
+      "alt": "Visualización conceptual de un soporte publicitario sin campaña junto a una avenida.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/completa-2026-11-17/concepto-exterior-prompt.txt",
+      "replacementRequired": true,
+      "presentationStatus": "Recurso conservado en disco, retirado de la presentación actual."
+    },
+    {
+      "id": "concepto-comercial",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-comercial-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "559e039829b39d83cd59a2b210057096accedbc5cf4d6c896725b15e8e6445c8",
+      "sizes": [
+        640,
+        1200
+      ],
+      "alt": "Visualización conceptual de una instalación comercial sin marca en un atrio.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/completa-2026-11-17/concepto-comercial-prompt.txt",
+      "replacementRequired": true,
+      "presentationStatus": "Recurso conservado en disco, retirado de la presentación actual."
+    },
+    {
+      "id": "concepto-cierre",
+      "type": "generated",
+      "source": "output/cierre-2026-11-17/concepto-cierre-original.png",
+      "originalDimensions": [
+        1672,
+        941
+      ],
+      "sha256": "7b8042f834f5f8931c8d1a36b3ecf34904cdf17e3e89061f2d4145cbe9257300",
+      "sizes": [
+        640,
+        1200,
+        1672
+      ],
+      "alt": "Visualización conceptual de una valla monumental vacía sobre una ciudad con cerros.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/cierre-2026-11-17/concepto-cierre-prompt.txt",
+      "replacementRequired": true
+    },
+    {
+      "id": "proyecto-issima",
+      "type": "documented",
+      "source": "recursos/originales/IMPACTOS EXITO MEDIA BRANDING.pdf",
+      "sourceSha256": "94f6d694876bfab7e06cbf55d0033c60608da13b6dcee2adcdfb9ea290cacba6",
+      "sourcePage": 3,
+      "pdfObjectId": 173,
+      "extractedOriginal": "output/presentacion-2026-11-17/issima-000.png",
+      "originalDimensions": [
+        1642,
+        1256
+      ],
+      "sha256": "75010eece8a850bc8d716804335359ad1bcc483924177b60a2753038b0410f59",
+      "sizes": [
+        720,
+        1200,
+        1642
+      ],
+      "alt": "Tres banderines de la campaña Issima fotografiados de noche.",
+      "position": "50% 66%",
+      "caption": "Banderines Issima",
+      "captionSource": "COPY-P04-S11-B02",
+      "evidence": "La página 3 del documento original identifica ISSIMA y muestra esta fotografía. No se incorporan testimonios ni resultados del PDF al copy de la página."
+    },
+    {
+      "id": "concepto-retail-detalle",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-retail-original.png",
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "sha256": "988fc07b9e13cab640d726757fcd285766fba83fc6ca03c5a40719a2620ce94a",
+      "sizes": [
+        640,
+        1120
+      ],
+      "alt": "Detalle del mismo exhibidor conceptual de supermercado.",
+      "position": "50% 76%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/completa-2026-11-17/concepto-retail-prompt.txt",
+      "replacementRequired": true,
+      "filePrefix": "concepto-retail",
+      "sourceMediaId": "concepto-retail",
+      "crop": "Recorte de presentación con object-fit y escala CSS; no se generó ni retocó otra imagen."
+    },
+    {
+      "id": "proyectos-secuencial",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-secuencial-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "d78542c31803688cf35ac1e1b5d3aadb8f11432ac4303d5d3ecdaebc805df128",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "alt": "Secuencia conceptual de soportes publicitarios azules en una avenida al anochecer.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/proyectos-2026-11-18/proyectos-secuencial-prompt.txt",
+      "provenance": "output/proyectos-2026-11-18/proyectos-secuencial-procedencia.json",
+      "replacementRequired": true,
+      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+    },
+    {
+      "id": "proyectos-paradero",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-paradero-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "c280bc89adb1f51f6b5da0687b1899b503b7d3188764c70ea99297e0a9a378e5",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "alt": "Paradero conceptual de acero y vidrio con un panel azul, junto a una calle arbolada.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/proyectos-2026-11-18/proyectos-paradero-prompt.txt",
+      "provenance": "output/proyectos-2026-11-18/proyectos-paradero-procedencia.json",
+      "replacementRequired": true,
+      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+    },
+    {
+      "id": "proyectos-unipolar",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-unipolar-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "f0f75aeb49f3921fe8ba62e028ab6772bb9b149c8922d9eff1fbdd1ca204d09c",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "alt": "Valla unipolar conceptual bajo un cielo diurno, con ciudad y colinas al fondo.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/proyectos-2026-11-18/proyectos-unipolar-prompt.txt",
+      "provenance": "output/proyectos-2026-11-18/proyectos-unipolar-procedencia.json",
+      "replacementRequired": true,
+      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+    },
+    {
+      "id": "proyectos-valla",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-valla-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "611a379aa7632657a33a00727b366efbc2c597cdddbb250bd6843f2240af0a4e",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "alt": "Valla conceptual sobre un muro junto a una avenida, con luz de última tarde.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/proyectos-2026-11-18/proyectos-valla-prompt.txt",
+      "provenance": "output/proyectos-2026-11-18/proyectos-valla-procedencia.json",
+      "replacementRequired": true,
+      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+    },
+    {
+      "id": "proyectos-puente",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-puente-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "788700fcec83cbe59ae502c5a617584acece3816a07ca5bc22d60e7c8202f1dc",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "alt": "Puente peatonal conceptual con una franja publicitaria azul sobre una avenida.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "prompt": "output/proyectos-2026-11-18/proyectos-puente-prompt.txt",
+      "provenance": "output/proyectos-2026-11-18/proyectos-puente-procedencia.json",
+      "replacementRequired": true,
+      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+    }
+  ]
+}

@@ -9,7 +9,7 @@
   <title>Grupo Branding · Inicio · Experimento 02</title>
   <link rel="icon" href="assets/brand/grupo-branding/isotipo-color.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v={{STYLE_HASH}}">
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="motion.js?v={{MOTION_HASH}}" defer></script>
@@ -35,18 +35,31 @@
             <div class="mobile-art-slot" aria-hidden="true"></div>
             <div class="hero-support">{{HERO_BODY}}<div class="hero-actions">{{HERO_ACTIONS}}</div></div>
           </div>
+          {{BRAND_ART}}
         </section>
-        {{BRAND_ART}}
+        <div class="division-region">
+          <div class="division-preface"></div>
+          <div class="division-story-shell">
+            <div class="division-story">
+          <div class="division-choice-art">{{MOBILE_DIVISION_ART}}</div>
+        <div class="division-choice-surface" role="group" aria-label="Tres especialidades conectadas para tu marca">
+          <svg class="division-connections" aria-hidden="true" focusable="false"><g data-connection="0"><polyline/><rect width="5" height="5"/></g><g data-connection="1"><polyline/><rect width="5" height="5"/></g><g data-connection="2"><polyline/><rect width="5" height="5"/></g></svg>
+          <div class="division-choices">{{DIVISION_CHOICES}}</div>
+        </div>
         <section class="division-surface" id="divisiones" aria-labelledby="division-heading" tabindex="-1">
           <div class="division-copy">
+            <div class="division-introduction">
             <span class="section-kicker">01 / DIVISIONES</span>
             <div id="division-heading">{{DIVISION_TITLE}}</div>
             {{DIVISION_BODY}}
-            {{MOBILE_DIVISION_ART}}
-            <div class="division-tabs" aria-label="Capacidades de Grupo Branding">{{DIVISION_TABS}}</div>
+            </div>
             <div class="division-panels">{{DIVISION_PANELS}}</div>
+            <nav class="division-switches" aria-label="Empresas de Grupo Branding">{{DIVISION_SWITCHES}}</nav>
           </div>
         </section>
+            </div>
+          </div>
+        </div>
         <div class="scene-bottom">
           <span class="scene-counter" aria-label="Secuencia de tres momentos"><span data-counter>01</span><span class="counter-rule" aria-hidden="true"></span>03</span>
           <a href="#divisiones" data-scroll class="scene-next" aria-label="Explorar las divisiones"><img class="ui-icon" src="assets/icons/arrow-down.svg" width="30" height="30" alt=""></a>

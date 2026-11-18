@@ -1,0 +1,215 @@
+{
+  "source": "docs/arq.html — ARQ-02 + COPY-03",
+  "registeredCount": 26,
+  "blocks": [
+    {
+      "sourceId": "COPY-P04-S01-B01",
+      "originalText": "Publicidad exterior y espacios estratégicos para hacer visible tu marca",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S01-B02",
+      "originalText": "Trabajamos medios y publicidad exterior para dar presencia a tu marca en espacios donde las personas circulan y toman decisiones.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S01-B03",
+      "originalText": "[Consulta una solución de medios]",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S02-B01",
+      "originalText": "Encuentra dónde debe estar tu marca",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S02-B02",
+      "originalText": "Cada campaña necesita una combinación diferente de ubicación, formato y presencia.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S02-B03",
+      "originalText": "Combinamos creatividad, producción e instalación para que tu mensaje llegue al espacio adecuado.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S03-B01",
+      "originalText": "Lleva tu campaña fuera de la pantalla",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S03-B02",
+      "originalText": "Desarrollamos campañas de publicidad exterior en formatos que hacen visible tu marca fuera de la pantalla.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S03-B03",
+      "originalText": "Te orientamos sobre el formato y la ubicación según el objetivo de tu campaña y la disponibilidad vigente.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S04-B01",
+      "originalText": "Presencia de marca donde ocurre la compra",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S04-B02",
+      "originalText": "Nuestra trayectoria incluye locaciones en supermercados. Los espacios comerciales disponibles se revisan para cada campaña.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S06-B01",
+      "originalText": "Elige el formato adecuado para tu campaña",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S06-B02",
+      "originalText": "Trabajamos vallas unipolares, puentes, banderines y minivallas. La selección depende de ubicación, objetivo y disponibilidad.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S10-B01",
+      "originalText": "Publicidad exterior en Honduras",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S10-B02",
+      "originalText": "Media Branding opera en Honduras. La cobertura disponible para cada campaña depende de las ubicaciones vigentes.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S11-B01",
+      "originalText": "Campañas que ocuparon su espacio",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S11-B02",
+      "originalText": "Entre nuestras referencias están banderines Issima, secuencial Six, paraderos Fútbol y unipolar Powerade.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B01",
+      "originalText": "Predios privados",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B02",
+      "originalText": "Sección dirigida a propietarios de terrenos y edificios interesados en alquilar espacios para publicidad exterior.",
+      "registry": "content.json",
+      "presentationId": "PRES-MB-PREDIOS-02",
+      "renderedOriginal": false,
+      "status": "presentation-substitution"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B03",
+      "originalText": "Terrenos · Edificios · Contacto directo",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B04",
+      "originalText": "[GUION DE CAPTACIÓN POR PROPORCIONAR]",
+      "registry": "content.json",
+      "presentationId": "PRES-MB-PREDIOS-01",
+      "renderedOriginal": false,
+      "status": "presentation-substitution"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B05",
+      "originalText": "[CORREO ESPECÍFICO POR PROPORCIONAR]",
+      "registry": "content.json",
+      "presentationId": "PRES-MB-PREDIOS-04",
+      "renderedOriginal": false,
+      "status": "presentation-substitution"
+    },
+    {
+      "sourceId": "COPY-P04-S13-B06",
+      "originalText": "[TELÉFONO ESPECÍFICO POR PROPORCIONAR]",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": false,
+      "status": "not-shown-no-phone-authorized"
+    },
+    {
+      "sourceId": "COPY-P04-S12-B01",
+      "originalText": "Encuentra el espacio para tu próxima campaña",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S12-B02",
+      "originalText": "Cuéntanos qué quieres comunicar, dónde buscas tener presencia y a qué público necesitas llegar.",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    },
+    {
+      "sourceId": "COPY-P04-S12-B03",
+      "originalText": "[Consultar solución de medios]",
+      "registry": "content.json",
+      "presentationId": null,
+      "renderedOriginal": true,
+      "status": "unchanged"
+    }
+  ],
+  "presentationSource": "presentation-copy.json"
+}

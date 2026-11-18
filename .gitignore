@@ -1,2 +1,24 @@
 .DS_Store
 /recursos/
+
+# Generated builds, dependency caches and local review evidence.
+/_site/
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+**/output/
+/docs/interno/
+/docs/auditoria-creativa.md
+/experimentos/inicio-v01/auditoria-arq-copy.md
+/media-branding/auditoria-contenido.md
+/media-branding/design-qa.md
+/media-branding/proyectos-qa.md
+/media-branding/informe-presentacion.md
+# Local reference image and redundant SVG aliases; official hyphenated variants remain.
+/assets/brand/grupo-branding/02C1A6F2-5AE8-4FC6-8F0B-10E43FB5FAC4.png
+/assets/brand/grupo-branding/isotipo.svg
+/assets/brand/grupo-branding/isotipo_color.svg

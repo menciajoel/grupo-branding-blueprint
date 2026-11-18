@@ -1,0 +1,404 @@
+{
+  "note": "Rutas source conservadas como procedencia histórica. Los originales locales no se incluyen; las variantes WebP necesarias sí. No se atribuyen los conceptos a campañas ejecutadas.",
+  "items": [
+    {
+      "source": "recursos/Unipolares/VU1C-18 copia.jpg",
+      "catalogId": "VU-025",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "1910ac5e8c2a00c2c06a0d8e6d0e8d78c6b792f1ac65f11e1a1c1b3986bd31e7",
+      "files": [
+        720,
+        1200,
+        1800,
+        2400
+      ],
+      "treatment": "Conversión colorimétrica ICC de Display P3 a sRGB, redimensionado y codificación WebP. Sin retoque, generación ni alteración del original. Recorte mediante object-fit en la presentación.",
+      "rights": "Recurso proporcionado dentro del proyecto. La autorización de publicación debe ser confirmada por el titular antes de un despliegue público."
+    },
+    {
+      "id": "exterior-puente",
+      "type": "real",
+      "source": "recursos/Puentes/PTE-04 copia.jpg",
+      "catalogId": "PTE-007",
+      "originalDimensions": [
+        4800,
+        3980
+      ],
+      "sha256": "565c28a2824e1c94c33f18b5a32d3e60abe5f176628ebc02b6f8f1c5d42a343a",
+      "sizes": [
+        800,
+        1800
+      ]
+    },
+    {
+      "id": "exterior-unipolar",
+      "type": "real",
+      "source": "recursos/Unipolares/VU3C-01 copia.jpg",
+      "catalogId": "VU-035",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "4b9cb9a0a08dd280cff6c9d0255af08bce18ab8597db4e15b0cb734ec9e09cb1",
+      "sizes": [
+        720,
+        1440
+      ]
+    },
+    {
+      "id": "formato-puentes",
+      "type": "real",
+      "source": "recursos/Puentes/PTE-12.jpg",
+      "catalogId": "PTE-025",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "9e3e4dc7ba06bddacb16e4c390dc52e71263a499301eab57644660aa25ce64f9",
+      "sizes": [
+        720,
+        1440
+      ]
+    },
+    {
+      "id": "formato-banderines",
+      "type": "real",
+      "source": "recursos/Banderines dobles/BD1C-07 copia.jpg",
+      "catalogId": "BD-009",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "2fe25ec6e8d4019e7cddf3352dfc56889faccf47d6d597f4d2648ddc57018319",
+      "sizes": [
+        720,
+        1440
+      ]
+    },
+    {
+      "id": "formato-minivallas",
+      "type": "real",
+      "source": "recursos/Minivallas/MV-02 copia.jpg",
+      "catalogId": "MV-003",
+      "originalDimensions": [
+        4080,
+        5440
+      ],
+      "sha256": "6d144d09f7f5e9e044d3b0aea3d72769c0bbbae5436a108ca5d8db9fd60897e9",
+      "sizes": [
+        720,
+        1440
+      ]
+    },
+    {
+      "id": "cobertura-ciudad",
+      "type": "real",
+      "source": "recursos/Unipolares/VU1C-02 copia.jpg",
+      "catalogId": "VU-003",
+      "originalDimensions": [
+        4080,
+        3060
+      ],
+      "sha256": "486dd180e93b85badb2d113bdab7af9c172d35f64e34ebe2b843a344900f46af",
+      "sizes": [
+        800,
+        1800
+      ]
+    },
+    {
+      "id": "concepto-retail",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-retail-original.png",
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "sha256": "988fc07b9e13cab640d726757fcd285766fba83fc6ca03c5a40719a2620ce94a",
+      "sizes": [
+        640,
+        1120
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural\nAsset type: provisional editorial website photograph, retail and point-of-sale section.\nPrimary request: a photorealistic architectural photograph of a credible contemporary supermarket interior in Central America, with an understated unbranded point-of-sale display at the end of an aisle.\nComposition: portrait 4:5 aspect ratio, approximately 1200 x 1500 pixels or larger. The display occupies the central/right portion, at human eye level, with sufficient space around it for both portrait 4:5 and landscape 3:2 crops. Correct architectural perspective and coherent shelf geometry. Not a graphic design or webpage.\nScene: everyday modern supermarket, natural side-window daylight balanced with realistic clean commercial lighting. Realistic painted metal and laminate shelving, one restrained blue #2E70B4 point-of-sale fixture, only a few tiny orange #F08633 details. Generic packaged groceries with no recognizable branding and no legible labels. Subtle human scale far in the background, no featured faces.\nStyle: premium professional editorial architectural photography, natural material texture, credible practical construction, accurate shadows, optically plausible lens perspective, understated natural color grading. No futuristic showroom and no glossy CGI appearance.\nConstraints: no logos, no client names, no campaigns, no headlines, no legible text, no watermarks. This is a conceptual visualization, NOT documentation of any real client installation. Do not render the provisional-image identification inside the photograph: the website will display that label in HTML. Keep the scene realistic and visually coherent.\n\nProcedencia: built-in image_gen__imagegen.\nDimensiones originales: (1122, 1402)\nUso autorizado: visualización conceptual provisional de retail, sin atribución a clientes reales.\nEtiqueta visible requerida en HTML: Visualización conceptual · Imagen provisional.\nSustituir por evidencia autorizada antes de publicación definitiva."
+    },
+    {
+      "id": "concepto-exterior",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-exterior-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "724925a9bdf1559ec33ee7212bfa16c4cab74e7b220281e8ff816e2d6e907722",
+      "sizes": [
+        800,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural.\nAsset type: provisional editorial image for an outdoor-advertising website, landscape 3:2 composition, 1536x1024 pixels or larger.\nPrimary request: A photorealistic, professional architectural photograph of a generic outdoor advertising support beside a believable Central American urban avenue. One large, blank rectangular billboard on an engineered steel structure, viewed from a restrained three-quarter angle. Its face is clean neutral off-white matte material with no advertisement, logo, words, graphics, or brand. Realistic frame, lighting brackets, bolts, load-bearing column, foundations and scale.\nScene/backdrop: ordinary contemporary low-rise urban buildings, credible vegetation, a small amount of unremarkable road traffic, no landmarks that identify a precise real location.\nComposition/framing: spacious editorial composition, the billboard on the right and urban context to the left, moderate camera focal length, correct architectural perspective, all important structure inside the frame.\nLighting/mood: soft warm natural morning light, delicate clouds, documentary photographic textures and real materials, sophisticated but unembellished.\nConstraints: This is a conceptual visualization, not documentation of a commercial execution or of a real client's campaign. Absolutely no Issima, Six, Fútbol, Powerade, other client names, products or logos. No invented campaign, text, results, promotion artwork or watermarks. No futuristic architecture, implausible CGI shine or distorted structures. Do not draw a provisional label in the image; the page HTML will provide it.\n\nTool: built-in image_gen.\nUse: generic conceptual support, never evidence of a named project.\nRequired visible HTML label: Visualización conceptual · Imagen provisional."
+    },
+    {
+      "id": "concepto-comercial",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-comercial-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "559e039829b39d83cd59a2b210057096accedbc5cf4d6c896725b15e8e6445c8",
+      "sizes": [
+        640,
+        1200
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Mode: built-in image_gen\nAsset: concepto-comercial\n\nUse case: photorealistic-natural.\nAsset type: provisional architectural editorial photograph for a Media Branding retail website section, not a client case.\nPrimary request: a landscape 3:2 photograph, 1536x1024 pixels or larger, of a small generic point-of-sale promotional installation inside a believable contemporary shopping mall atrium.\nScene/backdrop: real-world commercial architecture, stone flooring, large windows providing natural daylight; subtle out-of-focus shoppers in the distant background with no prominent faces.\nSubject: a compact modular counter and display built from physically credible painted metal and matte panels, mainly blue #2E70B4 with one small orange #F08633 edge; neutral unlabelled containers or generic display objects. Side view at human camera height, realistic scale and joins.\nLighting/mood: professional natural editorial photography, restrained contrast, natural shadows and architectural perspective. Real material detail, not glossy CGI or futuristic concept art.\nConstraints: no logos, branding, company or client names, text, readable signs, promotions, campaigns, results, testimonials or watermarks. It must not resemble documentation of an executed campaign for any named customer. This is a generic conceptual visualization, not a commercial project record.\nDo not include any visible caption or provisional label inside the bitmap; the page HTML will label it."
+    },
+    {
+      "id": "concepto-cierre",
+      "type": "generated",
+      "source": "output/cierre-2026-11-17/concepto-cierre-original.png",
+      "originalDimensions": [
+        1672,
+        941
+      ],
+      "sha256": "7b8042f834f5f8931c8d1a36b3ecf34904cdf17e3e89061f2d4145cbe9257300",
+      "sizes": [
+        640,
+        1200,
+        1672
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural.\nAsset type: panoramic editorial website photograph, 16:9 landscape, high resolution.\nPrimary request: Create a new professional photorealistic architectural photograph for the final commercial section of an outdoor-advertising website. A monumental empty billboard occupies the RIGHT side, seen from a believable low-angle architectural viewpoint. The LEFT approximately 55 percent of the frame is mostly open deep natural blue sky and restrained clouds, quiet negative space suitable for a very large white website headline that will be added later in HTML.\nScene/backdrop: A credible Latin American city below the horizon line, distant green hills, ordinary mid-rise buildings and trees across the bottom of the photograph. No identifiable real client or project. Camera at street/treetop height looking upward, moderate architectural lens, no fisheye.\nSubject: A large, realistic rectangular roadside billboard with a plain matte dark-blue face, entirely empty, at the right. Physically plausible gray steel support column, truss, frame, service catwalk, railing, small floodlights, bolts and structural connections. All load-bearing components coherent. The panel's perspective rises toward the upper-right. Keep the billboard's large face and major column visible.\nLighting/mood: Natural blue sky with soft clouds, warm low sunlight peeking beside or just under the billboard near the RIGHT edge, believable sun flare kept subtle, natural materials and photographic texture. Dramatic but credible, no CGI sheen.\nComposition/framing: Panoramic 16:9 photograph. Billboard right third/right half, open sky to the left and center, city/hills/trees confined mostly to the lower fifth, right-edge tree foliage can frame the scene very subtly. Keep clean contrast in the left negative space; do not add a graphic gradient overlay.\nText: None. No typography, button, caption, UI, line separator, graphic layout, logo, brand, slogan, advertisement, campaign or watermark anywhere.\nConstraints: Conceptual visualization only, not documentation of a real advertising execution. No client identity or campaign claim. The panel must remain plain dark blue. Professional natural photographic realism, correct architectural perspective and physically plausible structure.\n\nTool: built-in image_gen.\nReference visually inspected as composition reference only.\nNo derivatives created."
+    },
+    {
+      "id": "proyecto-issima",
+      "type": "documented",
+      "source": "recursos/originales/IMPACTOS EXITO MEDIA BRANDING.pdf",
+      "originalDimensions": [
+        1642,
+        1256
+      ],
+      "sha256": "75010eece8a850bc8d716804335359ad1bcc483924177b60a2753038b0410f59",
+      "sizes": [
+        720,
+        1200,
+        1642
+      ],
+      "caption": "Banderines Issima"
+    },
+    {
+      "id": "concepto-retail-detalle",
+      "type": "generated",
+      "source": "output/completa-2026-11-17/concepto-retail-original.png",
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "sha256": "988fc07b9e13cab640d726757fcd285766fba83fc6ca03c5a40719a2620ce94a",
+      "sizes": [
+        640,
+        1120
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural\nAsset type: provisional editorial website photograph, retail and point-of-sale section.\nPrimary request: a photorealistic architectural photograph of a credible contemporary supermarket interior in Central America, with an understated unbranded point-of-sale display at the end of an aisle.\nComposition: portrait 4:5 aspect ratio, approximately 1200 x 1500 pixels or larger. The display occupies the central/right portion, at human eye level, with sufficient space around it for both portrait 4:5 and landscape 3:2 crops. Correct architectural perspective and coherent shelf geometry. Not a graphic design or webpage.\nScene: everyday modern supermarket, natural side-window daylight balanced with realistic clean commercial lighting. Realistic painted metal and laminate shelving, one restrained blue #2E70B4 point-of-sale fixture, only a few tiny orange #F08633 details. Generic packaged groceries with no recognizable branding and no legible labels. Subtle human scale far in the background, no featured faces.\nStyle: premium professional editorial architectural photography, natural material texture, credible practical construction, accurate shadows, optically plausible lens perspective, understated natural color grading. No futuristic showroom and no glossy CGI appearance.\nConstraints: no logos, no client names, no campaigns, no headlines, no legible text, no watermarks. This is a conceptual visualization, NOT documentation of any real client installation. Do not render the provisional-image identification inside the photograph: the website will display that label in HTML. Keep the scene realistic and visually coherent.\n\nProcedencia: built-in image_gen__imagegen.\nDimensiones originales: (1122, 1402)\nUso autorizado: visualización conceptual provisional de retail, sin atribución a clientes reales.\nEtiqueta visible requerida en HTML: Visualización conceptual · Imagen provisional.\nSustituir por evidencia autorizada antes de publicación definitiva."
+    },
+    {
+      "id": "proyectos-secuencial",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-secuencial-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "d78542c31803688cf35ac1e1b5d3aadb8f11432ac4303d5d3ecdaebc805df128",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural.\nAsset type: provisional conceptual photograph for a premium outdoor-advertising website. Horizontal 3:2 composition, original resolution approximately 1536x1024 or larger, no upscaling.\nPrimary request: A premium architectural photograph of a sequence of four or five freestanding vertical outdoor advertising display panels along a tree-lined urban avenue, in front of credible contemporary commercial architecture. Blue hour with softly glowing warm interior lights behind real glass, natural dusk sky, believable trees and sidewalk materials.\nSubject: Repeated engineered portrait-format display supports with dark metal frames and physically realistic proportions, foundations and spacing. Each display has a deep blue panel with a restrained abstract white curved shape only. No words, letters, numbers, brands, logos, recognizable campaign artwork or client identity.\nComposition/framing: Low but moderate three-quarter architectural viewpoint along the avenue, professionally corrected perspective and a restrained 28–35mm lens feel. The principal supports should sit within the central 60 percent of the composition, with the nearest complete panel around the left-center and the others receding toward the right-center. Maintain enough space above, below and beside the main supports for both a wide thumbnail crop and a closer 585x460 crop. Keep all principal panels and their tops inside the image. Commercial facade and trees provide context, not clutter.\nLighting/mood: Photographic blue hour, warm natural interior lighting contrasting with the cool dusk, realistic illuminated display faces, subtle natural reflections. A small number of vehicles on the avenue may have very slight believable motion blur, without obscuring the panels.\nMaterials/textures: Real painted metal, glass, concrete sidewalk, tree bark and foliage. Crisp architectural detail, natural photographic grain, realistic shadows and exposure.\nConstraints: This is an AI conceptual visualization, never documentation of a real campaign or a named client. No client attribution. No text, logos, labels, watermarks or website UI in the image. No futuristic architecture, excessive neon, dramatic CGI glow, exaggerated lens distortion, impossible supports or artificial-looking surfaces. The page will add the visible provisional-image identification in HTML.\nReference role: The supplied reference's upper central Secuencial cell informs photographic mood, repeated-support arrangement and commercial-street context only; do not reproduce any reference headline, label, UI or copy.\n\nTool: built-in image_gen. Original saved without upscale or derivatives.",
+      "generationProvenance": {
+        "asset": "proyectos-secuencial",
+        "type": "AI-generated conceptual visualization",
+        "tool": "built-in image_gen",
+        "source": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "original": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2685278,
+        "reference": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "referenceRole": "Upper central Secuencial cell visually inspected for photographic mood and arrangement; no copy or UI reproduced",
+        "clientAttribution": null,
+        "labelRequired": "Visualización conceptual · Imagen provisional",
+        "sha256": "d78542c31803688cf35ac1e1b5d3aadb8f11432ac4303d5d3ecdaebc805df128",
+        "review": "Five plausible vertical panels along a tree-lined commercial avenue, blue hour, warm interiors, slight vehicle blur, deep blue and abstract white curves only, no words or logos. Main supports kept within central crop-safe zone.",
+        "derivativesCreated": false
+      }
+    },
+    {
+      "id": "proyectos-paradero",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-paradero-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "c280bc89adb1f51f6b5da0687b1899b503b7d3188764c70ea99297e0a9a378e5",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Mode: built-in image_gen\nAsset: proyectos-paradero\n\nUse case: photorealistic-natural.\nAsset type: provisional conceptual architectural photograph for an outdoor advertising projects gallery, not documentation of a real client or executed campaign.\nPrimary request: create one high-quality horizontal 3:2 image, approximately 1536x1024 pixels or larger. Show a premium but physically believable urban bus shelter, photographed professionally in soft natural daytime light.\nScene: a clean sidewalk with trees and a modern office facade in the background. The shelter is built of dark charcoal painted steel, slender realistic columns with visible footing attachment, a flat covered roof with correct support beams, clear glass side and rear panels, and a simple public bench. A vertical advertising lightbox is integrated into one side of the shelter.\nAdvertising panel: deep blue face containing only one discreet abstract white curve. No words or lettering anywhere. This is generic abstract artwork with no brand, company, logo, customer, identifiable campaign or trademark.\nComposition: human-height camera, slightly three-quarter architectural view, straight verticals and credible perspective. The bus shelter and panel are fully visible and concentrated inside the central 70% of the frame so both a wide 350x215 thumbnail and a 585x460 crop retain the core structure. Provide visual breathing room around the roof and feet. Focal point is the integrated panel and real construction, not people.\nStyle: premium architectural editorial photography with natural materials, realistic clean glass reflections, subtle foliage shadows, restrained color, photographic texture and believable scale. Soft daytime illumination, not night or cinematic neon.\nAvoid: extra floating beams, malformed geometry, impossible glass or joins, dramatic lens distortion, futuristic CGI appearance, readable signage, letters, words, numbers, logos, watermarks, clients, campaigns, promotional claims or any generated caption. Do not draw a provisional label in the bitmap; the website HTML will add the visible conceptual-image label.",
+      "generationProvenance": {
+        "asset": "proyectos-paradero",
+        "generator": "built-in image_gen",
+        "intent": "photorealistic-natural; generated conceptual image, not a real client case",
+        "reference": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "generatedSource": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "original": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2797523,
+        "sha256": "c280bc89adb1f51f6b5da0687b1899b503b7d3188764c70ea99297e0a9a378e5",
+        "suggestedObjectPosition": "50% 50%",
+        "targetSlots": [
+          {
+            "width": 350,
+            "height": 215
+          },
+          {
+            "width": 585,
+            "height": 460
+          }
+        ],
+        "requiredVisibleLabel": "Visualización conceptual · Imagen provisional",
+        "inspection": "Paradero físicamente verosímil con pilares, anclajes, cubierta, vidrio y banco; panel azul profundo con una curva blanca, sin texto, logos ni cliente. Perspectiva arquitectónica limpia y luz natural. El recorte central 585×460 conserva el panel y la estructura principal.",
+        "limitations": "Es una imagen generada; no documenta proyectos ejecutados ni garantiza una ubicación, cliente o campaña real. La cubierta completa ocupa más del 70% del ancho, pero el foco panel/banco queda dentro de la zona central y del recorte previsto."
+      }
+    },
+    {
+      "id": "proyectos-unipolar",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-unipolar-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "f0f75aeb49f3921fe8ba62e028ab6772bb9b149c8922d9eff1fbdd1ca204d09c",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural.\nAsset type: a single provisional architectural photograph for an editorial outdoor-advertising website, not a webpage or collage.\nCreate one photorealistic large-format unipolar billboard seen from below at a restrained three-quarter angle. Landscape 3:2 aspect ratio, at least approximately 1536 × 1024 pixels. Professional advertising-architecture photography.\nSubject: one realistic horizontal rectangular billboard, credible galvanized/dark steel frame, rear bracing, narrow inspection catwalk and unobtrusive lamp fixtures, supported by a single substantial steel monopole attached plausibly to the frame. Correct engineering proportions and perspective, no impossible cantilevers or floating parts.\nPanel artwork: a medium-to-deep blue face with one discreet flowing abstract white curve. No words, no letters, no numbers, no logos, no brand names, no commercial campaign or recognizable corporate identity.\nSetting: believable Latin American city on rolling terrain, distant urban roofs and low green hills, understated vegetation at the bottom edge. Blue midday sky with soft white clouds, natural sunlight, optically plausible shadows and materials. Crisp professional real-world photography, not a 3D-render showroom.\nComposition: centered subject with generous air around the entire billboard face and visible support structure. Keep the essential face and monopole within the central 70 percent of the image for flexible 350 × 215 and 585 × 460 website crops. Camera low but not extreme wide-angle. Billboard face and support clearly readable; a thin city/hill band near the lower edge.\nReference intent: the lower-center Unipolar cell of the supplied design reference is a composition cue: a centered unipolar on a blue-sky urban background. Render only a photograph, never the reference UI, captions or gallery.\nConstraints: no watermarks, no added captions, no people as subjects, no client associations, no implied executed campaign. This is a conceptual visualization; the website will visibly label it as provisional outside the image.",
+      "generationProvenance": {
+        "asset": "proyectos-unipolar",
+        "original": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "tool": "built-in image_gen__imagegen",
+        "tool_output": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "reference": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "sha256": "f0f75aeb49f3921fe8ba62e028ab6772bb9b149c8922d9eff1fbdd1ca204d09c",
+        "role": "Visualización conceptual fotorrealista de un soporte, sin atribución a clientes ni campañas ejecutadas.",
+        "required_visible_label": "Visualización conceptual · Imagen provisional",
+        "quality_check": "Valla única con monopole y estructura de acero reconocibles, perspectiva arquitectónica creíble, cielo diurno, ciudad y colinas; sin texto ni logos.",
+        "crop_guidance": "Centro 50% 50%. El panel ocupa aproximadamente x=200..1300 de 1536; recorte 585×460 mantiene el panel. El extremo inferior de la columna ya sale por el borde original.",
+        "upscale": false
+      }
+    },
+    {
+      "id": "proyectos-valla",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-valla-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "611a379aa7632657a33a00727b366efbc2c597cdddbb250bd6843f2240af0a4e",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "Use case: photorealistic-natural.\nAsset type: one provisional editorial photograph of an outdoor advertising support, not a website, poster layout, collage or campaign case.\nCreate a photorealistic wide horizontal billboard securely installed above/on a concrete retaining wall beside a tree-lined Latin American urban avenue. Landscape 3:2 composition, approximately 1536 × 1024 pixels or larger, no upscaling.\nDifferentiate this structure clearly from a unipolar: the support is a concrete wall with plausible steel mounting brackets and a slim metal billboard frame; no single freestanding pole. Correct load-bearing construction, believable edges and architectural perspective.\nPanel design: medium-to-deep blue, with one clean abstract white curved band or wave, similar in restraint to a generic architectural mock display. No text, letters, logos, brand names, clients, slogans or recognizable campaign graphics. No watermark.\nLighting and environment: natural warm late-afternoon light, soft blue sky, realistic leafy trees behind and beside the wall, modest urban infrastructure. One naturally motion-blurred ordinary car passing along the bottom foreground, kept visually secondary. Professional architectural advertising photography with real material textures and plausible shadows; no glossy CGI style.\nCamera: low, restrained lateral three-quarter perspective from across the avenue. Keep the full billboard face inside the central 70 percent of the image and leave useful air around it. The concrete wall and its connection to the billboard should be visible. The central subject must survive both 350 × 215 and 585 × 460 crops. No extreme wide-angle distortion.\nReference intent: the lower-right Valla cell of the supplied design reference: a blue-and-white horizontal billboard on a concrete wall above a road, warm daylight and a passing blurred car. Render only the photograph; no UI, captions or reference labels.\nThis image is an explicitly provisional conceptual visualization and must not look like documentary evidence for any named client campaign. The website will add the provisional identification outside the photo.",
+      "generationProvenance": {
+        "asset": "proyectos-valla",
+        "original": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "tool": "built-in image_gen__imagegen",
+        "tool_output": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "reference": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "sha256": "611a379aa7632657a33a00727b366efbc2c597cdddbb250bd6843f2240af0a4e",
+        "role": "Visualización conceptual de soporte sobre muro. No documenta campañas ni clientes reales.",
+        "required_visible_label": "Visualización conceptual · Imagen provisional",
+        "quality_check": "Muro de concreto con anclajes metálicos plausibles, valla horizontal sin monopole, perspectiva baja lateral, luz cálida natural y automóvil desenfocado. Sin palabras, logos o marcas.",
+        "crop_guidance": "Centro 52% 50%. Panel aproximadamente x=254..1370 de 1536; recorte central 585×460 mantiene el panel completo. El vehículo puede quedar parcialmente fuera en recortes verticales, sin afectar al soporte.",
+        "upscale": false
+      }
+    },
+    {
+      "id": "proyectos-puente",
+      "type": "generated",
+      "source": "output/proyectos-2026-11-18/proyectos-puente-original.png",
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "788700fcec83cbe59ae502c5a617584acece3816a07ca5bc22d60e7c8202f1dc",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacementRequired": true,
+      "generationPrompt": "GENERATION\n\nUse case: photorealistic-natural.\nAsset type: provisional conceptual outdoor-advertising photograph for a premium website, horizontal 3:2, original resolution around 1536x1024 or larger, no upscaling.\nPrimary request: A physically coherent steel pedestrian bridge spanning a Latin American urban avenue, photographed from pedestrian camera height in a moderate three-quarter perspective. This must clearly be a pedestrian bridge with real access stairs, not a billboard, monopole, road flyover or drone view.\nStructure: One continuous steel span with a plausible deck, truss/support beams, guardrails and side fencing, supported on concrete piers outside the vehicle lanes. Adequate realistic roadway clearance. A broad, long horizontal advertising band is securely mounted along the road-facing side of the bridge. Its surface is deep blue with one restrained abstract white curve only, no words, letters, numbers, logos, brand, client or campaign identity.\nAccess stairs: Realistic, continuous stair flights with handrails, visible treads and intermediate landings connect the bridge to the sidewalk on BOTH sides of the avenue. Keep the nearer left-side stair clearly visible in profile and visibly connected to the deck landing; the far right stair must also connect coherently and descend to the opposite sidewalk. No floating, impossible or disconnected stairs, no stair ending in the traffic lane.\nScene/backdrop: Credible ordinary Latin American urban context with commercial low-rise buildings, a few real-looking cars, trees and green planting, restrained distant hills if visible. Standard unobtrusive road markings, no readable shop or street text.\nComposition/framing: Ground-level architectural photograph, not aerial. Entire main span and useful portions of both access stairs fit comfortably in frame. The broad blue advertising band is central and readable as a physical support, with a crop-safe central zone suitable for a 350x215 thumbnail or 585x460 feature image. Natural moderate lens, straight plausible perspective, no fisheye or exaggerated wide-angle distortion.\nLighting/mood: Bright natural daylight, soft white clouds in blue sky, premium professional architectural photography, realistic metals, concrete, glass, foliage, shadows and photographic detail.\nConstraints: Conceptual visualization only, never evidence of an executed project. No words, typography, logos, clients, campaigns, promotional messages, results, watermarks or website UI. No futuristic architecture, exaggerated CGI shine or physically implausible engineering. The page will provide the visible provisional-image identification separately in HTML.\n\nREFINEMENT\n\nEdit only incidental storefront signage in the supplied photograph. Remove every tiny letter, word, logo-like emblem or sign visible on the commercial facades behind the bridge, especially the small white emblem on the dark storefront near the middle. Replace those marks with plain unbranded glass or the existing simple wall color, matching the natural photograph. Preserve the entire bridge, its exact steel structure and its stairs on both sides, all handrails, billboard blue face and white abstract curve, roadway, cars, trees, camera angle, lighting, crop and dimensions without redesign. Do not add any text, sign, brand, client, watermark or UI. This is a small cleanup of incidental background marks only.\n\nTool: built-in image_gen. Original saved without upscale or derivatives.",
+      "generationProvenance": {
+        "asset": "proyectos-puente",
+        "type": "AI-generated conceptual visualization",
+        "tool": "built-in image_gen",
+        "source": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "original": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "bytes": 2799351,
+        "initialGeneration": "Original local conservado fuera de Git; variante WebP en assets/media/.",
+        "refinement": "Integrated image_gen cleanup of incidental storefront marks; bridge structure and framing preserved.",
+        "clientAttribution": null,
+        "labelRequired": "Visualización conceptual · Imagen provisional",
+        "sha256": "788700fcec83cbe59ae502c5a617584acece3816a07ca5bc22d60e7c8202f1dc",
+        "review": "Pedestrian-level three-quarter architectural photograph. Continuous steel bridge, plausible load path, visible stair access on both sides outside traffic lanes. Empty deep-blue advertising band with abstract white curve. No client, campaign or legible brand attribution.",
+        "derivativesCreated": false
+      }
+    }
+  ]
+}

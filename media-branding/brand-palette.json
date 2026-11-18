@@ -1,0 +1,38 @@
+{
+  "source": [
+    "../assets/brand/media-branding/horizontal-color.svg",
+    "../assets/brand/media-branding/vertical-color.svg"
+  ],
+  "colors": [
+    "#348266",
+    "#5fbae9",
+    "#fde63e",
+    "#221f20",
+    "#4aa24a",
+    "#bd2e3e",
+    "#ce2a6c",
+    "#22538d",
+    "#c1ce42",
+    "#d4532d",
+    "#b0d5f1",
+    "#eeb05e",
+    "#e17f55",
+    "#74bfce",
+    "#c52f2f",
+    "#ab2c66",
+    "#3071b4",
+    "#eaadc5"
+  ],
+  "authority": "La lista colors registra pigmentos del material SVG original. Los dos roles vigentes de interfaz proceden del encargo explícito del usuario, que prevalece sobre la selección inicial del piloto.",
+  "applications": {
+    "horizontal-color.svg": "Isotipo multicolor y denominación oscura, para fondo claro.",
+    "vertical-color.svg": "Composición vertical con la misma paleta.",
+    "horizontal-blanco.svg": "Variante monocromática oficial utilizada en el encabezado oscuro, sin modificación.",
+    "horizontal-negro.svg": "Variante monocromática oscura para fondos claros."
+  },
+  "approvedInterface": {
+    "principal": "#2E70B4",
+    "secundario": "#F08633",
+    "authority": "Valores exactos autorizados por el director en el encargo «Aprobación creativa y desarrollo completo», 17-11-2026. Sustituyen los roles rosados del piloto; no se recolorean los SVG."
+  }
+}

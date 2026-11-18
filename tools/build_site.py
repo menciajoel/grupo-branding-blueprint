@@ -56,6 +56,8 @@ def main():
                         ignore=shutil.ignore_patterns('*.png', 'isotipo.svg', 'isotipo_color.svg'))
         shutil.copytree(ROOT / 'shared/divisions', work / 'shared/divisions',
                         ignore=shutil.ignore_patterns('__pycache__', 'output'))
+        shutil.copytree(ROOT / 'shared/inicio', work / 'shared/inicio',
+                        ignore=shutil.ignore_patterns('__pycache__', 'output'))
         for page in PAGES:
             target = work / page
             target.mkdir(parents=True)
@@ -71,6 +73,7 @@ def main():
         for page in ('experimentos/inicio-v01', 'media-branding'):
             subprocess.run([sys.executable, '-B', str(work / page / 'verify.py')], cwd=work, env=env, check=True)
         subprocess.run([sys.executable, '-B', str(work / 'shared/divisions/verify.py')], cwd=work, env=env, check=True)
+        subprocess.run([sys.executable, '-B', str(work / 'shared/inicio/verify.py')], cwd=work, env=env, check=True)
         # Building must reproduce the approved checked-in presentation exactly.
         for page in PAGES:
             if (work / page / 'index.html').read_bytes() != (ROOT / page / 'index.html').read_bytes():
@@ -79,6 +82,11 @@ def main():
             path = work / page / 'index.html'
             path.write_text(route_html(path.read_text(), base, page.startswith('experimentos/')), encoding='utf-8')
         queue = ['index.html', 'docs/arq.html', 'docs/og-image.png'] + [f'{page}/index.html' for page in PAGES]
+        # Dependencies selected by JavaScript are declared explicitly by the page.
+        for page in PAGES:
+            runtime = work / page / 'runtime-assets.json'
+            if runtime.is_file():
+                queue.extend(f'{page}/{name}' for name in json.loads(runtime.read_text()))
         files = set()
         while queue:
             name = queue.pop()

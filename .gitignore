@@ -26,3 +26,14 @@ node_modules/
 /assets/brand/grupo-branding/02C1A6F2-5AE8-4FC6-8F0B-10E43FB5FAC4.png
 /assets/brand/grupo-branding/isotipo.svg
 /assets/brand/grupo-branding/isotipo_color.svg
+
+# Rebuildable local reference of the approved motion; keep docs/build/baseline.
+/experimentos/transicion-cinematografica/assets/
+/experimentos/transicion-cinematografica/demo/
+/experimentos/transicion-cinematografica/index.html
+/experimentos/transicion-cinematografica/styles.css
+/experimentos/transicion-cinematografica/motion.js
+/experimentos/transicion-cinematografica/cinematic.css
+/experimentos/transicion-cinematografica/cinematic.js
+/experimentos/transicion-cinematografica/closing.css
+/experimentos/transicion-cinematografica/closing.js

@@ -1,0 +1,12 @@
+/* Contacto only. Defaults preserve the static, fully visible composition. */
+@media (prefers-reduced-motion:no-preference) {
+  .cinematic-experiment #contacto .contact-mark {
+    transform-origin:50% 50%;
+    transform:
+      translate(
+        calc(var(--closing-entry-x,0px) + var(--closing-sign-x,0px)),
+        calc(var(--closing-entry-y,0px) + var(--closing-sign-y,0px))
+      )
+      rotate(calc(var(--closing-entry-turn,0deg) + var(--closing-sign-turn,0deg)));
+  }
+}

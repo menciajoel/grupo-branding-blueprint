@@ -1,0 +1,33 @@
+/* A local two-plane stack. The wrapper adds no height or spacing. */
+@media (prefers-reduced-motion:no-preference) {
+  .cinematic-stack[data-cinematic-enabled="true"] {
+    position:relative;
+    isolation:isolate;
+  }
+  .cinematic-stack[data-cinematic-enabled="true"] #soluciones {
+    position:sticky;
+    top:var(--cinematic-stop-top,0px);
+    z-index:0;
+    isolation:isolate;
+    transform-origin:50% var(--cinematic-origin-y,50%);
+  }
+  .cinematic-stack[data-cinematic-enabled="true"] #soluciones[data-cinematic-depth="true"] {
+    clip-path:inset(var(--cinematic-crop-top,0px) 0 0);
+  }
+  .cinematic-stack[data-cinematic-enabled="true"] #soluciones::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:3;
+    background:#000;
+    opacity:var(--cinematic-shade,0);
+    pointer-events:none;
+  }
+  .cinematic-stack[data-cinematic-enabled="true"] #soluciones[data-cinematic-active="true"] {
+    will-change:transform;
+  }
+  .cinematic-stack[data-cinematic-enabled="true"] #proyectos {
+    position:relative;
+    z-index:1;
+  }
+}

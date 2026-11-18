@@ -38,7 +38,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visibl
 .hero-copy{position:relative;max-width:1180px;pointer-events:none}
 .hero-copy a{pointer-events:auto}
 .hero-dash{display:block;width:42px;height:4px;background:var(--teal);margin-bottom:27px}
-h1{font-size:clamp(60px,5.55vw,108px);line-height:.88;letter-spacing:-.045em;max-width:72vw;position:relative;z-index:4}
+h1{font-size:clamp(54px,5vw,100px);line-height:1;letter-spacing:-.045em;max-width:72vw;position:relative;z-index:4}
 .headline-mask{display:block;overflow:clip;max-width:100%;padding-bottom:.09em;margin-bottom:-.09em}
 .kinetic-line,.word-enter{display:block}
 .accent-line{color:var(--text-blue)}
@@ -50,6 +50,16 @@ h1{font-size:clamp(60px,5.55vw,108px);line-height:.88;letter-spacing:-.045em;max
 .button-outline{border:1px solid #c5c5c5;color:var(--paper)}
 .button-outline:hover{background:#303134}
 .button .ui-icon{width:19px;height:19px}
+/* Keep the editorial footprint clear of the unchanged monumental symbol.
+   Headline mask width stays intact because GSAP exits use xPercent. */
+@media(min-width:1200px){
+ body:not(.tablet-experience) .hero-support{max-width:calc(49vw - var(--gutter) - 28px)}
+}
+@media(min-width:1200px) and (max-width:1619px){
+ body:not(.tablet-experience) .hero-copy h1{font-size:clamp(54px,calc(5vw - 1px),100px);line-height:calc(1em + 1px)}
+ body:not(.tablet-experience) .hero-actions{gap:18px}
+ body:not(.tablet-experience) .hero-actions .button{font-size:clamp(13px,1vw,16px);padding-inline:clamp(18px,1.5vw,24px);gap:clamp(18px,1.5vw,24px)}
+}
 .mobile-art-slot{display:none}
 .brand-art{position:absolute;top:7svh;left:49vw;width:64vw;height:auto;z-index:2;overflow:visible;pointer-events:none}
 .brand-art .facet-photo{opacity:0}

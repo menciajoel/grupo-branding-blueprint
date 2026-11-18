@@ -1,0 +1,261 @@
+{
+  "id": "COPY-P05",
+  "architectureId": "ARQ-P05",
+  "name": "Linkbranding",
+  "sourceHeading": "5. LINKBRANDING",
+  "route": "/linkbranding/",
+  "status": "READY_FOR_REVIEW",
+  "provisional": false,
+  "sections": [
+    {
+      "id": "COPY-P05-S01",
+      "name": "Hero",
+      "sourceName": "Hero",
+      "type": "hero",
+      "blocks": [
+        {
+          "id": "COPY-P05-S01-B01",
+          "type": "h1",
+          "text": "Activaciones BTL y experiencias que conectan tu marca con las personas"
+        },
+        {
+          "id": "COPY-P05-S01-B02",
+          "type": "paragraph",
+          "text": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que generan interacción y recuerdo para tu marca."
+        },
+        {
+          "id": "COPY-P05-S01-B03",
+          "type": "cta",
+          "text": "[Planifica una activación]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S02",
+      "name": "Qué resolvemos",
+      "sourceName": "Qué resolvemos",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S02-B01",
+          "type": "h2",
+          "text": "Cuando tu marca necesita pasar de comunicar a interactuar"
+        },
+        {
+          "id": "COPY-P05-S02-B02",
+          "type": "paragraph",
+          "text": "Creamos encuentros donde las personas pueden interactuar directamente con tu marca."
+        },
+        {
+          "id": "COPY-P05-S02-B03",
+          "type": "paragraph",
+          "text": "Coordinamos concepto, proveedores y operación para que cada experiencia llegue a tiempo al lugar indicado."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S03",
+      "name": "Diseño de activaciones",
+      "sourceName": "Diseño de activaciones",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S03-B01",
+          "type": "h2",
+          "text": "Cada activación comienza con un objetivo"
+        },
+        {
+          "id": "COPY-P05-S03-B02",
+          "type": "paragraph",
+          "text": "Partimos de tu objetivo para diseñar una interacción relevante y planear su ejecución."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S04",
+      "name": "Eventos corporativos y experienciales",
+      "sourceName": "Eventos corporativos y experienciales",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S04-B01",
+          "type": "h2",
+          "text": "Eventos donde tu marca se encuentra con las personas"
+        },
+        {
+          "id": "COPY-P05-S04-B02",
+          "type": "paragraph",
+          "text": "Diseñamos y ejecutamos eventos corporativos y experienciales, cuidando la coordinación y la puntualidad de cada entrega."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S05",
+      "name": "Activaciones de marca",
+      "sourceName": "Activaciones de marca",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S05-B01",
+          "type": "h2",
+          "text": "Activaciones que invitan a participar"
+        },
+        {
+          "id": "COPY-P05-S05-B02",
+          "type": "paragraph",
+          "text": "Llevamos tu marca a una experiencia directa con las personas, desde el concepto hasta la operación en campo."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S06",
+      "name": "Staffing",
+      "sourceName": "Staffing",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S06-B01",
+          "type": "h2",
+          "text": "Staffing para activaciones y eventos"
+        },
+        {
+          "id": "COPY-P05-S06-B02",
+          "type": "paragraph",
+          "text": "Integramos personal de apoyo para la operación de activaciones y eventos según lo que requiere cada proyecto."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S07",
+      "name": "Street marketing",
+      "sourceName": "Street marketing",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S07-B01",
+          "type": "h2",
+          "text": "Street marketing para encontrarte con tu público"
+        },
+        {
+          "id": "COPY-P05-S07-B02",
+          "type": "paragraph",
+          "text": "Llevamos acciones de marca a espacios de circulación para generar contacto directo con tu público."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S08",
+      "name": "Experiencia regional",
+      "sourceName": "Experiencia regional",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S08-B01",
+          "type": "h2",
+          "text": "Más de 20 años creando experiencias BTL"
+        },
+        {
+          "id": "COPY-P05-S08-B02",
+          "type": "paragraph",
+          "text": "Nuestra trayectoria regional y la operación en Honduras nos permiten abordar proyectos con conocimiento de distintos mercados."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S09",
+      "name": "Coordinación de producción",
+      "sourceName": "Coordinación de producción",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S09-B01",
+          "type": "h2",
+          "text": "Menos proveedores que coordinar"
+        },
+        {
+          "id": "COPY-P05-S09-B02",
+          "type": "paragraph",
+          "text": "Centralizamos proveedores y coordinamos la ejecución para que tu experiencia mantenga consistencia, servicio y puntualidad."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S11",
+      "name": "Grupo Branding",
+      "sourceName": "Grupo Branding",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P05-S11-B01",
+          "type": "h2",
+          "text": "Cuando tu proyecto necesita más de una especialidad"
+        },
+        {
+          "id": "COPY-P05-S11-B02",
+          "type": "paragraph",
+          "text": "Como parte de Grupo Branding, podemos conectar tu experiencia BTL con medios y producción física cuando el proyecto lo necesita."
+        },
+        {
+          "id": "COPY-P05-S11-B03",
+          "type": "cta",
+          "text": "[Conoce nuestras divisiones]",
+          "destinationArchitectureId": "ARQ-P03"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P05-S12",
+      "name": "CTA",
+      "sourceName": "CTA",
+      "type": "action",
+      "blocks": [
+        {
+          "id": "COPY-P05-S12-B01",
+          "type": "h2",
+          "text": "Hagamos que tu próxima idea suceda"
+        },
+        {
+          "id": "COPY-P05-S12-B02",
+          "type": "paragraph",
+          "text": "Cuéntanos qué quieres activar, dónde quieres hacerlo y qué experiencia quieres crear."
+        },
+        {
+          "id": "COPY-P05-S12-B03",
+          "type": "cta",
+          "text": "[Planificar una activación]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    }
+  ],
+  "presentTerms": [
+    "BTL",
+    "activaciones",
+    "eventos corporativos",
+    "staffing",
+    "street marketing"
+  ]
+}

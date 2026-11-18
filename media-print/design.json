@@ -1,0 +1,34 @@
+{
+  "canvas": "#141116",
+  "brandFolder": "media-printing",
+  "logoWidth": 333,
+  "logoHeight": 136,
+  "heroImage": "print-taller",
+  "closingImage": "print-taller",
+  "anchors": {
+    "3": "espacios-y-exhibicion",
+    "4": "rotulacion-y-desarrollos"
+  },
+  "navigation": [
+    [
+      "Inicio",
+      "#inicio"
+    ],
+    [
+      "Qué hacemos",
+      "#que-resolvemos"
+    ],
+    [
+      "Soluciones",
+      "#espacios-y-exhibicion"
+    ],
+    [
+      "Proyectos",
+      "#proyectos"
+    ]
+  ],
+  "heroLineBreaks": [
+    2,
+    4
+  ]
+}

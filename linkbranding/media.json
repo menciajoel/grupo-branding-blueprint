@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "id": "link-encuentro",
+      "type": "generated",
+      "source": "OpenAI Imagegen · 2026-11-18",
+      "sourceOriginal": "recursos/conceptos-divisiones/link-encuentro.png",
+      "sha256": "10f13efd8c547451e0f4c9e6cb1be517d3112b2ff9cfeccf40bf11e55f068e04",
+      "sizes": [
+        640,
+        960,
+        1600
+      ],
+      "originalDimensions": [
+        1672,
+        941
+      ],
+      "alt": "Encuentro conceptual entre asistentes en un pabellón con una instalación verde sin marca.",
+      "position": "68% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+    },
+    {
+      "id": "link-calle",
+      "type": "generated",
+      "source": "OpenAI Imagegen · 2026-11-18",
+      "sourceOriginal": "recursos/conceptos-divisiones/link-calle.png",
+      "sha256": "466b98775108ea866bc788b0a101ee23097a6101a560d5750ff2694933b951ce",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "alt": "Interacción conceptual en una instalación de street marketing sin marcas de clientes.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+    },
+    {
+      "id": "experiencias",
+      "type": "stock",
+      "externalPrefix": "../experimentos/inicio-v01/assets/media/experiencias",
+      "sizes": [
+        720,
+        1440
+      ],
+      "originalDimensions": [
+        1440,
+        960
+      ],
+      "alt": "Público y luces durante un evento: fotografía de referencia, sin atribución a Linkbranding.",
+      "disclosure": "Fotografía de referencia · Yvette de Wit / Unsplash",
+      "source": "https://unsplash.com/photos/crowded-musical-event-with-lights-Kcx_YuUR-dw",
+      "license": "https://unsplash.com/license",
+      "uses": "COPY-P05-S04; fotografía genérica, no campaña ejecutada."
+    }
+  ]
+}

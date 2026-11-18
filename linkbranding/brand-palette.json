@@ -1,0 +1,17 @@
+{
+  "source": "../assets/brand/linkbranding/horizontal-color.svg",
+  "officialPigments": [
+    "#86be3a"
+  ],
+  "interfaceRoles": {
+    "accent": "#86be3a",
+    "accent-ink": "#356015",
+    "on-accent": "#101712",
+    "secondary": "#86be3a",
+    "canvas": "#101712",
+    "header": "#101712ed",
+    "paper": "#edf0e5",
+    "arrow-filter": "none"
+  },
+  "note": "Selección de pigmentos para interfaz; los SVG oficiales permanecen intactos. Colores de contraste del lienzo/papel son neutrales de presentación."
+}

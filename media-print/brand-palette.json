@@ -1,0 +1,38 @@
+{
+  "source": "../assets/brand/media-printing/horizontal-color.svg",
+  "officialPigments": [
+    "#221f20",
+    "#22538d",
+    "#3071b4",
+    "#348266",
+    "#4aa24a",
+    "#5fbae9",
+    "#6d6e70",
+    "#74bfce",
+    "#ab2c66",
+    "#b0d5f1",
+    "#b23634",
+    "#bcbdbf",
+    "#bd2e3e",
+    "#c1ce42",
+    "#c52f2f",
+    "#ce2a6c",
+    "#d4532d",
+    "#da3a32",
+    "#e17f55",
+    "#eaadc5",
+    "#eeb05e",
+    "#fde63e"
+  ],
+  "interfaceRoles": {
+    "accent": "#ce2a6c",
+    "accent-ink": "#aa1751",
+    "on-accent": "#ffffff",
+    "secondary": "#74bfce",
+    "canvas": "#141116",
+    "header": "#141116ed",
+    "paper": "#f2ede8",
+    "arrow-filter": "invert(1)"
+  },
+  "note": "Selección de pigmentos para interfaz; los SVG oficiales permanecen intactos. Colores de contraste del lienzo/papel son neutrales de presentación."
+}

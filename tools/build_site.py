@@ -14,8 +14,9 @@ import tempfile
 from verify_site import dependencies, validate
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ('experimentos/inicio-v01', 'media-branding', 'contacto')
-LIVE_ROUTES = {'media-branding': '/media-branding/', 'contacto': '/contacto/'}
+PAGES = ('experimentos/inicio-v01', 'media-branding', 'contacto', 'linkbranding', 'media-print')
+LIVE_ROUTES = {'media-branding': '/media-branding/', 'contacto': '/contacto/',
+               'linkbranding': '/linkbranding/', 'media-print': '/media-print/'}
 
 
 def route_html(text, base, connect_inicio=False):
@@ -25,6 +26,8 @@ def route_html(text, base, connect_inicio=False):
         if connect_inicio and preview and preview[1] in LIVE_ROUTES:
             tag = re.sub(r'\bhref="[^"]*"', f'href="{LIVE_ROUTES[preview[1]]}"', tag)
             tag = re.sub(r'\sdata-preview="[^"]*"', '', tag)
+        if connect_inicio:
+            tag = tag.replace('href="/contacto/"','href="/contacto/?origen=grupo-branding"')
         return tag
     text = re.sub(r'<a\b[^>]*>', anchor, text)
     return re.sub(r'\b(href|src)="(/(?!/)[^"]*)"',
@@ -51,6 +54,8 @@ def main():
             shutil.copy2(ROOT / name, target)
         shutil.copytree(ROOT / 'assets/brand', work / 'assets/brand',
                         ignore=shutil.ignore_patterns('*.png', 'isotipo.svg', 'isotipo_color.svg'))
+        shutil.copytree(ROOT / 'shared/divisions', work / 'shared/divisions',
+                        ignore=shutil.ignore_patterns('__pycache__', 'output'))
         for page in PAGES:
             target = work / page
             target.mkdir(parents=True)
@@ -65,6 +70,7 @@ def main():
             subprocess.run([sys.executable, '-B', str(work / page / 'build.py')], cwd=work, env=env, check=True)
         for page in ('experimentos/inicio-v01', 'media-branding'):
             subprocess.run([sys.executable, '-B', str(work / page / 'verify.py')], cwd=work, env=env, check=True)
+        subprocess.run([sys.executable, '-B', str(work / 'shared/divisions/verify.py')], cwd=work, env=env, check=True)
         # Building must reproduce the approved checked-in presentation exactly.
         for page in PAGES:
             if (work / page / 'index.html').read_bytes() != (ROOT / page / 'index.html').read_bytes():

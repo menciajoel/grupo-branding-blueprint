@@ -18,14 +18,14 @@ def block(section,number,tag='p',css='',identity=''):
     attrs=f' id="{identity}"' if identity else ''
     return f'<{tag}{attrs} class="{css}" data-copy="{key}">{esc(text)}</{tag}>'
 
-choices=''.join(f'<label class="need-option"><input type="radio" name="necesidad" value="{number}" {"checked" if number==2 else ""}><span data-copy="COPY-P08-S02-B{number:02d}">{esc(blocks[f"COPY-P08-S02-B{number:02d}"]["text"])}</span></label>' for number in range(2,7))
+choices=''.join(f'<label class="need-option"><input type="radio" name="necesidad" value="{number}"><span data-copy="COPY-P08-S02-B{number:02d}">{esc(blocks[f"COPY-P08-S02-B{number:02d}"]["text"])}</span></label>' for number in range(2,7))
 fields=[]
 for number,kind,autocomplete in [(7,'text','name'),(8,'text','organization'),(9,'email','email'),(10,'tel','tel')]:
     key=f'COPY-P08-S02-B{number:02d}';identity=f'contact-field-{number}'
     fields.append(f'<div class="contact-field"><label for="{identity}" data-copy="{key}">{esc(blocks[key]["text"])}</label><input id="{identity}" type="{kind}" autocomplete="off"></div>')
 textarea=f'<div class="contact-field contact-message"><label for="project-context" data-copy="COPY-P08-S02-B11">{esc(blocks["COPY-P08-S02-B11"]["text"])}</label><textarea id="project-context" rows="5" aria-describedby="project-help"></textarea></div>'
 send=block(2,13,'span')
-footer='<footer class="contact-footer"><a href="/media-branding/"><img src="../assets/brand/media-branding/horizontal-blanco.svg" width="202" height="60" alt="Media Branding"></a><a href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio">Grupo Branding<img src="../media-branding/assets/icons/arrow-up-right.svg" width="20" height="20" alt=""></a></footer>'
+footer='<footer class="contact-footer"><a href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="../assets/brand/grupo-branding/horizontal-blanco.svg" width="202" height="60" alt="Grupo Branding"></a><a href="../experimentos/inicio-v01/" data-contact-return><span data-contact-return-label>Grupo Branding</span><img src="../media-branding/assets/icons/arrow-up-right.svg" width="20" height="20" alt=""></a></footer>'
 page=f'''<!doctype html>
 <html lang="es"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -39,7 +39,7 @@ page=f'''<!doctype html>
   <script src="contact.js?v={hashlib.sha256((ROOT/'contact.js').read_bytes()).hexdigest()[:12]}" defer></script>
 </head><body class="division-page contact-page">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="division-header contact-header"><a class="brand-link" href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="../assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="64" alt="Grupo Branding"></a><nav aria-label="Grupo Branding"><a href="/media-branding/">Media Branding</a><a href="#contenido" aria-current="page">Contacto</a></nav></header>
+  <header class="division-header contact-header"><a class="brand-link" href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="../assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="64" alt="Grupo Branding"></a><nav aria-label="Grupo Branding"><a href="../experimentos/inicio-v01/" data-contact-return><span data-contact-return-label>Grupo Branding</span></a><a href="#contenido" aria-current="page">Contacto</a></nav></header>
   <main id="contenido" class="contact-main">
     <section class="contact-hero" aria-labelledby="contact-title">{block(1,1,'h1',identity='contact-title')}{block(1,2,'p','contact-introduction')}</section>
     <aside class="owner-context" id="predios-privados" aria-labelledby="owner-context-title" hidden><h2 id="owner-context-title">Predios privados</h2><p class="owner-email" data-demonstration-email>{esc(proposal['demonstrationEmail']['text'])}</p><span class="demo-status">Demostración</span></aside>

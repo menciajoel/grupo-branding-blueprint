@@ -1,6 +1,6 @@
 # Grupo Branding — prototipos para colaboración
 
-Media Branding, incluida la galería de Proyectos, cuenta con aprobación creativa del director (18-11-2026). Este repositorio conserva el Inicio experimental de Grupo Branding y una pantalla demostrativa de Contacto. Es una presentación navegable en GitHub Pages, no el sitio definitivo en los dominios comerciales.
+La publicación general del prototipo está autorizada por el director (18-11-2026): Inicio de Grupo Branding, Media Branding, Linkbranding, Media Print y Contacto compartido. Incluye los CTA corporativos, la exploración por hover/foco y el contexto de origen de Contacto. Es una presentación navegable en GitHub Pages, no el sitio definitivo en los dominios comerciales.
 
 ## Empezar
 
@@ -16,6 +16,8 @@ python3 -B -m http.server 4173 --bind 127.0.0.1 --directory _site
 Abrir:
 
 - Media Branding: <http://127.0.0.1:4173/media-branding/>
+- Linkbranding: <http://127.0.0.1:4173/linkbranding/>
+- Media Print: <http://127.0.0.1:4173/media-print/>
 - Grupo Branding: <http://127.0.0.1:4173/experimentos/inicio-v01/>
 - Contacto: <http://127.0.0.1:4173/contacto/>
 - Documentación aprobada: <http://127.0.0.1:4173/docs/arq.html>
@@ -26,6 +28,9 @@ La compilación trabaja en una copia temporal, verifica el contenido y genera ú
 
 ```text
 media-branding/             Página completa aprobada: fuentes editables y recursos web
+linkbranding/               COPY-P05, identidad y fotografía de Linkbranding
+media-print/                COPY-P06, identidad y fotografía de Media Print
+shared/divisions/           Render, hero, secciones y verificación de ambas divisiones
 contacto/                   COPY-P08 y presentación sin envíos
 experimentos/inicio-v01/     Inicio aprobado existente, conservado
 assets/brand/               SVG oficiales por marca
@@ -47,13 +52,20 @@ Trabajar en una rama propia, por ejemplo `git switch -c codex/ajuste-media-brand
 - **Estilos:** `tokens.css` define los colores aprobados; `styles.css` corresponde al hero y primera transición; `chapters.css` a las secciones posteriores; `projects.css` se limita a la galería. Contacto usa `contact.css`.
 - **Movimiento:** `motion.js`, `chapters.js`, `projects.js`; conservar las coreografías aprobadas y el soporte de movimiento reducido. Contacto usa `contact.js`.
 
+Linkbranding y Media Print usan cada una `content.json`, `design.json`, `media.json`, `theme.css` y `build.py`; comparten los componentes de `shared/divisions/`. Los registros de contenido se contrastan íntegramente con COPY-P05/COPY-P06 en `docs/arq.html`. Las modificaciones del código compartido requieren regenerar y revisar ambas marcas. Media Branding conserva su propia implementación aprobada; sus fuentes, vendor e iconos también son dependencias locales de las nuevas páginas.
+
+Los CTA de Contacto transmiten `origen=media-branding`, `origen=linkbranding`, `origen=media-print` o `origen=grupo-branding`. Contacto solo admite esos valores, preselecciona el servicio de la división y muestra su retorno. El origen del grupo, el acceso directo y un origen desconocido son neutrales. Los enlaces antiguos `?servicio=division` siguen funcionando cuando no hay un origen explícito. La identidad de Contacto es siempre Grupo Branding.
+
 Después de editar fuentes, regenerar los HTML correspondientes y revisarlos antes de compilar:
 
 ```sh
 python3 -B media-branding/build.py
 python3 -B contacto/build.py
+python3 -B linkbranding/build.py
+python3 -B media-print/build.py
 python3 -B media-branding/verify.py
 python3 -B experimentos/inicio-v01/verify.py
+python3 -B shared/divisions/verify.py
 python3 -B tools/build_site.py
 ```
 
@@ -62,6 +74,8 @@ El generador de Inicio es `experimentos/inicio-v01/build.py`; ejecutarlo solo al
 ## Actualizar imágenes
 
 Los WebP en `media-branding/assets/media/` son los recursos completos necesarios para reconstruir la presentación; no requieren descargar archivos privados. `media.json` registra variantes, dimensiones, alt, encuadre, procedencia y condición conceptual. `projects.json` define el orden y las etiquetas de las seis fotografías.
+
+Las otras divisiones incluyen sus WebP en `linkbranding/assets/media/` y `media-print/assets/media/`. Sus `media.json` identifican cinco escenas generadas y una fotografía de referencia ya existente en Inicio; se conserva visible la distinción conceptual. No se atribuyen estas imágenes a clientes o campañas reales. Los PNG originales opcionales permanecen fuera de Git; los WebP versionados permiten reconstruir todas las páginas sin ellos.
 
 Al sustituir una imagen: conservar proporciones, generar variantes WebP, actualizar el registro y su alt, y comprobar los encuadres en escritorio, tablet y móvil. No alterar los SVG oficiales ni sus colores. `procedencia-imagenes.json` conserva prompts y procedencia disponibles; `inventario-imagenes.md` documenta usos y sustituciones pendientes.
 
@@ -80,13 +94,16 @@ python3 -B tools/build_site.py --base-path /grupo-branding-blueprint
 python3 -B tools/verify_site.py --base-path /grupo-branding-blueprint
 ```
 
-El prefijo se obtiene de `configure-pages` en CI. Solo en la salida se adaptan las rutas absolutas de Contacto/Media Branding y se conectan los enlaces de Inicio a las dos páginas ya implementadas. Las demás páginas conservan sus vistas de prototipo. No se cambia el diseño ni se implementan destinos comerciales adicionales. Servir `_site/` directamente requiere compilar sin prefijo; para previsualizar un prefijo debe montarse esa carpeta bajo dicho subdirectorio.
+El prefijo se obtiene de `configure-pages` en CI. Solo en la salida se adaptan las rutas absolutas y se conectan los enlaces de Inicio a las tres divisiones y Contacto. Las demás páginas conservan sus vistas de prototipo. No se cambia el diseño ni se implementan destinos comerciales adicionales. Servir `_site/` directamente requiere compilar sin prefijo; para previsualizar un prefijo debe montarse esa carpeta bajo dicho subdirectorio.
 
 URLs públicas:
 
 - [Media Branding](https://menciajoel.github.io/grupo-branding-blueprint/media-branding/)
+- [Linkbranding](https://menciajoel.github.io/grupo-branding-blueprint/linkbranding/)
+- [Media Print](https://menciajoel.github.io/grupo-branding-blueprint/media-print/)
 - [Inicio de Grupo Branding](https://menciajoel.github.io/grupo-branding-blueprint/experimentos/inicio-v01/)
 - [Contacto](https://menciajoel.github.io/grupo-branding-blueprint/contacto/)
+- [ARQ-02 + COPY-03 en el mismo repositorio](https://github.com/menciajoel/grupo-branding-blueprint/blob/main/docs/arq.html)
 
 Revisar el resultado de Actions y el `sourceCommit` de `deployment.json` en la raíz publicada después de desplegar. La portada y `docs/arq.html` se copian sin modificaciones. El paquete incluye solo recursos referenciados y avisos de licencia; las fuentes Python/JSON, instrucciones y procedencia permanecen en el repositorio para colaboración.
 
@@ -94,4 +111,4 @@ Revisar el resultado de Actions y el `sourceCommit` de `deployment.json` en la r
 
 Conservar el hero, las transformaciones de Inicio, las máscaras, SVG oficiales, copy, rutas aprobadas y demás composiciones aprobadas. Las etiquetas de recuperación existentes siguen intactas; algunas apuntan a **árboles de archivos**, no a commits: inspeccionar con `git cat-file -t <etiqueta>^{}` y recuperar en una carpeta aparte con `git archive <etiqueta> | tar -x -C /ruta/vacia`. Nunca restaurar destructivamente sobre trabajo ajeno. Las etiquetas locales de trabajo no se publican indiscriminadamente porque pueden incluir material interno.
 
-Contacto es demostrativo: no hay backend, almacenamiento ni mensajes de envío simulado. El correo de Predios es un dato demostrativo sin destinatario operativo. Newsletter y las páginas independientes de las otras empresas quedan pendientes. Las validaciones responsive y Safari de escritorio no equivalen a una prueba en iPad/iPhone físicos. El alcance aprobado sigue siendo prototipo; no se ha desplegado ningún dominio comercial.
+Contacto es demostrativo: no hay backend, almacenamiento ni mensajes de envío simulado. El correo de Predios es un dato demostrativo sin destinatario operativo. El envío real de Newsletter y las páginas independientes de Divisiones y Portafolio siguen pendientes; los recorridos implementados utilizan sus equivalentes de Inicio o vistas de prototipo. Las imágenes conceptuales requieren sustitución o confirmación para el sitio comercial definitivo. Las validaciones responsive y Safari de escritorio no equivalen a una prueba en iPad/iPhone físicos. El alcance aprobado sigue siendo prototipo; no se ha desplegado ningún dominio comercial.

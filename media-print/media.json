@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id": "print-taller",
+      "type": "generated",
+      "source": "OpenAI Imagegen · 2026-11-18",
+      "sourceOriginal": "recursos/conceptos-divisiones/print-taller.png",
+      "sha256": "d734a4d4bc583c2c9b32b911694b7a3bbcacd6e62afb0d6649390168c01eb643",
+      "sizes": [
+        640,
+        960,
+        1600
+      ],
+      "originalDimensions": [
+        1672,
+        941
+      ],
+      "alt": "Taller conceptual de fabricación de estructuras y paneles de exhibición.",
+      "position": "69% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+    },
+    {
+      "id": "print-espacios",
+      "type": "generated",
+      "source": "OpenAI Imagegen · 2026-11-18",
+      "sourceOriginal": "recursos/conceptos-divisiones/print-espacios.png",
+      "sha256": "f65dcbb1260f908bc71a4cd5461c76daaac1166ca44d2123fb71b0b490bc143e",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "alt": "Instalación conceptual de exhibición y mobiliario comercial sin marcas.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+    },
+    {
+      "id": "print-vehiculo",
+      "type": "generated",
+      "source": "OpenAI Imagegen · 2026-11-18",
+      "sourceOriginal": "recursos/conceptos-divisiones/print-vehiculo.png",
+      "sha256": "cf185461f53582111140945864824f8565b1bce1b85adf66cf89bb47e658d34d",
+      "sizes": [
+        640,
+        960,
+        1536
+      ],
+      "originalDimensions": [
+        1536,
+        1024
+      ],
+      "alt": "Aplicación conceptual de gráficos geométricos sin marca sobre un vehículo comercial.",
+      "position": "50% 50%",
+      "disclosure": "Visualización conceptual · Imagen provisional",
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "canvas": "#101712",
+  "brandFolder": "linkbranding",
+  "logoWidth": 924,
+  "logoHeight": 201,
+  "heroImage": "link-encuentro",
+  "closingImage": "link-encuentro",
+  "anchors": {
+    "3": "diseno-de-activaciones",
+    "4": "eventos",
+    "5": "activaciones",
+    "6": "staffing",
+    "7": "street-marketing",
+    "8": "experiencia-regional",
+    "9": "coordinacion",
+    "11": "grupo-branding"
+  },
+  "navigation": [
+    [
+      "Inicio",
+      "#inicio"
+    ],
+    [
+      "Qué resolvemos",
+      "#que-resolvemos"
+    ],
+    [
+      "Experiencias",
+      "#eventos"
+    ],
+    [
+      "Grupo Branding",
+      "#grupo-branding"
+    ]
+  ],
+  "heroLineBreaks": [
+    2,
+    2,
+    4
+  ]
+}

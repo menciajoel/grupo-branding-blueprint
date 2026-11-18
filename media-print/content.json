@@ -1,0 +1,201 @@
+{
+  "id": "COPY-P06",
+  "architectureId": "ARQ-P06",
+  "name": "Media Print",
+  "sourceHeading": "6. MEDIA PRINT",
+  "route": "/media-print/",
+  "status": "READY_FOR_REVIEW",
+  "provisional": false,
+  "sections": [
+    {
+      "id": "COPY-P06-S01",
+      "name": "Hero",
+      "sourceName": "Hero",
+      "type": "hero",
+      "blocks": [
+        {
+          "id": "COPY-P06-S01-B01",
+          "type": "h1",
+          "text": "Producción física para convertir tus ideas en realidad"
+        },
+        {
+          "id": "COPY-P06-S01-B02",
+          "type": "paragraph",
+          "text": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
+        },
+        {
+          "id": "COPY-P06-S01-B03",
+          "type": "cta",
+          "text": "[Consultar producción]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P06-S02",
+      "name": "Qué hacemos",
+      "sourceName": "Qué hacemos",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P06-S02-B01",
+          "type": "h2",
+          "text": "De la idea a una solución física viable"
+        },
+        {
+          "id": "COPY-P06-S02-B02",
+          "type": "paragraph",
+          "text": "Revisamos tu identidad y objetivo, definimos cómo producir cada elemento y cuidamos materiales, medidas, acabados e implementación."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P06-S03",
+      "name": "Branding de espacios y punto de venta",
+      "sourceName": "Branding de espacios y punto de venta",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P06-S03-B01",
+          "type": "h2",
+          "text": "Tu marca presente en espacios y exhibiciones"
+        },
+        {
+          "id": "COPY-P06-S03-B02",
+          "type": "paragraph",
+          "text": "Producimos aplicaciones para espacios, comunicación comercial y exhibición, con atención a la identidad de tu marca."
+        },
+        {
+          "id": "COPY-P06-S03-B04",
+          "type": "h3",
+          "text": "Branding y ambientación"
+        },
+        {
+          "id": "COPY-P06-S03-B05",
+          "type": "paragraph",
+          "text": "Gráficos murales, señalización y aplicaciones de marca para espacios."
+        },
+        {
+          "id": "COPY-P06-S03-B06",
+          "type": "h3",
+          "text": "Punto de venta y exhibición"
+        },
+        {
+          "id": "COPY-P06-S03-B07",
+          "type": "paragraph",
+          "text": "Material POP, exhibidores, displays y gráficos para presentar tu marca o producto."
+        },
+        {
+          "id": "COPY-P06-S03-B08",
+          "type": "h3",
+          "text": "Estructuras y mobiliario"
+        },
+        {
+          "id": "COPY-P06-S03-B09",
+          "type": "paragraph",
+          "text": "Stands, exhibiciones, muebles publicitarios y estructuras metálicas."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P06-S04",
+      "name": "Rotulación y desarrollos especiales",
+      "sourceName": "Rotulación y desarrollos especiales",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P06-S04-B01",
+          "type": "h2",
+          "text": "Soluciones para vehículos e ideas fuera de formato"
+        },
+        {
+          "id": "COPY-P06-S04-B02",
+          "type": "paragraph",
+          "text": "Adaptamos la producción a vehículos, campañas y necesidades que requieren una pieza especial."
+        },
+        {
+          "id": "COPY-P06-S04-B03",
+          "type": "h3",
+          "text": "Rotulación vehicular"
+        },
+        {
+          "id": "COPY-P06-S04-B04",
+          "type": "paragraph",
+          "text": "Branding parcial o completo y gráficos para flotas."
+        },
+        {
+          "id": "COPY-P06-S04-B05",
+          "type": "h3",
+          "text": "Desarrollos a medida"
+        },
+        {
+          "id": "COPY-P06-S04-B06",
+          "type": "paragraph",
+          "text": "Prototipos, elementos tridimensionales y dispositivos diseñados para un proyecto específico."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P06-S05",
+      "name": "Proyectos",
+      "sourceName": "Proyectos",
+      "type": "section",
+      "blocks": [
+        {
+          "id": "COPY-P06-S05-B01",
+          "type": "h2",
+          "text": "Proyectos que muestran lo que producimos"
+        },
+        {
+          "id": "COPY-P06-S05-B02",
+          "type": "paragraph",
+          "text": "Entre nuestras referencias de producción están bancas de estadio, stand Nescafé Ice, proyectos Maggi y latas de Pepsi."
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "COPY-P06-S06",
+      "name": "CTA",
+      "sourceName": "CTA",
+      "type": "action",
+      "blocks": [
+        {
+          "id": "COPY-P06-S06-B01",
+          "type": "h2",
+          "text": "Cuéntanos qué necesitas producir"
+        },
+        {
+          "id": "COPY-P06-S06-B02",
+          "type": "paragraph",
+          "text": "Compártenos tu idea o requerimiento y conversemos sobre cómo llevarlo a una pieza terminada."
+        },
+        {
+          "id": "COPY-P06-S06-B03",
+          "type": "cta",
+          "text": "[Consultar producción]",
+          "destinationArchitectureId": "ARQ-P08"
+        }
+      ],
+      "pending": [],
+      "status": "READY_FOR_REVIEW"
+    }
+  ],
+  "presentTerms": [
+    "producción física",
+    "branding de espacios",
+    "material POP",
+    "exhibidores",
+    "rotulación vehicular",
+    "estructuras metálicas"
+  ]
+}

@@ -18,6 +18,10 @@ node_modules/
 /media-branding/design-qa.md
 /media-branding/proyectos-qa.md
 /media-branding/informe-presentacion.md
+/.superdesign/
+/linkbranding/informe-implementacion.md
+/media-print/informe-implementacion.md
+/shared/divisions/informe-consistencia.md
 # Local reference image and redundant SVG aliases; official hyphenated variants remain.
 /assets/brand/grupo-branding/02C1A6F2-5AE8-4FC6-8F0B-10E43FB5FAC4.png
 /assets/brand/grupo-branding/isotipo.svg

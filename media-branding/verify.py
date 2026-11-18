@@ -70,8 +70,8 @@ assert trace['registeredCount']==26 and {x['sourceId'] for x in trace['blocks']}
 official_colors={'#2e70b4','#f08633'}  # Explicit director approval supersedes the earlier pilot selection.
 pigments=re.findall(r'--mb-pigment-[\w-]+:\s*(#[0-9a-fA-F]{6})',(ROOT/'tokens.css').read_text())
 assert set(pigments)==official_colors, 'UI pigment differs from the explicitly approved palette'
-assert page.routes['COPY-P04-S01-B03']=='/contacto/'
-assert page.routes['COPY-P04-S12-B03']=='/contacto/'
+assert page.routes['COPY-P04-S01-B03']=='/contacto/?origen=media-branding'
+assert page.routes['COPY-P04-S12-B03']=='/contacto/?origen=media-branding'
 for asset in page.assets:
     assert (ROOT/unquote(urlsplit(asset).path)).is_file(), asset
 for css_asset in re.findall(r'url\([\'\"]?([^\)\'\"]+)',(ROOT/'styles.css').read_text()):
@@ -80,7 +80,7 @@ html=(ROOT/'index.html').read_text()
 for text in ['Piloto de diseño','Pendiente de implementación','Contacto pendiente','Contacto · Provisional','Fotografías de los proyectos citados pendientes','POR PROPORCIONAR']:
     assert text not in html,text
 assert 'Media Branding | Publicidad exterior en Honduras' in html
-assert sum(link.get('href')=='/contacto/' for link in page.links)==4
+assert sum(link.get('href')=='/contacto/?origen=media-branding' for link in page.links)==4
 assert all('data-pending' not in link for link in page.links)
 assert not any('predios@example.com' in link.get('href','') for link in page.links)
 assert 'data-media="proyecto-issima"' in html and 'data-media="concepto-exterior"' not in html

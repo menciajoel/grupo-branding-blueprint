@@ -100,6 +100,7 @@ page = (ROOT / 'template.html').read_text()
 for token, value in replacements.items():
     page = page.replace('{{' + token + '}}', value)
 assert '{{' not in page
+page = page.replace('href="/contacto/"','href="/contacto/?origen=media-branding"').replace('href="/contacto/#','href="/contacto/?origen=media-branding#')
 (ROOT / 'index.html').write_text(page)
 replacement_map={source:item['id'] for item in presentation['blocks'] for source in item.get('replaces',[])}
 pending={item['id']:item for section in content['sections'] for item in section.get('pending',[])}

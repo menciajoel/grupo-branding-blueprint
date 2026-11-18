@@ -1,0 +1,12 @@
+:root {
+  --division-accent:#86be3a;
+  --division-accent-ink:#356015;
+  --division-on-accent:#101712;
+  --division-secondary:#86be3a;
+  --division-canvas:#101712;
+  --division-header:#101712ed;
+  --division-paper:#edf0e5;
+  --division-arrow-filter:none;
+}
+.linkbranding .brand-link{width:clamp(220px,18vw,290px)}
+@media(max-width:700px){.linkbranding .brand-link{width:174px}}

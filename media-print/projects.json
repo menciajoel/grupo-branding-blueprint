@@ -1,0 +1,24 @@
+{
+  "section": "COPY-P06-S05",
+  "autoplay": false,
+  "items": [
+    {
+      "mediaId": "print-espacios",
+      "label": "Branding y ambientación",
+      "evidence": "conceptual",
+      "labelSource": "COPY-P06-S03-B04"
+    },
+    {
+      "mediaId": "print-vehiculo",
+      "label": "Rotulación vehicular",
+      "evidence": "conceptual",
+      "labelSource": "COPY-P06-S04-B03"
+    },
+    {
+      "mediaId": "print-taller",
+      "label": "Desarrollos a medida",
+      "evidence": "conceptual",
+      "labelSource": "COPY-P06-S04-B05"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+:root {
+  --division-accent:#ce2a6c;
+  --division-accent-ink:#aa1751;
+  --division-on-accent:#ffffff;
+  --division-secondary:#74bfce;
+  --division-canvas:#141116;
+  --division-header:#141116ed;
+  --division-paper:#f2ede8;
+  --division-arrow-filter:invert(1);
+}
+.media-print .brand-link{width:180px}
+.media-print .journey-photo{object-position:69% 50%}
+.media-print{--mb-color-editorial-accent:var(--division-secondary)}
+.media-print .division-section:not(.light-chapter) .section-label{color:var(--division-secondary)}
+@media(max-width:700px){.media-print .brand-link{width:135px}.media-print .hero-copy{padding-bottom:95px}}

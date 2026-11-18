@@ -13,8 +13,12 @@
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="motion.js?v={{MOTION_HASH}}" defer></script>
+  <link rel="stylesheet" href="../../shared/inicio/cinematic.css?v={{CINEMATIC_STYLE_HASH}}">
+  <script src="../../shared/inicio/cinematic.js?v={{CINEMATIC_MOTION_HASH}}" defer></script>
+  <link rel="stylesheet" href="../../shared/inicio/closing.css?v={{CLOSING_STYLE_HASH}}">
+  <script src="../../shared/inicio/closing.js?v={{CLOSING_MOTION_HASH}}" defer></script>
 </head>
-<body>
+<body class="cinematic-experiment">
   <a class="skip-link" href="#divisiones" data-scroll>Saltar a las divisiones</a>
   <header class="site-header">
     <a href="#inicio" class="brand" data-scroll aria-label="Grupo Branding · Inicio"><img src="assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="52" alt="Grupo Branding"></a>
@@ -68,6 +72,7 @@
       </div>
     </div>
 
+    <div class="cinematic-stack">
     <section class="solutions section-pad" id="soluciones" aria-labelledby="solutions-heading">
       <div class="section-top"><span class="section-kicker">02 / SOLUCIONES</span><span class="section-rule" aria-hidden="true"></span></div>
       <div class="section-heading" id="solutions-heading">{{SOLUTIONS_TITLE}}{{SOLUTIONS_BODY}}</div>
@@ -80,6 +85,8 @@
       <p class="evidence-note">Casos documentados · Fotografías de los proyectos por incorporar</p>
       <div class="project-index">{{PROJECT_ROWS}}</div>
     </section>
+
+    </div>
 
     <section class="brands section-pad" id="marcas" aria-labelledby="brands-heading">
       <span class="section-kicker">04 / MARCAS</span><div class="brands-copy" id="brands-heading">{{BRANDS_TITLE}}{{BRANDS_BODY}}</div>

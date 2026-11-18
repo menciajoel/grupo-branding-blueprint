@@ -1,0 +1,17 @@
+{
+  "approvedDate": "2026-11-18",
+  "referenceExperiment": "experimentos/transicion-cinematografica/",
+  "previousPublishedCommit": "735a12b909beaa53291c7246da3a008ecf30143b",
+  "motionFiles": {
+    "cinematic.css": "d21bf083aa661ac039e38f6a95af243ccd4bc17ccc4a296314bd358227511986",
+    "cinematic.js": "50029421a5c50d0cad0f00420b41be3ef2e3ee5aae5cd06992825db0a3e87b15",
+    "closing.css": "8b63247700e198dd779de043ac9812ba910350458e208d225dea71f41e0d2e15",
+    "closing.js": "077883ccc0dd988c769bff802ded5ef3cc4ca41138482853039b3c25a4a48428"
+  },
+  "bodySha256": "ba58fa1bb421cd309ac947ac0859ae250641ca56e6365126a74b28d4203ec5ff",
+  "protectedSources": {
+    "experimentos/inicio-v01/styles.css": "7fce64ce16178e08366f65c5f520b4a27c77ca5995fce845897db7d721fc39eb",
+    "experimentos/inicio-v01/motion.js": "d9eb6e0c1a543de059f36cbbead5962759bf9223c8ce2d0b0140d134470c1ccb",
+    "docs/arq.html": "7a259abc5c10151640a554fce9b586f7b1c93ed8998cc23584184f86ed299e1a"
+  }
+}

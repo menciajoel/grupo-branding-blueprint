@@ -2,6 +2,10 @@
 
 La publicación general del prototipo está autorizada por el director (18-11-2026): Inicio de Grupo Branding, Media Branding, Linkbranding, Media Print y Contacto compartido. Incluye los CTA corporativos, la exploración por hover/foco y el contexto de origen de Contacto. Es una presentación navegable en GitHub Pages, no el sitio definitivo en los dominios comerciales.
 
+La consolidación aprobada incorpora en Inicio la transición cinematográfica Soluciones → Proyectos y el cierre editorial de Contacto. Sus cuatro recursos se trasladaron sin cambios a `shared/inicio/`, como fuente única. Se conservan el hero, su refinamiento óptico y las páginas de las tres divisiones y Contacto. Las transiciones de las páginas individuales corresponden a una etapa posterior y no se incluyen aquí.
+
+El [informe de consolidación](docs/consolidacion-2026-11-18.md) documenta la protección, los cambios de integración y la verificación local.
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.
@@ -31,8 +35,10 @@ media-branding/             Página completa aprobada: fuentes editables y recur
 linkbranding/               COPY-P05, identidad y fotografía de Linkbranding
 media-print/                COPY-P06, identidad y fotografía de Media Print
 shared/divisions/           Render, hero, secciones y verificación de ambas divisiones
+shared/inicio/              Transición cinematográfica y cierre aprobados, con hashes de aprobación
 contacto/                   COPY-P08 y presentación sin envíos
 experimentos/inicio-v01/     Inicio aprobado existente, conservado
+experimentos/transicion-cinematografica/ Referencia técnica, generador y QA históricos; salidas locales ignoradas
 assets/brand/               SVG oficiales por marca
 docs/arq.html               ARQ-02 + COPY-03, fuente de verdad
 tools/build_site.py         Compilación aislada, prefijo de rutas y paquete estático
@@ -52,6 +58,8 @@ Trabajar en una rama propia, por ejemplo `git switch -c codex/ajuste-media-brand
 - **Estilos:** `tokens.css` define los colores aprobados; `styles.css` corresponde al hero y primera transición; `chapters.css` a las secciones posteriores; `projects.css` se limita a la galería. Contacto usa `contact.css`.
 - **Movimiento:** `motion.js`, `chapters.js`, `projects.js`; conservar las coreografías aprobadas y el soporte de movimiento reducido. Contacto usa `contact.js`.
 
+Inicio conserva su `motion.js` y `styles.css`. El template incluye `../../shared/inicio/cinematic.*` y `closing.*` con hashes de versión. `shared/inicio/approval.json` registra la implementación aprobada y `verify.py` comprueba su integridad y el cuerpo HTML. Consultar [la guía de motion de Inicio](shared/inicio/README.md). No actualizar esas huellas para justificar cambios creativos sin aprobación.
+
 Linkbranding y Media Print usan cada una `content.json`, `design.json`, `media.json`, `theme.css` y `build.py`; comparten los componentes de `shared/divisions/`. Los registros de contenido se contrastan íntegramente con COPY-P05/COPY-P06 en `docs/arq.html`. Las modificaciones del código compartido requieren regenerar y revisar ambas marcas. Media Branding conserva su propia implementación aprobada; sus fuentes, vendor e iconos también son dependencias locales de las nuevas páginas.
 
 Los CTA de Contacto transmiten `origen=media-branding`, `origen=linkbranding`, `origen=media-print` o `origen=grupo-branding`. Contacto solo admite esos valores, preselecciona el servicio de la división y muestra su retorno. El origen del grupo, el acceso directo y un origen desconocido son neutrales. Los enlaces antiguos `?servicio=division` siguen funcionando cuando no hay un origen explícito. La identidad de Contacto es siempre Grupo Branding.
@@ -66,10 +74,13 @@ python3 -B media-print/build.py
 python3 -B media-branding/verify.py
 python3 -B experimentos/inicio-v01/verify.py
 python3 -B shared/divisions/verify.py
+python3 -B shared/inicio/verify.py
 python3 -B tools/build_site.py
 ```
 
 El generador de Inicio es `experimentos/inicio-v01/build.py`; ejecutarlo solo al trabajar expresamente sobre Inicio. No editar únicamente un `index.html` generado: la compilación comprueba que las fuentes lo reproduzcan exactamente. Un manifiesto de protección local puede comprobarse opcionalmente con `media-branding/verify.py --baseline /ruta/manifiesto.json`.
+
+La referencia cinematográfica se reconstruye con `python3 -B experimentos/transicion-cinematografica/build.py`, después de generar Inicio. Sus copias de runtime, assets, capturas y videos permanecen locales y no se versionan ni despliegan. Sus README, QA, generador y baseline histórico sí se conservan en Git. El paquete declara en `runtime-assets.json` los recursos que se seleccionan desde JavaScript, como el icono de activar movimiento.
 
 ## Actualizar imágenes
 

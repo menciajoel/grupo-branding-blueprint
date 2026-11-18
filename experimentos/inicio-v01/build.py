@@ -117,6 +117,10 @@ error = newsletter_support[2]['blocks'][0]
 credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener noreferrer">{esc(m["author"])} · Unsplash{icon(size=18)}</a></li>' for m in media['items'])
 
 values = {
+ 'CINEMATIC_STYLE_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/cinematic.css').read_bytes()).hexdigest()[:12],
+ 'CINEMATIC_MOTION_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/cinematic.js').read_bytes()).hexdigest()[:12],
+ 'CLOSING_STYLE_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/closing.css').read_bytes()).hexdigest()[:12],
+ 'CLOSING_MOTION_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/closing.js').read_bytes()).hexdigest()[:12],
  'MOTION_HASH':hashlib.sha256((ROOT/'motion.js').read_bytes()).hexdigest()[:12],
  'STYLE_HASH':hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12],
  'META':esc(text(1,2)), 'HERO_TITLE':headline_html,'HERO_BODY':tag('p',1,2,'hero-lead'),

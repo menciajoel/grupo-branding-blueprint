@@ -7,14 +7,14 @@
   const categories = {
     'media-branding': {name:'Media Branding', color:'#2e70b4', icon:'assets/media-branding-isotipo.svg', question:'¿Dónde te gustaría que tu marca tuviera presencia?'},
     linkbranding: {name:'Linkbranding', color:'#86be3a', icon:'assets/linkbranding-isotipo.svg', question:'¿Qué experiencia te gustaría crear?'},
-    'media-print': {name:'Media Print', color:'#ce2a6c', icon:'assets/media-print-isotipo.svg', question:'¿Qué necesitas hacer realidad?'},
+    'media-print': {name:'Media Printing', color:'#ce2a6c', icon:'assets/media-print-isotipo.svg', question:'¿Qué necesitas hacer realidad?'},
     combinada: {name:'Solución combinada', color:'#0035d8', question:'Cuéntanos qué tienes en mente.\nNosotros conectamos las piezas.'},
     indefinida: {name:'Aún no estoy seguro', color:'#0035d8', question:'No necesitas tenerlo todo definido.\nCuéntanos lo que buscas.'}
   };
   const origins = {
     'media-branding': {name:'Media Branding', href:'../../media-branding/'},
     linkbranding: {name:'Linkbranding', href:'../../linkbranding/'},
-    'media-print': {name:'Media Print', href:'../../media-print/'},
+    'media-print': {name:'Media Printing', href:'../../media-print/'},
     'grupo-branding': {name:'Grupo Branding', href:'../inicio-v01/'}
   };
   const known = (object,key) => Object.prototype.hasOwnProperty.call(object,key);

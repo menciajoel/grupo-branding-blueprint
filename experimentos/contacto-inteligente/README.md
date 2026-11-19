@@ -100,7 +100,7 @@ permanece intacto. Las cinco preguntas condicionales no incluyen el nombre.
 | --- | --- | --- |
 | Media Branding | `#2e70b4` | `media-branding/tokens.css`, paleta de interfaz aprobada |
 | Linkbranding | `#86be3a` | SVG oficial y `linkbranding/theme.css` |
-| Media Print | `#ce2a6c` | SVG oficial y `media-print/theme.css` |
+| Media Printing | `#ce2a6c` | SVG oficial y `media-print/theme.css` |
 | Combinada / indefinida | `#0035d8` | tokens de Inicio de Grupo Branding |
 
 El logotipo principal siempre pertenece al grupo. La fila de progreso alinea a
@@ -124,7 +124,7 @@ no modifica la especialidad del formulario. El origen de división determina la
 pestaña inicial; para el grupo se utiliza Media Branding. La elección de pestaña
 se conserva al volver a abrir esta vista dentro de la misma sesión de página.
 
-Correos, teléfonos y oficinas se extraen de COPY-P08-S03. Media Print utiliza
+Correos, teléfonos y oficinas se extraen de COPY-P08-S03. Media Printing utiliza
 `ventas3@gbrandingca.com / 8735-6357`, por autorización expresa del director del
 18 de noviembre de 2026. Las oficinas son compartidas del grupo. Los dos enlaces
 de Google Maps abren búsquedas externas por sus direcciones aprobadas exactas,
@@ -138,7 +138,7 @@ los controles duplicados del recorrido.
 
 Desde 1101 px se aplica la composición 40/60: contexto y CTA abajo a la izquierda,
 información a la derecha. El texto secundario autorizado se muestra solo en ese
-formato. Al mostrar Media Print en escritorio se evita repetir el contacto
+formato. Al mostrar Media Printing en escritorio se evita repetir el contacto
 compartido en la sección general. En tablet y móvil se conserva la composición
 anterior aprobada, con el CTA tras la información. A 320 × 568 se necesita scroll
 vertical de respaldo para mantener todos los datos y áreas táctiles legibles.

@@ -1,8 +1,8 @@
 {
   "id": "COPY-P06",
   "architectureId": "ARQ-P06",
-  "name": "Media Print",
-  "sourceHeading": "6. MEDIA PRINT",
+  "name": "Media Printing",
+  "sourceHeading": "6. MEDIA PRINTING",
   "route": "/media-print/",
   "status": "READY_FOR_REVIEW",
   "provisional": false,
@@ -21,7 +21,7 @@
         {
           "id": "COPY-P06-S01-B02",
           "type": "paragraph",
-          "text": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
+          "text": "En Media Printing producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
         },
         {
           "id": "COPY-P06-S01-B03",

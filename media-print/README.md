@@ -1,4 +1,4 @@
-# Media Print — desarrollo local
+# Media Printing — desarrollo local
 
 Desde la raíz del repositorio:
 

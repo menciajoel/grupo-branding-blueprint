@@ -44,8 +44,8 @@ def contact_rows(item):
         for email, phone in contact_pairs(item))
 
 
-company_names = {'media-branding': 'Media Branding', 'linkbranding': 'Linkbranding', 'media-print': 'Media Print'}
-# COPY-P08-S03-B06 is shared with Media Print by the director's explicit
+company_names = {'media-branding': 'Media Branding', 'linkbranding': 'Linkbranding', 'media-print': 'Media Printing'}
+# COPY-P08-S03-B06 is shared with Media Printing by the director's explicit
 # authorization of 18 Nov 2026; it is not reclassified in the approved source.
 company_sources = {'media-branding': block(3, 4), 'linkbranding': block(3, 5), 'media-print': block(3, 6)}
 contact_tabs, contact_panels = [], []
@@ -80,7 +80,7 @@ contact_data = {
         for key, item in company_sources.items()},
     'offices': list(office_addresses),
     'generalSourceCopy': block(3, 6)['id'],
-    'sharedMediaPrintAuthorization': 'Director: Media Print utiliza ese contacto compartido · 2026-11-18'
+    'sharedMediaPrintAuthorization': 'Director: Media Printing utiliza ese contacto compartido · 2026-11-18'
 }
 
 

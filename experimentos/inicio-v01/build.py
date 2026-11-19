@@ -18,6 +18,7 @@ esc = lambda text: html.escape(str(text), quote=True)
 ROUTES = {'ARQ-P03':'/divisiones/','ARQ-P04':'/media-branding/','ARQ-P05':'/linkbranding/','ARQ-P06':'/media-print/','ARQ-P07':'/portafolio/','ARQ-P08':'/contacto/'}
 BRANDS = ('media-branding','linkbranding','media-printing')
 MEDIA = ('visibilidad','experiencias','produccion')
+DIVISION_ROUTES = ('../../media-branding/','../../linkbranding/','../../media-print/')
 
 
 def block_id(section, number):
@@ -42,6 +43,8 @@ def action(section, number, cls='text-link'):
     b = blocks[block_id(section,number)]
     route = ROUTES[b['destinationArchitectureId']]
     slug = route.strip('/')
+    if slug == 'divisiones':
+        return f'<a class="{cls}" href="#explorar-divisiones" data-scroll data-route="{route}"><span data-copy="{b["id"]}">{esc(b["text"].strip("[]"))}</span>{icon()}</a>'
     if slug == 'contacto':
         return f'<a class="{cls}" href="/contacto/?origen=grupo-branding" data-route="{route}"><span data-copy="{b["id"]}">{esc(b["text"].strip("[]"))}</span>{icon()}</a>'
     return f'<a class="{cls}" href="?vista={quote(slug)}" data-preview="{slug}" data-route="{route}"><span data-copy="{b["id"]}">{esc(b["text"].strip("[]"))}</span>{icon()}</a>'
@@ -76,8 +79,8 @@ def brand_svg(mobile=False):
         key = MEDIA[i]
         defs.append(f'<clipPath id="facet-{suffix}-{i}" clipPathUnits="userSpaceOnUse"><polygon points="{g["points"]}"/></clipPath>')
         defs.append(f'<clipPath id="reveal-{suffix}-{i}" clipPathUnits="userSpaceOnUse"><rect class="photo-wipe" data-width="{g["width"]}" x="{g["x"]}" y="{g["y"]}" width="{g["width"]}" height="{g["height"]}"/></clipPath>')
-        pieces.append(f'''<g class="piece-stage" data-piece="{i}"><g class="piece-arrival"><polygon class="official-piece" data-native-fill="{g['fill']}" fill="{g['fill']}" points="{g['points']}"/>
-          <g class="facet-photo" data-facet="{i}" clip-path="url(#facet-{suffix}-{i})"><g class="facet-media" clip-path="url(#reveal-{suffix}-{i})"><image href="assets/media/{key}-{'800' if i==0 else '720'}.webp" x="{g['x']}" y="{g['y']}" width="{g['width']}" height="{g['height']}" preserveAspectRatio="xMidYMid slice"/></g></g></g></g>''')
+        pieces.append(f'''<g class="piece-stage" data-piece="{i}"><g class="piece-arrival"><a class="division-piece-link" href="{DIVISION_ROUTES[i]}" data-division-piece="{i}" aria-label="Conoce {esc(text(2,(3,6,9)[i]).split(" · ",1)[0])}" tabindex="-1"><polygon class="official-piece" data-native-fill="{g['fill']}" fill="{g['fill']}" points="{g['points']}"/>
+          <g class="facet-photo" data-facet="{i}" clip-path="url(#facet-{suffix}-{i})"><g class="facet-media" clip-path="url(#reveal-{suffix}-{i})"><image href="assets/media/{key}-{'800' if i==0 else '720'}.webp" x="{g['x']}" y="{g['y']}" width="{g['width']}" height="{g['height']}" preserveAspectRatio="xMidYMid slice"/></g></g></a></g></g>''')
     return f'<svg class="{"mobile-division-art" if mobile else "brand-art"}" viewBox="0 0 221.4 211.53" aria-hidden="true" focusable="false"><defs>{"".join(defs)}</defs><g class="isotype-stage">{"".join(pieces)}</g></svg>'
 
 
@@ -91,7 +94,7 @@ else:
 division_switches, division_panels, division_choices = [], [], []
 for i,(brand,key,start) in enumerate(zip(BRANDS,MEDIA,(3,6,9))):
     name,category=text(2,start).split(' · ',1)
-    division_choices.append(f'<button class="division-choice" type="button" data-division-choice="{i}" aria-label="{esc(text(2,start))}" aria-controls="panel-{key}" aria-pressed="false"><span class="choice-category">{esc(category)}</span><span class="choice-name">{esc(name)}</span><span class="choice-accent" aria-hidden="true"></span></button>')
+    division_choices.append(f'<a class="division-choice" href="{DIVISION_ROUTES[i]}" data-division-choice="{i}" aria-label="{esc(text(2,start))}"><span class="choice-category">{esc(category)}</span><span class="choice-name">{esc(name)}</span><span class="choice-accent" aria-hidden="true"></span></a>')
     division_switches.append(f'<a class="division-switch" href="#panel-{key}" data-company-switch="{i}" aria-controls="panel-{key}">{esc(name)}{icon(size=16)}</a>')
     division_panels.append(f'<article id="panel-{key}" class="division-panel" data-panel="{i}" aria-labelledby="company-{key}" tabindex="-1"><h3 class="sr-only" id="company-{key}" data-copy="{block_id(2,start)}">{esc(text(2,start))}</h3><div class="division-logo-window"><img class="division-logo" src="../../assets/brand/{brand}/horizontal-color-blanco-01.svg" width="150" height="46" alt="" loading="lazy"></div><div class="division-panel-body">{tag("p",2,start+1)}{action(2,start+2,"button button-primary")}</div></article>')
 
@@ -128,6 +131,7 @@ error = newsletter_support[2]['blocks'][0]
 credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener noreferrer">{esc(m["author"])} · Unsplash{icon(size=18)}</a></li>' for m in media['items'])
 
 values = {
+ 'DIVISION_NAV_STYLE_HASH':hashlib.sha256((ROOT/'division-navigation.css').read_bytes()).hexdigest()[:12],
  'CLIENT_STYLE_HASH':hashlib.sha256((ROOT/'clients.css').read_bytes()).hexdigest()[:12],
  'CLIENT_LOGOS':client_logos,
  'PROJECT_STYLE_HASH':hashlib.sha256((ROOT/'projects.css').read_bytes()).hexdigest()[:12],

@@ -37,7 +37,9 @@ def verify():
     expected = {'experimentos/inicio-v01': 3, 'media-branding': 2, 'linkbranding': 4, 'media-print': 2, 'contacto': 0}
     for folder in PAGES:
         parser = Images()
-        parser.feed((ROOT / folder / 'index.html').read_text())
+        page = (ROOT / folder / 'index.html').read_text()
+        assert not re.search(r'(?<!@)\bmedia print\b', page, re.I), folder + ': stale public business name'
+        parser.feed(page)
         identities = [i for i in parser.images if 'assets/brand/' in i.get('src', '')]
         division_logos = [i for i in identities if any('/' + b + '/' in i['src'] for b in ('media-branding', 'linkbranding', 'media-printing'))]
         assert len(division_logos) == expected[folder], (folder, 'Logo placement count changed')
@@ -61,6 +63,9 @@ def verify():
         assert [ET.tostring(n) for n in icon] == [ET.tostring(n) for n in expected_nodes], 'Isotype nodes differ from official source: ' + company
         assert icon.get('viewBox') == record['viewBox']
     print('PASS · 5 pages / 11 full division logos · supplied SVG hashes exact · white group identity · 3 native isotype extractions')
+    for name in ('docs/arq.html','contacto/contact.js','contacto/assets/contact-data.json','shared/divisions/render.py'):
+        assert not re.search(r'(?<!@)\bmedia print\b', (ROOT / name).read_text(), re.I), name + ': stale public identity source'
+    print('PASS · Public identity Media Printing · legacy /media-print/ routes preserved · CSS @media print retained')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,12 @@
+/* The existing painted polygons are the hit areas; no overlay or new geometry. */
+svg .division-piece-link{cursor:pointer;touch-action:manipulation}
+svg:not([data-links-enabled="true"]) .division-piece-link{pointer-events:none}
+svg[data-links-enabled="true"] .division-piece-link{pointer-events:visiblePainted}
+.division-piece-link .facet-photo{pointer-events:none}
+.division-piece-link:focus-visible{outline:2px solid var(--focus-ring);outline-offset:4px}
+/* The names keep their existing reveal clips; draw their ring inside the clip. */
+.division-choice:focus-visible{outline-offset:-2px}
+/* Pass through empty desktop layout boxes; real links/copy retain their own hits. */
+.desktop-motion .division-region,.desktop-motion .division-story-shell,.desktop-motion .division-story{pointer-events:none}
+/* The original inert boundary now protects only the departing hero text. */
+.desktop-motion .hero-copy[inert] .hero-dash{visibility:hidden}

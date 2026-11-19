@@ -25,7 +25,7 @@ etiqueta solicitada `Volver a Grupo Branding`.
 `content.json` conserva los 23 bloques de COPY-P08 sin modificar ARQ-02/COPY-03.
 `editorial-trace.json` registra las sustituciones y omisiones autorizadas para la
 experiencia conversacional. Los datos de contacto y oficinas se extraen de esa
-fuente; `assets/contact-data.json` conserva su procedencia. Media Print utiliza
+fuente; `assets/contact-data.json` conserva su procedencia. Media Printing utiliza
 el contacto compartido por autorización expresa del director. Los SVG se derivan
 de sus nodos oficiales, con hashes en `assets/provenance.json`.
 

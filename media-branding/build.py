@@ -3,11 +3,15 @@
 import hashlib
 import html
 import json
+import sys
 from pathlib import Path
 from components import editorial_block, figure, section_label, section_links, action as editorial_action
 from projects_render import project_gallery
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT.parent / 'shared/divisions'))
+from cinematic import write_assets
+write_assets()
 content = json.loads((ROOT / 'content.json').read_text())
 media = json.loads((ROOT / 'media.json').read_text())
 presentation = json.loads((ROOT / 'presentation-copy.json').read_text())
@@ -58,13 +62,15 @@ page_sections=f'''
     <div class="chapter-heading page-width"><div>{section_label(2,'Publicidad exterior')}{h(3)}</div><div class="chapter-prose">{p(3,2)}{p(3,3)}</div></div>
     <div class="exterior-composition page-width">{photo('exterior-puente','exterior-primary','(max-width:700px) 100vw, 75vw')}{photo('exterior-unipolar','exterior-detail','(max-width:700px) 52vw, 27vw')}</div>
   </section>
-  <section class="chapter retail-chapter" id="retail" aria-labelledby="heading-4" data-section="COPY-P04-S04">
+  <div class="cinematic-stack">
+  <section class="chapter retail-chapter" id="retail" aria-labelledby="heading-4" data-section="COPY-P04-S04" data-cinematic-back>
     <div class="retail-grid page-width"><div class="retail-copy">{section_label(3,'Retail y punto de venta')}{h(4)}{p(4,2,'chapter-paragraph')}</div><div class="retail-visuals">{photo('concepto-retail','retail-primary','(max-width:700px) 85vw, 38vw')}{photo('concepto-retail-detalle','retail-detail','(max-width:700px) 64vw, 24vw')}</div></div>
   </section>
-  <section class="chapter formats-chapter" id="vallas-y-formatos-publicitarios" aria-labelledby="heading-6" data-section="COPY-P04-S06">
+  <section class="chapter formats-chapter" id="vallas-y-formatos-publicitarios" aria-labelledby="heading-6" data-section="COPY-P04-S06" data-cinematic-front>
     <div class="chapter-heading page-width"><div>{section_label(4,'Vallas y formatos publicitarios')}{h(6)}</div>{p(6,2,'chapter-paragraph')}</div>
     <div class="format-explorer page-width"><div class="format-visual" aria-busy="false">{format_panels}</div><div class="format-tabs" role="tablist" aria-label="Vallas y formatos publicitarios" aria-orientation="vertical">{format_tabs}</div></div>
   </section>
+  </div>
   <section class="chapter coverage-chapter" id="cobertura" aria-labelledby="heading-10" data-section="COPY-P04-S10">
     {photo('cobertura-ciudad','coverage-visual','100vw')}<div class="coverage-shade" aria-hidden="true"></div>
     <div class="coverage-copy page-width">{section_label(5,'Cobertura')}{h(10,'coverage-heading').replace('Honduras','<span>Honduras</span>')}{p(10,2,'chapter-paragraph')}</div>
@@ -98,6 +104,7 @@ for filename in ['tokens.css', 'styles.css', 'chapters.css', 'motion.js', 'chapt
     replacements[filename.upper()] = hashlib.sha256((ROOT / filename).read_bytes()).hexdigest()[:12]
 for ext in ('css', 'js'):
     replacements[f'FOCUS_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/focus/focus.{ext}').read_bytes()).hexdigest()[:12]
+    replacements[f'CINEMATIC_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/divisions/cinematic.{ext}').read_bytes()).hexdigest()[:12]
 page = (ROOT / 'template.html').read_text()
 for token, value in replacements.items():
     page = page.replace('{{' + token + '}}', value)

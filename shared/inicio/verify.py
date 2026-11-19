@@ -12,6 +12,22 @@ LIVE = {'/media-branding/', '/linkbranding/', '/media-print/', '/contacto/'}
 
 def canonical_body(page):
     body = re.search(r'<body\b[^>]*>[\s\S]*?</body>', page).group(0)
+    # Director-authorized public identity correction, 19 Nov 2026; no other copy.
+    body = body.replace('Media Printing', 'Media Print').replace('MEDIA PRINTING', 'MEDIA PRINT')
+    # Requested native navigation only; restore the original presentation for
+    # the protected comparison. The actual polygons and photographs stay exact.
+    body = re.sub(r'<a class="division-piece-link"[^>]*>(.*?)</a>', r'\1', body, flags=re.S)
+    body = body.replace(' id="explorar-divisiones" tabindex="-1"', '')
+    def division_choice(match):
+        index = int(match[1])
+        key = ('visibilidad','experiencias','produccion')[index]
+        return (f'<button class="division-choice" type="button" data-division-choice="{index}" '
+                f'aria-label="{match[2]}" aria-controls="panel-{key}" aria-pressed="false">'
+                f'{match[3]}</button>')
+    body = re.sub(r'<a class="division-choice" href="[^"]+" data-division-choice="(\d)" aria-label="([^"]+)">(.*?)</a>',
+                  division_choice, body, flags=re.S)
+    body = body.replace('href="#explorar-divisiones" data-scroll data-route="/divisiones/"',
+                        'href="?vista=divisiones" data-preview="divisiones" data-route="/divisiones/"')
     # Authorized brand-resource substitution only: the same logo slots remain.
     for brand in ('media-branding', 'linkbranding', 'media-printing'):
         body = body.replace(f'../../assets/brand/{brand}/horizontal-color-blanco-01.svg',
@@ -50,7 +66,14 @@ def verify():
         assert hashlib.sha256((HERE / name).read_bytes()).hexdigest() == digest, f'Approved motion changed: {name}'
     for name, digest in approved['protectedSources'].items():
         source = (ROOT / name).read_bytes()
+        if name == 'docs/arq.html':
+            source = source.replace(b'Media Printing', b'Media Print').replace(b'MEDIA PRINTING', b'MEDIA PRINT')
         if name == 'experimentos/inicio-v01/motion.js':
+            contract = json.loads((ROOT / 'experimentos/inicio-v01/division-navigation-contract.json').read_text())
+            for patch in reversed(contract['motionPatches']):
+                before, after = patch['before'].encode(), patch['after'].encode()
+                assert source.count(after) == patch['count'], 'Navigation edit differs from its isolated contract'
+                source = source.replace(after, before)
             hook = b"    document.dispatchEvent(new CustomEvent('project-preview-render',{detail:{slug}}));\n"
             assert source.count(hook) == 1, 'One synchronous documentary renderer hook required'
             source = source.replace(hook, b'')

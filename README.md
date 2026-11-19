@@ -1,8 +1,8 @@
 # Grupo Branding — prototipos para colaboración
 
-La publicación general del prototipo está autorizada por el director (18-11-2026): Inicio de Grupo Branding, Media Branding, Linkbranding, Media Print y Contacto compartido. Incluye los CTA corporativos, la exploración por hover/foco y el contexto de origen de Contacto. Es una presentación navegable en GitHub Pages, no el sitio definitivo en los dominios comerciales.
+La publicación general del prototipo está autorizada por el director (18-11-2026): Inicio de Grupo Branding, Media Branding, Linkbranding, Media Printing y Contacto compartido. Incluye los CTA corporativos, la exploración por hover/foco y el contexto de origen de Contacto. Es una presentación navegable en GitHub Pages, no el sitio definitivo en los dominios comerciales.
 
-La consolidación aprobada incorpora en Inicio la transición cinematográfica Soluciones → Proyectos y el cierre editorial de Contacto. Sus cuatro recursos se trasladaron sin cambios a `shared/inicio/`, como fuente única. Se conservan el hero, su refinamiento óptico y las páginas de las tres divisiones y Contacto. Las transiciones de las páginas individuales corresponden a una etapa posterior y no se incluyen aquí.
+La consolidación aprobada incorpora en Inicio la transición cinematográfica Soluciones → Proyectos y el cierre editorial de Contacto. Sus cuatro recursos se trasladaron sin cambios a `shared/inicio/`, como fuente única. Se conservan el hero, su refinamiento óptico y las páginas de las tres divisiones y Contacto. Las tres páginas interiores incorporan también el controlador aprobado: Retail → Formatos en Media Branding, Eventos → Activaciones en Linkbranding y Rotulación → Proyectos en Media Printing. Se conserva la escala .88 en desktop y .94 en móvil, sin añadir pins ni alturas.
 
 El [informe de consolidación](docs/consolidacion-2026-11-18.md) documenta la protección, los cambios de integración y la verificación local.
 
@@ -25,6 +25,12 @@ quedan excluidas. El [registro de publicación integral](docs/publicacion-integr
 documenta la aprobación, la protección y los límites. Los [originales de clientes](experimentos/inicio-v01/source-images/clients/README.md)
 y sus derivados permanecen disponibles para colaboración.
 
+## Consolidación aprobada · 19-11-2026
+
+Inicio incluye navegación nativa hacia la convergencia desde «Conoce nuestras divisiones» y enlaces independientes en piezas y nombres del isotipo. Hover y foco comparten la vista previa; clic o toque abre la división real. La denominación pública es **Media Printing**, también en ARQ-02/COPY-03; se conserva `/media-print/` y los identificadores internos.
+
+Los relevos interiores se generan desde la implementación aprobada de `shared/inicio/cinematic.*` mediante `shared/divisions/cinematic.py`. No editar únicamente sus salidas: las compilaciones reproducen y verifican el controlador común. El adaptador de resize conserva el progreso después del pin original del hero. Consultar [integración y QA](docs/transiciones-divisiones-media-printing-2026-11-19.md), [navegación](experimentos/inicio-v01/navegacion-divisiones-qa.md) y [consolidación de publicación](docs/publicacion-total-2026-11-19.md).
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.
@@ -40,7 +46,7 @@ Abrir:
 
 - Media Branding: <http://127.0.0.1:4173/media-branding/>
 - Linkbranding: <http://127.0.0.1:4173/linkbranding/>
-- Media Print: <http://127.0.0.1:4173/media-print/>
+- Media Printing: <http://127.0.0.1:4173/media-print/>
 - Grupo Branding: <http://127.0.0.1:4173/experimentos/inicio-v01/>
 - Contacto: <http://127.0.0.1:4173/contacto/>
 - Documentación aprobada: <http://127.0.0.1:4173/docs/arq.html>
@@ -52,7 +58,7 @@ La compilación trabaja en una copia temporal, verifica el contenido y genera ú
 ```text
 media-branding/             Página completa aprobada: fuentes editables y recursos web
 linkbranding/               COPY-P05, identidad y fotografía de Linkbranding
-media-print/                COPY-P06, identidad y fotografía de Media Print
+media-print/                COPY-P06, identidad y fotografía de Media Printing
 shared/divisions/           Render, hero, secciones y verificación de ambas divisiones
 shared/inicio/              Transición cinematográfica y cierre aprobados, con hashes de aprobación
 contacto/                   Contacto Inteligente aprobado, registro COPY-P08 y presentación sin envíos
@@ -80,7 +86,7 @@ Trabajar en una rama propia, por ejemplo `git switch -c codex/ajuste-media-brand
 
 Inicio conserva su `motion.js` y `styles.css`. El template incluye `../../shared/inicio/cinematic.*` y `closing.*` con hashes de versión. `shared/inicio/approval.json` registra la implementación aprobada y `verify.py` comprueba su integridad y el cuerpo HTML. Consultar [la guía de motion de Inicio](shared/inicio/README.md). No actualizar esas huellas para justificar cambios creativos sin aprobación.
 
-Linkbranding y Media Print usan cada una `content.json`, `design.json`, `media.json`, `theme.css` y `build.py`; comparten los componentes de `shared/divisions/`. Los registros de contenido se contrastan íntegramente con COPY-P05/COPY-P06 en `docs/arq.html`. Las modificaciones del código compartido requieren regenerar y revisar ambas marcas. Media Branding conserva su propia implementación aprobada; sus fuentes, vendor e iconos también son dependencias locales de las nuevas páginas.
+Linkbranding y Media Printing usan cada una `content.json`, `design.json`, `media.json`, `theme.css` y `build.py`; comparten los componentes de `shared/divisions/`. Los registros de contenido se contrastan íntegramente con COPY-P05/COPY-P06 en `docs/arq.html`. Las modificaciones del código compartido requieren regenerar y revisar ambas marcas. Media Branding conserva su propia implementación aprobada; sus fuentes, vendor e iconos también son dependencias locales de las nuevas páginas.
 
 Los CTA de Contacto transmiten `origen=media-branding`, `origen=linkbranding`, `origen=media-print` o `origen=grupo-branding`. Contacto solo admite esos valores, preselecciona el servicio de la división y muestra su retorno. El origen del grupo, el acceso directo y un origen desconocido son neutrales. Los enlaces antiguos `?servicio=division` siguen funcionando cuando no hay un origen explícito. La identidad de Contacto es siempre Grupo Branding.
 
@@ -143,7 +149,7 @@ URLs públicas:
 
 - [Media Branding](https://menciajoel.github.io/grupo-branding-blueprint/media-branding/)
 - [Linkbranding](https://menciajoel.github.io/grupo-branding-blueprint/linkbranding/)
-- [Media Print](https://menciajoel.github.io/grupo-branding-blueprint/media-print/)
+- [Media Printing](https://menciajoel.github.io/grupo-branding-blueprint/media-print/)
 - [Inicio de Grupo Branding](https://menciajoel.github.io/grupo-branding-blueprint/experimentos/inicio-v01/)
 - [Contacto](https://menciajoel.github.io/grupo-branding-blueprint/contacto/)
 - [ARQ-02 + COPY-03 en el mismo repositorio](https://github.com/menciajoel/grupo-branding-blueprint/blob/main/docs/arq.html)

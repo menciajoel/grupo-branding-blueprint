@@ -43,3 +43,5 @@ for folder,page_id in [('linkbranding','COPY-P05'),('media-print','COPY-P06')]:
             for width in item['sizes']:assert (root/f'assets/media/{item["id"]}-{width}.webp').is_file()
     print(f'PASS: {folder}: {len(original["sections"])} sections / {len(expected)} original blocks exact, once; concepts disclosed; contextual CTA.')
 print('ARQ-P03 standalone page remains pending; Linkbranding uses the approved existing Inicio divisions section as its documented navigable equivalent.')
+from verify_cinematic import verify as verify_cinematic
+verify_cinematic()

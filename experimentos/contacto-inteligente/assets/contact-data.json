@@ -30,7 +30,7 @@
       ]
     },
     "media-print": {
-      "name": "Media Print",
+      "name": "Media Printing",
       "sourceCopy": "COPY-P08-S03-B06",
       "contacts": [
         {
@@ -45,5 +45,5 @@
     "San Pedro Sula: Plaza Bulevar, bulevar Micheletti."
   ],
   "generalSourceCopy": "COPY-P08-S03-B06",
-  "sharedMediaPrintAuthorization": "Director: Media Print utiliza ese contacto compartido · 2026-11-18"
+  "sharedMediaPrintAuthorization": "Director: Media Printing utiliza ese contacto compartido · 2026-11-18"
 }

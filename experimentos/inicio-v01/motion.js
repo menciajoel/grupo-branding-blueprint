@@ -34,6 +34,23 @@
 
   const choiceSurface=$('.division-choice-surface');
   const choices=$$('[data-division-choice]');
+  const pieceLinks=$$('[data-division-piece]');
+  let pendingExplorationFocus=null;
+  function syncPieceLinks(){
+    const activeArt=choiceModeWide || choiceModeTablet?art:$('.mobile-division-art',artWindow);
+    [art,$('.mobile-division-art',artWindow)].forEach(svg=>{
+      const enabled=choiceCanPreview && svg===activeArt;
+      if(svg.dataset.linksEnabled===String(enabled))return;
+      svg.dataset.linksEnabled=String(enabled);
+      svg.setAttribute('role','group');
+      svg.setAttribute('aria-label','Empresas de Grupo Branding');
+      svg.setAttribute('aria-hidden',String(!enabled));
+      $$('[data-division-piece]',svg).forEach(link=>link.setAttribute('tabindex',enabled?'0':'-1'));
+    });
+    if(pendingExplorationFocus!==null && choiceCanPreview && Math.abs(scrollY-pendingExplorationFocus)<3){
+      pendingExplorationFocus=null;choiceSurface.focus({preventScroll:true});
+    }
+  }
   const connectionGroups=$$('[data-connection]');
   const exploration={start:.44,end:.57};
   let choiceModeWide=false;
@@ -95,11 +112,12 @@
     choiceSurface.dataset.previewCompany=String(preview);
     choiceSurface.dataset.chapter=String(currentChapter);
     choices.forEach((button,i)=>{
-      button.setAttribute('aria-pressed','false');
+      button.removeAttribute('aria-pressed');
       button.classList.toggle('is-highlighted',i===preview);
       connectionGroups[i].classList.toggle('is-highlighted',i===preview);
     });
     if(choiceCanPreview)requestExplorationColor(preview);
+    syncPieceLinks();
   }
   function measureChoiceConnections(){
     if(!choiceModeWide || !document.body.classList.contains('is-interactive'))return;
@@ -194,6 +212,7 @@
     } finally {restoringResize=false;}
   }
   function cancelEditorialResize(){
+    pendingExplorationFocus=null;
     if(!resizeRestore)return;
     clearTimeout(resizeTimer);resizeTimer=null;
     if(resizeFrame!==null)cancelAnimationFrame(resizeFrame);
@@ -317,13 +336,14 @@
       if(focus)panel.focus({preventScroll:true});
     }
   }
-  const canHover=()=>choiceModeWide && matchMedia('(hover:hover) and (pointer:fine)').matches;
-  choices.forEach((button,i)=>{
-    button.addEventListener('click',()=>navigateChapter(i));
-    button.addEventListener('pointerenter',()=>{if(canHover()){hoverDivision=i;syncChoiceButtons();}});
-    button.addEventListener('pointerleave',()=>{if(hoverDivision===i){hoverDivision=-1;syncChoiceButtons();}});
-    button.addEventListener('focus',()=>{if(button.matches(':focus-visible')){focusDivision=i;syncChoiceButtons();}});
-    button.addEventListener('blur',()=>{if(focusDivision===i){focusDivision=-1;syncChoiceButtons();}});
+  const canHover=()=>matchMedia('(hover:hover) and (pointer:fine)').matches;
+  [...choices,...pieceLinks].forEach(link=>{
+    const i=Number(link.dataset.divisionChoice ?? link.dataset.divisionPiece);
+    // Native links own clicks, modified clicks and touch. No click interception.
+    link.addEventListener('pointerenter',()=>{if(canHover()){hoverDivision=i;syncChoiceButtons();}});
+    link.addEventListener('pointerleave',()=>{if(hoverDivision===i){hoverDivision=-1;syncChoiceButtons();}});
+    link.addEventListener('focus',()=>{if(link.matches(':focus-visible')){focusDivision=i;syncChoiceButtons();}});
+    link.addEventListener('blur',()=>{if(focusDivision===i){focusDivision=-1;syncChoiceButtons();}});
   });
   switches.forEach((link,i)=>link.addEventListener('click',event=>{event.preventDefault();navigateChapter(i);}));
   document.body.classList.add('is-interactive');
@@ -454,6 +474,16 @@
     if (!target) return;
     $$('dialog[open]').forEach(dialog => dialog.close());
     pendingChapterFocus=null;
+    if(id==='explorar-divisiones'){
+      intro?.progress(1);
+      const state=activeStory,trigger=state?.timeline.scrollTrigger;
+      const y=trigger?trigger.start+(trigger.end-trigger.start)*(state.wide?.505:.04)/state.duration:
+        artWindow.getBoundingClientRect().top+scrollY-$('.site-header').offsetHeight-16;
+      if(focus && trigger)pendingExplorationFocus=y;
+      scrollTo({top:Math.max(0,y),behavior:focus && motionAllowed()?'smooth':'instant'});
+      if(focus && !trigger)choiceSurface.focus({preventScroll:true});
+      history.replaceState(null,'',`${location.pathname}#explorar-divisiones`);return;
+    }
     if(id==='divisiones'){
       intro?.progress(1);navigateChapter(0,focus);
       history.replaceState(null,'',`${location.pathname}#divisiones`);return;
@@ -556,7 +586,7 @@
       document.body.classList.toggle('mobile-motion',!wide && !reducedNow && !tablet);
       document.body.classList.toggle('tablet-experience',tablet);
       choiceModeTablet=tablet;
-      hero.inert=false;divisions.inert=false;
+      $('.hero-copy').inert=false;divisions.inert=false;
       const stage=$('.isotype-stage',art);
       const wipes=$$('.photo-wipe',art);
       const photoGroups=$$('.facet-photo',art);
@@ -675,7 +705,7 @@
               scene.dataset.progress=p.toFixed(3);
               scene.dataset.phase=p>.96?'divisions':p>.12?'convergence':'hero';
               $('[data-counter]').textContent=p<.3?'01':p<.72?'02':'03';
-              hero.inert=p>.28;divisions.inert=p<.80;
+              $('.hero-copy').inert=p>.28;divisions.inert=p<.80;
             },
             onRefresh:()=>{renderIsotype();if(transition){measureChoiceConnections();renderEditorial(transition.time());}}
           }});
@@ -695,7 +725,7 @@
             scene.dataset.progress=p.toFixed(3);
             scene.dataset.phase=p>.96?'divisions':p>.12?'convergence':'hero';
             $('[data-counter]').textContent=p<.3?'01':p<.72?'02':'03';
-            hero.inert=p>.28;divisions.inert=p<.8;
+            $('.hero-copy').inert=p>.28;divisions.inert=p<.8;
             renderEditorial(p);
           };
           timeline.eventCallback('onUpdate',sync);
@@ -719,7 +749,7 @@
           disposeFlowEditorial();disposeDivisionChoices();
           intro?.kill();
           document.body.classList.remove('desktop-motion','mobile-motion');
-          hero.inert=false;divisions.inert=false;
+          $('.hero-copy').inert=false;divisions.inert=false;
           art.setAttribute('viewBox',originalViewBox);art.removeAttribute('style');
           // gsap.context reverts SVG transforms, clip windows and ScrollTriggers.
           ScrollTrigger.removeEventListener('refreshInit',prepare);
@@ -727,7 +757,7 @@
         };
       }
       scene.dataset.entry='complete';scene.dataset.phase='static';
-      return () => {disposeFlowEditorial();disposeDivisionChoices();document.body.classList.remove('desktop-motion','mobile-motion');hero.inert=false;divisions.inert=false;};
+      return () => {disposeFlowEditorial();disposeDivisionChoices();document.body.classList.remove('desktop-motion','mobile-motion');$('.hero-copy').inert=false;divisions.inert=false;};
     });
   }else{setupDivisionChoices(false,true,innerWidth<=700);}
   document.fonts.ready.then(measureChoiceConnections);
@@ -742,5 +772,11 @@
   updateToggle();
   const initialPreview=new URLSearchParams(location.search).get('vista');
   if(initialPreview) showPreview(initialPreview,false);
-  if(location.hash && document.getElementById(location.hash.slice(1))) requestAnimationFrame(()=>goToSection(location.hash.slice(1)));
+  if(location.hash==='#explorar-divisiones'){
+    // Run after native fragment restoration and font/ScrollTrigger measurement.
+    // A direct URL enters the same centered pose without competing scrolls.
+    const explore=()=>document.fonts.ready.then(()=>requestAnimationFrame(()=>goToSection('explorar-divisiones')));
+    if(document.readyState==='complete')explore();
+    else addEventListener('load',explore,{once:true});
+  }else if(location.hash && document.getElementById(location.hash.slice(1))) requestAnimationFrame(()=>goToSection(location.hash.slice(1)));
 })();

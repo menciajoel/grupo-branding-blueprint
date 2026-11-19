@@ -84,7 +84,7 @@
         {
           "id": "COPY-P01-S02-B09",
           "type": "h3",
-          "text": "Media Print · Producción física"
+          "text": "Media Printing · Producción física"
         },
         {
           "id": "COPY-P01-S02-B10",
@@ -94,7 +94,7 @@
         {
           "id": "COPY-P01-S02-B11",
           "type": "cta",
-          "text": "[Conoce Media Print]",
+          "text": "[Conoce Media Printing]",
           "destinationArchitectureId": "ARQ-P06"
         }
       ],
@@ -503,9 +503,9 @@
       "body": "Diseñamos y ejecutamos activaciones, eventos y experiencias BTL que generan interacción y recuerdo para tu marca."
     },
     "/media-print/": {
-      "name": "Media Print",
+      "name": "Media Printing",
       "headline": "Producción física para convertir tus ideas en realidad",
-      "body": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
+      "body": "En Media Printing producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
     },
     "/portafolio/": {
       "name": "Portafolio",

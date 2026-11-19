@@ -1,0 +1,384 @@
+[
+  {
+    "file": "docs/arq.html",
+    "oldSha256": "7a259abc5c10151640a554fce9b586f7b1c93ed8998cc23584184f86ed299e1a",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 5,
+        "finalLine": 5
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 225,
+        "finalLine": 225
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 230,
+        "finalLine": 230
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 245,
+        "finalLine": 245
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 250,
+        "finalLine": 250
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 251,
+        "finalLine": 251
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 421,
+        "finalLine": 421
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 431,
+        "finalLine": 431
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 727,
+        "finalLine": 727
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 852,
+        "finalLine": 852
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1065,
+        "finalLine": 1065
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1066,
+        "finalLine": 1066
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1087,
+        "finalLine": 1087
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1616,
+        "finalLine": 1616
+      },
+      {
+        "before": "MEDIA PRINT",
+        "after": "MEDIA PRINTING",
+        "beforeLine": 1617,
+        "finalLine": 1617
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1636,
+        "finalLine": 1636
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1852,
+        "finalLine": 1852
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 2273,
+        "finalLine": 2273
+      }
+    ],
+    "afterIdentityOnlySha256": "d459a73e1c165ed33e40d6e897147d423f2fa4ac8528f6d1ddceac048f587488",
+    "finalSha256": "d459a73e1c165ed33e40d6e897147d423f2fa4ac8528f6d1ddceac048f587488"
+  },
+  {
+    "file": "experimentos/inicio-v01/content.json",
+    "oldSha256": "4a4bd856a5c2a9196668049d38e1f8f073d725889cf3d76ed8a0870207219248",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 87,
+        "finalLine": 87
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 97,
+        "finalLine": 97
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 506,
+        "finalLine": 506
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 508,
+        "finalLine": 508
+      }
+    ],
+    "afterIdentityOnlySha256": "e5a008c6aecb3cbf6e80997657881c979d6c7a0772590c989717f354b7d7f78a",
+    "finalSha256": "e5a008c6aecb3cbf6e80997657881c979d6c7a0772590c989717f354b7d7f78a"
+  },
+  {
+    "file": "media-print/content.json",
+    "oldSha256": "f7c4405cd0f39cf551a2336b574a03e71fcf609d43be0928dee7173061f5d01e",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 4,
+        "finalLine": 4
+      },
+      {
+        "before": "MEDIA PRINT",
+        "after": "MEDIA PRINTING",
+        "beforeLine": 5,
+        "finalLine": 5
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 24,
+        "finalLine": 24
+      }
+    ],
+    "afterIdentityOnlySha256": "3b85839841398f3cfd6d60e20a328759f722f5079c59a49064936c7bc2140148",
+    "finalSha256": "3b85839841398f3cfd6d60e20a328759f722f5079c59a49064936c7bc2140148"
+  },
+  {
+    "file": "contacto/build.py",
+    "oldSha256": "55392e99fb19356e2c3d038f3539ece1abf824346169fa08a5c464c21746fefd",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 65,
+        "finalLine": 65
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 66,
+        "finalLine": 66
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 101,
+        "finalLine": 101
+      }
+    ],
+    "afterIdentityOnlySha256": "87b2016eee3a6ebddfec2aa7663227d062d05d692feaf5c04f63adae3fdb20ab",
+    "finalSha256": "87b2016eee3a6ebddfec2aa7663227d062d05d692feaf5c04f63adae3fdb20ab"
+  },
+  {
+    "file": "contacto/contact.js",
+    "oldSha256": "f34307b1367a7c172cfdf5bc2ac94f87fca300d45cb897f484c6357de968936f",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 10,
+        "finalLine": 10
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 17,
+        "finalLine": 17
+      }
+    ],
+    "afterIdentityOnlySha256": "53ea2c7021f3e210934b6c1316d62e426d3dc110168e2e243fb78656d62f5400",
+    "finalSha256": "53ea2c7021f3e210934b6c1316d62e426d3dc110168e2e243fb78656d62f5400"
+  },
+  {
+    "file": "experimentos/contacto-inteligente/build.py",
+    "oldSha256": "a89263e32dbcf469de0fc3ccc58c0568d154020425b105ffa57857139d0fe9cb",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 47,
+        "finalLine": 47
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 48,
+        "finalLine": 48
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 83,
+        "finalLine": 83
+      }
+    ],
+    "afterIdentityOnlySha256": "10a30e34dfadf9c83e8cfeb8085f4cf7cc3a345b30be393e48418c9e9a28c34f",
+    "finalSha256": "10a30e34dfadf9c83e8cfeb8085f4cf7cc3a345b30be393e48418c9e9a28c34f"
+  },
+  {
+    "file": "experimentos/contacto-inteligente/contact.js",
+    "oldSha256": "320a2ed5e6e78df840e2f9e6b28d1f06bfb14d1ba4bf84ac6f83952c13315d31",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 10,
+        "finalLine": 10
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 17,
+        "finalLine": 17
+      }
+    ],
+    "afterIdentityOnlySha256": "1984f2bb2c5144cb27c3d7e705afca7530e896b20ed8aab813e26fadaf58b9d7",
+    "finalSha256": "1984f2bb2c5144cb27c3d7e705afca7530e896b20ed8aab813e26fadaf58b9d7"
+  },
+  {
+    "file": "shared/divisions/render.py",
+    "oldSha256": "8aca8563e80c400fdfb200fe5ff74e8d5630df88972fbc6681a5c6d1e44c749c",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 74,
+        "finalLine": 77
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 138,
+        "finalLine": 144
+      }
+    ],
+    "afterIdentityOnlySha256": "2bd25c3bdfa4b8cc7483a68be73d2b1a1547175a64705f011fdb2dd54668002f",
+    "finalSha256": "46c76b7c641a1414c476bdbeaae341a463261b76eaca25af51b5c9e18072b33f"
+  },
+  {
+    "file": "README.md",
+    "scope": "Guía operativa actual; nombre público únicamente",
+    "oldSha256": "75f7108022bee69af7f9bbb47554a65b4311493de6509734ac9e1eb8b65500e8",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 3,
+        "finalLine": 3
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 43,
+        "finalLine": 43
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 55,
+        "finalLine": 55
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 83,
+        "finalLine": 83
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 146,
+        "finalLine": 146
+      }
+    ],
+    "afterIdentityOnlySha256": "9480b5c12fa58c765cba183a82d0991f09c9e5c6832da5b1874e73ff32142b97",
+    "finalSha256": "9480b5c12fa58c765cba183a82d0991f09c9e5c6832da5b1874e73ff32142b97"
+  },
+  {
+    "file": "media-print/README.md",
+    "scope": "Guía operativa actual; nombre público únicamente",
+    "oldSha256": "cb932069e9be35ba9403ec19b9e4bed1984812a6bcb657a0f68ff39e1a89817a",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 1,
+        "finalLine": 1
+      }
+    ],
+    "afterIdentityOnlySha256": "be133054556fbd6197f475c52f932a41eeb9eb2520a3461a6a425660cb2edf69",
+    "finalSha256": "be133054556fbd6197f475c52f932a41eeb9eb2520a3461a6a425660cb2edf69"
+  },
+  {
+    "file": "contacto/README.md",
+    "scope": "Guía operativa actual; nombre público únicamente",
+    "oldSha256": "b6468b3ea58387e70542b12281361e1d1659a3713a5c3448f55b2ef7c46a1b12",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 28,
+        "finalLine": 28
+      }
+    ],
+    "afterIdentityOnlySha256": "e9c968e42fa640659ccc0cadc0ad4f467839840c2a79336e7f26c80b8644d031",
+    "finalSha256": "e9c968e42fa640659ccc0cadc0ad4f467839840c2a79336e7f26c80b8644d031"
+  },
+  {
+    "file": "experimentos/contacto-inteligente/README.md",
+    "scope": "Guía operativa actual; nombre público únicamente",
+    "oldSha256": "0870ab5d137d55d5a94ecb5ce149f3f8d122572dd9355cd2a528b773c49bcee7",
+    "corrections": [
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 103,
+        "finalLine": 103
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 127,
+        "finalLine": 127
+      },
+      {
+        "before": "Media Print",
+        "after": "Media Printing",
+        "beforeLine": 141,
+        "finalLine": 141
+      }
+    ],
+    "afterIdentityOnlySha256": "632c9b2755f809fcc2ed98f4ace6471d521f7690a86591c0d4845cf6f696bf74",
+    "finalSha256": "632c9b2755f809fcc2ed98f4ace6471d521f7690a86591c0d4845cf6f696bf74"
+  }
+]

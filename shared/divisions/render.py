@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'media-branding'))
 from projects_render import project_gallery
+from cinematic import write_assets
 
 
 def esc(value):
@@ -16,6 +17,7 @@ def esc(value):
 
 
 def render(folder):
+    write_assets()
     page_root = ROOT / folder
     page = json.loads((page_root / 'content.json').read_text())
     config = json.loads((page_root / 'design.json').read_text())
@@ -63,15 +65,16 @@ def render(folder):
 
     if folder == 'linkbranding':
         chapters = opening(3, 2, 'split-chapter light-chapter', 'link-calle') + '</div></section>'
-        chapters += opening(4, 3, 'event-chapter', 'experiencias') + '</div></section>'
-        chapters += '<div class="participation-group">'
+        chapters += '<div class="cinematic-stack">'
+        chapters += opening(4, 3, 'event-chapter', 'experiencias').replace('id="eventos"', 'id="eventos" data-cinematic-back') + '</div></section>'
+        chapters += '<div class="participation-group" data-cinematic-front>'
         for n, s in enumerate((5, 6, 7), 4):
             chapters += opening(s, n, 'participation-chapter') + '<div class="editorial-rule" aria-hidden="true"></div></div></section>'
-        chapters += photo('link-calle', 'participation-photo') + '</div>'
+        chapters += photo('link-calle', 'participation-photo') + '</div></div>'
         chapters += opening(8, 7, 'statement-chapter') + '</div></section>'
         chapters += opening(9, 8, 'coordination-chapter') + '</div></section>'
         chapters += opening(11, 9, 'group-chapter')
-        chapters += '<div class="group-composition">' + ''.join(f'<a href="../{route}/"><img src="../assets/brand/{brand}/horizontal-color-blanco-01.svg" width="300" height="100" alt="{title}"></a>' for route, brand, title in [('media-branding', 'media-branding', 'Media Branding'), ('media-print', 'media-printing', 'Media Print')]) + '</div>'
+        chapters += '<div class="group-composition">' + ''.join(f'<a href="../{route}/"><img src="../assets/brand/{brand}/horizontal-color-blanco-01.svg" width="300" height="100" alt="{title}"></a>' for route, brand, title in [('media-branding', 'media-branding', 'Media Branding'), ('media-print', 'media-printing', 'Media Printing')]) + '</div>'
         chapters += action(11, 3, '../experimentos/inicio-v01/#divisiones') + '</div></section>'
         last = 12
     else:
@@ -80,14 +83,15 @@ def render(folder):
         for b in (4, 6, 8):
             chapters += '<article>' + block(3, b) + block(3, b + 1) + '</article>'
         chapters += '</div></div></section>'
-        chapters += opening(4, 3, 'special-chapter', 'print-vehiculo')
+        chapters += '<div class="cinematic-stack">'
+        chapters += opening(4, 3, 'special-chapter', 'print-vehiculo').replace('id="rotulacion-y-desarrollos"', 'id="rotulacion-y-desarrollos" data-cinematic-back')
         chapters += '<div class="special-capabilities">'
         for b in (3, 5):
             chapters += '<article>' + block(4, b) + block(4, b + 1) + '</article>'
         chapters += '</div></div></section>'
         data = json.loads((page_root / 'projects.json').read_text())
         gallery = project_gallery(data, images).replace('heading-11', 'heading-5').replace('src="assets/icons/', f'src="{icons}')
-        chapters += f'<section class="division-section projects-chapter" id="proyectos" data-section="{prefix}-S05" aria-labelledby="heading-5"><div class="section-inner section-heading"><div>{label(5,4)}{block(5,1)}</div>{block(5,2,css="section-description")}</div>{gallery}</section>'
+        chapters += f'<section class="division-section projects-chapter" id="proyectos" data-cinematic-front data-section="{prefix}-S05" aria-labelledby="heading-5"><div class="section-inner section-heading"><div>{label(5,4)}{block(5,1)}</div>{block(5,2,css="section-description")}</div>{gallery}</section></div>'
         last = 6
 
     chapters += f'<section class="division-section division-closing" id="consulta" data-section="{prefix}-S{last:02}" aria-labelledby="heading-{last}">{photo(config["closingImage"], "closing-image")}<div class="closing-shade" aria-hidden="true"></div><div class="section-inner"><p class="section-label">{esc(name)}</p>{block(last,1)}<div class="editorial-rule" aria-hidden="true"></div><div class="closing-action">{block(last,2)}{action(last,3)}</div></div></section>'
@@ -110,6 +114,8 @@ def render(folder):
     resolve_label = sections[2]['name']
     css_paths = ['../media-branding/styles.css', '../shared/divisions/sections.css', 'theme.css', '../shared/focus/focus.css']
     js_paths = ['../shared/focus/focus.js', '../shared/divisions/hero.js', '../shared/divisions/sections.js']
+    css_paths.append('../shared/divisions/cinematic.css')
+    js_paths.append('../shared/divisions/cinematic.js')
     if folder == 'media-print':
         css_paths.insert(1, '../media-branding/projects.css')
         js_paths.append('../media-branding/projects.js')
@@ -135,7 +141,7 @@ def render(folder):
 <section class="resolve-copy" id="que-resolvemos" tabindex="-1" aria-labelledby="heading-2" data-section="{prefix}-S02"><p class="section-label">01 / {esc(resolve_label)}</p><div class="resolve-title-mask">{block(2,1)}</div><div class="resolve-paragraphs">{block(2,2,css='resolve-lead')}{resolve_detail}</div></section>
 <a class="continue-link" href="#que-resolvemos"><span>{esc(resolve_label)}</span>{icon('arrow-down',20)}</a><span class="scene-index" aria-hidden="true"><span class="scene-current">01</span><span class="index-rule"></span>02</span><span class="hero-provenance">{esc(images[config['heroImage']]['disclosure'])}</span></div></div>
 <div class="extended-page">{chapters}</div></main>
-<footer class="division-footer section-inner"><div class="footer-identities"><a href="#inicio"><img src="{logo}" width="{config['logoWidth']}" height="{config['logoHeight']}" alt="{esc(name)}"></a><a href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="{group}" width="200" height="65" alt="Grupo Branding"></a></div><nav aria-label="Divisiones">{''.join(f'<a href="../{route}/">{title}</a>' for title,route in [('Media Branding','media-branding'),('Linkbranding','linkbranding'),('Media Print','media-print')] if route != folder)}<a href="{contact}">Contacto</a><a href="#inicio">Volver al inicio</a></nav></footer></body></html>'''
+<footer class="division-footer section-inner"><div class="footer-identities"><a href="#inicio"><img src="{logo}" width="{config['logoWidth']}" height="{config['logoHeight']}" alt="{esc(name)}"></a><a href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="{group}" width="200" height="65" alt="Grupo Branding"></a></div><nav aria-label="Divisiones">{''.join(f'<a href="../{route}/">{title}</a>' for title,route in [('Media Branding','media-branding'),('Linkbranding','linkbranding'),('Media Printing','media-print')] if route != folder)}<a href="{contact}">Contacto</a><a href="#inicio">Volver al inicio</a></nav></footer></body></html>'''
     (page_root / 'index.html').write_text(result + '\n')
     trace = [{'id': b['id'], 'text': b['text'], 'rendered': True} for s in page['sections'] for b in s['blocks']]
     (page_root / 'editorial-trace.json').write_text(json.dumps({'source': 'docs/arq.html — COPY-03', 'blocks': trace}, ensure_ascii=False, indent=2) + '\n')

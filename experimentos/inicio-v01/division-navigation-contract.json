@@ -1,0 +1,45 @@
+{
+  "purpose": "Local requested navigation changes only; inverse patches preserve the previously approved GSAP source byte-for-byte.",
+  "motionPatches": [
+    {
+      "before": "  const choices=$$('[data-division-choice]');",
+      "after": "  const choices=$$('[data-division-choice]');\n  const pieceLinks=$$('[data-division-piece]');\n  let pendingExplorationFocus=null;\n  function syncPieceLinks(){\n    const activeArt=choiceModeWide || choiceModeTablet?art:$('.mobile-division-art',artWindow);\n    [art,$('.mobile-division-art',artWindow)].forEach(svg=>{\n      const enabled=choiceCanPreview && svg===activeArt;\n      if(svg.dataset.linksEnabled===String(enabled))return;\n      svg.dataset.linksEnabled=String(enabled);\n      svg.setAttribute('role','group');\n      svg.setAttribute('aria-label','Empresas de Grupo Branding');\n      svg.setAttribute('aria-hidden',String(!enabled));\n      $$('[data-division-piece]',svg).forEach(link=>link.setAttribute('tabindex',enabled?'0':'-1'));\n    });\n    if(pendingExplorationFocus!==null && choiceCanPreview && Math.abs(scrollY-pendingExplorationFocus)<3){\n      pendingExplorationFocus=null;choiceSurface.focus({preventScroll:true});\n    }\n  }",
+      "count": 1
+    },
+    {
+      "before": "      button.setAttribute('aria-pressed','false');",
+      "after": "      button.removeAttribute('aria-pressed');",
+      "count": 1
+    },
+    {
+      "before": "    if(choiceCanPreview)requestExplorationColor(preview);",
+      "after": "    if(choiceCanPreview)requestExplorationColor(preview);\n    syncPieceLinks();",
+      "count": 1
+    },
+    {
+      "before": "    if(!resizeRestore)return;",
+      "after": "    pendingExplorationFocus=null;\n    if(!resizeRestore)return;",
+      "count": 1
+    },
+    {
+      "before": "  const canHover=()=>choiceModeWide && matchMedia('(hover:hover) and (pointer:fine)').matches;\n  choices.forEach((button,i)=>{\n    button.addEventListener('click',()=>navigateChapter(i));\n    button.addEventListener('pointerenter',()=>{if(canHover()){hoverDivision=i;syncChoiceButtons();}});\n    button.addEventListener('pointerleave',()=>{if(hoverDivision===i){hoverDivision=-1;syncChoiceButtons();}});\n    button.addEventListener('focus',()=>{if(button.matches(':focus-visible')){focusDivision=i;syncChoiceButtons();}});\n    button.addEventListener('blur',()=>{if(focusDivision===i){focusDivision=-1;syncChoiceButtons();}});\n  });",
+      "after": "  const canHover=()=>matchMedia('(hover:hover) and (pointer:fine)').matches;\n  [...choices,...pieceLinks].forEach(link=>{\n    const i=Number(link.dataset.divisionChoice ?? link.dataset.divisionPiece);\n    // Native links own clicks, modified clicks and touch. No click interception.\n    link.addEventListener('pointerenter',()=>{if(canHover()){hoverDivision=i;syncChoiceButtons();}});\n    link.addEventListener('pointerleave',()=>{if(hoverDivision===i){hoverDivision=-1;syncChoiceButtons();}});\n    link.addEventListener('focus',()=>{if(link.matches(':focus-visible')){focusDivision=i;syncChoiceButtons();}});\n    link.addEventListener('blur',()=>{if(focusDivision===i){focusDivision=-1;syncChoiceButtons();}});\n  });",
+      "count": 1
+    },
+    {
+      "before": "    if(id==='divisiones'){",
+      "after": "    if(id==='explorar-divisiones'){\n      intro?.progress(1);\n      const state=activeStory,trigger=state?.timeline.scrollTrigger;\n      const y=trigger?trigger.start+(trigger.end-trigger.start)*(state.wide?.505:.04)/state.duration:\n        artWindow.getBoundingClientRect().top+scrollY-$('.site-header').offsetHeight-16;\n      if(focus && trigger)pendingExplorationFocus=y;\n      scrollTo({top:Math.max(0,y),behavior:focus && motionAllowed()?'smooth':'instant'});\n      if(focus && !trigger)choiceSurface.focus({preventScroll:true});\n      history.replaceState(null,'',`${location.pathname}#explorar-divisiones`);return;\n    }\n    if(id==='divisiones'){",
+      "count": 1
+    },
+    {
+      "before": "hero.inert=",
+      "after": "$('.hero-copy').inert=",
+      "count": 5
+    },
+    {
+      "before": "  if(location.hash && document.getElementById(location.hash.slice(1))) requestAnimationFrame(()=>goToSection(location.hash.slice(1)));",
+      "after": "  if(location.hash==='#explorar-divisiones'){\n    // Run after native fragment restoration and font/ScrollTrigger measurement.\n    // A direct URL enters the same centered pose without competing scrolls.\n    const explore=()=>document.fonts.ready.then(()=>requestAnimationFrame(()=>goToSection('explorar-divisiones')));\n    if(document.readyState==='complete')explore();\n    else addEventListener('load',explore,{once:true});\n  }else if(location.hash && document.getElementById(location.hash.slice(1))) requestAnimationFrame(()=>goToSection(location.hash.slice(1)));",
+      "count": 1
+    }
+  ]
+}

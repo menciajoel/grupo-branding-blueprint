@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ARQ-02 + COPY-03 · Grupo Branding</title>
-<meta name="description" content="Arquitectura de Información del nuevo portal corporativo de Grupo Branding, incluyendo Media Branding, Linkbranding, Media Print, recorridos principales y el área administrativa del Newsletter.">
+<meta name="description" content="Arquitectura de Información del nuevo portal corporativo de Grupo Branding, incluyendo Media Branding, Linkbranding, Media Printing, recorridos principales y el área administrativa del Newsletter.">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="canonical" href="https://menciajoel.github.io/grupo-branding-blueprint/docs/arq.html">
 <meta name="theme-color" content="#F4F3EF">
@@ -222,12 +222,12 @@ const blueprint={meta:{code:'ARQ-02',title:'Arquitectura de Información',versio
 {id:'ARQ-R01',name:'Grupo Branding',route:'grupobranding.com',type:'Público',status:'CONFIRMED',parent:null,objective:'Organizar un único portal corporativo para el grupo y sus tres divisiones.',journey:'Entrada al ecosistema de capacidades de Grupo Branding.',modules:['Navegación del sitio web','Páginas corporativas','Divisiones','Evidencia','Contacto comercial'],cta:'Explorar capacidades',relations:['ARQ-P01','ARQ-P02','ARQ-P03','ARQ-P07','ARQ-P08'],dependencies:[],note:'Recorrido principal: necesidad → capacidad → evidencia → contacto.'},
 {id:'ARQ-P01',name:'Inicio',route:'/',type:'Público',status:'CONFIRMED',parent:'ARQ-R01',objective:'Presentar el grupo y orientar cada necesidad hacia una capacidad.',journey:'Punto de partida de los recorridos comerciales.',modules:['Apertura / propuesta de valor','Nuestras divisiones','Soluciones','Proyectos','Marcas','Por qué Grupo Branding','Acción comercial','Newsletter'],cta:'Contar un proyecto',relations:['ARQ-P04','ARQ-P05','ARQ-P06','ARQ-P07','ARQ-C01','ARQ-P08'],dependencies:['Logotipos de clientes por incorporar']},
 {id:'ARQ-P02',name:'Nosotros',route:'/nosotros/',type:'Público',status:'CONFIRMED',parent:'ARQ-R01',objective:'Explicar quién es el grupo, su trayectoria y capacidad integrada.',journey:'Construye confianza antes del contacto comercial.',modules:['Apertura / quiénes somos','Historia y trayectoria','Visión de trabajo','Ecosistema de divisiones','Capacidad integrada','Presencia y cobertura','Clientes / credenciales','Acción principal'],cta:'Conocer capacidades',relations:['ARQ-P03','ARQ-P08'],dependencies:[]},
-{id:'ARQ-P03',name:'Divisiones',route:'/divisiones/',type:'Público',status:'CONFIRMED',parent:'ARQ-R01',objective:'Ordenar el acceso a las tres capacidades del grupo.',journey:'Orienta cada necesidad hacia la división adecuada.',modules:['Introducción','Media Branding — Visibilidad','Linkbranding — Experiencias','Media Print — Producción','Capacidad integrada','Acción principal'],cta:'Explorar una división',relations:['ARQ-T01','ARQ-P04','ARQ-P05','ARQ-P06'],dependencies:[]},
+{id:'ARQ-P03',name:'Divisiones',route:'/divisiones/',type:'Público',status:'CONFIRMED',parent:'ARQ-R01',objective:'Ordenar el acceso a las tres capacidades del grupo.',journey:'Orienta cada necesidad hacia la división adecuada.',modules:['Introducción','Media Branding — Visibilidad','Linkbranding — Experiencias','Media Printing — Producción','Capacidad integrada','Acción principal'],cta:'Explorar una división',relations:['ARQ-T01','ARQ-P04','ARQ-P05','ARQ-P06'],dependencies:[]},
 {id:'ARQ-T01',name:'Estructura común de las divisiones',route:'No aplica',type:'Componente',status:'PROPOSED',parent:'ARQ-P03',objective:'Definir una estructura coherente que compartan las tres divisiones.',journey:'Facilita una experiencia consistente y fácil de comprender.',modules:['Apertura / identidad / propuesta / acción principal','Qué resolvemos','Soluciones','Capacidades / diferenciadores','Proyectos destacados, según evidencia disponible','Clientes / credenciales, según evidencia disponible','Relación con Grupo Branding','Acción comercial'],cta:'Contactar',relations:['ARQ-P04','ARQ-P05','ARQ-P06'],dependencies:[],note:'Mantiene una base común, con espacio para que cada división tenga una expresión propia.'},
 {id:'ARQ-P04',name:'Media Branding',route:'/media-branding/',type:'Público',status:'CONFIRMED',parent:'ARQ-P03',concept:'Visibilidad y medios',objective:'Presentar las capacidades de visibilidad y medios.',journey:'Responde a necesidades de publicidad y medios.',modules:['Apertura de la división','Qué resolvemos','Publicidad exterior','Retail y punto de venta','Vallas y formatos publicitarios','Cobertura en Honduras','Proyectos','Predios privados','Acción principal'],cta:'Consultar solución de medios',relations:['ARQ-T01','ARQ-C02','ARQ-P07','ARQ-P08'],dependencies:['Guion de captación de predios','Correo específico para predios','Teléfono específico para predios']},
 {id:'ARQ-C02',name:'Captación de predios privados',route:'/media-branding/#predios-privados',type:'Componente',status:'PENDING INFORMATION',parent:'ARQ-P04',objective:'Invitar a propietarios de terrenos y edificios a ofrecer espacios para publicidad exterior.',journey:'Desde Media Branding conduce a un contacto directo específico para propietarios.',modules:['Mensaje de captación','Tipos de espacios: terrenos y edificios','Acción de contacto directo','Correo específico','Teléfono específico'],cta:'Contacto directo sobre predios',relations:['ARQ-P04'],dependencies:['Guion o script aprobado por el cliente','Correo específico para predios','Teléfono específico para predios'],note:'No se publica un formulario o dato de contacto inventado; estos insumos serán proporcionados por el cliente.'},
 {id:'ARQ-P05',name:'Linkbranding',route:'/linkbranding/',type:'Público',status:'CONFIRMED',parent:'ARQ-P03',concept:'Experiencias, activaciones y BTL',objective:'Presentar las capacidades de activaciones, eventos y experiencias BTL.',journey:'Responde a necesidades de BTL y activaciones.',modules:['Apertura de la división','Qué resolvemos','Diseño de activaciones','Eventos corporativos y experienciales','Activaciones de marca','Staffing','Street marketing','Experiencia regional','Coordinación de producción','Relación con Grupo Branding','Acción principal'],cta:'Planificar una activación',relations:['ARQ-T01','ARQ-P07','ARQ-P08'],dependencies:[]},
-{id:'ARQ-P06',name:'Media Print',route:'/media-print/',type:'Público',status:'CONFIRMED',parent:'ARQ-P03',concept:'Producción física',objective:'Presentar capacidades de producción física para espacios, exhibición, rotulación y desarrollos especiales.',journey:'Responde a necesidades de producción física.',modules:['Apertura de la división','Qué hacemos','Branding de espacios y punto de venta','Rotulación y desarrollos especiales','Proyectos','Acción principal'],cta:'Consultar producción',relations:['ARQ-T01','ARQ-P07','ARQ-P08'],dependencies:[]},
+{id:'ARQ-P06',name:'Media Printing',route:'/media-print/',type:'Público',status:'CONFIRMED',parent:'ARQ-P03',concept:'Producción física',objective:'Presentar capacidades de producción física para espacios, exhibición, rotulación y desarrollos especiales.',journey:'Responde a necesidades de producción física.',modules:['Apertura de la división','Qué hacemos','Branding de espacios y punto de venta','Rotulación y desarrollos especiales','Proyectos','Acción principal'],cta:'Consultar producción',relations:['ARQ-T01','ARQ-P07','ARQ-P08'],dependencies:[]},
 {id:'ARQ-P07',name:'Portafolio',route:'/portafolio/',type:'Público',status:'PROPOSED',parent:'ARQ-R01',objective:'Mostrar proyectos como evidencia de la capacidad integrada del grupo.',journey:'Aporta evidencia antes del contacto comercial.',modules:['Apertura','Filtros visuales: Todos / divisiones','Tarjetas de proyectos: imagen, cliente, división o divisiones, solución','Casos documentados dentro del Portafolio','Acceso al detalle individual de cada proyecto','Acción principal'],cta:'Explorar un proyecto o iniciar contacto',relations:['ARQ-P01','ARQ-P04','ARQ-P05','ARQ-P06','ARQ-P09','ARQ-P08'],dependencies:['Selección de proyectos y fichas','Evidencia fotográfica y permisos de uso'],note:'Los casos de éxito viven dentro del Portafolio. El modelo es estructurado y una futura administración se evaluará aparte; no se añade al CMS del Newsletter.'},
 {id:'ARQ-P09',name:'Detalle de proyecto · plantilla',route:'/portafolio/{proyecto}/',type:'Público',status:'PROPOSED',parent:'ARQ-P07',objective:'Presentar cada proyecto con la profundidad que permita su evidencia documentada.',journey:'Conecta un proyecto, su ejecución y evidencia con una conversación comercial contextual.',modules:['URL individual por proyecto','Presentación del proyecto','Descripción de la ejecución','Evidencia fotográfica','Resultados y KPIs, si existen','Testimonio, si existe','Proyectos relacionados, si existen','CTA comercial contextual'],cta:'Contactar sobre una solución relacionada',relations:['ARQ-P07','ARQ-P08'],dependencies:['Ficha y URL de cada proyecto','Fotografías autorizadas','Resultados/KPIs solo si están documentados','Testimonios autorizados si se usan'],note:'Plantilla reutilizable: no todos los proyectos deben mostrar todos los componentes opcionales.'},
 {id:'ARQ-P08',name:'Contacto',route:'/contacto/',type:'Público',status:'CONFIRMED',parent:'ARQ-R01',objective:'Recopilar el contexto necesario para iniciar una conversación comercial.',journey:'Punto de contacto comercial.',modules:['Introducción','Tipo de necesidad','Nombre','Empresa','Correo / teléfono','Contexto del proyecto','Acción principal'],cta:'Enviar consulta',relations:['ARQ-P01','ARQ-P04','ARQ-P05','ARQ-P06','ARQ-P07','ARQ-P09'],dependencies:['Destino de formularios'],note:'Solicita la información necesaria para orientar la conversación comercial.'},
@@ -242,13 +242,13 @@ const blueprint={meta:{code:'ARQ-02',title:'Arquitectura de Información',versio
 flows:[
 {id:'F01',name:'Publicidad / medios',note:'De una necesidad de visibilidad al contacto comercial.',steps:[['Inicio','NECESIDAD'],['Media Branding','CAPACIDAD'],['Solución','CAPACIDAD'],['Acción principal','CONVERSIÓN'],['Contacto','CONVERSIÓN']]},
 {id:'F02',name:'BTL / activación',note:'De una necesidad de activación al contacto comercial.',steps:[['Inicio','NECESIDAD'],['Linkbranding','CAPACIDAD'],['Solución','CAPACIDAD'],['Acción principal','CONVERSIÓN'],['Contacto','CONVERSIÓN']]},
-{id:'F03',name:'Producción',note:'De una necesidad de producción física al contacto comercial.',steps:[['Inicio','NECESIDAD'],['Media Print','CAPACIDAD'],['Solución','CAPACIDAD'],['Acción principal','CONVERSIÓN'],['Contacto','CONVERSIÓN']]},
+{id:'F03',name:'Producción',note:'De una necesidad de producción física al contacto comercial.',steps:[['Inicio','NECESIDAD'],['Media Printing','CAPACIDAD'],['Solución','CAPACIDAD'],['Acción principal','CONVERSIÓN'],['Contacto','CONVERSIÓN']]},
 {id:'F04',name:'Solución integral',note:'Combina capacidades y evidencia antes del contacto.',steps:[['Inicio','NECESIDAD'],['Ecosistema Grupo Branding','CAPACIDAD'],['Múltiples capacidades','CAPACIDAD'],['Portafolio','EVIDENCIA'],['Contacto','CONVERSIÓN']]},
 {id:'F05',name:'Newsletter',note:'Conecta la suscripción del sitio web con la gestión de comunicaciones en el área administrativa.',steps:[['Inicio / pie de página','SITIO WEB'],['Suscripción','CONVERSIÓN'],['Suscriptor','REGISTRO'],['Área administrativa / CMS','ÁREA ADMINISTRATIVA'],['Comunicación','PREPARACIÓN'],['Correo','ENVÍO']]},
 {id:'F06',name:'Proyecto con evidencia',note:'Un caso de éxito se consulta dentro del Portafolio y conduce al contacto comercial.',steps:[['Portafolio','EXPLORACIÓN'],['Proyecto individual','DETALLE'],['Ejecución y evidencia','EVIDENCIA'],['Contacto','CONVERSIÓN']]},
 {id:'F07',name:'Predios privados',note:'Una ruta específica para propietarios interesados en ofrecer terrenos o edificios para publicidad exterior.',steps:[['Media Branding','DIVISIÓN'],['Predios privados','CAPTACIÓN'],['Correo o teléfono específico','CONTACTO DIRECTO']]}],
-chapters:[['Grupo Branding','Un solo portal conecta las capacidades del grupo con las necesidades de cada marca.',['Grupo Branding','grupobranding.com','3 divisiones']],['El sitio web','Las páginas corporativas, divisiones, proyectos y contacto conviven en una experiencia integrada.',['Inicio','Nosotros','Divisiones','Portafolio','Contacto']],['Divisiones','Las tres divisiones comparten una estructura clara, manteniendo la personalidad propia de cada una.',['Media Branding → Visibilidad','Linkbranding → Experiencias','Media Print → Producción']],['Del interés al contacto','Cada recorrido guía a las personas desde una necesidad hasta la conversación comercial adecuada.',['Portafolio → Proyecto → Evidencia → Contacto','Media Branding → Predios → Contacto directo']],['Newsletter','La suscripción estará integrada en Inicio y en el pie de página, sin requerir una página independiente.',['Inicio / pie de página','Suscripción','Consentimiento']],['Área administrativa','El CMS del Newsletter tendrá un acceso separado para gestionar suscriptores y comunicaciones.',['Inicio de sesión','Panel general','Suscriptores','Comunicaciones','Editor']],['Casos y predios','Los casos de éxito se integran en Portafolio y la captación de predios vive dentro de Media Branding.',['Detalle de proyecto reutilizable','Predios privados','Guion y contacto específicos por proporcionar']],['La propuesta completa','La arquitectura contempla siete recorridos y mantiene separado el CMS del Newsletter.',['Experiencia responsive','Modelo de proyectos estructurado','CMS exclusivo del Newsletter']]],
-scope:{included:['Inicio','Nosotros','Media Branding','Linkbranding','Media Print','Portafolio','Contacto y formulario comercial','Newsletter','Área administrativa del Newsletter','Un administrador','SEO técnico inicial','Experiencia responsive','Infraestructura y publicación'],additional:['Detalle de proyecto reutilizable dentro del Portafolio','Captación de predios privados dentro de Media Branding'],boundary:'El CMS del Newsletter no administra el Portafolio; una futura solución como Keystatic se evalúa por separado.'}};
+chapters:[['Grupo Branding','Un solo portal conecta las capacidades del grupo con las necesidades de cada marca.',['Grupo Branding','grupobranding.com','3 divisiones']],['El sitio web','Las páginas corporativas, divisiones, proyectos y contacto conviven en una experiencia integrada.',['Inicio','Nosotros','Divisiones','Portafolio','Contacto']],['Divisiones','Las tres divisiones comparten una estructura clara, manteniendo la personalidad propia de cada una.',['Media Branding → Visibilidad','Linkbranding → Experiencias','Media Printing → Producción']],['Del interés al contacto','Cada recorrido guía a las personas desde una necesidad hasta la conversación comercial adecuada.',['Portafolio → Proyecto → Evidencia → Contacto','Media Branding → Predios → Contacto directo']],['Newsletter','La suscripción estará integrada en Inicio y en el pie de página, sin requerir una página independiente.',['Inicio / pie de página','Suscripción','Consentimiento']],['Área administrativa','El CMS del Newsletter tendrá un acceso separado para gestionar suscriptores y comunicaciones.',['Inicio de sesión','Panel general','Suscriptores','Comunicaciones','Editor']],['Casos y predios','Los casos de éxito se integran en Portafolio y la captación de predios vive dentro de Media Branding.',['Detalle de proyecto reutilizable','Predios privados','Guion y contacto específicos por proporcionar']],['La propuesta completa','La arquitectura contempla siete recorridos y mantiene separado el CMS del Newsletter.',['Experiencia responsive','Modelo de proyectos estructurado','CMS exclusivo del Newsletter']]],
+scope:{included:['Inicio','Nosotros','Media Branding','Linkbranding','Media Printing','Portafolio','Contacto y formulario comercial','Newsletter','Área administrativa del Newsletter','Un administrador','SEO técnico inicial','Experiencia responsive','Infraestructura y publicación'],additional:['Detalle de proyecto reutilizable dentro del Portafolio','Captación de predios privados dentro de Media Branding'],boundary:'El CMS del Newsletter no administra el Portafolio; una futura solución como Keystatic se evalúa por separado.'}};
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let selected='ARQ-R01',activeFlow=0,filter='Todos',chapter=0;
 const statusLabels={'CONFIRMED':'DEFINIDO','PROPOSED':'PROPUESTA','PENDING INFORMATION':'INFORMACIÓN POR COMPLETAR','PENDING APPROVAL':'POR VALIDAR','PRIVATE':'ACCESO PRIVADO'};
 const typeLabels={'Público':'Página del sitio','Privado':'Área administrativa','Componente':'Elemento del sitio'};
@@ -418,7 +418,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B09",
               "type": "h3",
-              "text": "Media Print · Producción física"
+              "text": "Media Printing · Producción física"
             },
             {
               "id": "COPY-P01-S02-B10",
@@ -428,7 +428,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P01-S02-B11",
               "type": "cta",
-              "text": "[Conoce Media Print]",
+              "text": "[Conoce Media Printing]",
               "destinationArchitectureId": "ARQ-P06"
             }
           ],
@@ -724,7 +724,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S02-B03",
               "type": "paragraph",
-              "text": "Media Branding trabaja visibilidad y medios; Linkbranding diseña experiencias BTL; Media Print produce los elementos físicos que las hacen posibles."
+              "text": "Media Branding trabaja visibilidad y medios; Linkbranding diseña experiencias BTL; Media Printing produce los elementos físicos que las hacen posibles."
             }
           ],
           "pending": [],
@@ -849,7 +849,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P02-S05-B06",
               "type": "h3",
-              "text": "Media Print · Producción física"
+              "text": "Media Printing · Producción física"
             },
             {
               "id": "COPY-P02-S05-B07",
@@ -1062,8 +1062,8 @@ const copyBlueprint = {
         },
         {
           "id": "COPY-P03-S04",
-          "name": "Media Print",
-          "sourceName": "Media Print",
+          "name": "Media Printing",
+          "sourceName": "Media Printing",
           "type": "section",
           "blocks": [
             {
@@ -1084,7 +1084,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P03-S04-B04",
               "type": "cta",
-              "text": "[Explora Media Print]",
+              "text": "[Explora Media Printing]",
               "destinationArchitectureId": "ARQ-P06"
             }
           ],
@@ -1613,8 +1613,8 @@ const copyBlueprint = {
     {
       "id": "COPY-P06",
       "architectureId": "ARQ-P06",
-      "name": "Media Print",
-      "sourceHeading": "6. MEDIA PRINT",
+      "name": "Media Printing",
+      "sourceHeading": "6. MEDIA PRINTING",
       "route": "/media-print/",
       "status": "READY_FOR_REVIEW",
       "provisional": false,
@@ -1633,7 +1633,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P06-S01-B02",
               "type": "paragraph",
-              "text": "En Media Print producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
+              "text": "En Media Printing producimos branding de espacios, exhibidores, estructuras y rotulación para marcas que necesitan llevar una idea al mundo físico."
             },
             {
               "id": "COPY-P06-S01-B03",
@@ -1849,7 +1849,7 @@ const copyBlueprint = {
             {
               "id": "COPY-P07-S02-B01",
               "type": "list",
-              "text": "Todos · Media Branding · Linkbranding · Media Print"
+              "text": "Todos · Media Branding · Linkbranding · Media Printing"
             }
           ],
           "pending": [],
@@ -2270,7 +2270,7 @@ const copyBlueprint = {
     },
     {
       "title": "Divisiones",
-      "body": "Cómo diferenciamos Media Branding, Linkbranding y Media Print.",
+      "body": "Cómo diferenciamos Media Branding, Linkbranding y Media Printing.",
       "kind": "divisions",
       "pageIds": [
         "COPY-P03"

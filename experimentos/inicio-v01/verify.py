@@ -22,12 +22,13 @@ normalize = lambda value: ' '.join(value.split())
 class Document(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.stack=[];self.copy={};self.refs=set();self.routes={};self.headings=0;self.ids=[];self.choices=[];self.photo_images=[];self.photo_layers=[];self.polygons=[];self.hero_art=0
+        self.stack=[];self.copy={};self.refs=set();self.routes={};self.headings=0;self.ids=[];self.choices=[];self.piece_links=[];self.photo_images=[];self.photo_layers=[];self.polygons=[];self.hero_art=0
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=='h1': self.headings+=1
         if 'id' in a: self.ids.append(a['id'])
         if 'data-division-choice' in a: self.choices.append((tag,a))
+        if 'data-division-piece' in a: self.piece_links.append((tag,a))
         if tag=='image': self.photo_images.append(a)
         if a.get('class')=='facet-media': self.photo_layers.append(a)
         if tag=='polygon': self.polygons.append(a)
@@ -72,9 +73,16 @@ assert len(doc.copy)==count+3, 'Unexpected copy fields or missing newsletter sta
 assert len(doc.choices)==3, 'Three central division selectors required'
 for i,((tag,attrs),key,start) in enumerate(zip(doc.choices,('visibilidad','experiencias','produccion'),(3,6,9))):
     expected=content['sections']['COPY-P01-S02']['blocks'][start-1]['text']
-    assert tag=='button' and attrs.get('type')=='button', 'Central selector must be a native button'
+    assert tag=='a', 'Central division name must be a native link'
     assert attrs['data-division-choice']==str(i) and attrs['aria-label']==expected, 'Selector copy must come from COPY-03'
-    assert attrs['aria-controls']==f'panel-{key}' and f'panel-{key}' in doc.ids, 'Selector must control its division panel'
+    assert attrs['href']==('../../media-branding/','../../linkbranding/','../../media-print/')[i], 'Division name must open its actual page'
+assert len(doc.piece_links)==6, 'Exactly three native piece links per responsive symbol required'
+for n,(tag,attrs) in enumerate(doc.piece_links):
+    i=n%3
+    assert tag=='a' and attrs['href']==doc.choices[i][1]['href'], 'Piece/name destinations must agree'
+    assert attrs['data-division-piece']==str(i) and attrs['aria-label']=='Conoce '+doc.choices[i][1]['aria-label'].split(' · ')[0], 'Each piece needs its own descriptive link name'
+    assert attrs['tabindex']=='-1', 'Decorative hero links must not enter the tab order before exploration is active'
+assert 'href="#explorar-divisiones" data-scroll data-route="/divisiones/"' in (ROOT/'index.html').read_text(), 'Hero CTA must scroll to convergence, not open a preview'
 assert len(doc.photo_images)==len(doc.photo_layers)==6, 'Three photographic facets per responsive SVG required'
 for layer,(suffix,i) in zip(doc.photo_layers,((s,i) for s in ('main','mobile') for i in range(3))):
     assert layer['clip-path']==f'url(#reveal-{suffix}-{i})', 'Photo layer must retain its original reveal mask'
@@ -89,6 +97,9 @@ clips=[p['points'] for p in doc.polygons if p.get('class')!='official-piece']
 assert clips==[points for points,_ in expected]*2, 'Photographic silhouettes must match the official pairs'
 for rel in re.findall(r'url\([\'\"]?([^\)\'\"]+)',(ROOT/'styles.css').read_text()): doc.refs.add(rel)
 for ref in doc.refs:
+    if ref in ('../../media-branding/','../../linkbranding/','../../media-print/'):
+        assert (ROOT/ref/'index.html').is_file(), 'Missing division page'
+        continue
     if ref == '/contacto/?origen=grupo-branding':
         assert (REPO/'contacto/index.html').is_file(), 'Missing Contacto Inteligente destination'
         continue
@@ -107,6 +118,9 @@ for variant in ('color','blanco'):
 protected={'index.html':'0578c92afa7c6403207ac28c7c85a5ea297cd5574de2f25f7493374906d2c60d','docs/arq.html':'7a259abc5c10151640a554fce9b586f7b1c93ed8998cc23584184f86ed299e1a'}
 for file, expected in protected.items():
     source = (REPO/file).read_bytes()
+    if file == 'docs/arq.html':
+        # Explicit authorization: correct the business name only, retain IDs/routes.
+        source = source.replace(b'Media Printing', b'Media Print').replace(b'MEDIA PRINTING', b'MEDIA PRINT')
     if file == 'index.html':
         # Authorized Unicode → SVG correction only; every other cover byte
         # must still match the original protection hash. ARQ/COPY stay exact.

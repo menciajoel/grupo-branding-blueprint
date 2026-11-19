@@ -18,8 +18,8 @@
     "rights": "Recurso proporcionado dentro del proyecto. La autorización de publicación debe ser confirmada por el titular antes de un despliegue público."
   },
   "brand": {
-    "source": "../assets/brand/media-branding/horizontal-blanco.svg",
-    "sha256": "2c6685fffd2847803814cd387ae5a62c1441fb1945fbfb50f854bb30098d6f68",
+    "source": "../assets/brand/media-branding/horizontal-color-blanco-01.svg",
+    "sha256": "b177ec7795fd34a8f9b4b59ce22946d4e292b3616912d5a837a67822b17b9092",
     "accent": "#2e70b4",
     "accentSource": "Encargo aprobado del usuario — 17 de noviembre de 2026; prevalece sobre la selección anterior del piloto."
   },

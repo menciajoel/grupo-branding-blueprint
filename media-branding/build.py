@@ -96,6 +96,8 @@ replacements = {
 }
 for filename in ['tokens.css', 'styles.css', 'chapters.css', 'motion.js', 'chapters.js', 'projects.css', 'projects.js']:
     replacements[filename.upper()] = hashlib.sha256((ROOT / filename).read_bytes()).hexdigest()[:12]
+for ext in ('css', 'js'):
+    replacements[f'FOCUS_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/focus/focus.{ext}').read_bytes()).hexdigest()[:12]
 page = (ROOT / 'template.html').read_text()
 for token, value in replacements.items():
     page = page.replace('{{' + token + '}}', value)

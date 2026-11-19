@@ -494,6 +494,7 @@
     }
     if (item.evidence) body.append(paragraph(`Evidencia fotográfica documentada: ${item.evidence.source} · página ${item.evidence.page}. Fotografías por incorporar al sitio.`,'evidence-source'));
     $('#preview-note').textContent=item.evidence ? 'Esta ficha utiliza el material documentado. No se muestran imágenes de stock como evidencia del proyecto.' : 'La página completa queda fuera del alcance de este prototipo de Inicio.';
+    document.dispatchEvent(new CustomEvent('project-preview-render',{detail:{slug}}));
     if (updateURL) history.pushState({vista:slug},'',routeURL(slug));
     openDialog($('#preview-dialog'));
   }

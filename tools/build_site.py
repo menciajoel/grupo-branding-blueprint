@@ -58,6 +58,8 @@ def main():
                         ignore=shutil.ignore_patterns('__pycache__', 'output'))
         shutil.copytree(ROOT / 'shared/inicio', work / 'shared/inicio',
                         ignore=shutil.ignore_patterns('__pycache__', 'output'))
+        shutil.copytree(ROOT / 'shared/focus', work / 'shared/focus',
+                        ignore=shutil.ignore_patterns('__pycache__', 'output'))
         for page in PAGES:
             target = work / page
             target.mkdir(parents=True)
@@ -72,6 +74,7 @@ def main():
             subprocess.run([sys.executable, '-B', str(work / page / 'build.py')], cwd=work, env=env, check=True)
         for page in ('experimentos/inicio-v01', 'media-branding'):
             subprocess.run([sys.executable, '-B', str(work / page / 'verify.py')], cwd=work, env=env, check=True)
+        subprocess.run([sys.executable, '-B', str(work / 'experimentos/inicio-v01/verify_projects.py')], cwd=work, env=env, check=True)
         subprocess.run([sys.executable, '-B', str(work / 'shared/divisions/verify.py')], cwd=work, env=env, check=True)
         subprocess.run([sys.executable, '-B', str(work / 'shared/inicio/verify.py')], cwd=work, env=env, check=True)
         # Building must reproduce the approved checked-in presentation exactly.
@@ -115,6 +118,7 @@ def main():
                     'files': {name: hashlib.sha256((output / name).read_bytes()).hexdigest() for name in sorted(files)}}
         (output / 'deployment.json').write_text(json.dumps(manifest, indent=2) + '\n')
     validate(output, base)
+    subprocess.run([sys.executable, '-B', str(ROOT / 'tools/verify_identity.py')], check=True)
     subprocess.run([sys.executable, '-B', str(ROOT / 'tools/verify_contact_integration.py'),
                     '--directory', str(output), '--base-path', base], check=True)
     print(f'Packaged {len(files)} static files → {output}; base path: {base or "/"}')

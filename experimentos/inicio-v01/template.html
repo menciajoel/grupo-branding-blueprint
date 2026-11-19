@@ -7,16 +7,21 @@
   <meta name="theme-color" content="#141414">
   <meta name="description" content="{{META}}">
   <title>Grupo Branding · Inicio · Experimento 02</title>
-  <link rel="icon" href="assets/brand/grupo-branding/isotipo-color.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/grupo-branding/isotipo-blanco.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css?v={{STYLE_HASH}}">
+  <link rel="stylesheet" href="projects.css?v={{PROJECT_STYLE_HASH}}">
+  <link rel="stylesheet" href="../../shared/focus/focus.css?v={{FOCUS_CSS_HASH}}">
+  <script src="../../shared/focus/focus.js?v={{FOCUS_JS_HASH}}" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="projects.js?v={{PROJECT_MOTION_HASH}}" defer></script>
   <script src="motion.js?v={{MOTION_HASH}}" defer></script>
   <link rel="stylesheet" href="../../shared/inicio/cinematic.css?v={{CINEMATIC_STYLE_HASH}}">
   <script src="../../shared/inicio/cinematic.js?v={{CINEMATIC_MOTION_HASH}}" defer></script>
   <link rel="stylesheet" href="../../shared/inicio/closing.css?v={{CLOSING_STYLE_HASH}}">
   <script src="../../shared/inicio/closing.js?v={{CLOSING_MOTION_HASH}}" defer></script>
+  {{PROJECT_CASE_TEMPLATES}}
 </head>
 <body class="cinematic-experiment">
   <a class="skip-link" href="#divisiones" data-scroll>Saltar a las divisiones</a>
@@ -82,8 +87,8 @@
     <section class="projects section-pad" id="proyectos" aria-labelledby="projects-heading">
       <div class="section-top"><span class="section-kicker">03 / PROYECTOS</span><span class="section-rule" aria-hidden="true"></span></div>
       <div class="section-heading" id="projects-heading">{{PROJECTS_TITLE}}<div>{{PROJECTS_BODY}}{{PROJECTS_ACTION}}</div></div>
-      <p class="evidence-note">Casos documentados · Fotografías de los proyectos por incorporar</p>
       <div class="project-index">{{PROJECT_ROWS}}</div>
+      {{PROJECT_CASES_FALLBACK}}
     </section>
 
     </div>

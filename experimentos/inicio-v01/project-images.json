@@ -1,0 +1,128 @@
+{
+  "source": {
+    "document": "IMPACTOS EXITO MEDIA BRANDING.pdf",
+    "sha256": "94f6d694876bfab7e06cbf55d0033c60608da13b6dcee2adcdfb9ea290cacba6",
+    "pagesRead": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "images": {
+    "CASE-DUNKIN": {
+      "page": 2,
+      "object": 157,
+      "width": 1720,
+      "height": 1290,
+      "original": "source-images/projects/dunkin.png",
+      "originalSha256": "c6e218ed56eb35a43a3d44188cd4bdbf3d73dfae95db9492ae43480cf2b80615",
+      "pixelsSha256": "feb0b399b92833ccf8cf84f943415c548dee677c110948b1306596013755a6dd",
+      "iccSha256": "d9f822e8083f2f4d1c91e887454be5f75e8c7144b2853408f361e3c4a7a6b36d",
+      "variants": [
+        {
+          "file": "assets/media/projects/dunkin-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 15694,
+          "sha256": "66c4391556820ad0d394c0285c094b98403ce1f0101daa980fe7c27c54b0d90f"
+        },
+        {
+          "file": "assets/media/projects/dunkin-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 33204,
+          "sha256": "598ecb3234d72a7dbef394b9d001e9e7ebfcf902397994bc49842cda1c4b4d87"
+        },
+        {
+          "file": "assets/media/projects/dunkin-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 57138,
+          "sha256": "63afbda29eb3cbad907ace922089ef1884672b8bec0590b7d3683732d0024732"
+        },
+        {
+          "file": "assets/media/projects/dunkin-1720.webp",
+          "width": 1720,
+          "height": 1290,
+          "bytes": 90614,
+          "sha256": "59997a350f58a2770255894c514afa2ddd55945ec5e9498627475ce70e200696"
+        }
+      ]
+    },
+    "CASE-ISSIMA": {
+      "page": 3,
+      "object": 173,
+      "width": 1642,
+      "height": 1256,
+      "original": "source-images/projects/issima.png",
+      "originalSha256": "b2054840a83ebbc7865c517510ef42760ac4aa05b9daae9802be1206f5b5bf4a",
+      "pixelsSha256": "3a8c095e138a5e99e31e4adc5f815b6a727fb954d59bb6d009f5db685d5aee06",
+      "iccSha256": "d9f822e8083f2f4d1c91e887454be5f75e8c7144b2853408f361e3c4a7a6b36d",
+      "variants": [
+        {
+          "file": "assets/media/projects/issima-480.webp",
+          "width": 480,
+          "height": 367,
+          "bytes": 33030,
+          "sha256": "d9d54dca70c919fca5a4bb50c2a06a4bdca606e742005977e63238028deeb4d5"
+        },
+        {
+          "file": "assets/media/projects/issima-800.webp",
+          "width": 800,
+          "height": 612,
+          "bytes": 64240,
+          "sha256": "2c3881c16c4f3e1a8fa2487c85ba2277282fccb2f9d07802210388a044d208cf"
+        },
+        {
+          "file": "assets/media/projects/issima-1200.webp",
+          "width": 1200,
+          "height": 918,
+          "bytes": 106978,
+          "sha256": "3d1ccee6fef54ee6244a2a0c60ad453c7b3ba37c016ab08e27add517a993ad5b"
+        },
+        {
+          "file": "assets/media/projects/issima-1642.webp",
+          "width": 1642,
+          "height": 1256,
+          "bytes": 156780,
+          "sha256": "434e0ecc0db2c177bcbe5f1513a110eaa8bd1260ba7a88d0d0e034c6f2255b65"
+        }
+      ]
+    },
+    "CASE-FLYING-FISH": {
+      "page": 4,
+      "object": 188,
+      "width": 1164,
+      "height": 1488,
+      "original": "source-images/projects/flying-fish.png",
+      "originalSha256": "1e9ec9cb946886a4241c797ab908c23d2181e0a4e4f9324f3de3f166b1a17769",
+      "pixelsSha256": "3cfebabb1cbc3788ecc9c3db5d6857e8fb8ca54a8c4e53a6edadf89b76dbde72",
+      "iccSha256": "d9f822e8083f2f4d1c91e887454be5f75e8c7144b2853408f361e3c4a7a6b36d",
+      "variants": [
+        {
+          "file": "assets/media/projects/flying-fish-480.webp",
+          "width": 480,
+          "height": 614,
+          "bytes": 53402,
+          "sha256": "5b53adbdd95768276252aa99bee19849869f92b3d79ad6013c56eb795893ffc0"
+        },
+        {
+          "file": "assets/media/projects/flying-fish-800.webp",
+          "width": 800,
+          "height": 1023,
+          "bytes": 100358,
+          "sha256": "c1274f0c514f151c37c46628d4d6e0a1bcb06d5539fc467b258c5c39993b5225"
+        },
+        {
+          "file": "assets/media/projects/flying-fish-1164.webp",
+          "width": 1164,
+          "height": 1488,
+          "bytes": 157992,
+          "sha256": "bb2091694f0c3a8408817dce8520d228e51c31b7d2338d29e54d467f7fc0a999"
+        }
+      ]
+    }
+  }
+}

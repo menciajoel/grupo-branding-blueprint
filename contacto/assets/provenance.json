@@ -1,23 +1,23 @@
 {
   "media-branding": {
-    "source": "assets/brand/media-branding/horizontal-color.svg",
-    "sourceSha256": "b005862831234dab91b658b57a919759a6e9de95e32167135fc37f10e5ea7c7f",
+    "source": "assets/brand/media-branding/horizontal-color-blanco-01.svg",
+    "sourceSha256": "b177ec7795fd34a8f9b4b59ce22946d4e292b3616912d5a837a67822b17b9092",
     "viewBox": "0 0 195.89 157.51",
     "selection": "polygons",
-    "assetSha256": "c0bda13671e020c0187033c769f693082a5ebe2d4af15468d18b415cfdd682f3"
+    "assetSha256": "f364b7adb9755b25109ad2af77afe1c9fb968d9af54691879682bcc1e8166468"
   },
   "linkbranding": {
-    "source": "assets/brand/linkbranding/horizontal-color.svg",
-    "sourceSha256": "cb8fc39df320899cf38b65f131d265fb618c9bc830581125cd357eadc34091ef",
+    "source": "assets/brand/linkbranding/horizontal-color-blanco-01.svg",
+    "sourceSha256": "760f82cabd42028975731d3e8166b3ee9dd5ce6fd1802d443068b3527a088d8f",
     "viewBox": "0 0 143.2 200.77",
     "selection": 0,
-    "assetSha256": "06d8769ceed3200151f9ebf329ee90229ac3e8dd1250e25d1dee918ecd3a1b1b"
+    "assetSha256": "04f96bf8a49b143dec7d645e908c41a9615d4f544484d79ba7f78ae2485de7f0"
   },
   "media-print": {
-    "source": "assets/brand/media-printing/horizontal-color.svg",
-    "sourceSha256": "3519f63c2baa998700afce76f70dc8a4692d12dec747d30e0afb0878eec4a815",
+    "source": "assets/brand/media-printing/horizontal-color-blanco-01.svg",
+    "sourceSha256": "2bd69fc8ee461c765611b56f5004650a3578ebfc36320c6d20c06c574c3238bc",
     "viewBox": "0 0 134 136.46",
     "selection": 2,
-    "assetSha256": "af96a5352291b15e070c993592d6c0d78b720c855e39bd8f04685b0f7837e790"
+    "assetSha256": "f972c250f39033f78e3a77e74783ee697469fde3914f72d8c4d5eb87062cea92"
   }
 }

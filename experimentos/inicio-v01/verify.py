@@ -101,7 +101,16 @@ for variant in ('color','blanco'):
 # Protected approved documents and public cover, recorded before work.
 protected={'index.html':'0578c92afa7c6403207ac28c7c85a5ea297cd5574de2f25f7493374906d2c60d','docs/arq.html':'7a259abc5c10151640a554fce9b586f7b1c93ed8998cc23584184f86ed299e1a'}
 for file, expected in protected.items():
-    assert hashlib.sha256((REPO/file).read_bytes()).hexdigest()==expected, f'Protected file changed: {file}'
+    source = (REPO/file).read_bytes()
+    if file == 'index.html':
+        # Authorized Unicode → SVG correction only; every other cover byte
+        # must still match the original protection hash. ARQ/COPY stay exact.
+        arrow = ('<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" '
+                 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                 'stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block">'
+                 '<path d="M5 12h14m-7-7 7 7-7 7"/></svg>')
+        source = source.replace(arrow.encode(), '→'.encode())
+    assert hashlib.sha256(source).hexdigest()==expected, f'Protected file changed: {file}'
 assert all(slug in doc.routes for slug in ('divisiones','contacto','media-branding','linkbranding','media-print','portafolio','proyecto-dunkin','proyecto-issima','proyecto-flying-fish'))
 print(f'PASS · {count} approved Inicio blocks · 8 sections · 3 documented cases · newsletter states/consent')
 print(f'PASS · {len(doc.refs)} local resources · official vectors exact · protected documents intact')

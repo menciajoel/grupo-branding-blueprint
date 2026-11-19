@@ -11,6 +11,13 @@ Inteligente, integrada en la misma ruta `/contacto/`. La referencia experimental
 se conserva en Git y queda fuera del artefacto público. Ver
 [integración y QA](docs/integracion-contacto-2026-11-18.md).
 
+La consolidación final aprobada incorpora la corrección global de focus, los
+iconos vectoriales, las fichas documentales de Dunkin, ISSIMA y Flying Fish y las
+variantes oficiales a color/blanco de las tres divisiones. Grupo Branding
+conserva su identidad blanca. Consultar [el registro de consolidación final](docs/consolidacion-final-2026-11-18.md),
+[los casos y su procedencia](experimentos/inicio-v01/casos-reales.md) y
+[el inventario de identidades](docs/identidad-implementacion-2026-11-18.md).
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.
@@ -103,7 +110,7 @@ Las otras divisiones incluyen sus WebP en `linkbranding/assets/media/` y `media-
 
 Al sustituir una imagen: conservar proporciones, generar variantes WebP, actualizar el registro y su alt, y comprobar los encuadres en escritorio, tablet y móvil. No alterar los SVG oficiales ni sus colores. `procedencia-imagenes.json` conserva prompts y procedencia disponibles; `inventario-imagenes.md` documenta usos y sustituciones pendientes.
 
-`prepare_media.py` es una utilidad opcional para el original del hero: requiere Pillow 11.3.0 (`python3 -m pip install Pillow==11.3.0`) y el archivo original indicado en el manifiesto. Los originales de cámara/PDF y PNG generados permanecen en el equipo del proyecto, fuera de Git. No son necesarios para compilar; solicitarlos al director si se necesita volver a producir esas fotografías.
+`prepare_media.py` es una utilidad opcional para el original del hero: requiere Pillow 11.3.0 (`python3 -m pip install Pillow==11.3.0`) y el archivo original indicado en el manifiesto. Los originales de cámara/PDF y PNG generados permanecen en el equipo del proyecto, fuera de Git. No son necesarios para compilar; solicitarlos al director si se necesita volver a producir esas fotografías. La excepción son los tres PNG documentales extraídos del PDF para Inicio: se conservan en `experimentos/inicio-v01/source-images/projects/` como fuentes editables; solo sus once derivados WebP se despliegan. Su README documenta la regeneración opcional con pypdf y Pillow. La compilación habitual no requiere esas dependencias ni el PDF.
 
 Issima cuenta con una fotografía documental extraída del PDF original. Los recursos generados no documentan campañas de Six, Fútbol ni Powerade; mantienen visible **«Visualización conceptual · Imagen provisional»**. Los permisos para el sitio comercial definitivo y la sustitución de recursos conceptuales requieren confirmación del cliente. La autorización actual cubre esta publicación de prototipo.
 

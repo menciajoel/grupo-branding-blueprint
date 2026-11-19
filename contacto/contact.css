@@ -13,6 +13,7 @@ button,a,input,textarea{outline-offset:6px}
 :focus-visible{outline:2px solid var(--focus)}
 h1[tabindex]:focus{outline:none}
 img{display:block;max-width:100%}
+.contact-icon{display:inline-block;width:1em;height:1em;vertical-align:-.125em;flex:none;pointer-events:none}
 h1,h2,p{margin:0}
 [hidden]{display:none!important}
 fieldset{margin:0;padding:0;border:0;min-width:0}

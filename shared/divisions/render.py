@@ -71,7 +71,7 @@ def render(folder):
         chapters += opening(8, 7, 'statement-chapter') + '</div></section>'
         chapters += opening(9, 8, 'coordination-chapter') + '</div></section>'
         chapters += opening(11, 9, 'group-chapter')
-        chapters += '<div class="group-composition">' + ''.join(f'<a href="../{route}/"><img src="../assets/brand/{brand}/horizontal-blanco.svg" width="300" height="100" alt="{title}"></a>' for route, brand, title in [('media-branding', 'media-branding', 'Media Branding'), ('media-print', 'media-printing', 'Media Print')]) + '</div>'
+        chapters += '<div class="group-composition">' + ''.join(f'<a href="../{route}/"><img src="../assets/brand/{brand}/horizontal-color-blanco-01.svg" width="300" height="100" alt="{title}"></a>' for route, brand, title in [('media-branding', 'media-branding', 'Media Branding'), ('media-print', 'media-printing', 'Media Print')]) + '</div>'
         chapters += action(11, 3, '../experimentos/inicio-v01/#divisiones') + '</div></section>'
         last = 12
     else:
@@ -95,7 +95,7 @@ def render(folder):
     def nav_links(items):
         return ''.join(f'<a href="{target}" data-section-link>{esc(title)}</a>' for title, target in items)
 
-    logo = '../assets/brand/' + config['brandFolder'] + '/horizontal-blanco.svg'
+    logo = '../assets/brand/' + config['brandFolder'] + '/horizontal-color-blanco-01.svg'
     group = '../assets/brand/grupo-branding/horizontal-blanco.svg'
     words = item(1, 1)['text'].split()
     lines = []
@@ -108,8 +108,8 @@ def render(folder):
     heading = f'<h1 id="hero-title" data-copy="{item(1,1)["id"]}" aria-label="{esc(item(1,1)["text"])}">' + ' '.join(f'<span class="headline-line" aria-hidden="true"><span>{esc(line)}</span></span>' for line in lines) + '</h1>'
     resolve_detail = block(2, 3, css='resolve-description') if len(sections[2]['blocks']) == 3 else ''
     resolve_label = sections[2]['name']
-    css_paths = ['../media-branding/styles.css', '../shared/divisions/sections.css', 'theme.css']
-    js_paths = ['../shared/divisions/hero.js', '../shared/divisions/sections.js']
+    css_paths = ['../media-branding/styles.css', '../shared/divisions/sections.css', 'theme.css', '../shared/focus/focus.css']
+    js_paths = ['../shared/focus/focus.js', '../shared/divisions/hero.js', '../shared/divisions/sections.js']
     if folder == 'media-print':
         css_paths.insert(1, '../media-branding/projects.css')
         js_paths.append('../media-branding/projects.js')
@@ -126,7 +126,7 @@ def render(folder):
     reference_data = json.dumps(reference, ensure_ascii=False).replace('<', '\\u003c')
     result = f'''<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="{config['canvas']}">
-<title>{esc(name)} | Grupo Branding</title><meta name="description" content="{esc(item(1,2)['text'])}"><link rel="icon" href="../assets/brand/{config['brandFolder']}/horizontal-color.svg" type="image/svg+xml">
+<title>{esc(name)} | Grupo Branding</title><meta name="description" content="{esc(item(1,2)['text'])}"><link rel="icon" href="../contacto/assets/{folder}-isotipo.svg" type="image/svg+xml">
 {styles}<script type="application/json" id="hero-geometry-reference">{reference_data}</script><script src="../media-branding/assets/vendor/gsap.min.js" defer></script><script src="../media-branding/assets/vendor/ScrollTrigger.min.js" defer></script>{scripts}</head>
 <body class="division-page new-division {folder}" data-resolve-label="{esc(resolve_label)}"><a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="division-header"><a class="brand-link" href="#inicio" aria-label="{esc(name)} · Inicio"><img src="{logo}" width="{config['logoWidth']}" height="{config['logoHeight']}" alt="{esc(name)}"></a><button class="menu-toggle" type="button" aria-controls="division-navigation" aria-expanded="false" aria-label="Abrir menú" hidden><span>Menú</span>{icon('menu',24)}</button><nav id="division-navigation" aria-label="{esc(name)}">{nav_links(config['navigation'])}<a href="{contact}">Contacto</a></nav></header>

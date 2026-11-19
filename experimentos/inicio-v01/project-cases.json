@@ -1,0 +1,61 @@
+{
+  "source": {
+    "document": "IMPACTOS EXITO MEDIA BRANDING.pdf",
+    "sha256": "94f6d694876bfab7e06cbf55d0033c60608da13b6dcee2adcdfb9ea290cacba6",
+    "pagesRead": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "cases": [
+    {
+      "id": "CASE-DUNKIN",
+      "slug": "proyecto-dunkin",
+      "asset": "dunkin",
+      "page": 2,
+      "imageObject": 157,
+      "alt": "Campaña exterior nocturna de Dunkin con vasos de bebidas sobresaliendo de los soportes junto a una vía.",
+      "testimonialParagraphs": [
+        "Queremos expresar nuestro agradecimiento a Grupo Branding por el excelente trabajo realizado en nuestra reciente campaña publicitaria de Dunkin. Nos sentimos muy satisfechos con el resultado, especialmente por la creatividad con la que lograron destacar nuestros productos y hacer que la campaña llamara la atención de una manera diferente y atractiva.",
+        "El resultado superó nuestras expectativas y nos alegra ver cómo nuestros productos se convierten en protagonistas de una campaña tan llamativa, que refleja muy bien la alegría y frescura que caracteriza a Dunkin.",
+        "Felicitamos a todo su equipo por esta excelente iniciativa y esperamos seguir compartiendo proyectos que nos permitan sorprender a nuestros consumidores.",
+        "Atentamente, Gilma Mejía"
+      ]
+    },
+    {
+      "id": "CASE-ISSIMA",
+      "slug": "proyecto-issima",
+      "asset": "issima",
+      "page": 3,
+      "imageObject": 173,
+      "alt": "Tres banderines de la campaña ISSIMA junto a una calle durante la noche.",
+      "testimonialParagraphs": [
+        "Por medio de la presente, deseamos expresar nuestro sincero agradecimiento y reconocimiento a Grupo Branding por el excelente desarrollo y ejecución de la campaña publicitaria de ISSIMA, marca de Corporación Dinant.",
+        "Esta campaña ha logrado destacarse por su creatividad, innovación y alto impacto visual, aprovechando un formato publicitario diferenciador que rompe con los esquemas tradicionales de comunicación exterior y permite generar una presencia de marca atractiva, memorable y de gran notoriedad.",
+        "Queremos destacar especialmente la calidad de la implementación, el cuidado de los detalles y el compromiso demostrado por su equipo durante el desarrollo del proyecto, elementos fundamentales para alcanzar un resultado que refleja el potencial de las ejecuciones publicitarias innovadoras.",
+        "Sin duda, iniciativas como esta reafirman que Grupo Branding es un aliado estratégico ideal para aquellas marcas que buscan diferenciarse, maximizar su visibilidad y conectar con sus consumidores mediante experiencias publicitarias de alto impacto.",
+        "Agradecemos su profesionalismo, dedicación y disposición para hacer realidad propuestas que aportan valor a nuestras estrategias de comunicación y elevan la presencia de las marcas en el mercado. Esperamos continuar desarrollando juntos proyectos innovadores que nos permitan seguir marcando la diferencia.",
+        "Reciban nuestras felicitaciones y nuestro agradecimiento por el excelente trabajo realizado."
+      ]
+    },
+    {
+      "id": "CASE-FLYING-FISH",
+      "slug": "proyecto-flying-fish",
+      "asset": "flying-fish",
+      "page": 4,
+      "imageObject": 188,
+      "alt": "Valla de Flying Fish con una botella tridimensional que sobresale por debajo del anuncio, junto al tránsito urbano.",
+      "testimonialParagraphs": [
+        "En nombre de Eco Publicidad, expresamos nuestro agradecimiento y reconocimiento a Grupo Branding por la destacada implementación de la campaña de Flying Fish, marca de nuestro cliente Cervecería Hondureña, S.A.",
+        "Esta ejecución demuestra cómo una propuesta creativa, respaldada por una excelente producción, puede transformar la publicidad exterior en un punto de atracción para quienes transitan por la ciudad. El elemento tridimensional que sobresale de la valla aporta profundidad, sorpresa y una presencia diferencial a la marca.",
+        "Valoramos especialmente la capacidad de su equipo para convertir una idea en una solución de gran calidad visual, cuidando los detalles técnicos y logrando que el mensaje publicitario adquiera protagonismo en su entorno.",
+        "Para Eco Publicidad, contar con aliados que aportan iniciativa, profesionalismo y nuevas posibilidades de exhibición es fundamental para ofrecer a nuestros clientes campañas que destaquen y sean recordadas.",
+        "Felicitamos a Grupo Branding por este trabajo y agradecemos el compromiso demostrado. Confiamos en seguir impulsando juntos ejecuciones innovadoras que eleven el valor de la comunicación exterior.",
+        "Reciban nuestro reconocimiento y un cordial saludo."
+      ]
+    }
+  ]
+}

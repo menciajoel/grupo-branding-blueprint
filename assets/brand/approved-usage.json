@@ -1,0 +1,17 @@
+{
+  "approvedBy": "Joel · variantes originales entregadas el 18-11-2026",
+  "board": "BRAND BOARD GENERAL GB.pdf",
+  "resources": {
+    "linkbranding/horizontal-color-blanco-01.svg": "760f82cabd42028975731d3e8166b3ee9dd5ce6fd1802d443068b3527a088d8f",
+    "media-branding/horizontal-color-blanco-01.svg": "b177ec7795fd34a8f9b4b59ce22946d4e292b3616912d5a837a67822b17b9092",
+    "media-printing/horizontal-color-blanco-01.svg": "2bd69fc8ee461c765611b56f5004650a3578ebfc36320c6d20c06c574c3238bc",
+    "grupo-branding/horizontal-blanco.svg": "7e7d1f2d51a53e300b0b5f35b6f8c66b2148563daeed2d2b105251ef9516fa55",
+    "grupo-branding/isotipo-blanco.svg": "abf9c2391dd1f047adec3adef5ec4986ff130f4c07c67cb747e6050fa40106a7"
+  },
+  "roles": {
+    "fullDivisionLogo": "horizontal-color-blanco-01.svg",
+    "fullGroupLogo": "grupo-branding/horizontal-blanco.svg",
+    "groupIdentityIsotype": "grupo-branding/isotipo-blanco.svg",
+    "preservedInicioDecoration": "grupo-branding/isotipo-color.svg"
+  }
+}

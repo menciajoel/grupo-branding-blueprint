@@ -1,0 +1,60 @@
+/* Focus only: geometry, selection, hover and motion belong to the page. */
+:root { --focus-ring: #1daabc; }
+.division-page { --focus-ring: #2e70b4; }
+.new-division { --focus-ring: var(--division-accent); }
+.new-division .light-chapter { --focus-ring: var(--division-accent-ink); }
+.new-division .statement-chapter { --focus-ring: var(--division-on-accent); }
+.division-panel, .division-choice { --focus-ring: var(--company-cta); }
+body[data-category="media-branding"] { --focus-ring: #2e70b4; }
+body[data-category="linkbranding"] { --focus-ring: #86be3a; }
+body[data-category="media-print"] { --focus-ring: #ce2a6c; }
+.direct-content[data-contact-company="media-branding"] { --focus-ring: #2e70b4; }
+.direct-content[data-contact-company="linkbranding"] { --focus-ring: #86be3a; }
+.direct-content[data-contact-company="media-print"] { --focus-ring: #ce2a6c; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible,
+h1[tabindex]:focus-visible, .projects-gallery:focus-visible,
+.division-page:not(.contact-page) .button:focus-visible,
+.new-division .button:focus-visible, .new-division .projects-arrow:focus-visible,
+.division-panel .button-primary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* The outer ring is sufficient; keep the existing pointer hover/press states. */
+.division-page:not(.contact-page) .button:focus-visible:not(:hover):not(:active),
+.new-division .button:focus-visible:not(:hover):not(:active),
+.division-panel .button-primary:focus-visible:not(:hover):not(:active) {
+  box-shadow: none;
+}
+
+/* Text entry keeps one continuous 2px baseline with every input method.
+   Browsers intentionally match :focus-visible on text fields after a click. */
+body input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus,
+body textarea:focus {
+  outline: none;
+  border-bottom-color: var(--focus-ring);
+  box-shadow: 0 1px 0 var(--focus-ring);
+}
+.email-line input:focus { box-shadow: inset 0 -2px 0 var(--focus-ring); }
+body input[aria-invalid="true"]:focus, body textarea[aria-invalid="true"]:focus {
+  border-bottom-color: #f3a5a5;
+  box-shadow: 0 1px 0 #f3a5a5;
+}
+
+@supports selector(:focus-visible) {
+  :is(a, button, input, textarea, select, [tabindex]):focus:not(:focus-visible) {
+    outline: none;
+  }
+  /* A scoped exception for an actual pointer-triggered focus transfer.
+     Functional focus/tabindex remain intact; any key removes the exception. */
+  body [data-pointer-focus]:focus { outline: none; }
+}
+
+@media (forced-colors: active) {
+  :root, body, body * { --focus-ring: Highlight; }
+  body [data-pointer-focus]:focus { outline: 2px solid Highlight; outline-offset: 4px; }
+  body input:not([type="radio"]):not([type="checkbox"]):focus,
+  body textarea:focus { border-bottom: 2px solid Highlight; box-shadow: none; }
+}

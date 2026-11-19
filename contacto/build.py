@@ -19,6 +19,24 @@ def block(section, number):
     return sections[section - 1]['blocks'][number - 1]
 
 
+def icon(name='arrow-up-right'):
+    """Reuse the site's Lucide geometry; never depend on an OS symbol font."""
+    source = 'arrow-up-right' if name == 'arrow-up-right' else 'arrow-down'
+    paths = ''.join(re.findall(r'<path\b[^>]*/>', (ROOT / f'media-branding/assets/icons/{source}.svg').read_text()))
+    if name in ('arrow-right', 'arrow-left'):
+        paths = f'<g transform="rotate({-90 if name == "arrow-right" else 90} 12 12)">{paths}</g>'
+    elif name == 'plus':
+        paths = '<path d="M5 12h14M12 5v14"/>'
+    # Keep the former glyph's optical footprint inside the same 1em wrapper.
+    # Diagonals are open/thin; horizontal arrows keep their long, low profile.
+    viewport = '4.5 4.5 15 15' if name == 'arrow-up-right' else '4 -8 16 40' if name in ('arrow-right', 'arrow-left') else '0 0 24 24'
+    stroke = '1' if name == 'arrow-up-right' else '2'
+    return ('<svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" '
+            f'viewBox="{viewport}" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="{stroke}" '
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
+            + paths + '</svg>')
+
+
 def official_contact(item):
     text = item['text']
     pieces, position = [], 0
@@ -39,7 +57,7 @@ def contact_pairs(item):
 def contact_rows(item):
     return ''.join(
         f'<div class="contact-person"><a class="contact-email" href="mailto:{html.escape(email)}">'
-        f'{html.escape(email)}<span aria-hidden="true">↗</span></a>'
+        f'{html.escape(email)}<span aria-hidden="true">{icon()}</span></a>'
         f'<a class="contact-phone" href="tel:{phone.replace("-", "")}">{phone}</a></div>'
         for email, phone in contact_pairs(item))
 
@@ -71,7 +89,7 @@ for address in office_addresses:
         f'<div class="contact-office"><h3>{html.escape(city)}</h3><p>{html.escape(street)}</p>'
         f'<a href="{html.escape(target)}" target="_blank" rel="noopener noreferrer" '
         f'aria-label="Cómo llegar a la oficina de {html.escape(city)} (abre Google Maps en otra pestaña)">'
-        f'Cómo llegar<span aria-hidden="true">↗</span></a></div>')
+        f'Cómo llegar<span aria-hidden="true">{icon()}</span></a></div>')
 
 contact_data = {
     'source': 'contacto/content.json',
@@ -95,12 +113,12 @@ icons = {
 provenance = {}
 (HERE / 'assets').mkdir(exist_ok=True)
 for name, (folder, viewbox, group_index) in icons.items():
-    source = ROOT / 'assets/brand' / folder / 'horizontal-color.svg'
+    source = ROOT / 'assets/brand' / folder / 'horizontal-color-blanco-01.svg'
     original = ET.fromstring(source.read_bytes())
     vector = ET.Element('{http://www.w3.org/2000/svg}svg', {'viewBox': viewbox})
-    vector.append(copy.deepcopy(original[0]))
-    group = original[1]
-    selected = list(group)[:17] if group_index == 'polygons' else [group[group_index]]
+    # The supplied dark-background exports have inline fills and no defs block.
+    # Select their original isotype nodes; never redraw or recolor them.
+    selected = list(original)[:17] if group_index == 'polygons' else [original[0][group_index]]
     for node in selected:
         vector.append(copy.deepcopy(node))
     target = HERE / 'assets' / f'{name}-isotipo.svg'
@@ -112,10 +130,14 @@ categories = ['media-branding', 'linkbranding', 'media-print', 'combinada', 'ind
 for index, category in enumerate(categories):
     item = block(2, index + 2)
     options.append(f'''<button class="category-choice" type="button" data-category="{category}" aria-pressed="false" disabled>
-      <span class="choice-number" aria-hidden="true">0{index + 1}</span><span data-copy="{item['id']}">{html.escape(item['text'])}</span><span class="choice-arrow" aria-hidden="true">↗</span>
+      <span class="choice-number" aria-hidden="true">0{index + 1}</span><span data-copy="{item['id']}">{html.escape(item['text'])}</span><span class="choice-arrow" aria-hidden="true">{icon()}</span>
     </button>''')
 
 values = {
+    'ARROW_UP_RIGHT': icon(),
+    'ARROW_RIGHT': icon('arrow-right'),
+    'ARROW_LEFT': icon('arrow-left'),
+    'PLUS_ICON': icon('plus'),
     'OPTIONS': '\n'.join(options),
     'DIRECT_INTRO': html.escape(block(3, 2)['text']),
     'CONTACTS': '\n'.join(official_contact(block(3, i)) for i in (4, 5, 6)),
@@ -126,6 +148,8 @@ values = {
     'GENERAL_CONTACT': contact_rows(block(3, 6)),
     'CSS_HASH': hashlib.sha256((HERE / 'contact.css').read_bytes()).hexdigest()[:12],
     'JS_HASH': hashlib.sha256((HERE / 'contact.js').read_bytes()).hexdigest()[:12],
+    'FOCUS_CSS_HASH': hashlib.sha256((ROOT / 'shared/focus/focus.css').read_bytes()).hexdigest()[:12],
+    'FOCUS_JS_HASH': hashlib.sha256((ROOT / 'shared/focus/focus.js').read_bytes()).hexdigest()[:12],
 }
 page = (HERE / 'template.html').read_text()
 for key, value in values.items():

@@ -7,6 +7,7 @@ import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import quote
+from project_views import render as render_project_views
 
 ROOT = Path(__file__).resolve().parent
 content = json.loads((ROOT / 'content.json').read_text(encoding='utf-8'))
@@ -92,7 +93,7 @@ for i,(brand,key,start) in enumerate(zip(BRANDS,MEDIA,(3,6,9))):
     name,category=text(2,start).split(' · ',1)
     division_choices.append(f'<button class="division-choice" type="button" data-division-choice="{i}" aria-label="{esc(text(2,start))}" aria-controls="panel-{key}" aria-pressed="false"><span class="choice-category">{esc(category)}</span><span class="choice-name">{esc(name)}</span><span class="choice-accent" aria-hidden="true"></span></button>')
     division_switches.append(f'<a class="division-switch" href="#panel-{key}" data-company-switch="{i}" aria-controls="panel-{key}">{esc(name)}{icon(size=16)}</a>')
-    division_panels.append(f'<article id="panel-{key}" class="division-panel" data-panel="{i}" aria-labelledby="company-{key}" tabindex="-1"><h3 class="sr-only" id="company-{key}" data-copy="{block_id(2,start)}">{esc(text(2,start))}</h3><div class="division-logo-window"><img class="division-logo" src="assets/brand/{brand}/horizontal-blanco.svg" width="150" height="46" alt="" loading="lazy"></div><div class="division-panel-body">{tag("p",2,start+1)}{action(2,start+2,"button button-primary")}</div></article>')
+    division_panels.append(f'<article id="panel-{key}" class="division-panel" data-panel="{i}" aria-labelledby="company-{key}" tabindex="-1"><h3 class="sr-only" id="company-{key}" data-copy="{block_id(2,start)}">{esc(text(2,start))}</h3><div class="division-logo-window"><img class="division-logo" src="../../assets/brand/{brand}/horizontal-color-blanco-01.svg" width="150" height="46" alt="" loading="lazy"></div><div class="division-panel-body">{tag("p",2,start+1)}{action(2,start+2,"button button-primary")}</div></article>')
 
 solutions = []
 for i,start in enumerate((3,5,7,9)):
@@ -107,9 +108,10 @@ for i,p in enumerate(content['projects']):
     slug = p['routeProposal'].strip('/').split('/')[-1]
     key='proyecto-'+slug
     division_label=' + '.join(content['destinations'][ROUTES[division]]['name'] for division in p['divisionIds'])
-    project_rows.append(f'<a class="project-row" href="?vista={key}" data-preview="{key}" data-route="{esc(p["routeProposal"])}"><span class="project-index" aria-hidden="true">0{i+1}</span><h3>{esc(p["name"])}</h3><span class="project-division">{esc(division_label)}</span>{icon(size=32)}</a>')
+    project_rows.append(f'<a class="project-row" href="?vista={key}#caso-{slug}" data-preview="{key}" data-route="{esc(p["routeProposal"])}"><span class="project-index" aria-hidden="true">0{i+1}</span><h3>{esc(p["name"])}</h3><span class="project-division">{esc(division_label)}</span>{icon(size=32)}</a>')
     destination_data[key]={'name':p['name'],'headline':p['name'],'body':p['presentation'],'execution':p['execution'],'route':p['routeProposal'],'testimonial':p.get('testimonial'),'evidence':p.get('photoEvidence'),'photo':p.get('photo')}
 
+project_templates, project_fallback = render_project_views(ROOT, content, icon)
 pending = content['sections']['COPY-P01-S05']['pending'][0]['label']
 values = ''.join(f'<article class="value-row"><span class="value-index" aria-hidden="true">0{i+1}</span>{tag("h3",6,start)}{tag("p",6,start+1)}</article>' for i,start in enumerate((3,5,7)))
 newsletter_support = content['newsletter']['sections']
@@ -119,6 +121,12 @@ error = newsletter_support[2]['blocks'][0]
 credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener noreferrer">{esc(m["author"])} · Unsplash{icon(size=18)}</a></li>' for m in media['items'])
 
 values = {
+ 'PROJECT_STYLE_HASH':hashlib.sha256((ROOT/'projects.css').read_bytes()).hexdigest()[:12],
+ 'PROJECT_MOTION_HASH':hashlib.sha256((ROOT/'projects.js').read_bytes()).hexdigest()[:12],
+ 'PROJECT_CASE_TEMPLATES':project_templates,
+ 'PROJECT_CASES_FALLBACK':project_fallback,
+ 'FOCUS_CSS_HASH':hashlib.sha256((ROOT.parents[1]/'shared/focus/focus.css').read_bytes()).hexdigest()[:12],
+ 'FOCUS_JS_HASH':hashlib.sha256((ROOT.parents[1]/'shared/focus/focus.js').read_bytes()).hexdigest()[:12],
  'CINEMATIC_STYLE_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/cinematic.css').read_bytes()).hexdigest()[:12],
  'CINEMATIC_MOTION_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/cinematic.js').read_bytes()).hexdigest()[:12],
  'CLOSING_STYLE_HASH':hashlib.sha256((ROOT.parents[1]/'shared/inicio/closing.css').read_bytes()).hexdigest()[:12],

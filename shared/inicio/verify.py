@@ -16,6 +16,12 @@ def canonical_body(page):
     for brand in ('media-branding', 'linkbranding', 'media-printing'):
         body = body.replace(f'../../assets/brand/{brand}/horizontal-color-blanco-01.svg',
                             f'assets/brand/{brand}/horizontal-blanco.svg')
+    # Eight source-verified client logos fulfill the reserved placeholder only.
+    # Its original spelling is restored solely for the protected body comparison.
+    body, replacements = re.subn(r'<ul class="client-logos"(?=\s|>).*?</ul>',
+        '<div class="brand-pending"><p class="pending-label" data-copy="COPY-P01-S05-B03">Logotipos de clientes por incorporar</p><span class="pending-rule" aria-hidden="true"></span></div>',
+        body, flags=re.S)
+    assert replacements == 1, 'Exactly one authorized client logo group required'
     # The authorized documentary cases replace one obsolete photography note,
     # add native no-JS content and anchor fallbacks. The rest stays byte-exact.
     body = re.sub(r'^      <noscript id="project-cases-fallback">.*?</noscript>\n', '', body, flags=re.M|re.S)

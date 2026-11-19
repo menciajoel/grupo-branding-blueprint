@@ -18,6 +18,13 @@ conserva su identidad blanca. Consultar [el registro de consolidación final](do
 [los casos y su procedencia](experimentos/inicio-v01/casos-reales.md) y
 [el inventario de identidades](docs/identidad-implementacion-2026-11-18.md).
 
+La publicación integral final incluye los testimonios completos de escritorio,
+el isotipo de Media Branding y el encabezado móvil corregido de las fichas, además
+de los ocho clientes seleccionados de la fuente oficial. MAPFRE y Salvavidas
+quedan excluidas. El [registro de publicación integral](docs/publicacion-integral-final-2026-11-18.md)
+documenta la aprobación, la protección y los límites. Los [originales de clientes](experimentos/inicio-v01/source-images/clients/README.md)
+y sus derivados permanecen disponibles para colaboración.
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.

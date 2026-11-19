@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
+from verify_clients import verify as verify_clients
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -61,7 +62,11 @@ for section in sections:
         if 'text' in block: expected=block['text'].strip('[]')
         else: expected=next(p['label'] for p in section['pending'])
         actual=normalize(''.join(doc.copy.get(block['id'],[])))
-        assert actual==normalize(expected), f"Missing/altered {block['id']}: {actual}"
+        if block.get('pendingId') == 'COPY-P01-S05-P01':
+            assert block['id'] in doc.copy and actual == '', 'Client logos must fulfill the reserved block without new copy'
+            verify_clients()
+        else:
+            assert actual==normalize(expected), f"Missing/altered {block['id']}: {actual}"
         count+=1
 assert len(doc.copy)==count+3, 'Unexpected copy fields or missing newsletter states'
 assert len(doc.choices)==3, 'Three central division selectors required'

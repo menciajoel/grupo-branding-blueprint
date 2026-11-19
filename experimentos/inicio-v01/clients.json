@@ -1,0 +1,208 @@
+{
+  "source": {
+    "page": "https://mediabranding.net/spanish.html",
+    "section": "Nuestros clientes",
+    "sectionAnchor": "clientDiv",
+    "retrievedAtUTC": "2026-11-19T04:21:04.797784+00:00",
+    "snapshot": "source-images/clients/mediabranding-clientes.source.txt",
+    "sha256": "0acdf358ac4ddda5b734990cbee9ea24e72543b410209fdf42b7edbdd402d36a",
+    "clientAssetURLs": [
+      "https://mediabranding.net/index_files/banpais.png",
+      "https://mediabranding.net/index_files/bancatlan.png",
+      "https://mediabranding.net/index_files/bac.png",
+      "https://mediabranding.net/index_files/bimbo.png",
+      "https://mediabranding.net/index_files/gatorade.png",
+      "https://mediabranding.net/index_files/lipton.png",
+      "https://mediabranding.net/index_files/amp.png",
+      "https://mediabranding.net/index_files/cerhon.png",
+      "https://mediabranding.net/index_files/zared.png",
+      "https://mediabranding.net/index_files/dew.png",
+      "https://mediabranding.net/index_files/dinat.png",
+      "https://mediabranding.net/index_files/pandora.png",
+      "https://mediabranding.net/index_files/mapfre.png",
+      "https://mediabranding.net/index_files/salvavida.png",
+      "https://mediabranding.net/index_files/nestle.png",
+      "https://mediabranding.net/index_files/sula.png",
+      "https://mediabranding.net/index_files/pepsi.png",
+      "https://mediabranding.net/index_files/pizza.png",
+      "https://mediabranding.net/index_files/coca.png",
+      "https://mediabranding.net/index_files/aden.png",
+      "https://mediabranding.net/index_files/roble.png",
+      "https://mediabranding.net/index_files/cbc.png",
+      "https://mediabranding.net/index_files/ficohsa.png"
+    ],
+    "pageSha256": "8ca9cbbdb9c61ff73f96e4ca86f4fc6bd26708486b59d4d38ff9094b48494c7e",
+    "snapshotScope": "Únicamente el bloque publicado de Nuestros clientes; la copia íntegra usada para inspección queda en output local."
+  },
+  "fulfills": {
+    "copyBlock": "COPY-P01-S05-B03",
+    "pendingId": "COPY-P01-S05-P01"
+  },
+  "excluded": [
+    "MAPFRE",
+    "Salvavidas"
+  ],
+  "selectionType": "Selección editorial, sin clasificación comercial cuantitativa ni afirmaciones de resultados.",
+  "clients": [
+    {
+      "id": "coca-cola",
+      "name": "Coca-Cola",
+      "sourceURL": "https://mediabranding.net/index_files/coca.png",
+      "sourceFile": "source-images/clients/coca-cola.png",
+      "sourceSha256": "44c99d36a4415cb4df211e17f962d67d152965f1d52f05449e6b0239caf46853",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 210,
+      "selectionReason": "Marca internacional de consumo masivo y firma gráfica ampliamente reconocible.",
+      "image": {
+        "file": "assets/media/clients/coca-cola.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 71171,
+        "sha256": "1440ca8e9b29fe8c8c1f4b3bce316f4e196e7162c911f93a5301bc46cda414f3",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 765
+    },
+    {
+      "id": "pepsi",
+      "name": "Pepsi",
+      "sourceURL": "https://mediabranding.net/index_files/pepsi.png",
+      "sourceFile": "source-images/clients/pepsi.png",
+      "sourceSha256": "f7ff6e211dc784d01948942bdad74a4f80cbe9fa1fcd3ec5e86c23217b81bfcc",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 210,
+      "selectionReason": "Marca internacional de bebidas presente en la fuente, con identificación visual inmediata.",
+      "image": {
+        "file": "assets/media/clients/pepsi.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 51021,
+        "sha256": "8da30b3383ea41c8f9142096472eb3cd9e85ad94b756b3cf5c6473f2d2a0ddaa",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 753
+    },
+    {
+      "id": "nestle",
+      "name": "Nestlé",
+      "sourceURL": "https://mediabranding.net/index_files/nestle.png",
+      "sourceFile": "source-images/clients/nestle.png",
+      "sourceSha256": "0d327d02b57f21b0f321a88104ac615c4151a038dd6810374d8b4d645975c009",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 225,
+      "selectionReason": "Marca internacional de alimentación que aporta reconocimiento a la selección.",
+      "image": {
+        "file": "assets/media/clients/nestle.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 86308,
+        "sha256": "9e488bd280616550cce2502d06f888a4d498754738cce23fb87727304c0741a7",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 741
+    },
+    {
+      "id": "bimbo",
+      "name": "Bimbo",
+      "sourceURL": "https://mediabranding.net/index_files/bimbo.png",
+      "sourceFile": "source-images/clients/bimbo.png",
+      "sourceSha256": "b326f8725e537c557bda360b89dec3e8d7ec8bff745525c9c11b0e5caab9054a",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 200,
+      "selectionReason": "Marca de alimentación de alcance regional e internacional, afín al contexto comercial.",
+      "image": {
+        "file": "assets/media/clients/bimbo.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 53784,
+        "sha256": "31784847674f93629a37e1401c9efd7fb32832219407e97773440c1fe7cc547f",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 657
+    },
+    {
+      "id": "bac-credomatic",
+      "name": "BAC Credomatic",
+      "sourceURL": "https://mediabranding.net/index_files/bac.png",
+      "sourceFile": "source-images/clients/bac-credomatic.png",
+      "sourceSha256": "f01f194dde42d54931a327b1dfb79f788f2c46da9b5be54c44308d9cf292d4d0",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 200,
+      "selectionReason": "Referencia financiera regional que diversifica los sectores representados.",
+      "image": {
+        "file": "assets/media/clients/bac-credomatic.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 51743,
+        "sha256": "d7bbd123dbbc12cc93253683789530ad9a6463fcc8c831e522a36533454e1417",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 649
+    },
+    {
+      "id": "gatorade",
+      "name": "Gatorade",
+      "sourceURL": "https://mediabranding.net/index_files/gatorade.png",
+      "sourceFile": "source-images/clients/gatorade.png",
+      "sourceSha256": "aa6c250ae28d316b46af87fadae8134e0f4e193174873c30438b5d10b254d2fa",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 170,
+      "selectionReason": "Marca de bebidas deportivas de reconocimiento internacional.",
+      "image": {
+        "file": "assets/media/clients/gatorade.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 30015,
+        "sha256": "46a42333b4d4b223b7df1e92503312b9741e5dd690cdaa0fa9f094ceba8595cb",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 665
+    },
+    {
+      "id": "lipton",
+      "name": "Lipton",
+      "sourceURL": "https://mediabranding.net/index_files/lipton.png",
+      "sourceFile": "source-images/clients/lipton.png",
+      "sourceSha256": "ecbcd0019999985fc3e54c001392dc333eb8a095a6231e56e6929696c5796eea",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 175,
+      "selectionReason": "Marca internacional de bebidas que amplía la variedad visual y comercial.",
+      "image": {
+        "file": "assets/media/clients/lipton.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 79044,
+        "sha256": "cd3fe924b341aaaa7d229444b7d193e0a17fe5f6b032c5c38d9eaed0265db2b5",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 673
+    },
+    {
+      "id": "pandora",
+      "name": "Pandora",
+      "sourceURL": "https://mediabranding.net/index_files/pandora.png",
+      "sourceFile": "source-images/clients/pandora.png",
+      "sourceSha256": "88827b932bbfcddf175d875bcb5025183d03c92be673a09bcff579e07a5d5174",
+      "sourceWidth": 5703,
+      "sourceHeight": 2814,
+      "opticalWidth": 220,
+      "selectionReason": "Marca internacional de joyería que añade una referencia de retail y prestigio.",
+      "image": {
+        "file": "assets/media/clients/pandora.png",
+        "width": 800,
+        "height": 395,
+        "bytes": 31967,
+        "sha256": "4b78d7bce2479cbeaf6fd9cdee505213788e9cd5659b082dba037900c98899b9",
+        "processing": "Lienzo completo reducido proporcionalmente; sin recorte, recoloreado, filtros ni IA."
+      },
+      "sourceLineInPage": 721
+    }
+  ]
+}

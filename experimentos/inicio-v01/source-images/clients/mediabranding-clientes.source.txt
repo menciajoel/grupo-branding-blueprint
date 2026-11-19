@@ -1,0 +1,202 @@
+<div id="clientDiv"></div>
+
+  <div>
+
+
+  <div class="row" style="padding-top: 100px; background-color: #005e95;
+        background-image: url(./index_files/textBlue.png) ">
+
+
+         <div  style="padding-left: 150px;">
+          <strong style=" font-family: helvetica; font-size: 100PX; color: #ffffff; opacity: 0.5 ">NUESTROS CLIENTES</strong>
+        </div>
+
+          <hr>
+
+           <div class="col-sm-12" style="padding-left: 20%; padding-right: 20%">
+
+
+    <p style="font-family: helvetica; font-size: 17px; padding-bottom: 50px; color: #ffffff ">
+      
+      Ayudamos a nuestros clientes, marcas líderes en sus mercados y en la región, a estar en el lugar correcto en el momento correcto.
+      <br>
+      Para alcanzar estar en el “top of mind” y alcanzar a sus consumidores en diversas formas.
+    </p>
+      </div>
+
+      </div>
+
+     
+
+      <div  style=" background-color: #ffffff;" class="row">
+
+       <div  style="padding-left: 20%; padding-right: 20%; padding-bottom: 20%; padding-top: 50px" >   
+
+          <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/banpais.png" class="img-responsive">
+
+      </div>
+
+      
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/bancatlan.png" class="img-responsive">
+
+      </div>
+
+        
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/bac.png" class="img-responsive">
+
+      </div>
+
+       
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/bimbo.png" class="img-responsive">
+
+      </div>
+
+        
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/gatorade.png" class="img-responsive">
+
+      </div>
+
+        
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/lipton.png" class="img-responsive">
+
+      </div>
+
+         
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/amp.png" class="img-responsive">
+
+      </div>
+
+         
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/cerhon.png" class="img-responsive">
+
+      </div>
+
+          
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/zared.png" class="img-responsive">
+
+      </div>
+
+         
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/dew.png" class="img-responsive">
+
+      </div>
+
+         
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/dinat.png" class="img-responsive">
+
+      </div>
+
+        
+
+      <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/pandora.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/mapfre.png" class="img-responsive">
+
+      </div>
+
+
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/salvavida.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/nestle.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/sula.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/pepsi.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/pizza.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/coca.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/aden.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/roble.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/cbc.png" class="img-responsive">
+
+      </div>
+
+       <div class="col-sm-3">
+      
+        <img style="padding: 30px" src="./index_files/ficohsa.png" class="img-responsive">
+
+      </div> 
+
+      </div>
+     
+      
+      </div>
+
+       

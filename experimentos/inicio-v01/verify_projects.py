@@ -57,8 +57,9 @@ def main():
         assert f'id="caso-{case["asset"]}"' in rendered, 'No-JS case target missing'
         assert case['alt'] and f'width="{image["width"]}" height="{image["height"]}"' in template
         assert 'loading="lazy"' in template and 'srcset=' in template
-        assert '<details class="case-testimony">' in template, 'Testimony must start collapsed'
-        assert 'Leer testimonio completo' in template and 'case-summary-compact">Testimonio completo' in template
+        assert '<details class="case-testimony" open>' in template, 'Complete testimony must be available by default'
+        assert '<summary><span>Testimonio completo</span>' in template
+        assert 'Leer testimonio completo' not in template, 'Desktop must not require an extra disclosure action'
         assert not re.search(r'por incorporar|pendiente|\.pdf|/portafolio/', template, re.I)
         previous = 0
         for variant in image['variants']:

@@ -1,0 +1,7 @@
+/* Only the approved clients placeholder is completed. Original logo colors
+   and canvases are preserved; optical widths balance different brand shapes. */
+.brands .client-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;column-gap:clamp(24px,3vw,60px);row-gap:24px;list-style:none;padding:32px 0;margin:65px 0 0;border-top:1px solid #a3a7aa;border-bottom:1px solid #a3a7aa}
+.brands .client-logos li{min-width:0;min-height:116px;display:flex;align-items:center;justify-content:center}
+.brands .client-logos img{display:block;width:var(--client-logo-width);max-width:100%;height:auto;object-fit:contain}
+@media(max-width:1100px){.brands .client-logos{column-gap:24px;row-gap:16px;padding-block:28px}.brands .client-logos li{min-height:94px}}
+@media(max-width:700px){.brands .client-logos{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:20px;margin-top:40px;padding-block:24px}.brands .client-logos li{min-height:92px}}

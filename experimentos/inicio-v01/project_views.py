@@ -32,8 +32,7 @@ def render(root, content, icon):
                    f'<h2 class="case-project-title">{esc(approved["name"])}</h2>'
                    f'<p class="case-description">{esc(approved["presentation"])} {esc(approved["execution"])}</p>'
                    f'<blockquote><p>“{esc(quote["quote"])}”</p><cite>{esc(quote["attribution"])}</cite></blockquote>'
-                   f'<details class="case-testimony"><summary><span class="case-summary-compact">Testimonio completo</span>'
-                   f'<span class="case-summary-desktop">Leer testimonio completo</span>{icon("arrow-down",18)}</summary>'
+                   f'<details class="case-testimony" open><summary><span>Testimonio completo</span>{icon("arrow-down",18)}</summary>'
                    f'<div class="case-letter">{full}</div></details></div></article>')
         templates.append(f'<template id="project-case-{case["slug"]}">{article}</template>')
         fallback.append(f'<section class="case-fallback-item" id="caso-{case["asset"]}">'

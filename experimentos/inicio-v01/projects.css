@@ -1,12 +1,13 @@
 .project-case-dialog,.project-catalog-dialog{width:min(1320px,calc(100% - 48px));max-height:calc(100dvh - 40px)}
 .project-case-dialog .dialog-bar,.project-catalog-dialog .dialog-bar{position:sticky;top:0;z-index:2;background:inherit;min-height:44px}
+.case-brand-isotype{display:block;width:40px;height:auto}
 .case-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.85fr);align-items:start;gap:clamp(28px,4vw,56px)}
 .case-figure{margin:0;min-width:0;background:var(--black);display:grid;place-items:center}
 .case-figure img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
 .case-layout[data-portrait=true]{grid-template-columns:minmax(0,.9fr) minmax(280px,1.1fr)}
 .case-layout[data-portrait=true] .case-figure img{width:auto;max-height:75dvh}
 .case-copy{min-width:0}
-.case-project-title,.case-summary-desktop{display:none}
+.case-project-title{display:none}
 .project-case-dialog .case-description{font-size:17px;line-height:1.65}
 .project-case-dialog blockquote{margin:32px 0;padding-left:24px}
 .project-case-dialog blockquote>p{color:var(--paper);font-size:clamp(22px,2.2vw,31px);line-height:1.35;letter-spacing:-.025em;margin:0}
@@ -33,7 +34,7 @@
 .case-no-script cite{display:block;font-size:13px;margin-top:18px}
 /* Desktop places the existing project identity beside the documentary image.
    The viewport budget belongs to this dialog, never to the page's scroll scene.
-   Only the reading column scrolls when its expanded text exceeds that budget. */
+   Only the reading column scrolls when its complete text exceeds that budget. */
 @media(min-width:1001px){
  .project-case-dialog{--case-inset:clamp(24px,2.5vw,40px);--case-room:calc(100dvh - 110px - var(--case-inset) - var(--case-inset));width:min(1480px,calc(100% - 64px));padding:var(--case-inset)}
  .project-case-dialog .dialog-bar{position:relative;top:auto;margin-bottom:24px}
@@ -48,8 +49,19 @@
  .project-case-dialog blockquote{margin:28px 0;padding-left:22px}
  .project-case-dialog blockquote>p{font-size:clamp(22px,2.1vw,30px);line-height:1.35}
  .project-case-dialog .case-testimony{margin-top:28px}
- .project-case-dialog .case-summary-compact{display:none}
- .project-case-dialog .case-summary-desktop{display:inline}
+ .project-case-dialog .case-testimony summary{display:none}
+ .project-case-dialog .case-letter{padding-top:20px}
 }
-@media(max-width:1000px){.case-layout,.case-layout[data-portrait=true]{grid-template-columns:1fr}.case-layout[data-portrait=true] .case-figure img{max-height:65dvh}.case-copy{max-width:740px}.project-case-dialog blockquote{max-width:640px}.case-catalog{gap:20px}}
+@media(max-width:1000px){
+ /* Keep the header and project title outside the actual reading scroller.
+    A sticky bar inside the padded dialog exposed a 20px strip above itself. */
+ .project-case-dialog[open]{display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:visible}
+ .project-case-dialog .dialog-bar{position:static}
+ .project-case-dialog #preview-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+ .case-layout,.case-layout[data-portrait=true]{grid-template-columns:1fr}
+ .case-layout[data-portrait=true] .case-figure img{max-height:65dvh}
+ .case-copy{max-width:740px}
+ .project-case-dialog blockquote{max-width:640px}
+ .case-catalog{gap:20px}
+}
 @media(max-width:700px){.project-case-dialog,.project-catalog-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:20px}.project-case-dialog .dialog-bar,.project-catalog-dialog .dialog-bar{margin-bottom:20px}.case-layout{gap:26px}.project-case-dialog .case-description{font-size:16px}.project-case-dialog blockquote{margin-block:26px;padding-left:18px}.case-catalog{grid-template-columns:1fr;gap:32px}.case-catalog figure{max-height:340px}.case-catalog h3{font-size:36px}}

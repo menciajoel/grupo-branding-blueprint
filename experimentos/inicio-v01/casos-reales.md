@@ -151,3 +151,10 @@ validación física iOS/iPadOS. Flying Fish mantiene la suavidad de su fuente.
 Vista previa local: `http://192.168.68.120:4190/experimentos/inicio-v01/`, con
 `?vista=proyecto-dunkin`, `?vista=proyecto-issima` o `?vista=proyecto-flying-fish`.
 Servidor local activo; no se ha publicado ninguna de estas modificaciones.
+# Actualización local posterior
+
+El refinamiento solicitado sobre la versión `6780fe6` se documenta en
+[proyectos-refinamiento-final-qa.md](proyectos-refinamiento-final-qa.md): isotipo
+multicolor de Media Branding, testimonio íntegro por defecto en escritorio y
+corrección del encabezado durante la lectura móvil. Las comprobaciones siguientes
+se conservan como registro histórico de la primera implementación aprobada.

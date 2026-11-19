@@ -112,7 +112,14 @@ for i,p in enumerate(content['projects']):
     destination_data[key]={'name':p['name'],'headline':p['name'],'body':p['presentation'],'execution':p['execution'],'route':p['routeProposal'],'testimonial':p.get('testimonial'),'evidence':p.get('photoEvidence'),'photo':p.get('photo')}
 
 project_templates, project_fallback = render_project_views(ROOT, content, icon)
-pending = content['sections']['COPY-P01-S05']['pending'][0]['label']
+clients = json.loads((ROOT / 'clients.json').read_text())
+client_logos = ('<ul class="client-logos" role="list" aria-label="Clientes" '
+                f'data-copy="{block_id(5,3)}" data-pending-id="{clients["fulfills"]["pendingId"]}">'
+                + ''.join(f'<li data-client-id="{esc(client["id"])}"><img data-client-logo="{esc(client["id"])}" '
+                          f'src="{esc(client["image"]["file"])}" width="{client["image"]["width"]}" '
+                          f'height="{client["image"]["height"]}" alt="{esc(client["name"])}" loading="lazy" decoding="async" '
+                          f'style="--client-logo-width:{client["opticalWidth"]}px"></li>' for client in clients['clients'])
+                + '</ul>')
 values = ''.join(f'<article class="value-row"><span class="value-index" aria-hidden="true">0{i+1}</span>{tag("h3",6,start)}{tag("p",6,start+1)}</article>' for i,start in enumerate((3,5,7)))
 newsletter_support = content['newsletter']['sections']
 consent = next(b for b in newsletter_support[0]['blocks'] if b['type']=='consent')
@@ -121,6 +128,8 @@ error = newsletter_support[2]['blocks'][0]
 credits=''.join(f'<li><a href="{esc(m["source"])}" target="_blank" rel="noopener noreferrer">{esc(m["author"])} · Unsplash{icon(size=18)}</a></li>' for m in media['items'])
 
 values = {
+ 'CLIENT_STYLE_HASH':hashlib.sha256((ROOT/'clients.css').read_bytes()).hexdigest()[:12],
+ 'CLIENT_LOGOS':client_logos,
  'PROJECT_STYLE_HASH':hashlib.sha256((ROOT/'projects.css').read_bytes()).hexdigest()[:12],
  'PROJECT_MOTION_HASH':hashlib.sha256((ROOT/'projects.js').read_bytes()).hexdigest()[:12],
  'PROJECT_CASE_TEMPLATES':project_templates,
@@ -142,7 +151,7 @@ values = {
  'SOLUTIONS_TITLE':tag('h2',3,1),'SOLUTIONS_BODY':tag('p',3,2),
  'SOLUTIONS_ROWS':''.join(solutions),'SOLUTIONS_PHOTOS':solution_photos,
  'PROJECTS_TITLE':tag('h2',4,1),'PROJECTS_BODY':tag('p',4,2),'PROJECTS_ACTION':action(4,3,'text-link'), 'PROJECT_ROWS':''.join(project_rows),
- 'BRANDS_TITLE':tag('h2',5,1),'BRANDS_BODY':tag('p',5,2), 'BRANDS_PENDING':f'<p class="pending-label" data-copy="{block_id(5,3)}">{esc(pending)}</p>',
+ 'BRANDS_TITLE':tag('h2',5,1),'BRANDS_BODY':tag('p',5,2),
  'WHY_TITLE':tag('h2',6,1),'WHY_BODY':tag('p',6,2),'VALUES':values,
  'CONTACT_TITLE':tag('h2',7,1),'CONTACT_BODY':tag('p',7,2),'CONTACT_ACTION':action(7,3,'button button-primary'),
  'NEWS_TITLE':tag('h2',8,1),'NEWS_BODY':tag('p',8,2),

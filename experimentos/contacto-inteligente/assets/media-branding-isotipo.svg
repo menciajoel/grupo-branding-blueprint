@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195.89 157.51"><defs>
+    <style>
+      .cls-1 {
+        fill: #348266;
+      }
+
+      .cls-2 {
+        fill: #5fbae9;
+      }
+
+      .cls-3 {
+        fill: #fde63e;
+      }
+
+      .cls-4 {
+        stroke: #221f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .86px;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #221f20;
+      }
+
+      .cls-6 {
+        fill: #4aa24a;
+      }
+
+      .cls-7 {
+        fill: #bd2e3e;
+      }
+
+      .cls-8 {
+        fill: #ce2a6c;
+      }
+
+      .cls-9 {
+        fill: #22538d;
+      }
+
+      .cls-10 {
+        fill: #c1ce42;
+      }
+
+      .cls-11 {
+        fill: #d4532d;
+      }
+
+      .cls-12 {
+        fill: #b0d5f1;
+      }
+
+      .cls-13 {
+        fill: #eeb05e;
+      }
+
+      .cls-14 {
+        fill: #e17f55;
+      }
+
+      .cls-15 {
+        fill: #74bfce;
+      }
+
+      .cls-16 {
+        fill: #c52f2f;
+      }
+
+      .cls-17 {
+        fill: #ab2c66;
+      }
+
+      .cls-18 {
+        fill: #3071b4;
+      }
+
+      .cls-19 {
+        fill: #eaadc5;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-19" points="32.64 10.78 14.43 93.49 46.77 71.9 32.64 10.78" />
+    <polygon class="cls-8" points="58.23 120.1 46.77 71.9 14.43 93.49 58.23 120.1" />
+    <polygon class="cls-7" points="0 157.51 14.43 93.49 58.23 120.1 0 157.51" />
+    <polygon class="cls-17" points="49.63 157.51 58.23 120.1 0 157.51 49.63 157.51" />
+    <polygon class="cls-12" points="36.33 0 87.17 0 97.64 47.55 36.33 0" />
+    <polygon class="cls-2" points="58.23 90.39 97.64 47.55 36.33 0 58.23 90.39" />
+    <polygon class="cls-15" points="73.45 157.51 97.64 47.55 58.23 90.39 73.45 157.51" />
+    <polygon class="cls-18" points="116.41 129.59 97.64 47.55 73.45 157.51 116.41 129.59" />
+    <polygon class="cls-10" points="106.22 10.78 97.64 47.55 106.22 85.04 131.59 117.82 106.22 10.78" />
+    <polygon class="cls-1" points="122.79 157.51 131.59 117.82 116.41 129.59 122.79 157.51" />
+    <polygon class="cls-6" points="106.22 85.04 116.41 129.59 131.59 117.82 106.22 85.04" />
+    <polygon class="cls-13" points="110.03 0 131.59 90.39 173.28 55.39 110.03 0" />
+    <polygon class="cls-3" points="160.83 0 173.28 55.39 110.03 0 160.83 0" />
+    <polygon class="cls-14" points="131.59 90.39 186.23 113.88 173.28 55.39 131.59 90.39" />
+    <polygon class="cls-11" points="146.86 157.51 131.59 90.39 186.23 113.88 146.86 157.51" />
+    <polygon class="cls-16" points="195.89 157.51 146.86 157.51 186.23 113.88 195.89 157.51" />
+    <polygon class="cls-9" points="122.79 157.51 73.45 157.51 116.41 129.59 122.79 157.51" />
+    </svg>

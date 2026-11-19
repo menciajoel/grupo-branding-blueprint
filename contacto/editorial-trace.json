@@ -1,0 +1,146 @@
+{
+  "source": "docs/arq.html — COPY-P08",
+  "registeredCount": 23,
+  "authorization": "Integración definitiva de Contacto Inteligente · 2026-11-18",
+  "reference": "experimentos/contacto-inteligente/",
+  "blocks": [
+    {
+      "sourceId": "COPY-P08-S01-B01",
+      "originalText": "Cuéntanos qué necesita tu marca",
+      "status": "approved-replacement",
+      "presentation": "Tres etapas editoriales aprobadas"
+    },
+    {
+      "sourceId": "COPY-P08-S01-B02",
+      "originalText": "Cuéntanos qué quieres lograr. Te conectaremos con la especialidad adecuada o coordinaremos varias si tu proyecto lo requiere.",
+      "status": "not-rendered-approved",
+      "presentation": "Composición conversacional aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B01",
+      "originalText": "¿Qué necesitas?",
+      "status": "rendered",
+      "presentation": "Pregunta de etapa 01"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B02",
+      "originalText": "Publicidad exterior y medios",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B03",
+      "originalText": "Activaciones, BTL o eventos",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B04",
+      "originalText": "Producción física e impresión",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B05",
+      "originalText": "Una solución combinada",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B06",
+      "originalText": "Aún no estoy seguro",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B07",
+      "originalText": "Nombre",
+      "status": "approved-replacement",
+      "presentation": "¿Cuál es tu nombre?; label nativo y autocomplete name"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B08",
+      "originalText": "Empresa",
+      "status": "not-rendered-approved",
+      "presentation": "Empresa omitida en el recorrido aprobado"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B09",
+      "originalText": "Correo electrónico",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B10",
+      "originalText": "Teléfono",
+      "status": "rendered",
+      "presentation": "Etiqueta u opción aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B11",
+      "originalText": "Cuéntanos sobre tu proyecto",
+      "status": "approved-replacement",
+      "presentation": "Pregunta condicional; proyecto obligatorio"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B12",
+      "originalText": "¿Qué quieres lograr? Puedes contarnos sobre tu campaña, necesidad, fechas o cualquier información que nos ayude a entender el proyecto.",
+      "status": "not-rendered-approved",
+      "presentation": "Limpieza editorial aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S02-B13",
+      "originalText": "[Enviar consulta]",
+      "status": "approved-replacement",
+      "presentation": "CTA dinámico Cuéntanos tu idea / Enviar mi solicitud"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B01",
+      "originalText": "Empecemos por entender tu necesidad",
+      "status": "approved-replacement",
+      "presentation": "Estamos aquí para ti."
+    },
+    {
+      "sourceId": "COPY-P08-S03-B02",
+      "originalText": "Si prefieres escribirnos directamente, estas son nuestras vías de contacto.",
+      "status": "not-rendered-approved",
+      "presentation": "Composición de pestañas aprobada"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B03",
+      "originalText": "Contacto directo",
+      "status": "approved-replacement",
+      "presentation": "Pestañas por división"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B04",
+      "originalText": "Media Branding: rromero@mediabranding.net / 3368-2657 · ventashn@mediabranding.net / 3350-1306.",
+      "status": "data-unchanged",
+      "presentation": "Correos y teléfonos; nueva presentación"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B05",
+      "originalText": "Linkbranding: ventashn@linkbranding.com / 3180-9892 · norarivera@linkbranding.com / 3177-0084.",
+      "status": "data-unchanged",
+      "presentation": "Correos y teléfonos; nueva presentación"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B06",
+      "originalText": "Contacto adicional: ventas3@gbrandingca.com / 8735-6357.",
+      "status": "data-unchanged",
+      "presentation": "Contacto general compartido con Media Print por autorización expresa"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B07",
+      "originalText": "Oficinas",
+      "status": "approved-replacement",
+      "presentation": "Oficinas de Grupo Branding"
+    },
+    {
+      "sourceId": "COPY-P08-S03-B08",
+      "originalText": "Tegucigalpa: Condominios Metrópolis, bulevar Suyapa. San Pedro Sula: Plaza Bulevar, bulevar Micheletti.",
+      "status": "data-unchanged",
+      "presentation": "Direcciones exactas; enlaces externos de búsqueda Maps"
+    }
+  ]
+}

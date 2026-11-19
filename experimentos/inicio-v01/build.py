@@ -41,6 +41,8 @@ def action(section, number, cls='text-link'):
     b = blocks[block_id(section,number)]
     route = ROUTES[b['destinationArchitectureId']]
     slug = route.strip('/')
+    if slug == 'contacto':
+        return f'<a class="{cls}" href="/contacto/?origen=grupo-branding" data-route="{route}"><span data-copy="{b["id"]}">{esc(b["text"].strip("[]"))}</span>{icon()}</a>'
     return f'<a class="{cls}" href="?vista={quote(slug)}" data-preview="{slug}" data-route="{route}"><span data-copy="{b["id"]}">{esc(b["text"].strip("[]"))}</span>{icon()}</a>'
 
 

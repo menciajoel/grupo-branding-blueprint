@@ -27,7 +27,7 @@
       "id": "PRES-MB-PREDIOS-03",
       "role": "cta",
       "text": "Proponer mi espacio",
-      "target": "/contacto/#predios-privados",
+      "target": "/contacto/",
       "sourceDependency": [
         "ARQ-C02"
       ]

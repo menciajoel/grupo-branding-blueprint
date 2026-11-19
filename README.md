@@ -6,6 +6,11 @@ La consolidación aprobada incorpora en Inicio la transición cinematográfica S
 
 El [informe de consolidación](docs/consolidacion-2026-11-18.md) documenta la protección, los cambios de integración y la verificación local.
 
+Contacto utiliza ahora la experiencia conversacional aprobada de Contacto
+Inteligente, integrada en la misma ruta `/contacto/`. La referencia experimental
+se conserva en Git y queda fuera del artefacto público. Ver
+[integración y QA](docs/integracion-contacto-2026-11-18.md).
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.
@@ -36,7 +41,8 @@ linkbranding/               COPY-P05, identidad y fotografía de Linkbranding
 media-print/                COPY-P06, identidad y fotografía de Media Print
 shared/divisions/           Render, hero, secciones y verificación de ambas divisiones
 shared/inicio/              Transición cinematográfica y cierre aprobados, con hashes de aprobación
-contacto/                   COPY-P08 y presentación sin envíos
+contacto/                   Contacto Inteligente aprobado, registro COPY-P08 y presentación sin envíos
+experimentos/contacto-inteligente/ Referencia técnica aprobada, excluida del sitio público
 experimentos/inicio-v01/     Inicio aprobado existente, conservado
 experimentos/transicion-cinematografica/ Referencia técnica, generador y QA históricos; salidas locales ignoradas
 assets/brand/               SVG oficiales por marca
@@ -64,11 +70,18 @@ Linkbranding y Media Print usan cada una `content.json`, `design.json`, `media.j
 
 Los CTA de Contacto transmiten `origen=media-branding`, `origen=linkbranding`, `origen=media-print` o `origen=grupo-branding`. Contacto solo admite esos valores, preselecciona el servicio de la división y muestra su retorno. El origen del grupo, el acceso directo y un origen desconocido son neutrales. Los enlaces antiguos `?servicio=division` siguen funcionando cuando no hay un origen explícito. La identidad de Contacto es siempre Grupo Branding.
 
+Origen y especialidad son independientes. La presentación no envía ni almacena
+solicitudes; la integración de Resend queda pendiente. Las pestañas de información
+de contacto y el formulario comparten la misma página. El inventario automático
+comprueba los 18 accesos desde las cuatro páginas, incluidos menús, footer y
+Predios privados. Este último ya no usa el fragmento del formulario anterior.
+
 Después de editar fuentes, regenerar los HTML correspondientes y revisarlos antes de compilar:
 
 ```sh
 python3 -B media-branding/build.py
 python3 -B contacto/build.py
+python3 -B contacto/verify.py
 python3 -B linkbranding/build.py
 python3 -B media-print/build.py
 python3 -B media-branding/verify.py
@@ -106,6 +119,11 @@ python3 -B tools/verify_site.py --base-path /grupo-branding-blueprint
 ```
 
 El prefijo se obtiene de `configure-pages` en CI. Solo en la salida se adaptan las rutas absolutas y se conectan los enlaces de Inicio a las tres divisiones y Contacto. Las demás páginas conservan sus vistas de prototipo. No se cambia el diseño ni se implementan destinos comerciales adicionales. Servir `_site/` directamente requiere compilar sin prefijo; para previsualizar un prefijo debe montarse esa carpeta bajo dicho subdirectorio.
+
+`tools/verify_contact_integration.py` valida los destinos y orígenes de todos los
+CTA de Contacto en el paquete real y que no se publique la referencia experimental.
+Los enlaces de Contacto de Inicio ya son navegables también en sus fuentes; las
+animaciones cinematográficas y sus hashes aprobados permanecen intactos.
 
 URLs públicas:
 

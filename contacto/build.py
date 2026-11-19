@@ -1,64 +1,137 @@
 #!/usr/bin/env python3
-"""Static demonstration of COPY-P08. No submission endpoint or backend."""
+"""Build the approved Contacto Inteligente presentation; no submission backend."""
+from pathlib import Path
+import copy
+import hashlib
 import html
 import json
-import hashlib
-from pathlib import Path
+import re
+import xml.etree.ElementTree as ET
+from urllib.parse import quote
 
-ROOT=Path(__file__).resolve().parent
-MEDIA=ROOT.parent/'media-branding'
-content=json.loads((ROOT/'content.json').read_text())
-presentation=json.loads((MEDIA/'presentation-copy.json').read_text())
-proposal={item['role']:item for item in presentation['blocks']}
-blocks={block['id']:block for section in content['sections'] for block in section['blocks']}
-esc=lambda value:html.escape(str(value),quote=True)
-def block(section,number,tag='p',css='',identity=''):
-    key=f'COPY-P08-S{section:02d}-B{number:02d}'
-    text=blocks[key]['text'].strip('[]')
-    attrs=f' id="{identity}"' if identity else ''
-    return f'<{tag}{attrs} class="{css}" data-copy="{key}">{esc(text)}</{tag}>'
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+content = json.loads((ROOT / 'contacto/content.json').read_text())
+sections = content['sections']
 
-choices=''.join(f'<label class="need-option"><input type="radio" name="necesidad" value="{number}"><span data-copy="COPY-P08-S02-B{number:02d}">{esc(blocks[f"COPY-P08-S02-B{number:02d}"]["text"])}</span></label>' for number in range(2,7))
-fields=[]
-for number,kind,autocomplete in [(7,'text','name'),(8,'text','organization'),(9,'email','email'),(10,'tel','tel')]:
-    key=f'COPY-P08-S02-B{number:02d}';identity=f'contact-field-{number}'
-    fields.append(f'<div class="contact-field"><label for="{identity}" data-copy="{key}">{esc(blocks[key]["text"])}</label><input id="{identity}" type="{kind}" autocomplete="off"></div>')
-textarea=f'<div class="contact-field contact-message"><label for="project-context" data-copy="COPY-P08-S02-B11">{esc(blocks["COPY-P08-S02-B11"]["text"])}</label><textarea id="project-context" rows="5" aria-describedby="project-help"></textarea></div>'
-send=block(2,13,'span')
-footer='<footer class="contact-footer"><a href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="../assets/brand/grupo-branding/horizontal-blanco.svg" width="202" height="60" alt="Grupo Branding"></a><a href="../experimentos/inicio-v01/" data-contact-return><span data-contact-return-label>Grupo Branding</span><img src="../media-branding/assets/icons/arrow-up-right.svg" width="20" height="20" alt=""></a></footer>'
-page=f'''<!doctype html>
-<html lang="es"><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#080f12">
-  <title>Contacto | Grupo Branding</title>
-  <link rel="icon" href="../assets/brand/grupo-branding/isotipo-color.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../media-branding/tokens.css?v={hashlib.sha256((MEDIA/'tokens.css').read_bytes()).hexdigest()[:12]}">
-  <link rel="stylesheet" href="../media-branding/styles.css?v={hashlib.sha256((MEDIA/'styles.css').read_bytes()).hexdigest()[:12]}">
-  <link rel="stylesheet" href="contact.css?v={hashlib.sha256((ROOT/'contact.css').read_bytes()).hexdigest()[:12]}">
-  <script src="../media-branding/assets/vendor/gsap.min.js" defer></script>
-  <script src="contact.js?v={hashlib.sha256((ROOT/'contact.js').read_bytes()).hexdigest()[:12]}" defer></script>
-</head><body class="division-page contact-page">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header class="division-header contact-header"><a class="brand-link" href="../experimentos/inicio-v01/" aria-label="Grupo Branding · Inicio"><img src="../assets/brand/grupo-branding/horizontal-blanco.svg" width="180" height="64" alt="Grupo Branding"></a><nav aria-label="Grupo Branding"><a href="../experimentos/inicio-v01/" data-contact-return><span data-contact-return-label>Grupo Branding</span></a><a href="#contenido" aria-current="page">Contacto</a></nav></header>
-  <main id="contenido" class="contact-main">
-    <section class="contact-hero" aria-labelledby="contact-title">{block(1,1,'h1',identity='contact-title')}{block(1,2,'p','contact-introduction')}</section>
-    <aside class="owner-context" id="predios-privados" aria-labelledby="owner-context-title" hidden><h2 id="owner-context-title">Predios privados</h2><p class="owner-email" data-demonstration-email>{esc(proposal['demonstrationEmail']['text'])}</p><span class="demo-status">Demostración</span></aside>
-    <div class="contact-layout">
-      <section class="contact-form" role="form" aria-labelledby="contact-form-title">
-        {block(2,1,'h2',identity='contact-form-title')}
-        <div class="need-options" role="radiogroup" aria-labelledby="contact-form-title">{choices}</div>
-        <div class="contact-fields">{''.join(fields)}{textarea}</div>
-        {block(2,12,'p','contact-help','project-help')}
-        <div class="contact-form-action"><button type="button" class="button contact-send" disabled aria-describedby="contact-demo-status">{send}<img src="../media-branding/assets/icons/arrow-up-right.svg" width="22" height="22" alt=""></button><span class="demo-status" id="contact-demo-status">Demostración</span></div>
-      </section>
-      <section class="contact-details" aria-labelledby="contact-details-title">
-        {block(3,1,'h2',identity='contact-details-title')}{block(3,2,'p','contact-details-introduction')}
-        <div class="contact-channel">{block(3,3,'h3')}{block(3,4)}{block(3,5)}{block(3,6)}</div>
-        <div class="contact-offices">{block(3,7,'h3')}{block(3,8)}</div>
-      </section>
-    </div>
-    {footer}
-  </main>
-</body></html>'''
-(ROOT/'index.html').write_text(page)
-print('Rendered COPY-P08 → contacto/index.html (demonstration only)')
+
+def block(section, number):
+    return sections[section - 1]['blocks'][number - 1]
+
+
+def official_contact(item):
+    text = item['text']
+    pieces, position = [], 0
+    for match in re.finditer(r'[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}|\b\d{4}-\d{4}\b', text):
+        pieces.append(html.escape(text[position:match.start()]))
+        value = match.group()
+        href = 'mailto:' + value if '@' in value else 'tel:' + value.replace('-', '')
+        pieces.append(f'<a href="{html.escape(href)}">{html.escape(value)}</a>')
+        position = match.end()
+    pieces.append(html.escape(text[position:]))
+    return f'<p data-copy="{item["id"]}">{"".join(pieces)}</p>'
+
+
+def contact_pairs(item):
+    return re.findall(r'([\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}) / (\d{4}-\d{4})', item['text'])
+
+
+def contact_rows(item):
+    return ''.join(
+        f'<div class="contact-person"><a class="contact-email" href="mailto:{html.escape(email)}">'
+        f'{html.escape(email)}<span aria-hidden="true">↗</span></a>'
+        f'<a class="contact-phone" href="tel:{phone.replace("-", "")}">{phone}</a></div>'
+        for email, phone in contact_pairs(item))
+
+
+company_names = {'media-branding': 'Media Branding', 'linkbranding': 'Linkbranding', 'media-print': 'Media Print'}
+# COPY-P08-S03-B06 is shared with Media Print by the director's explicit
+# authorization of 18 Nov 2026; it is not reclassified in the approved source.
+company_sources = {'media-branding': block(3, 4), 'linkbranding': block(3, 5), 'media-print': block(3, 6)}
+contact_tabs, contact_panels = [], []
+for company, title in company_names.items():
+    initial = company == 'media-branding'
+    contact_tabs.append(
+        f'<button type="button" class="contact-tab" role="tab" id="contact-tab-{company}" '
+        f'data-contact-company="{company}" aria-controls="contact-panel-{company}" '
+        f'aria-selected="{str(initial).lower()}" tabindex="{0 if initial else -1}">{title}</button>')
+    item = company_sources[company]
+    contact_panels.append(
+        f'<div class="contact-panel" role="tabpanel" id="contact-panel-{company}" '
+        f'aria-labelledby="contact-tab-{company}" tabindex="0" data-source-copy="{item["id"]}"'
+        f'{"" if initial else " hidden inert"}>{contact_rows(item)}</div>')
+
+offices_text = block(3, 8)['text']
+office_addresses = re.fullmatch(r'(Tegucigalpa:.*?) (San Pedro Sula:.*)', offices_text).groups()
+office_links = []
+for address in office_addresses:
+    city, street = address.split(': ', 1)
+    target = 'https://www.google.com/maps/search/?api=1&query=' + quote(address, safe='')
+    office_links.append(
+        f'<div class="contact-office"><h3>{html.escape(city)}</h3><p>{html.escape(street)}</p>'
+        f'<a href="{html.escape(target)}" target="_blank" rel="noopener noreferrer" '
+        f'aria-label="Cómo llegar a la oficina de {html.escape(city)} (abre Google Maps en otra pestaña)">'
+        f'Cómo llegar<span aria-hidden="true">↗</span></a></div>')
+
+contact_data = {
+    'source': 'contacto/content.json',
+    'companies': {key: {'name': company_names[key], 'sourceCopy': item['id'], 'contacts': [
+        {'email': email, 'phone': phone} for email, phone in contact_pairs(item)]}
+        for key, item in company_sources.items()},
+    'offices': list(office_addresses),
+    'generalSourceCopy': block(3, 6)['id'],
+    'sharedMediaPrintAuthorization': 'Director: Media Print utiliza ese contacto compartido · 2026-11-18'
+}
+
+
+# Extract existing official vector nodes, including their original styles.
+# No geometry is redrawn; originals remain untouched.
+ET.register_namespace('', 'http://www.w3.org/2000/svg')
+icons = {
+    'media-branding': ('media-branding', '0 0 195.89 157.51', 'polygons'),
+    'linkbranding': ('linkbranding', '0 0 143.2 200.77', 0),
+    'media-print': ('media-printing', '0 0 134 136.46', 2),
+}
+provenance = {}
+(HERE / 'assets').mkdir(exist_ok=True)
+for name, (folder, viewbox, group_index) in icons.items():
+    source = ROOT / 'assets/brand' / folder / 'horizontal-color.svg'
+    original = ET.fromstring(source.read_bytes())
+    vector = ET.Element('{http://www.w3.org/2000/svg}svg', {'viewBox': viewbox})
+    vector.append(copy.deepcopy(original[0]))
+    group = original[1]
+    selected = list(group)[:17] if group_index == 'polygons' else [group[group_index]]
+    for node in selected:
+        vector.append(copy.deepcopy(node))
+    target = HERE / 'assets' / f'{name}-isotipo.svg'
+    ET.ElementTree(vector).write(target, encoding='utf-8', xml_declaration=True)
+    provenance[name] = {'source': str(source.relative_to(ROOT)), 'sourceSha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'viewBox': viewbox, 'selection': group_index, 'assetSha256': hashlib.sha256(target.read_bytes()).hexdigest()}
+
+options = []
+categories = ['media-branding', 'linkbranding', 'media-print', 'combinada', 'indefinida']
+for index, category in enumerate(categories):
+    item = block(2, index + 2)
+    options.append(f'''<button class="category-choice" type="button" data-category="{category}" aria-pressed="false" disabled>
+      <span class="choice-number" aria-hidden="true">0{index + 1}</span><span data-copy="{item['id']}">{html.escape(item['text'])}</span><span class="choice-arrow" aria-hidden="true">↗</span>
+    </button>''')
+
+values = {
+    'OPTIONS': '\n'.join(options),
+    'DIRECT_INTRO': html.escape(block(3, 2)['text']),
+    'CONTACTS': '\n'.join(official_contact(block(3, i)) for i in (4, 5, 6)),
+    'OFFICES': html.escape(block(3, 8)['text']),
+    'CONTACT_TABS': '\n'.join(contact_tabs),
+    'CONTACT_PANELS': '\n'.join(contact_panels),
+    'CONTACT_OFFICES': '\n'.join(office_links),
+    'GENERAL_CONTACT': contact_rows(block(3, 6)),
+    'CSS_HASH': hashlib.sha256((HERE / 'contact.css').read_bytes()).hexdigest()[:12],
+    'JS_HASH': hashlib.sha256((HERE / 'contact.js').read_bytes()).hexdigest()[:12],
+}
+page = (HERE / 'template.html').read_text()
+for key, value in values.items():
+    page = page.replace('{{' + key + '}}', value)
+assert not re.search(r'\{\{\w+\}\}', page)
+(HERE / 'index.html').write_text(page)
+(HERE / 'assets/provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
+(HERE / 'assets/contact-data.json').write_text(json.dumps(contact_data, ensure_ascii=False, indent=2) + '\n')
+print('Contacto Inteligente · 3 approved stages · neutral completion · official contacts/vectors')

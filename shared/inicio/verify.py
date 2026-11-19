@@ -18,6 +18,10 @@ def canonical_body(page):
         if route and route[1] in LIVE:
             tag = re.sub(r'\bhref="[^"]*"', f'href="{route[1]}"', tag)
             tag = re.sub(r'\sdata-preview="[^"]*"', '', tag)
+        elif 'href="/contacto/?origen=grupo-branding"' in tag:
+            # Navigation now opens Contacto Inteligente; compare presentation
+            # against the approved hash using its original anchor spelling.
+            tag = tag.replace('href="/contacto/?origen=grupo-branding"', 'href="#contacto" data-scroll')
         return tag
     return re.sub(r'<a\b[^>]*>', anchor, body)
 

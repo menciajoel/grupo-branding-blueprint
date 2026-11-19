@@ -34,7 +34,7 @@ class Document(HTMLParser):
             assert any(t=='section' and cls=='hero-surface' for t,_,cls in self.stack), 'Hero symbol must stay contained by the hero, including reduced motion'
             self.hero_art+=1
         if a.get('data-copy'): self.copy[a['data-copy']]=[]
-        if a.get('data-route'): self.routes[a['data-preview']]=a['data-route']
+        if a.get('data-route'): self.routes[a.get('data-preview') or a['data-route'].strip('/')]=a['data-route']
         for key in ('src','href'):
             value=a.get(key,'')
             if value and not value.startswith(('#','?','http:','https:')): self.refs.add(value)
@@ -84,6 +84,9 @@ clips=[p['points'] for p in doc.polygons if p.get('class')!='official-piece']
 assert clips==[points for points,_ in expected]*2, 'Photographic silhouettes must match the official pairs'
 for rel in re.findall(r'url\([\'\"]?([^\)\'\"]+)',(ROOT/'styles.css').read_text()): doc.refs.add(rel)
 for ref in doc.refs:
+    if ref == '/contacto/?origen=grupo-branding':
+        assert (REPO/'contacto/index.html').is_file(), 'Missing Contacto Inteligente destination'
+        continue
     assert not ref.startswith('/'), f'Root-relative asset: {ref}'
     assert (ROOT/urlsplit(ref).path).is_file(), f'Missing local asset: {ref}'
 for path in (ROOT/'assets/brand').rglob('*.svg'):

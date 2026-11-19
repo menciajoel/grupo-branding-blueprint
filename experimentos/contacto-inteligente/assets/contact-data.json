@@ -1,0 +1,49 @@
+{
+  "source": "contacto/content.json",
+  "companies": {
+    "media-branding": {
+      "name": "Media Branding",
+      "sourceCopy": "COPY-P08-S03-B04",
+      "contacts": [
+        {
+          "email": "rromero@mediabranding.net",
+          "phone": "3368-2657"
+        },
+        {
+          "email": "ventashn@mediabranding.net",
+          "phone": "3350-1306"
+        }
+      ]
+    },
+    "linkbranding": {
+      "name": "Linkbranding",
+      "sourceCopy": "COPY-P08-S03-B05",
+      "contacts": [
+        {
+          "email": "ventashn@linkbranding.com",
+          "phone": "3180-9892"
+        },
+        {
+          "email": "norarivera@linkbranding.com",
+          "phone": "3177-0084"
+        }
+      ]
+    },
+    "media-print": {
+      "name": "Media Print",
+      "sourceCopy": "COPY-P08-S03-B06",
+      "contacts": [
+        {
+          "email": "ventas3@gbrandingca.com",
+          "phone": "8735-6357"
+        }
+      ]
+    }
+  },
+  "offices": [
+    "Tegucigalpa: Condominios Metrópolis, bulevar Suyapa.",
+    "San Pedro Sula: Plaza Bulevar, bulevar Micheletti."
+  ],
+  "generalSourceCopy": "COPY-P08-S03-B06",
+  "sharedMediaPrintAuthorization": "Director: Media Print utiliza ese contacto compartido · 2026-11-18"
+}

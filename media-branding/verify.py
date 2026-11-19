@@ -4,6 +4,8 @@ import hashlib
 import argparse
 import json
 import re
+import subprocess
+import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -80,7 +82,7 @@ html=(ROOT/'index.html').read_text()
 for text in ['Piloto de diseño','Pendiente de implementación','Contacto pendiente','Contacto · Provisional','Fotografías de los proyectos citados pendientes','POR PROPORCIONAR']:
     assert text not in html,text
 assert 'Media Branding | Publicidad exterior en Honduras' in html
-assert sum(link.get('href')=='/contacto/?origen=media-branding' for link in page.links)==4
+assert sum(link.get('href')=='/contacto/?origen=media-branding' for link in page.links)==5
 assert all('data-pending' not in link for link in page.links)
 assert not any('predios@example.com' in link.get('href','') for link in page.links)
 assert 'data-media="proyecto-issima"' in html and 'data-media="concepto-exterior"' not in html
@@ -90,12 +92,7 @@ contact_data=json.loads((contact_root/'content.json').read_text())
 contact_source=next(x for x in blueprint['pages'] if x['id']=='COPY-P08')
 assert contact_data==contact_source
 contact=Page();contact.feed((contact_root/'index.html').read_text())
-for section in contact_source['sections']:
-    for item in section['blocks']:
-        assert ' '.join(' '.join(contact.copy[item['id']]).split())==' '.join(item['text'].strip('[]').split()),item['id']
-assert len(contact.copy)==sum(len(s['blocks']) for s in contact_source['sections'])
-assert not contact.forms, 'Demonstration fields must have no submission endpoint'
-assert 'class="button contact-send" disabled' in (contact_root/'index.html').read_text()
+subprocess.run([sys.executable,'-B',str(contact_root/'verify.py')],cwd=REPO,check=True)
 for asset in contact.assets:assert (contact_root/unquote(urlsplit(asset).path)).is_file(),asset
 assert not any('predios@example.com' in link.get('href','') for link in contact.links)
 parser=argparse.ArgumentParser(description=__doc__)
@@ -107,4 +104,4 @@ if baseline_path is not None:
         path=Path(name)
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest: changed.append(name)
     assert not changed, f'Pre-existing work changed: {changed}'
-print(f'PASS: 26 original blocks registered / {len(page.copy)} rendered unchanged + {len(page.proposals)} authorized presentation blocks; {len(contact.copy)} COPY-P08 blocks; assets, routes, demonstration safety and protected work intact.')
+print(f'PASS: 26 original blocks registered / {len(page.copy)} rendered unchanged + {len(page.proposals)} authorized presentation blocks; 23 COPY-P08 blocks registered and approved conversational Contacto verified; assets, routes and protected work intact.')

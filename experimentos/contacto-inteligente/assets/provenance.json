@@ -1,0 +1,23 @@
+{
+  "media-branding": {
+    "source": "assets/brand/media-branding/horizontal-color.svg",
+    "sourceSha256": "b005862831234dab91b658b57a919759a6e9de95e32167135fc37f10e5ea7c7f",
+    "viewBox": "0 0 195.89 157.51",
+    "selection": "polygons",
+    "assetSha256": "c0bda13671e020c0187033c769f693082a5ebe2d4af15468d18b415cfdd682f3"
+  },
+  "linkbranding": {
+    "source": "assets/brand/linkbranding/horizontal-color.svg",
+    "sourceSha256": "cb8fc39df320899cf38b65f131d265fb618c9bc830581125cd357eadc34091ef",
+    "viewBox": "0 0 143.2 200.77",
+    "selection": 0,
+    "assetSha256": "06d8769ceed3200151f9ebf329ee90229ac3e8dd1250e25d1dee918ecd3a1b1b"
+  },
+  "media-print": {
+    "source": "assets/brand/media-printing/horizontal-color.svg",
+    "sourceSha256": "3519f63c2baa998700afce76f70dc8a4692d12dec747d30e0afb0878eec4a815",
+    "viewBox": "0 0 134 136.46",
+    "selection": 2,
+    "assetSha256": "af96a5352291b15e070c993592d6c0d78b720c855e39bd8f04685b0f7837e790"
+  }
+}

@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../shared/divisions/cinematic.css?v=824032f10e17">
   <link rel="stylesheet" href="projects.css?v=b8c7cdf39d9b">
   <link rel="stylesheet" href="../shared/focus/focus.css?v=45ac2237ec39">
+  <link rel="stylesheet" href="../shared/divisions/navigation.css?v=9bae099f7c4d">
   <script src="../shared/focus/focus.js?v=366ca1d06a76" defer></script>
+  <script src="../shared/divisions/navigation.js?v=8bba696846db" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="motion.js?v=cf914714552e" defer></script>
@@ -33,6 +35,11 @@
 <a href="#publicidad-exterior" data-section-link aria-label="Publicidad exterior"><span>Publicidad exterior</span></a>
 <a href="#vallas-y-formatos-publicitarios" data-section-link aria-label="Vallas y formatos publicitarios"><span>Vallas y formatos publicitarios</span></a>
 <a href="#proyectos" data-section-link aria-label="Proyectos"><span>Proyectos</span></a>
+<details class="division-switcher" data-division-switcher>
+      <summary role="button" aria-controls="division-destinations">Divisiones<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg></summary>
+      <div class="division-destinations" id="division-destinations" role="group" aria-labelledby="division-destinations-label">
+        <p class="division-destinations-label" id="division-destinations-label">Otras divisiones</p>
+        <div class="division-destination-links"><a href="../experimentos/inicio-v01/" data-division-destination="grupo-branding" style="--division-destination-accent:currentColor">Grupo Branding</a><a href="../linkbranding/" data-division-destination="linkbranding" style="--division-destination-accent:#86be3a">Linkbranding</a><a href="../media-print/" data-division-destination="media-print" style="--division-destination-accent:#ce2a6c">Media Printing</a></div></div></details>
 <a href="/contacto/?origen=media-branding" aria-label="Contacto"><span>Contacto</span></a></nav>
   </header>
   <main id="contenido">

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'media-branding'))
 from projects_render import project_gallery
 from cinematic import write_assets
+from navigation import division_navigation
 
 
 def esc(value):
@@ -116,6 +117,8 @@ def render(folder):
     js_paths = ['../shared/focus/focus.js', '../shared/divisions/hero.js', '../shared/divisions/sections.js']
     css_paths.append('../shared/divisions/cinematic.css')
     js_paths.append('../shared/divisions/cinematic.js')
+    css_paths.append('../shared/divisions/navigation.css')
+    js_paths.append('../shared/divisions/navigation.js')
     if folder == 'media-print':
         css_paths.insert(1, '../media-branding/projects.css')
         js_paths.append('../media-branding/projects.js')
@@ -135,7 +138,7 @@ def render(folder):
 <title>{esc(name)} | Grupo Branding</title><meta name="description" content="{esc(item(1,2)['text'])}"><link rel="icon" href="../contacto/assets/{folder}-isotipo.svg" type="image/svg+xml">
 {styles}<script type="application/json" id="hero-geometry-reference">{reference_data}</script><script src="../media-branding/assets/vendor/gsap.min.js" defer></script><script src="../media-branding/assets/vendor/ScrollTrigger.min.js" defer></script>{scripts}</head>
 <body class="division-page new-division {folder}" data-resolve-label="{esc(resolve_label)}"><a class="skip-link" href="#contenido">Saltar al contenido</a>
-<header class="division-header"><a class="brand-link" href="#inicio" aria-label="{esc(name)} · Inicio"><img src="{logo}" width="{config['logoWidth']}" height="{config['logoHeight']}" alt="{esc(name)}"></a><button class="menu-toggle" type="button" aria-controls="division-navigation" aria-expanded="false" aria-label="Abrir menú" hidden><span>Menú</span>{icon('menu',24)}</button><nav id="division-navigation" aria-label="{esc(name)}">{nav_links(config['navigation'])}<a href="{contact}">Contacto</a></nav></header>
+<header class="division-header"><a class="brand-link" href="#inicio" aria-label="{esc(name)} · Inicio"><img src="{logo}" width="{config['logoWidth']}" height="{config['logoHeight']}" alt="{esc(name)}"></a><button class="menu-toggle" type="button" aria-controls="division-navigation" aria-expanded="false" aria-label="Abrir menú" hidden><span>Menú</span>{icon('menu',24)}</button><nav id="division-navigation" aria-label="{esc(name)}">{nav_links(config['navigation'])}{division_navigation(folder)}<a href="{contact}">Contacto</a></nav></header>
 <main id="contenido"><div class="division-journey" id="inicio"><div class="journey-stage" data-state="hero"><div class="photo-window"><div class="photo-depth">{image(config['heroImage'],'journey-photo',True)}</div></div><div class="photo-shade" aria-hidden="true"></div>
 <section class="hero-copy" aria-labelledby="hero-title" data-section="{prefix}-S01">{heading}{block(1,2,css='hero-description')}<div class="hero-action">{action(1,3)}</div></section>
 <section class="resolve-copy" id="que-resolvemos" tabindex="-1" aria-labelledby="heading-2" data-section="{prefix}-S02"><p class="section-label">01 / {esc(resolve_label)}</p><div class="resolve-title-mask">{block(2,1)}</div><div class="resolve-paragraphs">{block(2,2,css='resolve-lead')}{resolve_detail}</div></section>

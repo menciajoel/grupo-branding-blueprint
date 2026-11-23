@@ -31,6 +31,8 @@ Inicio incluye navegación nativa hacia la convergencia desde «Conoce nuestras 
 
 Los relevos interiores se generan desde la implementación aprobada de `shared/inicio/cinematic.*` mediante `shared/divisions/cinematic.py`. No editar únicamente sus salidas: las compilaciones reproducen y verifican el controlador común. El adaptador de resize conserva el progreso después del pin original del hero. Consultar [integración y QA](docs/transiciones-divisiones-media-printing-2026-11-19.md), [navegación](experimentos/inicio-v01/navegacion-divisiones-qa.md) y [consolidación de publicación](docs/publicacion-total-2026-11-19.md).
 
+La navegación cruzada aprobada (23-11-2026) incorpora «Divisiones» antes de Contacto en los tres encabezados y «Otras divisiones» dentro del menú móvil existente. Grupo Branding aparece primero y se excluye la división actual. En Linkbranding, «Servicios complementarios» conserva el destino interno `#grupo-branding`, mientras el destino corporativo del desplegable abre el Inicio del grupo. Fuentes: `shared/divisions/navigation.*` y `linkbranding/design.json`; ver [integración y publicación](docs/publicacion-navegacion-2026-11-23.md).
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.

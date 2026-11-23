@@ -11,6 +11,7 @@ from projects_render import project_gallery
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT.parent / 'shared/divisions'))
 from cinematic import write_assets
+from navigation import division_navigation
 write_assets()
 content = json.loads((ROOT / 'content.json').read_text())
 media = json.loads((ROOT / 'media.json').read_text())
@@ -27,6 +28,8 @@ def block(section, number, element, css=''):
 def navigation():
     links = []
     for i, item in enumerate(content['navigation']):
+        if item['target'] == '/contacto/':
+            links.append(division_navigation('media-branding'))
         attrs = ' data-section-link' if item['target'].startswith('#') else ''
         current = ' aria-current="page"' if i == 0 else ''
         links.append(f'<a href="{esc(item["target"])}"{attrs}{current} aria-label="{esc(item["label"])}"><span>{esc(item["label"])}</span></a>')
@@ -105,6 +108,7 @@ for filename in ['tokens.css', 'styles.css', 'chapters.css', 'motion.js', 'chapt
 for ext in ('css', 'js'):
     replacements[f'FOCUS_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/focus/focus.{ext}').read_bytes()).hexdigest()[:12]
     replacements[f'CINEMATIC_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/divisions/cinematic.{ext}').read_bytes()).hexdigest()[:12]
+    replacements[f'NAVIGATION_{ext.upper()}_HASH'] = hashlib.sha256((ROOT.parent / f'shared/divisions/navigation.{ext}').read_bytes()).hexdigest()[:12]
 page = (ROOT / 'template.html').read_text()
 for token, value in replacements.items():
     page = page.replace('{{' + token + '}}', value)

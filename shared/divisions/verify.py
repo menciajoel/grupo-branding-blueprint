@@ -45,3 +45,5 @@ for folder,page_id in [('linkbranding','COPY-P05'),('media-print','COPY-P06')]:
 print('ARQ-P03 standalone page remains pending; Linkbranding uses the approved existing Inicio divisions section as its documented navigable equivalent.')
 from verify_cinematic import verify as verify_cinematic
 verify_cinematic()
+from verify_navigation import verify as verify_navigation
+verify_navigation()

@@ -231,7 +231,7 @@
   .closing-chapter {padding:0}
   .closing-content {min-height:760px;padding-block:72px 86px}
   .closing-chapter h2 {font-size:clamp(40px,10.8vw,64px);width:100%;margin-top:26px;margin-bottom:54px;line-height:1.04}
-  .closing-visual img {object-position:71% 50%!important}
+  .closing-visual img {object-position:42% 50%!important}
   .closing-shade {background:linear-gradient(90deg,#002644e8,#00243dba),linear-gradient(0deg,#001e38ed,transparent 90%)}
   .closing-rule {margin-bottom:30px}
   .closing-action {margin-top:0;gap:26px}
@@ -247,4 +247,8 @@
 }
 @media(prefers-reduced-motion:reduce) {
   .extended-page *, .division-footer * {will-change:auto!important}
+}
+/* Photographic framing: retain the full unipolar above the foreground trees. */
+@media(min-width:1101px) {
+  .journey-photo {object-position:50% 10%}
 }

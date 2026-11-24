@@ -3,8 +3,8 @@
   "brandFolder": "linkbranding",
   "logoWidth": 924,
   "logoHeight": 201,
-  "heroImage": "link-encuentro",
-  "closingImage": "link-encuentro",
+  "heroImage": "link-encuentro-real",
+  "closingImage": "link-cierre-real",
   "anchors": {
     "3": "diseno-de-activaciones",
     "4": "eventos",
@@ -37,5 +37,10 @@
     2,
     2,
     4
-  ]
+  ],
+  "sectionImages": {
+    "design": "link-diseno-real",
+    "events": "link-eventos-real",
+    "participation": "link-calle-real"
+  }
 }

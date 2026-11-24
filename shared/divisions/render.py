@@ -51,12 +51,14 @@ def render(folder):
 
     def image(key, css='', eager=False, position=None):
         m = images[key]
-        source = m.get('externalPrefix', 'assets/media/' + key)
+        source = m.get('externalPrefix', 'assets/media/' + m.get('filePrefix', key))
         widths = m['sizes']
         srcset = ', '.join(f'{source}-{w}.webp {w}w' for w in widths)
-        w, h = m['originalDimensions']
+        w, h = m.get('processedDimensions', m['originalDimensions'])
         loading = 'fetchpriority="high"' if eager else 'loading="lazy"'
-        return f'<img class="{css}" src="{source}-{widths[-2]}.webp" srcset="{srcset}" sizes="(max-width:700px) 100vw, 75vw" width="{w}" height="{h}" {loading} decoding="async" alt="{esc(m["alt"])}" style="object-position:{position or m.get("position", "50% 50%")}">'
+        responsive_sizes = m.get('responsiveSizes', '(max-width:700px) 100vw, 75vw')
+        frame_ratio = f';aspect-ratio:{esc(m["frameAspectRatio"])}' if m.get('frameAspectRatio') else ''
+        return f'<img class="{css}" src="{source}-{widths[-2]}.webp" srcset="{srcset}" sizes="{esc(responsive_sizes)}" width="{w}" height="{h}" {loading} decoding="async" alt="{esc(m["alt"])}" style="object-position:{position or m.get("position", "50% 50%")}{frame_ratio}">'
 
     def photo(key, css=''):
         return f'<figure class="division-photo {css}" data-media="{key}"><div class="photo-shell">{image(key)}</div><figcaption>{esc(images[key]["disclosure"])}</figcaption></figure>'
@@ -65,13 +67,14 @@ def render(folder):
         return f'<section class="division-section {css}" id="{config["anchors"][str(s)]}" data-section="{sections[s]["id"]}" aria-labelledby="heading-{s}"><div class="section-inner"><div class="section-copy">{label(s, number)}{block(s, 1)}{block(s, 2, css="section-description")}</div>{photo(photo_id) if photo_id else ""}'
 
     if folder == 'linkbranding':
-        chapters = opening(3, 2, 'split-chapter light-chapter', 'link-calle') + '</div></section>'
+        section_images = config.get('sectionImages', {})
+        chapters = opening(3, 2, 'split-chapter light-chapter', section_images.get('design', 'link-calle')) + '</div></section>'
         chapters += '<div class="cinematic-stack">'
-        chapters += opening(4, 3, 'event-chapter', 'experiencias').replace('id="eventos"', 'id="eventos" data-cinematic-back') + '</div></section>'
+        chapters += opening(4, 3, 'event-chapter', section_images.get('events', 'experiencias')).replace('id="eventos"', 'id="eventos" data-cinematic-back') + '</div></section>'
         chapters += '<div class="participation-group" data-cinematic-front>'
         for n, s in enumerate((5, 6, 7), 4):
             chapters += opening(s, n, 'participation-chapter') + '<div class="editorial-rule" aria-hidden="true"></div></div></section>'
-        chapters += photo('link-calle', 'participation-photo') + '</div></div>'
+        chapters += photo(section_images.get('participation', 'link-calle'), 'participation-photo') + '</div></div>'
         chapters += opening(8, 7, 'statement-chapter') + '</div></section>'
         chapters += opening(9, 8, 'coordination-chapter') + '</div></section>'
         chapters += opening(11, 9, 'group-chapter')
@@ -79,7 +82,7 @@ def render(folder):
         chapters += action(11, 3, '../experimentos/inicio-v01/#divisiones') + '</div></section>'
         last = 12
     else:
-        chapters = opening(3, 2, 'production-chapter light-chapter', 'print-espacios')
+        chapters = opening(3, 2, 'production-chapter light-chapter', config.get('sectionImages', {}).get('spaces', 'print-espacios'))
         chapters += '<div class="production-capabilities">'
         for b in (4, 6, 8):
             chapters += '<article>' + block(3, b) + block(3, b + 1) + '</article>'

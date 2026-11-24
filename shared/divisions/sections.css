@@ -9,6 +9,25 @@
 .new-division .projects-arrow:focus-visible {outline:3px solid var(--division-accent);outline-offset:5px}
 .new-division .button img {filter:var(--division-arrow-filter)}
 .new-division .photo-shade {background:linear-gradient(90deg,var(--division-canvas) 0%,color-mix(in srgb,var(--division-canvas) 90%,transparent) 30%,transparent 78%),linear-gradient(0deg,color-mix(in srgb,var(--division-canvas) 48%,transparent),transparent 60%)}
+/* Alpha blend only at the photo boundary; GSAP continues to own clip-path. */
+.new-division .photo-window {
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#00000014 6%,#00000088 17%,#000 28%);
+  mask-image:linear-gradient(90deg,transparent 0%,#00000014 6%,#00000088 17%,#000 28%);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%;
+}
+@media(max-width:1100px) {
+  .new-division .photo-window {
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#00000066 3%,#000 8%);
+    mask-image:linear-gradient(90deg,transparent 0%,#00000066 3%,#000 8%);
+  }
+}
+@media(max-width:700px) {
+  .new-division .photo-window {
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 80%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 80%,transparent 100%);
+  }
+}
 .new-division .hero-copy {width:65%}
 .new-division .hero-description {max-width:580px}
 .hero-provenance {position:absolute;bottom:28px;right:var(--edge);max-width:42%;z-index:4;font-size:11px;line-height:1.35;color:white;background:#0a1115c9;padding:5px 8px}

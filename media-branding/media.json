@@ -15,7 +15,52 @@
     ],
     "alt": "Valla unipolar junto a una vía urbana, con árboles y cielo nublado.",
     "treatment": "Conversión colorimétrica ICC de Display P3 a sRGB, redimensionado y codificación WebP. Sin retoque, generación ni alteración del original. Recorte mediante object-fit en la presentación.",
-    "rights": "Recurso proporcionado dentro del proyecto. La autorización de publicación debe ser confirmada por el titular antes de un despliegue público."
+    "rights": "Recurso proporcionado dentro del proyecto. La autorización de publicación debe ser confirmada por el titular antes de un despliegue público.",
+    "filePrefix": "hero-unipolar-curado",
+    "processedDimensions": [
+      3100,
+      4590
+    ],
+    "sourceDimensions": [
+      4080,
+      5440
+    ],
+    "processedOriginal": "media-branding/source-images/curated/hero-unipolar-curado.png",
+    "processedSha256": "48846db31d12993472b54cf6410a7bdcb39e02291525dfbe42ffbf9b9a21ed17",
+    "postproduction": {
+      "method": "Convencional · Pillow; sin generación ni reconstrucción",
+      "crop": [
+        450,
+        850,
+        3550,
+        5440
+      ],
+      "channelGains": [
+        1,
+        1,
+        1
+      ],
+      "brightness": 1.025,
+      "contrast": 1.015,
+      "unsharp": {
+        "radius": 0.8,
+        "percent": 30,
+        "threshold": 3
+      },
+      "upscaled": false,
+      "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+    },
+    "curation": {
+      "gradeAfter": "A",
+      "reason": "Se conserva la fotografía real de mayor resolución. El reencuadre reduce cielo sin propósito y aproxima el soporte, conservando la vía y la vegetación."
+    },
+    "responsiveSizes": "max(100vw, 67.538svh)",
+    "webEncoding": {
+      "format": "WebP",
+      "quality": 89,
+      "method": 6,
+      "upscaled": false
+    }
   },
   "brand": {
     "source": "../assets/brand/media-branding/horizontal-color-blanco-01.svg",
@@ -39,7 +84,51 @@
         1800
       ],
       "alt": "Soporte publicitario en un puente sobre una vía urbana.",
-      "position": "50% 50%"
+      "position": "50% 50%",
+      "filePrefix": "exterior-puente-curado",
+      "processedDimensions": [
+        4800,
+        2670
+      ],
+      "sourceDimensions": [
+        4800,
+        3980
+      ],
+      "processedOriginal": "media-branding/source-images/curated/exterior-puente-curado.png",
+      "processedSha256": "eeddbff3eee614fcfb2086b050eb2ea5fb23f71f3f3cf1444d95d066fde65e9e",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          0,
+          650,
+          4800,
+          3320
+        ],
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.02,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "A",
+        "reason": "La misma toma conserva puente, anuncio y vehículos, con menos asfalto vacío en el primer plano."
+      },
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      }
     },
     {
       "id": "exterior-unipolar",
@@ -111,20 +200,64 @@
     },
     {
       "id": "cobertura-ciudad",
-      "type": "real",
-      "source": "recursos/Unipolares/VU1C-02 copia.jpg",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R085-p28-3f786dc7.webp",
       "catalogId": "VU-003",
       "originalDimensions": [
-        4080,
-        3060
+        1600,
+        900
       ],
-      "sha256": "486dd180e93b85badb2d113bdab7af9c172d35f64e34ebe2b843a344900f46af",
+      "sha256": "3688c0c7442d92351a146b5ba59380b5f1cc840ed279af64a22b30ee56d2a75e",
       "sizes": [
         800,
-        1800
+        1600
       ],
-      "alt": "Vía urbana con soporte publicitario y paisaje construido.",
-      "position": "50% 50%"
+      "alt": "Vista elevada de una intersección y su entorno urbano con soportes publicitarios.",
+      "position": "50% 50%",
+      "filePrefix": "cobertura-aerea-curada",
+      "processedDimensions": [
+        1600,
+        900
+      ],
+      "sourceDimensions": [
+        1600,
+        900
+      ],
+      "processedOriginal": "media-branding/source-images/curated/cobertura-aerea-curada.png",
+      "processedSha256": "ca693ed5f99d40f27e2bf1d4af3130bd33beb6b9917295442a787cf56e495aed",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1.005,
+          1,
+          0.995
+        ],
+        "brightness": 1.0,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "A",
+        "reason": "La vista elevada organiza vías y tejido urbano; aporta contexto comercial y sustituye el cielo y cableado dominantes de la toma anterior."
+      },
+      "sourceOriginal": "media-branding/source-images/canva/R085-p28-3f786dc7.webp",
+      "sourceResourceId": "R085",
+      "sourcePage": 28,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "evidence": "Fotografía del cliente recuperada del tramo de Media Branding en la presentación; no atribuye resultados ni proyectos nuevos.",
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      }
     },
     {
       "id": "concepto-retail",
@@ -187,23 +320,62 @@
     },
     {
       "id": "concepto-cierre",
-      "type": "generated",
-      "source": "output/cierre-2026-11-17/concepto-cierre-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R095-p32-4adaa7d7.webp",
       "originalDimensions": [
-        1672,
-        941
+        1234,
+        1599
       ],
-      "sha256": "7b8042f834f5f8931c8d1a36b3ecf34904cdf17e3e89061f2d4145cbe9257300",
+      "sha256": "83ab25cdb5b5f456a7f1465eb9dfb64a34f9335ed95405a070e988650042fe8b",
       "sizes": [
         640,
-        1200,
-        1672
+        960,
+        1234
       ],
-      "alt": "Visualización conceptual de una valla monumental vacía sobre una ciudad con cerros.",
-      "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/cierre-2026-11-17/concepto-cierre-prompt.txt",
-      "replacementRequired": true
+      "alt": "Valla iluminada de Coca-Cola junto a una avenida al anochecer.",
+      "position": "42% 50%",
+      "sourceOriginal": "media-branding/source-images/canva/R095-p32-4adaa7d7.webp",
+      "sourceResourceId": "R095",
+      "sourcePage": 32,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1234,
+        1599
+      ],
+      "filePrefix": "cierre-documental-real",
+      "processedDimensions": [
+        1234,
+        1090
+      ],
+      "processedOriginal": "media-branding/source-images/curated/cierre-documental-real.png",
+      "processedSha256": "a63869360559207bd6dbb5588f1057856312b00b17c749c2abe15f88cbf7f1d9",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          0,
+          260,
+          1234,
+          1350
+        ],
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.01,
+        "contrast": 1.01,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Sustituye el paisaje generado por un soporte real documentado en Innovaciones, página 32. Mantiene la escena vial y el anuncio original."
+      }
     },
     {
       "id": "proyecto-issima",
@@ -253,113 +425,278 @@
     },
     {
       "id": "proyectos-secuencial",
-      "type": "generated",
-      "source": "output/proyectos-2026-11-18/proyectos-secuencial-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R077-p24-1a75cc7e.webp",
       "originalDimensions": [
-        1536,
-        1024
+        1200,
+        996
       ],
-      "sha256": "d78542c31803688cf35ac1e1b5d3aadb8f11432ac4303d5d3ecdaebc805df128",
+      "sha256": "091079c80f7db7115c8e02639fef9bdaa961aa2b82999f2b51a67effa1634d00",
       "sizes": [
         640,
         960,
-        1536
+        1200
       ],
-      "alt": "Secuencia conceptual de soportes publicitarios azules en una avenida al anochecer.",
+      "alt": "Tres banderines publicitarios de Vana dispuestos consecutivamente junto a una calle.",
       "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/proyectos-2026-11-18/proyectos-secuencial-prompt.txt",
-      "provenance": "output/proyectos-2026-11-18/proyectos-secuencial-procedencia.json",
-      "replacementRequired": true,
-      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "sourceOriginal": "media-branding/source-images/canva/R077-p24-1a75cc7e.webp",
+      "sourceResourceId": "R077",
+      "sourcePage": 24,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1200,
+        996
+      ],
+      "filePrefix": "secuencial-documental-real",
+      "processedDimensions": [
+        1200,
+        996
+      ],
+      "processedOriginal": "media-branding/source-images/curated/secuencial-documental-real.png",
+      "processedSha256": "88162bb4185f3a1a21da2b54bbec17c27afdac5a9c442642d02509a4a576edd6",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.01,
+        "contrast": 1.01,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "La fotografía muestra una secuencia real de soportes; procede de Banderines, página 24. No se atribuye a Six."
+      }
     },
     {
       "id": "proyectos-paradero",
-      "type": "generated",
-      "source": "output/proyectos-2026-11-18/proyectos-paradero-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R083-p27-6140011f.webp",
       "originalDimensions": [
-        1536,
-        1024
+        1586,
+        1600
       ],
-      "sha256": "c280bc89adb1f51f6b5da0687b1899b503b7d3188764c70ea99297e0a9a378e5",
+      "sha256": "b5aa30909eddddd7e51c66972928f3ed666fdf7d8158ea23fdf6c67c398e6240",
       "sizes": [
         640,
         960,
-        1536
+        1440
       ],
-      "alt": "Paradero conceptual de acero y vidrio con un panel azul, junto a una calle arbolada.",
-      "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/proyectos-2026-11-18/proyectos-paradero-prompt.txt",
-      "provenance": "output/proyectos-2026-11-18/proyectos-paradero-procedencia.json",
-      "replacementRequired": true,
-      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+      "alt": "Parabús con paneles publicitarios de Del Valle junto a una vía.",
+      "position": "50% 0%",
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "sourceOriginal": "media-branding/source-images/canva/R083-p27-6140011f.webp",
+      "sourceResourceId": "R083",
+      "sourcePage": 27,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1586,
+        1600
+      ],
+      "filePrefix": "paradero-documental-real",
+      "processedDimensions": [
+        1586,
+        1600
+      ],
+      "processedOriginal": "media-branding/source-images/curated/paradero-documental-real.png",
+      "processedSha256": "986003034a8a5c7e3d0968b82ddb255b053290d3f4700eb7a0bab45578017511",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.005,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Parabús documentado, página 27. Se conserva la fotografía completa y se ancla arriba en la galería para mantener el remate del logotipo y la cubierta; sin alterar la composición del componente."
+      }
     },
     {
       "id": "proyectos-unipolar",
-      "type": "generated",
-      "source": "output/proyectos-2026-11-18/proyectos-unipolar-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R078-p25-c505573a.jpg",
       "originalDimensions": [
-        1536,
-        1024
+        1200,
+        994
       ],
-      "sha256": "f0f75aeb49f3921fe8ba62e028ab6772bb9b149c8922d9eff1fbdd1ca204d09c",
+      "sha256": "7fee14a060585544ac6d162acc3293452fc1fabd4c3d0147deaef3c56c0288a3",
       "sizes": [
         640,
         960,
-        1536
+        1200
       ],
-      "alt": "Valla unipolar conceptual bajo un cielo diurno, con ciudad y colinas al fondo.",
+      "alt": "Valla vertical de Sherwin-Williams sobre un soporte unipolar junto a una vía.",
       "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/proyectos-2026-11-18/proyectos-unipolar-prompt.txt",
-      "provenance": "output/proyectos-2026-11-18/proyectos-unipolar-procedencia.json",
-      "replacementRequired": true,
-      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "sourceOriginal": "media-branding/source-images/canva/R078-p25-c505573a.jpg",
+      "sourceResourceId": "R078",
+      "sourcePage": 25,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1200,
+        994
+      ],
+      "filePrefix": "unipolar-documental-real",
+      "processedDimensions": [
+        1200,
+        994
+      ],
+      "processedOriginal": "media-branding/source-images/curated/unipolar-documental-real.png",
+      "processedSha256": "650b94089efb15a99c911ee2170ccdcd768a91220c65fa6e4d74bebad2bd8d14",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.01,
+        "contrast": 1.01,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Formato univalla vertical documentado en la página 25. No se presenta como la campaña de Powerade."
+      }
     },
     {
       "id": "proyectos-valla",
-      "type": "generated",
-      "source": "output/proyectos-2026-11-18/proyectos-valla-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R097-p33-6a929f2d.webp",
       "originalDimensions": [
-        1536,
-        1024
+        1280,
+        576
       ],
-      "sha256": "611a379aa7632657a33a00727b366efbc2c597cdddbb250bd6843f2240af0a4e",
+      "sha256": "1de5689d58766397b06a3f0d284f91d23509185203b9df6309bd9d898d24adc3",
       "sizes": [
         640,
         960,
-        1536
+        1280
       ],
-      "alt": "Valla conceptual sobre un muro junto a una avenida, con luz de última tarde.",
-      "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/proyectos-2026-11-18/proyectos-valla-prompt.txt",
-      "provenance": "output/proyectos-2026-11-18/proyectos-valla-procedencia.json",
-      "replacementRequired": true,
-      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+      "alt": "Valla horizontal de Dinant junto al estacionamiento de una terminal aeroportuaria.",
+      "position": "43% 50%",
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "sourceOriginal": "media-branding/source-images/canva/R097-p33-6a929f2d.webp",
+      "sourceResourceId": "R097",
+      "sourcePage": 33,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1280,
+        576
+      ],
+      "filePrefix": "valla-documental-real",
+      "processedDimensions": [
+        1280,
+        576
+      ],
+      "processedOriginal": "media-branding/source-images/curated/valla-documental-real.png",
+      "processedSha256": "dc5a323b8e73df51c76f562534c1589c576df9d85d0041da755ea07874f95d09",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.01,
+        "contrast": 1.01,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Soporte exterior horizontal documentado en Aeropuerto XPL, página 33; mantiene la etiqueta funcional Valla."
+      }
     },
     {
       "id": "proyectos-puente",
-      "type": "generated",
-      "source": "output/proyectos-2026-11-18/proyectos-puente-original.png",
+      "type": "documented",
+      "source": "media-branding/source-images/canva/R081-p26-65dbef04.webp",
       "originalDimensions": [
-        1536,
-        1024
+        1200,
+        983
       ],
-      "sha256": "788700fcec83cbe59ae502c5a617584acece3816a07ca5bc22d60e7c8202f1dc",
+      "sha256": "72048eb691dd60cd06db55e583f5cf4476bef0e182bcf4ec77f4afa8f3c13f1c",
       "sizes": [
-        640,
-        960,
-        1536
+        480,
+        800,
+        1200
       ],
-      "alt": "Puente peatonal conceptual con una franja publicitaria azul sobre una avenida.",
+      "alt": "Publicidad de Zixx instalada en un puente sobre una avenida.",
       "position": "50% 50%",
-      "disclosure": "Visualización conceptual · Imagen provisional",
-      "prompt": "output/proyectos-2026-11-18/proyectos-puente-prompt.txt",
-      "provenance": "output/proyectos-2026-11-18/proyectos-puente-procedencia.json",
-      "replacementRequired": true,
-      "evidence": "Recurso conceptual sin cliente, campaña, resultado ni disponibilidad acreditados."
+      "evidence": "Fotografía proporcionada por el cliente en el tramo de Media Branding de la presentación. No acredita otras campañas citadas ni disponibilidad comercial actual.",
+      "sourceOriginal": "media-branding/source-images/canva/R081-p26-65dbef04.webp",
+      "sourceResourceId": "R081",
+      "sourcePage": 26,
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourceDimensions": [
+        1200,
+        983
+      ],
+      "filePrefix": "puente-documental-curado",
+      "processedDimensions": [
+        1200,
+        830
+      ],
+      "processedOriginal": "media-branding/source-images/curated/puente-documental-curado.png",
+      "processedSha256": "f40c379fbfa99db872bed033de7978900875d9228bbaffa2fe7cd7d5965b4ccb",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          0,
+          100,
+          1200,
+          930
+        ],
+        "channelGains": [
+          1.01,
+          1,
+          0.995
+        ],
+        "brightness": 1.025,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Formato confirmado en «Puentes», página 26. El encuadre reduce cielo y asfalto mientras mantiene el anuncio y el contexto vial. Alternativa evaluada y no incorporada: no mejora suficientemente la limpieza visual de la referencia conceptual aprobada, que se conserva con su etiqueta."
+      }
     }
   ]
 }

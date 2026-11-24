@@ -18,7 +18,12 @@
       "alt": "Taller conceptual de fabricación de estructuras y paneles de exhibición.",
       "position": "69% 50%",
       "disclosure": "Visualización conceptual · Imagen provisional",
-      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados.",
+      "responsiveSizes": "max(100vw, 177.68svh)",
+      "curation": {
+        "status": "Retirado de la presentación",
+        "reason": "Sustituido por R102 documental. El original conceptual se conserva como archivo histórico sin uso visible."
+      }
     },
     {
       "id": "print-espacios",
@@ -58,7 +63,324 @@
       "alt": "Aplicación conceptual de gráficos geométricos sin marca sobre un vehículo comercial.",
       "position": "50% 50%",
       "disclosure": "Visualización conceptual · Imagen provisional",
-      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados."
+      "replacesBeforeFinalPublication": "Fotografía propia autorizada de la capacidad representada; no atribuir a clientes ni proyectos nombrados.",
+      "replacementStatus": {
+        "status": "Pendiente confirmado por el usuario",
+        "date": "2026-11-24",
+        "reason": "R041/R042 pertenecen al tramo Innovaciones de Linkbranding. No se confirma autoría de rotulación por Media Printing; no se utilizan como evidencia de esta división.",
+        "visibleUses": [
+          "COPY-P06-S04 · Rotulación y desarrollos especiales",
+          "COPY-P06-S05 · Galería / Rotulación vehicular"
+        ]
+      }
+    },
+    {
+      "id": "print-exhibicion-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 37,
+      "sourceResourceId": "R102",
+      "sourceOriginal": "media-print/source-images/canva/R102-p37-7e82ce46.webp",
+      "sha256": "f90c381a5b8d82e06263bab5602a96ae70eb2c8d702c5b86b40f9a5a0b33d2b1",
+      "sizes": [
+        480,
+        800,
+        1280
+      ],
+      "originalDimensions": [
+        1280,
+        960
+      ],
+      "alt": "Mobiliario de exhibición con vitrinas iluminadas y paneles gráficos de New Era.",
+      "position": "58% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P06-S06"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "responsiveSizes": "max(100vw, 184.173svh)",
+      "filePrefix": "print-exhibicion-curada",
+      "processedDimensions": [
+        1280,
+        695
+      ],
+      "sourceDimensions": [
+        1280,
+        960
+      ],
+      "processedOriginal": "media-print/source-images/curated/print-exhibicion-curada.png",
+      "processedSha256": "334d7a785791ad0f3bd253480b18af5d34d46af85cb9f99065722028ff590883",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          0,
+          190,
+          1280,
+          885
+        ],
+        "channelGains": [
+          0.99,
+          0.99,
+          1.065
+        ],
+        "brightness": 1.015,
+        "contrast": 1.025,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Hero y Qué hacemos: exhibición New Era documentada en la página 37 de Media Printing. Original 1280×960, recorte efectivo 1280×695; su detalle es inferior a una fotografía original de alta resolución, sin ampliación de archivos ni detalle inventado."
+      }
+    },
+    {
+      "id": "print-espacios-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 39,
+      "sourceResourceId": "R108",
+      "sourceOriginal": "media-print/source-images/canva/R108-p39-9200f800.webp",
+      "sha256": "dcdabb6f8dc28c4b01a20952b7578b8fe579d4be447474f3a8d61a5c2717b54f",
+      "sizes": [
+        480,
+        800,
+        960
+      ],
+      "originalDimensions": [
+        960,
+        1280
+      ],
+      "alt": "Exhibidor de perfumería con paneles gráficos y módulos iluminados en un comercio.",
+      "position": "50% 25%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P06-S03"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 90,
+        "method": 6,
+        "upscaled": false
+      }
+    },
+    {
+      "id": "print-bancas-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 36,
+      "sourceResourceId": "R101",
+      "sourceOriginal": "media-print/source-images/canva/R101-p36-fe8210d0.webp",
+      "sha256": "59e0223c7ef7d34cb79866342683c3119ad3c69d214e1c7b2a532a098387777d",
+      "sizes": [
+        480,
+        800,
+        1215
+      ],
+      "originalDimensions": [
+        1280,
+        720
+      ],
+      "alt": "Instalación de exhibición con paneles y gráficas de Superman en un comercio.",
+      "position": "50% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P06-S05"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "filePrefix": "print-branding-curado",
+      "processedDimensions": [
+        1215,
+        695
+      ],
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "processedOriginal": "media-print/source-images/curated/print-branding-curado.png",
+      "processedSha256": "fa4ed1e38e94db32bad301c3b3505c7084f3aafaf52a96c3f2c508a61230ffab",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          35,
+          20,
+          1250,
+          715
+        ],
+        "channelGains": [
+          0.995,
+          1,
+          1.01
+        ],
+        "brightness": 1.025,
+        "contrast": 1.02,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Sustituye R106. Se elige una instalación de exhibición con un proyecto más próximo y definido que las bancas; R105 se probó y se reservó como apoyo por falta de detalle en el marco principal. Uso de galería, sin inventar un caso nuevo ni modificar su etiqueta."
+      }
+    },
+    {
+      "id": "print-volumen-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 36,
+      "sourceResourceId": "R100",
+      "sourceOriginal": "media-print/source-images/canva/R100-p36-678ac00c.webp",
+      "sha256": "d7e8e69e1867c79e06f19cc6028370ffd842f5050adc696b858ac6efe01e3ee3",
+      "sizes": [
+        480,
+        720,
+        900
+      ],
+      "originalDimensions": [
+        1280,
+        720
+      ],
+      "alt": "Pieza publicitaria volumétrica con forma de envase junto a una vía urbana.",
+      "position": "45% 55%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P06-S05"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "filePrefix": "print-volumen-curado",
+      "processedDimensions": [
+        900,
+        540
+      ],
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "processedOriginal": "media-print/source-images/curated/print-volumen-curado.png",
+      "processedSha256": "402243c43939713fb383b73320b106dbd0f46e1c04b7e82015c8a87471651fab",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          220,
+          180,
+          1120,
+          720
+        ],
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.01,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "La pieza volumétrica pasa a dominar frente al tráfico y el aparcamiento. El recorte limita el detalle a 900 px efectivos: galería secundaria; no hero ni ampliación artificial."
+      }
+    },
+    {
+      "id": "print-cierre-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 37,
+      "sourceResourceId": "R103",
+      "sourceOriginal": "media-print/source-images/canva/R103-p37-385a6204.webp",
+      "sha256": "b50c326def3a3728f33a48c0ebc45b72cfbb8cf4199347524f5329f7c03e79fd",
+      "sizes": [
+        480,
+        800,
+        1150
+      ],
+      "originalDimensions": [
+        1280,
+        720
+      ],
+      "alt": "Exhibición de productos para bebés con paneles, pedestales y mobiliario en un comercio.",
+      "position": "48% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P06-S06"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 90,
+        "method": 6,
+        "upscaled": false
+      },
+      "responsiveSizes": "max(100vw, 166.667svh)",
+      "filePrefix": "print-cierre-curado",
+      "processedDimensions": [
+        1150,
+        690
+      ],
+      "sourceDimensions": [
+        1280,
+        720
+      ],
+      "processedOriginal": "media-print/source-images/curated/print-cierre-curado.png",
+      "processedSha256": "c07811cf32c4c614208a2f57dfec4c4660662463fea6951f76aec3b00d35dc83",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          60,
+          20,
+          1210,
+          710
+        ],
+        "channelGains": [
+          1.005,
+          1,
+          1.015
+        ],
+        "brightness": 1.02,
+        "contrast": 1.02,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Cierre: exhibición de productos para bebés documentada en la página 37 de Media Printing. Evita repetir el hero y representa producción de mobiliario/piezas comerciales."
+      }
     }
   ]
 }

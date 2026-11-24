@@ -3,9 +3,9 @@
   "autoplay": false,
   "items": [
     {
-      "mediaId": "print-espacios",
+      "mediaId": "print-bancas-real",
       "label": "Branding y ambientación",
-      "evidence": "conceptual",
+      "evidence": "documental",
       "labelSource": "COPY-P06-S03-B04"
     },
     {
@@ -15,9 +15,9 @@
       "labelSource": "COPY-P06-S04-B03"
     },
     {
-      "mediaId": "print-taller",
+      "mediaId": "print-volumen-real",
       "label": "Desarrollos a medida",
-      "evidence": "conceptual",
+      "evidence": "documental",
       "labelSource": "COPY-P06-S04-B05"
     }
   ]

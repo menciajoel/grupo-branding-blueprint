@@ -1,5 +1,26 @@
 # Inventario de imágenes — Media Branding
 
+## Estado vigente · 24-11-2026
+
+**Una imagen generada activa, en dos apariciones:** Retail principal y Retail detalle. Ambas usan el mismo original `concepto-retail`, con sus leyendas conceptuales. La sustitución requiere una fotografía verificable de las locaciones comerciales de Media Branding; no se atribuyen a esta división las fotografías de activaciones de Linkbranding ni los exhibidores de Media Printing.
+
+| Espacio actualizado | Recurso real activo | Procedencia |
+| --- | --- | --- |
+| Cobertura | R085 | Canva, p.28 |
+| Galería · Secuencial | R077 | Canva, p.24; secuencia de soportes, sin atribución a Six |
+| Galería · Paradero | R083 | Canva, p.27; sin atribución a Fútbol |
+| Galería · Unipolar | R078 | Canva, p.25; sin atribución a Powerade |
+| Galería · Valla | R097 | Canva, p.33 |
+| Galería · Puente | R081 | Canva, p.26 |
+| Cierre comercial | R095 | Canva, p.32; valla iluminada de Coca-Cola |
+
+Los conceptos sustituidos se conservan en disco como historial y ya no se renderizan. Las fotografías reales aprobadas se conservan. JSON y maestros registran los recursos actuales, sus originales recuperados, páginas, hashes, alt, tamaños y recetas. Informe de la revisión: `../output/sustitucion-real-final-2026-11-24/informe.md`.
+
+## Registro histórico · 17–18-11-2026
+
+**Los apartados siguientes documentan el estado original y sus decisiones; no describen el inventario activo después de la sustitución del 24-11-2026.**
+
+
 Fecha: 17-11-2026. Uso autorizado para la presentación navegable local. Los conceptos no documentan campañas ejecutadas; la fotografía de Issima sí procede del documento original identificado abajo.
 
 ## Visualizaciones generadas provisionales

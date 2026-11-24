@@ -57,6 +57,343 @@
       "source": "https://unsplash.com/photos/crowded-musical-event-with-lights-Kcx_YuUR-dw",
       "license": "https://unsplash.com/license",
       "uses": "COPY-P05-S04; fotografía genérica, no campaña ejecutada."
+    },
+    {
+      "id": "link-encuentro-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 10,
+      "sourceResourceId": "R026",
+      "sourceOriginal": "linkbranding/source-images/canva/R026-p10-15726942.webp",
+      "sha256": "39ffa77398aa5723bc5dc385b331e4153dab5c91032a28dfe8b2b33e9fc2498e",
+      "sizes": [
+        480,
+        800,
+        1599
+      ],
+      "originalDimensions": [
+        1599,
+        1066
+      ],
+      "alt": "Encuentro al aire libre con asistentes, mesas y ambientación de marca.",
+      "position": "62% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P05-S01",
+        "COPY-P05-S02"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "responsiveSizes": "max(100vw, 150.0svh)",
+      "filePrefix": "link-encuentro-curado",
+      "processedDimensions": [
+        1599,
+        1066
+      ],
+      "sourceDimensions": [
+        1599,
+        1066
+      ],
+      "processedOriginal": "linkbranding/source-images/curated/link-encuentro-curado.png",
+      "processedSha256": "0b13d44fc1415b1741cfe9a0ad4e3868f3a4508c0595d131925d92480f7f918b",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1.005,
+          1,
+          0.995
+        ],
+        "brightness": 1.015,
+        "contrast": 1.02,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "A",
+        "reason": "Se conserva la toma ambiental: profundidad por planos, iluminación natural y una experiencia de marca reconocible. Ajuste moderado de tonos."
+      }
+    },
+    {
+      "id": "link-diseno-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 14,
+      "sourceResourceId": "R043",
+      "sourceOriginal": "linkbranding/source-images/canva/R043-p14-2447b3fd.webp",
+      "sha256": "bfc4546ac1a42dc9c35c2289d044df710887840b45909a66fe63cb14c633cac1",
+      "sizes": [
+        480,
+        800,
+        1200
+      ],
+      "originalDimensions": [
+        1200,
+        1600
+      ],
+      "alt": "Interacción en una degustación de productos junto a un exhibidor en supermercado.",
+      "position": "50% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P05-S03"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "filePrefix": "link-interaccion-curada",
+      "processedDimensions": [
+        1200,
+        1600
+      ],
+      "sourceDimensions": [
+        1200,
+        1600
+      ],
+      "processedOriginal": "linkbranding/source-images/curated/link-interaccion-curada.png",
+      "processedSha256": "1727074f95b5129ab6c860c3c452c908b05c0f5ed9ac3a6400390242ce379372",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1,
+          1,
+          1
+        ],
+        "brightness": 1.015,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Se conserva la interacción entre persona y producto. Los rostros y el módulo quedan completos en el marco mediano."
+      }
+    },
+    {
+      "id": "link-eventos-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 7,
+      "sourceResourceId": "R014",
+      "sourceOriginal": "linkbranding/source-images/canva/R014-p07-f1ad619a.webp",
+      "sha256": "467aa04d1e8654a9a8e335d83ec3f78b0b302162f9d2b0a8eccc7b0fb3cbbbf3",
+      "sizes": [
+        480,
+        800,
+        1599
+      ],
+      "originalDimensions": [
+        1599,
+        1066
+      ],
+      "alt": "Participantes en un corte de cinta frente a una tienda New Era.",
+      "position": "50% 32%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P05-S04"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "filePrefix": "link-eventos-curados",
+      "processedDimensions": [
+        1599,
+        1066
+      ],
+      "sourceDimensions": [
+        1599,
+        1066
+      ],
+      "processedOriginal": "linkbranding/source-images/curated/link-eventos-curados.png",
+      "processedSha256": "729dcd8e9e64d65e4b330f32aeeaf92cbc67a54dee5128b9008de11afb7b6ca6",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": null,
+        "channelGains": [
+          1.02,
+          1,
+          0.99
+        ],
+        "brightness": 1.015,
+        "contrast": 1.01,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "A",
+        "reason": "Sustituye R018. Apertura frontal con personas y marca claras; evita la gran superficie negra y la lectura desequilibrada de la toma nocturna."
+      }
+    },
+    {
+      "id": "link-calle-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 10,
+      "sourceResourceId": "R027",
+      "sourceOriginal": "linkbranding/source-images/canva/R027-p10-dd8fba2f.webp",
+      "sha256": "23c1b31d74b92fd462aada49807d0626810f3ba7580f4c6bf0b50c7b95621b6a",
+      "sizes": [
+        480,
+        800,
+        900
+      ],
+      "originalDimensions": [
+        900,
+        1600
+      ],
+      "alt": "Promotora junto a una instalación azul y módulos de Nescafé Ice.",
+      "position": "50% 48%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P05-S05",
+        "COPY-P05-S06",
+        "COPY-P05-S07"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "frameAspectRatio": "3 / 2",
+      "frameNote": "Reserva la proporción intrínseca del recurso sustituido para conservar la altura de las tres filas editoriales; object-fit mantiene la fotografía original sin deformación.",
+      "filePrefix": "link-staffing-curado",
+      "processedDimensions": [
+        900,
+        1460
+      ],
+      "sourceDimensions": [
+        900,
+        1600
+      ],
+      "processedOriginal": "linkbranding/source-images/curated/link-staffing-curado.png",
+      "processedSha256": "30452788c39d93b77936e9bf727e8585504c4147c7312fdcc403b6c5171f6986",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          0,
+          80,
+          900,
+          1540
+        ],
+        "channelGains": [
+          1.015,
+          1,
+          0.99
+        ],
+        "brightness": 1.02,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "B",
+        "reason": "Sustituye R031. Protagonista humano y espacio de activación claramente delimitados; se elimina el peso de cables, cielo y calzada de la foto anterior. Ilustra activaciones/staffing, sin afirmar que esta escena sea street marketing."
+      }
+    },
+    {
+      "id": "link-cierre-real",
+      "type": "documentary",
+      "source": "Fotografía proporcionada por el cliente · Presentación de Grupo Branding en Canva",
+      "sourcePresentation": "https://www.canva.com/design/DAG_54Q9H3A/1-KYGrgc1f6MKhoSjA82zg/view",
+      "sourcePage": 19,
+      "sourceResourceId": "R064",
+      "sourceOriginal": "linkbranding/source-images/canva/R064-p19-20ea9e0f.webp",
+      "sha256": "c9ae505711e9e4eba4b4687195a7bce9704939345aa5823f9c9239794cb22ce8",
+      "sizes": [
+        640,
+        1200,
+        1900
+      ],
+      "originalDimensions": [
+        2400,
+        1351
+      ],
+      "alt": "Vista elevada de la instalación UNO Dynamax en un centro comercial.",
+      "position": "50% 50%",
+      "disclosure": "Fotografía del cliente",
+      "uses": [
+        "COPY-P05-S12"
+      ],
+      "webEncoding": {
+        "format": "WebP",
+        "quality": 89,
+        "method": 6,
+        "upscaled": false
+      },
+      "responsiveSizes": "max(100vw, 206.522svh)",
+      "filePrefix": "link-cierre-curado",
+      "processedDimensions": [
+        1900,
+        920
+      ],
+      "sourceDimensions": [
+        2400,
+        1351
+      ],
+      "processedOriginal": "linkbranding/source-images/curated/link-cierre-curado.png",
+      "processedSha256": "e40277dcce275b3c661633e58618d08a822f6c100b04725b2137b9734189754e",
+      "postproduction": {
+        "method": "Convencional · Pillow; sin generación ni reconstrucción",
+        "crop": [
+          260,
+          320,
+          2160,
+          1240
+        ],
+        "channelGains": [
+          0.995,
+          1,
+          1.01
+        ],
+        "brightness": 1.005,
+        "contrast": 1.015,
+        "unsharp": {
+          "radius": 0.8,
+          "percent": 30,
+          "threshold": 3
+        },
+        "upscaled": false,
+        "colorManagement": "Conversión ICC a sRGB cuando el original contiene perfil; sin look creativo."
+      },
+      "curation": {
+        "gradeAfter": "A",
+        "reason": "Sustituye R054. El encuadre se concentra en la instalación y evita el toldo y ruido visual de la activación anterior. Procede del caso UNO GAMING de Linkbranding, página 19, sin atribuirlo a Media Printing."
+      }
     }
   ]
 }

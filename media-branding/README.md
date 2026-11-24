@@ -53,3 +53,17 @@ Pendientes definitivos: evidencia visual de Six, Fútbol y Powerade; fotografía
 HEAD: `0549555ec3f0de294e201b35fa548c0051e823aa`. Etiqueta **media-branding-antes-presentacion**, árbol **7c2818c76625c1e115557a941f8fe8f683c91b64**. Incluye el trabajo local no ignorado anterior, sin crear commit ni modificar el índice normal. Se conservaron las etiquetas anteriores.
 
 Copias de los archivos de implementación y manifiesto SHA-256 de 327 archivos previos en `output/presentacion-2026-11-17/`. No restaurar destructivamente sobre trabajo local. Los recursos y evidencias ignorados siguen en disco.
+
+## Estado fotográfico vigente · 24-11-2026
+
+Se conservan las fotografías reales aprobadas: hero VU018, puente PTE04, soportes del inventario y Banderines Issima del PDF. Cobertura mantiene R085, página 28 de la presentación del cliente, como contexto urbano sin afirmar disponibilidad.
+
+La galería sustituye las cinco imágenes generadas por fotografías documentales: **R077** (Secuencial, p.24), **R083** (Paradero, p.27), **R078** (Unipolar, p.25), **R097** (Valla, p.33) y **R081** (Puente, p.26). Las etiquetas funcionales no atribuyen estas fotografías a Six, Fútbol o Powerade. El cierre utiliza **R095**, valla iluminada de Coca-Cola, p.32; el ID técnico heredado `concepto-cierre` se conserva para no cambiar el componente, pero su recurso activo ya es documental.
+
+**Pendiente específico:** Retail y punto de venta conserva una imagen conceptual en dos encuadres. No se encontró evidencia adecuada de las locaciones de Media Branding; las activaciones de Linkbranding y los exhibidores de Media Printing no se reasignan a esta división. Las dos apariciones mantienen la identificación conceptual visible.
+
+Los bloques editoriales, tipografías, etiquetas funcionales, controles y movimiento no cambian. `media.json` registra procedencia, tamaños, alt, maestros y recetas convencionales; los originales permanecen intactos. Informe consolidado: `../output/sustitucion-real-final-2026-11-24/informe.md`. Revisión local, sin publicación.
+
+## Publicación autorizada · 24-11-2026
+
+La selección y los ajustes locales anteriores quedan aprobados para integrar en `main` y publicar el prototipo. El estado vigente, las fuentes versionadas, el QA y los pendientes confirmados se documentan en [publicación fotográfica](../docs/publicacion-fotografica-2026-11-24.md). Los informes locales previos registran estados históricos, no una restricción vigente de publicación.

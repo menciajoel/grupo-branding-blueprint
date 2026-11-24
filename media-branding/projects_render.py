@@ -4,7 +4,7 @@ from components import esc,icon
 def project_gallery(data,media):
     items=data['items'];figures=[]
     for i,record in enumerate(items):
-        item=media[record['mediaId']];asset=item.get('filePrefix',item['id']);widths=item['sizes'];w,h=item['originalDimensions']
+        item=media[record['mediaId']];asset=item.get('filePrefix',item['id']);widths=item['sizes'];w,h=item.get('processedDimensions',item['originalDimensions'])
         sources=', '.join(f'assets/media/{asset}-{width}.webp {width}w' for width in widths)
         provenance=item['disclosure'] if item['type']=='generated' else 'Fotografía documental'
         figures.append(f'<figure class="project-slide" role="group" aria-roledescription="fotografía" aria-label="{i+1} de {len(items)}: {esc(record["label"])}" data-project-slide="{i}" data-slot="{i}" data-media="{esc(item["id"])}" data-evidence="{record["evidence"]}" aria-hidden="{str(i>=5).lower()}"><div class="project-photo"><img src="assets/media/{asset}-{widths[0]}.webp" srcset="{sources}" sizes="(max-width:700px) 90vw, (max-width:1100px) 65vw, 50vw" width="{w}" height="{h}" loading="lazy" decoding="async" draggable="false" alt="{esc(item["alt"])}" style="object-position:{esc(item.get("position","50% 50%"))}"></div><figcaption><span class="project-label">{esc(record["label"])}</span><small class="project-provenance">{esc(provenance)}</small></figcaption></figure>')

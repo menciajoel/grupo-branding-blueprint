@@ -3,8 +3,8 @@
   "brandFolder": "media-printing",
   "logoWidth": 333,
   "logoHeight": 136,
-  "heroImage": "print-taller",
-  "closingImage": "print-taller",
+  "heroImage": "print-exhibicion-real",
+  "closingImage": "print-cierre-real",
   "anchors": {
     "3": "espacios-y-exhibicion",
     "4": "rotulacion-y-desarrollos"
@@ -30,5 +30,8 @@
   "heroLineBreaks": [
     2,
     4
-  ]
+  ],
+  "sectionImages": {
+    "spaces": "print-espacios-real"
+  }
 }

@@ -33,6 +33,12 @@ Los relevos interiores se generan desde la implementación aprobada de `shared/i
 
 La navegación cruzada aprobada (23-11-2026) incorpora «Divisiones» antes de Contacto en los tres encabezados y «Otras divisiones» dentro del menú móvil existente. Grupo Branding aparece primero y se excluye la división actual. En Linkbranding, «Servicios complementarios» conserva el destino interno `#grupo-branding`, mientras el destino corporativo del desplegable abre el Inicio del grupo. Fuentes: `shared/divisions/navigation.*` y `linkbranding/design.json`; ver [integración y publicación](docs/publicacion-navegacion-2026-11-23.md).
 
+## Fotografía aprobada · 24-11-2026
+
+La revisión aprobada incorpora fotografías documentales recuperadas del material del cliente en las tres divisiones, sus encuadres y el desvanecimiento fotográfico del hero de Linkbranding/Media Printing. El hero de Media Printing utiliza R102 real; el taller generado deja de mostrarse. Las galerías, navegación y coreografías aprobadas permanecen intactas. Ver [selección, procedencia, QA y límites](docs/publicacion-fotografica-2026-11-24.md).
+
+Los originales recuperados y maestros convencionales se versionan en `*/source-images/` como fuentes de colaboración. El paquete público solo incluye las variantes web utilizadas. Permanecen dos imágenes conceptuales únicas: Retail de Media Branding (principal/detalle) y Rotulación vehicular de Media Printing (sección/galería), con identificación visible y sus pendientes documentados.
+
 ## Empezar
 
 Requisitos: Git y Python **3.9 o posterior**. No se necesita npm, framework, CMS ni instalación de paquetes para compilar o servir las páginas. GSAP, ScrollTrigger, fuentes e iconos se incluyen localmente con sus licencias. Node.js solo es necesario para el chequeo opcional de sintaxis JavaScript; GitHub Actions lo ejecuta automáticamente.
@@ -121,13 +127,13 @@ La referencia cinematográfica se reconstruye con `python3 -B experimentos/trans
 
 Los WebP en `media-branding/assets/media/` son los recursos completos necesarios para reconstruir la presentación; no requieren descargar archivos privados. `media.json` registra variantes, dimensiones, alt, encuadre, procedencia y condición conceptual. `projects.json` define el orden y las etiquetas de las seis fotografías.
 
-Las otras divisiones incluyen sus WebP en `linkbranding/assets/media/` y `media-print/assets/media/`. Sus `media.json` identifican cinco escenas generadas y una fotografía de referencia ya existente en Inicio; se conserva visible la distinción conceptual. No se atribuyen estas imágenes a clientes o campañas reales. Los PNG originales opcionales permanecen fuera de Git; los WebP versionados permiten reconstruir todas las páginas sin ellos.
+Las otras divisiones incluyen sus WebP en `linkbranding/assets/media/` y `media-print/assets/media/`. Sus `media.json` distinguen la fotografía documental del cliente, los recursos anteriores conservados y los conceptos aún visibles. `filePrefix` selecciona las variantes activas; `processedDimensions` reserva las proporciones del derivado. Linkbranding usa exclusivamente fotografías reales; Media Printing conserva únicamente el concepto vehicular pendiente confirmado. Los originales recuperados y maestros están en `source-images/`, fuera del artefacto público.
 
 Al sustituir una imagen: conservar proporciones, generar variantes WebP, actualizar el registro y su alt, y comprobar los encuadres en escritorio, tablet y móvil. No alterar los SVG oficiales ni sus colores. `procedencia-imagenes.json` conserva prompts y procedencia disponibles; `inventario-imagenes.md` documenta usos y sustituciones pendientes.
 
 `prepare_media.py` es una utilidad opcional para el original del hero: requiere Pillow 11.3.0 (`python3 -m pip install Pillow==11.3.0`) y el archivo original indicado en el manifiesto. Los originales de cámara/PDF y PNG generados permanecen en el equipo del proyecto, fuera de Git. No son necesarios para compilar; solicitarlos al director si se necesita volver a producir esas fotografías. La excepción son los tres PNG documentales extraídos del PDF para Inicio: se conservan en `experimentos/inicio-v01/source-images/projects/` como fuentes editables; solo sus once derivados WebP se despliegan. Su README documenta la regeneración opcional con pypdf y Pillow. La compilación habitual no requiere esas dependencias ni el PDF.
 
-Issima cuenta con una fotografía documental extraída del PDF original. Los recursos generados no documentan campañas de Six, Fútbol ni Powerade; mantienen visible **«Visualización conceptual · Imagen provisional»**. Los permisos para el sitio comercial definitivo y la sustitución de recursos conceptuales requieren confirmación del cliente. La autorización actual cubre esta publicación de prototipo.
+Issima conserva su fotografía documental extraída del PDF original. Las otras cinco imágenes de la galería de Media Branding son ahora documentales y sus etiquetas describen formatos; no se atribuyen a Six, Fútbol ni Powerade. La evidencia específica de esos casos sigue pendiente. Los dos conceptos aún activos conservan visible **«Visualización conceptual · Imagen provisional»**. Los permisos para el sitio comercial definitivo y la sustitución de recursos conceptuales requieren confirmación del cliente. La autorización actual cubre esta publicación de prototipo.
 
 ## Rutas y despliegue
 

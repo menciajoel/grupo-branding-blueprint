@@ -100,6 +100,10 @@ replacements = {
     'RESOLVE_PARAGRAPH': block(2, 3, 'p', 'resolve-description'),
     'BRAND': esc(media['brand']['source']),
     'HERO_ALT': esc(media['hero']['alt']),
+    'HERO_PREFIX': esc(media['hero'].get('filePrefix', 'unipolar-vu018')),
+    'HERO_WIDTH': str(media['hero'].get('processedDimensions', media['hero']['originalDimensions'])[0]),
+    'HERO_HEIGHT': str(media['hero'].get('processedDimensions', media['hero']['originalDimensions'])[1]),
+    'HERO_SIZES': esc(media['hero'].get('responsiveSizes', '(max-width:700px) 100vw, (max-width:1100px) 82vw, 74vw')),
     'PAGE_SECTIONS':page_sections,
     'PAGE_FOOTER':page_footer,
 }

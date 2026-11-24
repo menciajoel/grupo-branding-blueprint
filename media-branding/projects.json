@@ -12,31 +12,31 @@
       "mediaId": "proyectos-secuencial",
       "label": "Secuencial",
       "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
-      "evidence": "conceptual"
+      "evidence": "documental"
     },
     {
       "mediaId": "proyectos-paradero",
       "label": "Paradero",
       "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
-      "evidence": "conceptual"
+      "evidence": "documental"
     },
     {
       "mediaId": "proyectos-unipolar",
       "label": "Unipolar",
       "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
-      "evidence": "conceptual"
+      "evidence": "documental"
     },
     {
       "mediaId": "proyectos-valla",
       "label": "Valla",
       "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
-      "evidence": "conceptual"
+      "evidence": "documental"
     },
     {
       "mediaId": "proyectos-puente",
       "label": "Puente",
       "labelSource": "Descripción funcional de soporte; no identifica campaña ni cliente",
-      "evidence": "conceptual"
+      "evidence": "documental"
     }
   ]
 }
